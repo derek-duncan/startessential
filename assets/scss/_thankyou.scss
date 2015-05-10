@@ -1,0 +1,263 @@
+#thankyou {
+  .header {
+    width: 100%;
+    background: $red;
+    padding: 15px 0;
+    color: #fff;
+    text-align: center;
+    font-size: 120%;
+    .header-inner {
+      width: 30%;
+      margin: 0 auto;
+      @media (max-width: $ipad) {
+        width: 60%;
+      }
+      @media (max-width: $phone) {
+        width: 90%;
+      }
+    }
+    h1.logo {
+      float: left;
+      margin: 0;
+      a {
+        outline: none;
+      }
+      img {
+        width: 130px;
+      }
+    }
+    p.thanks {
+      float: right;
+      margin: 0;
+      margin-top: 12px;
+      font-weight: 600;
+      @media (max-width: $ipad) {
+        margin-top: 15px;
+      }
+    }
+    h1.logo, p.thanks {
+      @media (max-width: $phone) {
+        float: none;
+        width: 100%;
+      }
+    }
+  }
+  section.info {
+    padding: 50px 0;
+    text-align: center;
+    font-size: 130%;
+    h3.info-tagline {
+      color: $gray;
+      width: 90%;
+      margin: 0 auto;
+    }
+    h2.info-title {
+      margin: 40px auto;
+      font-size: 220%;
+      width: 30%;
+      @media (max-width: $ipad) {
+        width: 60%;
+      }
+      @media (max-width: $phone) {
+        width: 80%;
+        font-size: 190%;
+        br {
+          display: none;
+        }
+      }
+    }
+    p.info-desc {
+      width: 30%;
+      margin: 0 auto;
+      color: $gray;
+      @media (max-width: $ipad) {
+        width: 60%;
+      }
+      @media (max-width: $phone) {
+        width: 80%;
+      }
+    }
+    .share-form {
+      margin: 40px auto 0;
+      width: 30%;
+      @media (max-width: $ipad) {
+        width: 60%;
+      }
+      @media (max-width: $phone) {
+        width: 80%;
+      }
+      input.share-link {
+        width: 100%;
+        padding: 10px 15px;
+        border: 1px solid #C4C4C4;
+        box-sizing: border-box;
+        outline: none;
+        &:hover, &:focus {
+          border-color: $red;
+        }
+      }
+      .share-links {
+        margin-top: 20px;
+      }
+      .share-fb, .share-tw {
+        width: 48%;
+        display: inline-block;
+        text-align: center;
+        color: #fff;
+        padding: 10px 0;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .share-fb {
+        background: #43609C;
+        margin-right: 1%;
+        &:hover {
+          background: darken(#43609C, 10%);
+        }
+      }
+      .share-tw {
+        background: #55ACEE;
+        margin-left: 1%;
+        &:hover {
+          background: darken(#55ACEE, 10%);
+        }
+      }
+    }
+  }
+  p.share-status {
+    font-weight: 200;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  section.goals {
+    padding: 20px 0 80px;
+    background: #FAFAFA;
+
+    @media (max-width: $phone) {
+      padding-bottom: 50px;
+    }
+    .goals-inner {
+      width: 60%;
+      margin: 0 auto;
+      text-align: center;
+      @media (max-width: $ipad) {
+        width: 90%;
+      }
+    }
+    h3.goals-title {
+      font-size: 180%;
+    }
+    .options {
+      margin-top: 50px;
+      .option {
+        width: 25%;
+        padding: 0 30px;
+        color: #2D2D2D;
+        display: inline-block;
+        vertical-align: top;
+        box-sizing: border-box;
+
+        &.yus {
+          color: $red;
+          .option-stat {
+            background: $red;
+            color: #fff;
+          }
+          .option-success {
+            display: block;
+          }
+        }
+
+        @media (max-width: $phone) {
+          width: 100%;
+          margin: 15px 0;
+        }
+        p.option-stat {
+          padding: 15px;
+          background: #E3EBF3;
+          color: #686868;
+          display: inline-block;
+          margin: 0;
+          font-size: 140%;
+          font-weight: 600;
+          span {
+            font-size: 70%;
+          }
+        }
+        p.option-text {
+          font-weight: 600;
+          font-size: 140%;
+          margin-top: 20px;
+          span {
+            font-size: 70%;
+            margin-top: 5px;
+            display: block;
+          }
+
+          @media (max-width: $ipad) {
+            font-size: 120%;
+          }
+        }
+        p.option-success {
+          display: none;
+        }
+      }
+    }
+    .goals-reached {
+      width: 100%;
+      margin-top: 30px;
+      @media (max-width: $phone) {
+        display: none;
+      }
+      .dot-sec {
+        width: 25%;
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        &:first-child, &:last-child {
+          hr {
+            width: 50%;
+            transform: translateX(0);
+          }
+        }
+        &:last-child {
+          hr {
+            right: 50%;
+            left: auto;
+          }
+        }
+        &.yus {
+          .dot {
+            background: $red;
+            border-color: #fff;
+          }
+          hr {
+            border-color: $red;
+          }
+        }
+      }
+      .dot, hr {
+        vertical-align: middle;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+      }
+      .dot {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        border: 1px solid #979797;
+        background: #fff;
+        z-index: 10;
+      }
+      hr {
+        width: 100%;
+        top: 4px;
+        height: 0;
+        overflow: hidden;
+        border-bottom: 1px solid #979797;
+      }
+    }
+  }
+}

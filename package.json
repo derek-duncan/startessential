@@ -16,7 +16,11 @@
     "good": "^6.1.2",
     "good-console": "^5.0.0",
     "hapi": "^8.4.0",
-    "jade": "^1.9.2"
+    "hapi-auth-basic": "^2.0.0",
+    "jade": "^1.9.2",
+    "joi": "^6.4.1",
+    "mongoose": "*",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "gulp-autoprefixer": "^2.2.0",

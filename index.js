@@ -1,9 +1,18 @@
-var Hapi = require('hapi');
-var Good = require('good');
-var Path = require('path');
+"use strict";
 
-var server = new Hapi.Server();
-server.connection({ port: 3000 });
+var Hapi = require('hapi');
+var constants = require('./src/config/constants.js');
+var basicAuth = require('./src/middleware/basic-auth');
+var routes = require('./src/routes/index.js');
+var _ = require('underscore');
+var fs = require('fs');
+
+var server = new Hapi.Server()
+
+var port = constants.application['port'];
+server.connection({
+  port: port
+});
 
 server.views({
   engines: {
@@ -15,51 +24,22 @@ server.views({
   helpersPath: 'views/helpers'
 });
 
-server.route({
-  method: 'GET',
-  path: '/',
-  handler: function (request, reply) {
-    reply.view('index', {
-      title: 'Everything you need to grow your Essential Oil business'
-    })
-  }
+//server.register(require('hapi-auth-basic'), function (err) {
+//  server.auth.strategy('simple', 'basic', true, {
+//    validateFunc: basicAuth
+//  });
+//});
+
+// Add all the routes within the routes folder
+fs.readdirSync('./src/routes').forEach(function(file) {
+  var route = require('./src/routes/' + file);
+  server.route(route);
 });
 
-server.route({
-  method: 'GET',
-  path: '/{name}',
-  handler: function (request, reply) {
-    reply('Hello, ' + encodeURIComponent(request.params.name) + '!');
-  }
-});
+module.exports = server;
 
-server.route({
-  method: 'GET',
-  path: '/{param*}',
-  handler: {
-    directory: {
-      path: 'assets'
-    }
-  }
-});
+if (process.env.NODE_ENV !== 'test') {
+	server.start();
 
-server.register({
-  register: Good,
-  options: {
-    reporters: [{
-      reporter: require('good-console'),
-      events: {
-        response: '*',
-        log: '*'
-      }
-    }]
-  }
-}, function (err) {
-  if (err) {
-    throw err; // something bad happened loading the plugin
-  }
-
-  server.start(function () {
-    server.log('info', 'Server running at: ' + server.info.uri);
-  });
-});
+	console.log('Server running in port '+port);
+}
