@@ -13,9 +13,6 @@ module.exports = function() {
 			port: appConstants[env]['port'],
 		},
 		database : {
-			host: dbContants[env]['host'],
-			user: dbContants[env]['user'],
-			password: dbContants[env]['password'],
 			database: dbContants[env]['database']
 		},
 		server : {
@@ -29,15 +26,6 @@ module.exports = function() {
 	} else if (!obj.application['port']) {
 		throw new Error('Missing constant application.port. ' +
 			'Check your enviroment variable NODE_PORT.');
-	} else if (!obj.database['host']) {
-		throw new Error('Missing constant database.host. ' +
-			'Check your enviroment variables.');
-	} else if (!obj.database['user']) {
-		throw new Error('Missing constant database.user. ' +
-			'Check your enviroment variables.');
-	//} else if (!obj.database['password']) {
-	//  throw new Error('Missing constant database.password. ' +
-	//    'Check your enviroment variables.');
 	} else if (!obj.database['database']) {
 		throw new Error('Missing constant database.database. ' +
 			'Check your enviroment variables.');
@@ -48,16 +36,13 @@ module.exports = function() {
 	function databaseConfig(){
 		return {
 			'production' : {
-				'host' : process.env.DB_PRD_HOST,
+				'host' : process.env.DB_PRD_HOST || 'localhost',
 				'user' : process.env.DB_PRD_USER,
 				'password' : process.env.DB_PRD_PASS || '',
-				'database' : 'hapi-todo'
+				'database' : 'se'
 			},
 			'development' : {
-				'host' : 'localhost',
-				'user' : process.env.DB_DEV_USER,
-				'password' : process.env.DB_DEV_PASS || '',
-				'database' : 'hapi-todo'
+				'database' : 'mongodb://localhost/se-dev'
 			},
 			'test' : {
 				'host' : 'localhost',

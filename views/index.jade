@@ -8,7 +8,7 @@ html
       div.header-top.cf
         h1.logo
           img(src='/images/logo-color.png' alt='Start Essential resources logo' width='300')
-        a.cta-top(href="#" title="Join Start Essential for free") Join for free
+        a.cta-top(href="#join" title="Join Start Essential for free") Join for free
       div.header-middle.content.cf
         h2 Everything you need to grow your Essential Oil business.
         p Liven up your blog and social media with interesting, engaging images and content
@@ -41,11 +41,13 @@ html
             p.info-desc Did you know that 90% of information transmitted to the brain is visual? Studies have shown that people are 40% more likely to respond to a post with visual information then just plain text. Talk about growth!
     section.join
       img.join-icon(src='/images/join_icon.png' width='100' alt='Request an invitation icon')
-      .join-content
+      .join-content#join
         h2.join-sub_head Are you ready to grow your business with better content?
         p.join-desc Start Essential is still growing and is only available to beta members. If you would like to get free access to all this valuable content and help Start Essential grow, you just need your email address! <b>Sign up below to join</b> and be one of the first to use Start Essential.
+        p.join-msg
         .join-form
           input.join-input(type='email' placeholder='Enter your email')
           button.join-submit(type='submit') Step inside
 script(src="http://localhost:35729/livereload.js?snipver=1")
 script(type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js")
+script(type="text/javascript" src="/js/main.js")
