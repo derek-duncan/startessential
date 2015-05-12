@@ -2,7 +2,6 @@
 
 var Hapi = require('hapi');
 var Good = require('good');
-var Poop = require('poop');
 var constants = require('./src/config/constants.js');
 var basicAuth = require('./src/middleware/basic-auth');
 var routes = require('./src/routes/index.js');
