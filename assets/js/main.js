@@ -41,7 +41,7 @@ $(function() {
         })
         .success(function(usr) {
           localStorage.setItem('user', JSON.stringify(usr))
-          window.location.href = "http://localhost:3000/thankyou";
+          window.location.href = "http://" + window.location.hostname + "/thankyou";
         })
       }
     }
