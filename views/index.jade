@@ -1,5 +1,6 @@
 extends templates/layout
 block body
+  // Google Analytics Content Experiment code
   script.
     function utmx_section(){}function utmx(){}(function(){var
     k='102171873-1',d=document,l=d.location,c=d.cookie;
@@ -13,7 +14,8 @@ block body
     valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
     '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
   script.
-    utmx('url','A/B')
+    utmx('url','A/B');
+  // End of Google Analytics Content Experiment code
   #front
     header.header
       div.header-top.cf
