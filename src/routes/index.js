@@ -3,10 +3,10 @@ exports.register = function(server, options, next) {
     method: 'GET',
     path: '/',
     handler: function (request, reply) {
-      var switchReq = _getRandomInt(0, 1);
-      if (switchReq) {
-        return reply.redirect('/v2')
-      }
+      //var switchReq = _getRandomInt(0, 1);
+      //if (switchReq) {
+      //  return reply.redirect('/v2')
+      //}
       reply.view('index', {
         title: 'Everything you need to grow your Essential Oil business',
         header: 'A huge collection of essential oil infographics and social media posts',
