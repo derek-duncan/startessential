@@ -41,16 +41,38 @@ server.views({
   helpersPath: 'views/helpers'
 });
 
-//server.register(require('hapi-auth-basic'), function (err) {
-//  server.auth.strategy('simple', 'basic', true, {
-//    validateFunc: basicAuth
-//  });
-//});
+server.register(require('hapi-auth-bearer-token'), function (err) {
+
+  server.auth.strategy('simple', 'bearer-access-token', {
+    allowQueryToken: true,              // optional, true by default
+    allowMultipleHeaders: false,        // optional, false by default
+    accessTokenName: 'access_token',    // optional, 'access_token' by default
+    validateFunc: function( token, callback ) {
+
+      // For convenience, the request object can be accessed
+      // from `this` within validateFunc.
+      var request = this;
+
+      // Use a real strategy here,
+      // comparing with a token from your database for example
+      if(token === "1234"){
+        callback(null, true, { token: token })
+      } else {
+        callback(null, false, { token: token })
+      }
+    }
+  });
+});
+
 
 // Add all the routes within the routes folder
 fs.readdirSync('./src/routes').forEach(function(file) {
   var route = require('./src/routes/' + file);
-  server.route(route(server));
+  server.register({register: route}, function(err) {
+    if (err) {
+      server.log('error', err);
+    }
+  });
 });
 
 module.exports = server;

@@ -1,0 +1,24 @@
+html
+  head
+    title #{title}
+    meta(name="description" content="Provides essential oil images, infographics, and social media posts to help you grow your essential oils business")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet" type="text/css" href='/css/main.css')
+    link(rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon")
+    link(rel="icon" href="/images/favicon.ico" type="image/x-icon")
+    block head
+  body
+    block body
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-62852836-1', 'auto');
+      ga('send', 'pageview');
+
+    script(src="http://localhost:35729/livereload.js?snipver=1")
+    script(type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js")
+    script(type="text/javascript" src="/js/main.js")
+    block scripts
