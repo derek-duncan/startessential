@@ -4,19 +4,24 @@ exports.register = function(server, options, next) {
     path: '/',
     handler: function (request, reply) {
       var switchReq = _getRandomInt(0, 1);
-      var header, v;
       if (switchReq) {
-        header = 'Everything you need to grow your Essential Oil business'
-        v = 1;
-      } else {
-        header = 'A huge collection of essential oil infographics and social media posts'
-        v = 2;
+        return reply.redirect('/v2')
       }
-
       reply.view('index', {
         title: 'Everything you need to grow your Essential Oil business',
-        header: header,
-        version: v
+        header: 'A huge collection of essential oil infographics and social media posts',
+        version: 1
+      });
+    }
+  })
+  server.route({
+    method: 'GET',
+    path: '/v2',
+    handler: function (request, reply) {
+      reply.view('index', {
+        title: 'Everything you need to grow your Essential Oil business',
+        header: 'A huge collection of essential oil infographics and social media posts',
+        version: 2
       });
     }
   })
