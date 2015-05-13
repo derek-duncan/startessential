@@ -26,10 +26,22 @@ $(function() {
       }
     })
 
+    // GA Events //
+    var ctaTop = $('.cta-top');
+    var joinSubmit = $('.join-submit');
+
+    ctaTop.on('click touchend', function(e) {
+      console.log('clicked')
+      ga('send', 'event', 'button', 'click', 'top cta')
+    })
+    joinSubmit.on('click touchend', function(e) {
+      ga('send', 'event', 'button', 'click', 'join submit')
+    })
+
     function submitEmail(e) {
       e.preventDefault()
-      toggleButtonState()
       if (joinEmail.val().length > 3) {
+        toggleButtonState()
         $.ajax({
           method: "POST",
           url: "/api/v1/users",
@@ -37,7 +49,7 @@ $(function() {
           dataType: 'JSON'
         })
         .error(function(xhr) {
-          emailError(xhr.status)
+          _emailError(xhr.status)
         })
         .success(function(usr) {
           localStorage.setItem('user', JSON.stringify(usr))
@@ -46,7 +58,7 @@ $(function() {
       }
     }
 
-    function emailError(code) {
+    function _emailError(code) {
       var msg = $('.join-msg')
       switch (code) {
         case 409:
@@ -74,6 +86,7 @@ $(function() {
         joinButton.text('Submitting...');
       }
     }
+
   }
 
   if ($('#thankyou').length) {
@@ -105,6 +118,17 @@ $(function() {
       option.eq(i).addClass('yus');
       dot.eq(i).addClass('yus');
     }
+    // GA Events //
+    var shareFB = $('.share-fb');
+    var shareTW = $('.share-tw');
+    var shareLink = $('.share-link');
+
+    shareFB.on('click touchend', function(e) {
+      ga('send', 'event', 'share', 'click', 'facebook')
+    })
+    shareTW.on('click touchend', function(e) {
+      ga('send', 'event', 'share', 'click', 'twitter')
+    })
   }
 });
 

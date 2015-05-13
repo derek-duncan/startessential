@@ -99,15 +99,6 @@
       .share-links {
         margin-top: 20px;
       }
-      .share-fb, .share-tw {
-        width: 48%;
-        display: inline-block;
-        text-align: center;
-        color: #fff;
-        padding: 10px 0;
-        text-decoration: none;
-        font-weight: 600;
-      }
       .share-fb {
         background: #43609C;
         margin-right: 1%;
@@ -120,6 +111,19 @@
         margin-left: 1%;
         &:hover {
           background: darken(#55ACEE, 10%);
+        }
+      }
+      .share-fb, .share-tw {
+        width: 48%;
+        display: inline-block;
+        text-align: center;
+        color: #fff;
+        padding: 10px 0;
+        text-decoration: none;
+        font-weight: 600;
+        @media (max-width: $phone) {
+          width: 100%;
+          margin: 1% 0;
         }
       }
     }

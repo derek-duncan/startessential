@@ -7,7 +7,7 @@ block body
           img(src='/images/logo-color.png' alt='Start Essential resources logo' width='300')
         a.cta-top(href="#join" title="Join Start Essential for free") Join for free
       div.header-middle.content.cf
-        h2 Everything you need to grow your Essential Oil business.
+        h2 #{header}
         p We design incredible infographics and social media posts so you can use them to grow your business!
       div.header-bottom.examples
         div.example-blocks.cf
@@ -25,7 +25,7 @@ block body
         .info-block
           img.info-image(src='/images/icon_3.png' width='100' alt='Improve your blog graph')
           div.info-content
-            h3.info-sub_head Improve your blogs and posts engagement by 40%
+            h3.info-sub_head Improve your blogs and posts engagement by <b>40%</b>
             p.info-desc Did you know that 90% of information transmitted to the brain is visual? Studies have shown that people are 40% more likely to respond to a post with visual information then just plain text. Talk about growth!
 
         .info-block
@@ -47,3 +47,9 @@ block body
         .join-form
           input.join-input(type='email' placeholder='Enter your email')
           button.join-submit(type='submit') Step inside
+block scripts
+  script.
+    ga('set', {
+      page: '/',
+      title: 'Homepage ' + #{version}
+    });
