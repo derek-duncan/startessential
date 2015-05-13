@@ -9,7 +9,7 @@ exports.register = function(server, options, next) {
       //}
       reply.view('index', {
         title: 'Everything you need to grow your Essential Oil business',
-        header: 'A huge collection of essential oil infographics and social media posts',
+        header: 'Everything you need to grow your Essential Oil business',
         version: 1
       });
     }
