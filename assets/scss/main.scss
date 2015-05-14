@@ -190,6 +190,81 @@ body {
         margin-bottom: 0;
         font-size: 110%;
         color: $gray;
+        span {
+          display: block;
+          padding-top: 3px;
+          font-size: 80%;
+          color: #aaa;
+          a {
+            color: inherit;
+          }
+        }
+      }
+    }
+  }
+
+  section.howto {
+    padding-bottom: 50px;
+    width: $content-width;
+    margin: 0 auto;
+    hr {
+      width: 100%;
+      margin: 15px auto 50px;
+      height: 0;
+      border: none;
+      border-top: 1px solid #b2b2b2;
+    }
+    h2.howto-sub_head {
+      max-width: 90%;
+      margin: 0 auto;
+      font-size: 190%;
+      text-align: center;
+    }
+    p.howto-sub_desc {
+      text-align: center;
+      font-size: 130%;
+      color: $gray;
+    }
+    .howto-step {
+      margin: 70px 0;
+      width: 100%;
+
+      .step-number {
+        border-radius: 50%;
+        text-align: center;
+        font: 600 40px 'claire_handbold';
+        margin-right: 5%;
+        width: 15%;
+        max-width: 120px;
+        height: 100px; // js takes care of things
+        display: inline-block;
+        vertical-align: middle;
+        background: #F8F8F8;
+        color: #131313;
+        .step-number-inner {
+          display: table;
+          width: 100%;
+          height: 100%;
+        }
+        span {
+          display: table-cell;
+          vertical-align: middle;
+        }
+      }
+      .step-content {
+        font-weight: 300;
+        width: 80%;
+        display: inline-block;
+        vertical-align: middle;
+        h4.step-head {
+          font-size: 180%;
+          margin: 0 0 15px;
+          font-weight: inherit;
+        }
+        p.step-desc {
+          margin-bottom: 0;
+          font-size: 110%;
+        }
       }
     }
   }

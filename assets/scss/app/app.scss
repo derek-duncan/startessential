@@ -1,0 +1,35 @@
+@import '../normalize';
+$red: #FF8F8F;
+$shade-red: darken(#FF8F8F, 10%);
+$blue: #ACD7F8;
+$dark: #282828;
+$gray: #7D7D7D;
+
+$content-width: 60%;
+
+$ipad: 768px;
+$phone: 520px;
+
+@font-face {
+  font-family: 'claire_handbold';
+  src: url('/fonts/clairehandbold-webfont.eot');
+  src: url('/fonts/clairehandbold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/clairehandbold-webfont.woff2') format('woff2'),
+    url('/fonts/clairehandbold-webfont.woff') format('woff'),
+    url('/fonts/clairehandbold-webfont.ttf') format('truetype'),
+    url('/fonts/clairehandbold-webfont.svg#claire_handbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.cf {
+  overflow: auto;
+  zoom: 1;
+}
+
+body {
+  font: 100% "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: $dark;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+}

@@ -505,6 +505,67 @@ body {
       margin-bottom: 0;
       font-size: 110%;
       color: #7D7D7D; }
+      #front section.info .info-block .info-desc span {
+        display: block;
+        padding-top: 3px;
+        font-size: 80%;
+        color: #aaa; }
+        #front section.info .info-block .info-desc span a {
+          color: inherit; }
+
+#front section.howto {
+  padding-bottom: 50px;
+  width: 60%;
+  margin: 0 auto; }
+  #front section.howto hr {
+    width: 100%;
+    margin: 15px auto 50px;
+    height: 0;
+    border: none;
+    border-top: 1px solid #b2b2b2; }
+  #front section.howto h2.howto-sub_head {
+    max-width: 90%;
+    margin: 0 auto;
+    font-size: 190%;
+    text-align: center; }
+  #front section.howto p.howto-sub_desc {
+    text-align: center;
+    font-size: 130%;
+    color: #7D7D7D; }
+  #front section.howto .howto-step {
+    margin: 70px 0;
+    width: 100%; }
+    #front section.howto .howto-step .step-number {
+      border-radius: 50%;
+      text-align: center;
+      font: 600 40px "claire_handbold";
+      margin-right: 5%;
+      width: 15%;
+      max-width: 120px;
+      height: 100px;
+      display: inline-block;
+      vertical-align: middle;
+      background: #F8F8F8;
+      color: #131313; }
+      #front section.howto .howto-step .step-number .step-number-inner {
+        display: table;
+        width: 100%;
+        height: 100%; }
+      #front section.howto .howto-step .step-number span {
+        display: table-cell;
+        vertical-align: middle; }
+    #front section.howto .howto-step .step-content {
+      font-weight: 300;
+      width: 80%;
+      display: inline-block;
+      vertical-align: middle; }
+      #front section.howto .howto-step .step-content h4.step-head {
+        font-size: 180%;
+        margin: 0 0 15px;
+        font-weight: inherit; }
+      #front section.howto .howto-step .step-content p.step-desc {
+        margin-bottom: 0;
+        font-size: 110%; }
 
 #front section.join {
   margin-top: 30px;

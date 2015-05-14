@@ -26,6 +26,18 @@ $(function() {
       }
     })
 
+    // Steps //
+    var step = $('.howto-step')
+    var stepNumber = step.find('.step-number')
+    stepNumber.css({
+      height: stepNumber.outerWidth()
+    });
+    $(window).resize(function() {
+      stepNumber.css({
+        height: stepNumber.outerWidth()
+      });
+    })
+
     // GA Events //
     var ctaTop = $('.cta-top');
     var joinSubmit = $('.join-submit');
