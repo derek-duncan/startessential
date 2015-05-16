@@ -132,9 +132,10 @@ $(function() {
 
     var option = $('.option');
     var dot = $('.dot-sec');
-    for (i = 0; i < user.friends.length; i++) {
-      if (user.friends.length / i % 5 == 0) {
-        var index = i/5;
+    for (i = 1; i <= user.friends.length; i++) {
+      var k = Math.floor(i/5)*5;
+      if (k % 5 == 0 && k !== 0) {
+        var index = k / 5 - 1;
         option.eq(index).addClass('yus');
         dot.eq(index).addClass('yus');
       }
@@ -146,7 +147,7 @@ $(function() {
       if (user.friends.length === 1) {
         plural = ' friend has joined!'
       } else {
-        plurl = ' friends have joined!'
+        plural = ' friends have joined!'
       }
       shareStatus.text(user.friends.length + plural + ' Great job... you\'re getting closer to the prize!');
     }
