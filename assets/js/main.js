@@ -138,7 +138,13 @@ $(function() {
     }
     var shareStatus = $('.share-status');
     if (user.friends.length) {
-      shareStatus.text(user.friends.length + '\'s have joined! Great job... you\'re getting closer to the prize!');
+      var plural;
+      if (user.friends.length == 1) {
+        plural = ' friend has joined!'
+      } else {
+        plurl = ' friends have joined!'
+      }
+      shareStatus.text(user.friends.length + plural + ' Great job... you\'re getting closer to the prize!');
     }
     // GA Events //
     var shareFB = $('.share-fb');
