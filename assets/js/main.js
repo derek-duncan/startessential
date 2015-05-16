@@ -132,9 +132,11 @@ $(function() {
 
     var option = $('.option');
     var dot = $('.dot-sec');
-    for (i = 0; i < Math.ceil(user.friends.length/5); i++) {
-      option.eq(i).addClass('yus');
-      dot.eq(i).addClass('yus');
+    for (i = 0; i < user.friends.length/5; i++) {
+      if (i % 1 == 0) {
+        option.eq(i).addClass('yus');
+        dot.eq(i).addClass('yus');
+      }
     }
     var shareStatus = $('.share-status');
     if (user.friends.length) {
