@@ -128,7 +128,6 @@ $(function() {
       .done(function(usr) {
         localStorage.setItem('user', JSON.stringify(usr))
         user = usr
-        console.log(usr)
       })
 
     var option = $('.option');
@@ -136,6 +135,10 @@ $(function() {
     for (i = 0; i < Math.ceil(user.friends.length/5); i++) {
       option.eq(i).addClass('yus');
       dot.eq(i).addClass('yus');
+    }
+    var shareStatus = $('.share-status');
+    if (user.friends.length) {
+      shareStatus.text(user.friends.length + '\'s have joined! Great job... you\'re getting closer to the prize!');
     }
     // GA Events //
     var shareFB = $('.share-fb');
