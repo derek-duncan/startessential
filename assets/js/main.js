@@ -125,10 +125,10 @@ $(function() {
       url: "/api/v1/users/" + user_id,
       dataType: 'JSON'
     })
-      .done(function(usr) {
-        localStorage.setItem('user', JSON.stringify(usr))
-        user = usr
-      })
+    .done(function(usr) {
+      localStorage.setItem('user', JSON.stringify(usr))
+      user = usr
+    })
 
     var option = $('.option');
     var dot = $('.dot-sec');
@@ -139,12 +139,11 @@ $(function() {
         dot.eq(index).addClass('yus');
       }
     }
-    if (user.friends.length % 5 == 0) {
-    }
+
     var shareStatus = $('.share-status');
     if (user.friends.length) {
       var plural;
-      if (user.friends.length == 1) {
+      if (user.friends.length === 1) {
         plural = ' friend has joined!'
       } else {
         plurl = ' friends have joined!'
