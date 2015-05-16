@@ -47,7 +47,7 @@ server.register(require('hapi-auth-bearer-token'), function (err) {
     allowQueryToken: true,              // optional, true by default
     allowMultipleHeaders: false,        // optional, false by default
     accessTokenName: 'access_token',    // optional, 'access_token' by default
-    validateFunc: function( token, callback ) {
+    validateFunc: function(token, callback) {
 
       // For convenience, the request object can be accessed
       // from `this` within validateFunc.
@@ -55,10 +55,13 @@ server.register(require('hapi-auth-bearer-token'), function (err) {
 
       // Use a real strategy here,
       // comparing with a token from your database for example
-      if(token === "1234"){
-        callback(null, true, { token: token })
+      if(token === "39109*089a8a--_asjlu716CVae3ER"){
+        callback(null, true, {
+          scope: 'admin',
+          token: token
+        })
       } else {
-        callback(null, false, { token: token })
+        callback(null, false)
       }
     }
   });

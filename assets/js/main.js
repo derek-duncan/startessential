@@ -58,9 +58,13 @@ $(function() {
           method: "POST",
           url: "/api/v1/users",
           data: { email: joinEmail.val(), friend: friend },
-          dataType: 'JSON'
+          dataType: 'JSON',
+          headers: {
+            'Authorization': 'Bearer 123'
+          }
         })
         .error(function(xhr) {
+          console.log(xhr);
           _emailError(xhr.status)
         })
         .success(function(usr) {
@@ -84,6 +88,9 @@ $(function() {
           break;
         case 500:
           msg.text('There was an error on our side while registering your email. Try giving it another shot! We\'re so sorry.')
+          break;
+        case 401:
+          msg.text('Invalid credentials')
           break;
         default:
           msg.text('Something went wrong while registering your email. Could you give it another shot? Thanks!')

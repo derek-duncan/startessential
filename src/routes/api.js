@@ -9,6 +9,12 @@ exports.register = function(server, options, next) {
   server.route({
     method: 'GET',
     path: '/api/v1/users',
+    config: {
+      auth: {
+        strategy: 'simple',
+        scope: ['admin']
+      }
+    },
     handler: function (request, reply) {
       User.find({}, function(err, users) {
         reply(users)
@@ -18,21 +24,29 @@ exports.register = function(server, options, next) {
   server.route({
     method: 'POST',
     path: '/api/v1/users',
+    config: {
+      validate: {
+        payload: {
+          email: Joi.string().email().required(),
+          friend: Joi.string().token().max(20)
+        }
+      }
+    },
     handler: function (request, reply) {
       async.waterfall([
         function(done) {
+          User.findOne({ email: request.payload.email }, function(err, user) {
+            if (err) return done(Boom.badGateway())
+            if (user) return done(Boom.conflict())
+
+            return done(null);
+          })
+        }, function(done) {
           var ip = request.headers['x-forwarded-for'] ||
                    request.raw.req.connection.remoteAddress ||
                    request.raw.req.socket.remoteAddress ||
                    request.raw.req.connection.socket.remoteAddress;
-          async.parallel([
-            function(done) {
-              var newIP = new IP({ip: ip})
-              newIP.save(function(err) {
-                if (err) return done(Boom.wrap(err, 500))
-                done()
-              })
-            },
+          async.waterfall([
             function(done) {
               IP.find({ip: ip}, function(err, ips) {
                 if (err) return done(Boom.wrap(err, 500))
@@ -42,20 +56,20 @@ exports.register = function(server, options, next) {
                   return done()
                 }
               })
+            },
+            function(done) {
+              var newIP = new IP({ip: ip})
+              newIP.save(function(err) {
+                if (err) return done(Boom.wrap(err, 500))
+                done()
+              })
             }
           ], function(err) {
             if (err) return done(err)
             return done()
           })
         }, function(done) {
-          User.findOne({ email: request.payload.email }, function(err, user) {
-            if (err) return done(Boom.badGateway())
-            if (user) return done(Boom.conflict())
-
-            var user = new User({ email: request.payload.email });
-            return done(null, user);
-          })
-        }, function(user, done) {
+          var user = new User({ email: request.payload.email });
           if (request.payload.friend) {
             User.findOne({ referral_id: request.payload.friend }, function(err, friend_user) {
               if (err) return done(Boom.wrap(err, 500))
@@ -81,22 +95,14 @@ exports.register = function(server, options, next) {
         function(user, done) {
           sendEmail(user.email, function(err) {
             if (err) console.log(Boom.wrap(err, 500))
-            return done(null, user)
           })
+          return done(null, user)
         }
       ], function(err, user) {
         console.log(err);
         if (err) return reply(err)
         return reply(user)
       })
-    },
-    config: {
-      validate: {
-        payload: {
-          email: Joi.string().email().required(),
-          friend: Joi.string().token().max(20)
-        }
-      }
     }
   });
   server.route({
