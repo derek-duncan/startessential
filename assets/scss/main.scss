@@ -341,5 +341,20 @@ body {
   }
 }
 
+.footer {
+  background: #f9f9f9;
+  .footer-content {
+    margin: 0 auto;
+    padding: 20px 0;
+    width: 60%;
+    text-align: center;
+    color: #999999;
+    .disclaimer {
+      font-size: 80%;
+    }
+  }
+}
+
 
 @import 'thankyou';
+@import 'post';

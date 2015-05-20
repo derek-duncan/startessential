@@ -2,6 +2,7 @@
 
 var _ = require('lodash');
 var Joi = require('joi');
+var moment = require('moment');
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
@@ -14,7 +15,7 @@ var UserSchema = new Schema({
   referral_id: { type: String },
   friend: { type: Schema.Types.ObjectId, ref: 'User'},
   friends: [{ type: Schema.Types.ObjectId, ref: 'User'}],
-  date_created: {type: Date, default: Date.now},
+  date_created: {type: Date, default: moment},
 });
 
 UserSchema.pre('save', function(next) {

@@ -1,0 +1,11 @@
+extends ../templates/admin.jade
+
+block body
+  pre Users registered: #{users.length}
+  section
+    h2 Today's post
+    if post && post.length
+      b Today's done!
+      a(href="/admin/posts/#{post._id}") View it
+    else
+      a(href='/admin/new') Upload the post for today

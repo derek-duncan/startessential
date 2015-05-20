@@ -1,0 +1,26 @@
+extends ../templates/admin.jade
+
+block body
+  h2 Today's Post
+  form.new-post-form(action='/admin/new' method='POST' enctype="multipart/form-data")
+    div.form-section
+      label Day
+      select(name='day')
+        option(value='Sunday') Sunday
+        option(value='Monday') Monday
+        option(value='Tuesday') Tuesday
+        option(value='Wednesday') Wednesday
+        option(value='Thursday') Thursday
+        option(value='Friday') Friday
+        option(value='Saturday') Saturday
+    div.form-section
+      label Title
+      input(type='text' name='title')
+    div.form-section
+      label Content
+      textarea(name='content' rows='6')
+    div.form-section
+      label Main image
+      input(type='file' name='image')
+    div.form-section
+      button(type='submit') Send it

@@ -628,6 +628,17 @@ body {
       #front section.join .join-form button.join-submit:hover {
         background: #ff5c5c; }
 
+.footer {
+  background: #f9f9f9; }
+  .footer .footer-content {
+    margin: 0 auto;
+    padding: 20px 0;
+    width: 60%;
+    text-align: center;
+    color: #999999; }
+    .footer .footer-content .disclaimer {
+      font-size: 80%; }
+
 #thankyou .header {
   width: 100%;
   background: #FF8F8F;
@@ -845,3 +856,256 @@ body {
       height: 0;
       overflow: hidden;
       border-bottom: 1px solid #979797; }
+
+#post .header {
+  width: 100%;
+  background: #FF8F8F; }
+  #post .header .header-content {
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: stretch;
+    -webkit-justify-content: stretch;
+        -ms-flex-pack: stretch;
+            justify-content: stretch;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    @media (max-width: 520px) {
+      #post .header .header-content {
+        -webkit-flex-flow: row wrap;
+            -ms-flex-flow: row wrap;
+                flex-flow: row wrap;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center; }
+        #post .header .header-content h3.title .right {
+          display: block; }
+        #post .header .header-content h3.title .mob-hide {
+          display: none; } }
+    #post .header .header-content img.logo {
+      width: 120px; }
+    #post .header .header-content h3.title {
+      margin: 0;
+      margin-left: -120px;
+      text-align: center;
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      font-size: 160%; }
+      @media (max-width: 520px) {
+        #post .header .header-content h3.title {
+          margin: 0;
+          font-size: 120%; } }
+      #post .header .header-content h3.title .right {
+        color: #B05555; }
+        #post .header .header-content h3.title .right .small, #post .header .header-content h3.title .right sup {
+          font-weight: 200; }
+        #post .header .header-content h3.title .right .small {
+          font-size: 80%; }
+
+#post.view .main .post-wrap {
+  margin: 0; }
+  #post.view .main .post-wrap .post {
+    margin: 0 auto; }
+    #post.view .main .post-wrap .post .post-header {
+      padding: 15px 20px; }
+
+#post .main {
+  background: #fff;
+  overflow: auto; }
+  #post .main .intro {
+    background: #fff;
+    width: 100%; }
+    #post .main .intro .intro-content {
+      padding: 50px 0;
+      width: 60%;
+      margin: 0 auto;
+      text-align: center; }
+      @media (max-width: 520px) {
+        #post .main .intro .intro-content {
+          width: 80%; } }
+    #post .main .intro .title {
+      font-size: 200%;
+      font-weight: 300;
+      margin-top: 0; }
+    #post .main .intro .details {
+      margin: 20px 0 0;
+      font-size: 120%;
+      color: #878787; }
+      #post .main .intro .details span {
+        color: #FF8F8F; }
+  #post .main .post-wrap {
+    margin: 50px 0 0;
+    padding: 40px 0;
+    background: #f9f9f9; }
+  #post .main .post {
+    width: 40%;
+    margin: 0 auto;
+    margin-top: -90px;
+    border-radius: 5px; }
+    @media (max-width: 520px) {
+      #post .main .post {
+        width: 80%; } }
+    #post .main .post .post-header {
+      padding: 10px 20px;
+      background: #B6DEFC;
+      box-sizing: border-box;
+      overflow: auto;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-flow: row nowrap;
+          -ms-flex-flow: row nowrap;
+              flex-flow: row nowrap;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      @media (max-width: 520px) {
+        #post .main .post .post-header {
+          -webkit-flex-flow: column wrap;
+              -ms-flex-flow: column wrap;
+                  flex-flow: column wrap;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          text-align: center;
+          padding: 15px 0; } }
+      #post .main .post .post-header .daily-title {
+        margin: 0;
+        font: 140% 'Museo Slab';
+        color: #194e64;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+            -ms-flex: 1;
+                flex: 1; }
+      #post .main .post .post-header .post-now {
+        display: inline-block; }
+        @media (max-width: 520px) {
+          #post .main .post .post-header .post-now {
+            margin-top: 10px;
+            font-size: 90%; } }
+        #post .main .post .post-header .post-now a {
+          text-decoration: none;
+          display: inline-block;
+          padding: 10px 15px;
+          background: #43609C;
+          color: #fff;
+          border-radius: 5px;
+          font-weight: 600; }
+          @media (max-width: 520px) {
+            #post .main .post .post-header .post-now a {
+              padding: 5px 15px; } }
+          #post .main .post .post-header .post-now a:hover {
+            background: #344a78; }
+    #post .main .post .post-content {
+      box-sizing: border-box;
+      background: #fff;
+      overflow: auto;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-flow: row nowrap;
+          -ms-flex-flow: row nowrap;
+              flex-flow: row nowrap;
+      position: relative; }
+      #post .main .post .post-content:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        background: rgba(0, 0, 0, 0.001); }
+      #post .main .post .post-content .profile {
+        width: 20%;
+        padding-top: 50px;
+        padding-right: 20px;
+        padding-left: 20px;
+        box-sizing: border-box;
+        background: #f9f9f9;
+        margin: 0; }
+        #post .main .post .post-content .profile img {
+          width: 100%;
+          margin: 0;
+          opacity: 0.4; }
+      #post .main .post .post-content .post-copy {
+        width: 80%;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+        border-left: 1px solid #f2f2f2;
+        padding: 40px;
+        box-sizing: border-box; }
+        @media (max-width: 520px) {
+          #post .main .post .post-content .post-copy {
+            padding: 30px; } }
+        #post .main .post .post-content .post-copy .description {
+          font-size: 130%;
+          margin-bottom: 30px; }
+        #post .main .post .post-content .post-copy .image {
+          width: 100%; }
+
+#post .final {
+  background: #fff; }
+  #post .final .final-content {
+    width: 60%;
+    margin: 0 auto;
+    padding: 50px 0;
+    text-align: center; }
+    @media (max-width: 520px) {
+      #post .final .final-content {
+        width: 80%; } }
+  #post .final .title {
+    margin-top: 0;
+    font-size: 200%;
+    font-weight: 500; }
+  #post .final .tagline {
+    color: #878787;
+    font-size: 130%;
+    margin-top: 0; }
+  #post .final .member-number {
+    -webkit-appearance: none;
+    padding: 15px 20px;
+    border: 1px solid #D1D1D1;
+    margin: 20px 0;
+    width: 70%;
+    font-size: 130%;
+    outline: none;
+    text-align: center; }
+    @media (max-width: 520px) {
+      #post .final .member-number {
+        width: 100%; } }
+    #post .final .member-number:focus {
+      border-color: #aaa; }
+  #post .final .cta {
+    margin-top: 20px; }
+    #post .final .cta .post-now {
+      display: inline-block;
+      padding: 15px 25px;
+      font-size: 140%;
+      font-weight: 600;
+      text-decoration: none;
+      background: #43609C;
+      color: #fff;
+      border-radius: 5px; }
+      #post .final .cta .post-now:hover {
+        background: #344a78; }

@@ -1,0 +1,112 @@
+@import '../normalize';
+
+* {
+  transition: all 0.1s;
+}
+
+body {
+  font: 300 120% 'Helvetica Neue', 'Arial', sans-serif;
+}
+
+h1, h2, h3, h4, h5, label {
+  // font-family: monospace;
+}
+
+$red: #FF8F8F;
+$shade-red: darken(#FF8F8F, 10%);
+$blue: #ACD7F8;
+$dark: #282828;
+$gray: #7D7D7D;
+
+.header {
+  display: block;
+  width: 100%;
+  background: $red;
+  .header-content {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+}
+
+.nav {
+  margin: 0; padding: 0;
+  .nav-item {
+    display: inline-block;
+    a {
+      display: inline-block;
+      padding: 0 10px;
+      color: #fff;
+      text-decoration: none;
+      &:hover {
+        color: darken($red, 10%);
+      }
+    }
+  }
+}
+
+.main-content {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.all-posts {
+  .post-item {
+    margin: 15px 0;
+    a {
+      color: $red;
+    }
+  }
+}
+
+.share-url {
+  label {
+    display: block;
+    margin-bottom: 20px;
+  }
+  input {
+    width: 100%;
+    -webkit-appearance: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    background: #FFFEEF;
+  }
+}
+.post-img {
+  display: block;
+  margin: 15px 0;
+}
+.post-file {
+  display: block;
+}
+
+.new-post-form {
+  width: 80%;
+  label {
+    display:  block;
+    margin: 20px 0;
+  }
+  textarea, input[type=text]  {
+    -webkit-appearance: none;
+    border: 1px solid #ccc;
+    padding: 20px;
+    outline: none;
+    width: 100%;
+  }
+  button {
+    -webkit-appearance: none;
+    width: 30%;
+    background: $red;
+    box-shadow: none;
+    border: none;
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 5px;
+    color: #fff;
+    margin-top: 20px;
+    &:hover {
+      background: darken($red, 7%);
+    }
+  }
+}

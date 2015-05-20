@@ -4,6 +4,7 @@ var Joi = require('joi')
 var Boom = require('boom')
 var User = mongoose.model('User');
 var IP = mongoose.model('IP');
+var Post = mongoose.model('Post');
 
 exports.register = function(server, options, next) {
   server.route({

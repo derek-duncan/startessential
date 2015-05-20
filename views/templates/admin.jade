@@ -1,0 +1,24 @@
+html
+  head
+    title Admin | Start Essential
+    meta(name="description" content="Admin portal for Start Essential")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet" type="text/css" href='/css/admin/admin.css')
+    link(rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon")
+    link(rel="icon" href="/images/favicon.ico" type="image/x-icon")
+    block head
+  body
+    header.header
+      .header-content
+        ul.nav
+          li.nav-item
+            a(href='/') View Site
+            a(href='/admin/posts') Archive
+            a(href='/admin/new') New Post
+    main.main-content
+      block body
+
+    script(src="http://localhost:35729/livereload.js?snipver=1")
+    script(type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js")
+    script(type="text/javascript" src="/js/admin/mainjs")
+    block scripts
