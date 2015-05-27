@@ -3,7 +3,6 @@
 var Hapi = require('hapi');
 var Good = require('good');
 var constants = require('./src/config/constants.js');
-var basicAuth = require('./src/middleware/basic-auth');
 var routes = require('./src/routes/index.js');
 var _ = require('underscore');
 var fs = require('fs');
@@ -26,7 +25,7 @@ fs.readdirSync(__dirname + '/src/models').forEach(function (file) {
   if (file.indexOf('.js') >= 0) require(__dirname + '/src/models/' + file);
 });
 
-var port = constants.application['port'];
+var port = 3000;
 server.connection({
   port: port
 });
@@ -41,16 +40,15 @@ server.views({
   helpersPath: 'views/helpers'
 });
 
+// Authentication strategy
 server.register(require('hapi-auth-bearer-token'), function (err) {
 
   server.auth.strategy('simple', 'bearer-access-token', {
-    allowQueryToken: true,              // optional, true by default
-    allowMultipleHeaders: false,        // optional, false by default
-    accessTokenName: 'access_token',    // optional, 'access_token' by default
+    allowQueryToken: true,
+    allowMultipleHeaders: false,
+    accessTokenName: 'access_token',
     validateFunc: function(token, callback) {
 
-      // For convenience, the request object can be accessed
-      // from `this` within validateFunc.
       var request = this;
 
       // Use a real strategy here,
@@ -67,16 +65,31 @@ server.register(require('hapi-auth-bearer-token'), function (err) {
   });
 });
 
-
-// Add all the routes within the routes folder
-fs.readdirSync('./src/routes').forEach(function(file) {
-  var route = require('./src/routes/' + file);
-  server.register({register: route}, function(err) {
-    if (err) {
-      server.log('error', err);
-    }
+// Facebook login strategy
+server.register(require('bell'), function (err) {
+  server.auth.strategy('facebook', 'bell', {
+    provider: 'facebook',
+    password: 'my_secret',
+    clientId: '1589098114709228',
+    clientSecret: '7fc1cf34eb3fe7daa129331790276b8b',
+    isSecure: false     // Terrible idea but required if not using HTTPS
   });
 });
+
+
+// Add all the routes within the routes folder
+// API routes
+server.register({register: require('./src/routes/api')}, function(err) {
+  if (err) server.log('error', err)
+})
+// Index routes
+server.register({register: require('./src/routes/index')}, function(err) {
+  if (err) server.log('error', err)
+})
+// App routes
+server.register({register: require('./src/routes/app')}, function(err) {
+  if (err) server.log('error', err)
+})
 
 module.exports = server;
 

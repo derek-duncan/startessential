@@ -11,11 +11,16 @@ var Schema = mongoose.Schema;
  */
 
 var UserSchema = new Schema({
+  first_name: String,
+  last_name: String,
   email: { type: String, required: true, lowercase:true, index: { unique: true } },
   referral_id: { type: String },
   friend: { type: Schema.Types.ObjectId, ref: 'User'},
   friends: [{ type: Schema.Types.ObjectId, ref: 'User'}],
+  member_number: { type: String },
   date_created: {type: Date, default: moment},
+  facebook_connected: {type: Boolean, default: false},
+  facebook_id: String
 });
 
 UserSchema.pre('save', function(next) {

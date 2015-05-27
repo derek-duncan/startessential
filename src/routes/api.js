@@ -5,6 +5,7 @@ var Boom = require('boom')
 var User = mongoose.model('User');
 var IP = mongoose.model('IP');
 var Post = mongoose.model('Post');
+var Ctrl = require('../controllers/api');
 
 exports.register = function(server, options, next) {
   server.route({
@@ -33,78 +34,7 @@ exports.register = function(server, options, next) {
         }
       }
     },
-    handler: function (request, reply) {
-      async.waterfall([
-        function(done) {
-          User.findOne({ email: request.payload.email }, function(err, user) {
-            if (err) return done(Boom.badGateway())
-            if (user) return done(Boom.conflict())
-
-            return done(null);
-          })
-        }, function(done) {
-          var ip = request.headers['x-forwarded-for'] ||
-                   request.raw.req.connection.remoteAddress ||
-                   request.raw.req.socket.remoteAddress ||
-                   request.raw.req.connection.socket.remoteAddress;
-          async.waterfall([
-            function(done) {
-              IP.find({ip: ip}, function(err, ips) {
-                if (err) return done(Boom.wrap(err, 500))
-                if (ips.length >= 5) {
-                  return done(Boom.forbidden('You\'re not allowed to register more then 5 email address on this ip address'))
-                } else {
-                  return done()
-                }
-              })
-            },
-            function(done) {
-              var newIP = new IP({ip: ip})
-              newIP.save(function(err) {
-                if (err) return done(Boom.wrap(err, 500))
-                done()
-              })
-            }
-          ], function(err) {
-            if (err) return done(err)
-            return done()
-          })
-        }, function(done) {
-          var user = new User({ email: request.payload.email });
-          if (request.payload.friend) {
-            User.findOne({ referral_id: request.payload.friend }, function(err, friend_user) {
-              if (err) return done(Boom.wrap(err, 500))
-              if (!friend_user) return done(null, user) // if the friend doesnt exist, just create a new account
-              friend_user.friends.push(user._id);
-              user.friend = friend_user._id;
-
-              friend_user.save(function(err) {
-                if (err) return done(Boom.wrap(err, 500))
-
-                return done(null, user);
-              })
-            })
-          } else {
-            return done(null, user)
-          }
-        }, function(user, done) {
-          user.save(function(err) {
-            if (err) return done(Boom.wrap(err, 500))
-            return done(null, user)
-          })
-        },
-        function(user, done) {
-          sendEmail(user.email, function(err) {
-            if (err) console.log(Boom.wrap(err, 500))
-          })
-          return done(null, user)
-        }
-      ], function(err, user) {
-        console.log(err);
-        if (err) return reply(err)
-        return reply(user)
-      })
-    }
+    handler: Ctrl.User.new
   });
   server.route({
     method: 'GET',
@@ -117,27 +47,17 @@ exports.register = function(server, options, next) {
       })
     }
   });
+  server.route({
+    method: ['GET', 'POST'], // Must handle both GET and POST
+    path: '/api/v1/facebook/login',   // The callback endpoint registered with the provider
+    config: {
+      auth: 'facebook'
+    },
+    handler: Ctrl.User.loginFacebook
+  });
 }
 
 exports.register.attributes = {
   name: 'apiRoutes',
   version: '0.1'
-}
-
-function sendEmail(email, done) {
-  var MailChimpAPI = require('mailchimp').MailChimpAPI;
-  var MailChimpAPIKey = 'f07d6c72ff341a4c4a9fbc3c2c2845ae-us9';
-  var api;
-  try {
-    api = new MailChimpAPI(MailChimpAPIKey, { version : '2.0' });
-  } catch (error) {
-    return done(new Error('Error while adding email to Mail Chimp.'));
-  }
-  api.call('lists', 'subscribe', { id: 'b61c1b85db', email: { email: email }, double_optin: false }, function(err) {
-    if (err) {
-      return done(err);
-    }
-    //Successfully registered user
-    return done(null);
-  });
 }

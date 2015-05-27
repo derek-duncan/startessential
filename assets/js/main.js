@@ -165,6 +165,19 @@ $(function() {
   }
 });
 
+if ($('#post').length) {
+  var mnInput = $('.member-number');
+  var postNow = $('.post-now');
+  var lsNumber = localStorage.getItem('memberNumber') || '';
+  if (lsNumber.length) {
+    mnInput.val(lsNumber);
+  } else {
+    postNow.on('click touchend', function(e) {
+      localStorage.setItem('memberNumber', mnInput.val());
+    })
+  }
+}
+
 $.extend({
   getQueryParameters : function(str) {
 	  return (str || document.location.search).replace(/(^\?)/,'').split("&").map(function(n){return n = n.split("="),this[n[0]] = n[1],this}.bind({}))[0];
