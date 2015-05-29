@@ -153,8 +153,8 @@ function createPostAdmin(request, reply) {
       })
     }
   ], function(err, post) {
-    if (err) reply(err)
-    reply.redirect('/admin/posts/' + post._id)
+    if (err) return reply(err)
+    return reply.redirect('/admin/posts/' + post._id)
   })
 }
 
