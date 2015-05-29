@@ -1,0 +1,21 @@
+extends ../templates/layout.jade
+block head
+  script(src='/js/build/moment.js')
+
+block body
+  div#post.posts
+    header.header
+      .header-content
+        .logo-wrap
+          a(href='/' title='Start Essential Logo')
+            img.logo(src='/images/logo-white.png' width='200')
+        h3.title All Posts
+    main.main
+      for post in posts
+        .post
+          a(href='#{post.url}' title='#{post.title}')
+            .post-image-wrap
+              img.post-image(src='#{post.image_url}' width='300')
+            p.post-description #{post.content}
+            .tags
+              span.post-day #{post.day}

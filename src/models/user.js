@@ -20,7 +20,9 @@ var UserSchema = new Schema({
   member_number: { type: String },
   date_created: {type: Date, default: moment},
   facebook_connected: {type: Boolean, default: false},
-  facebook_id: String
+  facebook_id: String,
+  token: String,
+  password_set: {type: Boolean, default: false}
 });
 
 UserSchema.pre('save', function(next) {

@@ -18,7 +18,8 @@ var PostSchema = new Schema({
   share_token: String,
   new_share_token: {type: Boolean, default: false},
   date_created: {type: Date, default: moment},
-  date_formatted: {type: String}
+  date_formatted: {type: String},
+  url: {type: String}
 });
 
 PostSchema.pre('save', function(next) {
@@ -27,6 +28,7 @@ PostSchema.pre('save', function(next) {
   self.fb_post = self.content + imgTag;
   if (this.isNew) {
     self.date_formatted = moment(self.date_created).format('MM/DD/YYYY');
+    self.url = '/posts/' + moment(self.date_created).format('YYYY/MM/DD');
   }
   if (this.isNew || self.new_share_token) {
     createShareToken(function(token) {

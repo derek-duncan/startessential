@@ -9,13 +9,13 @@ block body
     div.form-section
       label Day
       select(name='day')
-        option(value='Sunday') Sunday
-        option(value='Monday') Monday
-        option(value='Tuesday') Tuesday
-        option(value='Wednesday') Wednesday
-        option(value='Thursday') Thursday
-        option(value='Friday') Friday
-        option(value='Saturday') Saturday
+        option(value='Sunday' selected=post.day == 'Sunday') Sunday
+        option(value='Monday' selected=post.day == 'Monday') Monday
+        option(value='Tuesday' selected=post.day == 'Tuesday') Tuesday
+        option(value='Wednesday' selected=post.day == 'Wednesday') Wednesday
+        option(value='Thursday' selected=post.day == 'Thursday') Thursday
+        option(value='Friday' selected=post.day == 'Friday') Friday
+        option(value='Saturday' selected=post.day == 'Saturday') Saturday
     div.form-section
       label Title
       input(type='text' value='#{post.title}' name='title')

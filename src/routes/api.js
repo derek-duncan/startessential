@@ -5,7 +5,7 @@ var Boom = require('boom')
 var User = mongoose.model('User');
 var IP = mongoose.model('IP');
 var Post = mongoose.model('Post');
-var Ctrl = require('../controllers/api');
+var ApiCtrl = require('../controllers/api');
 
 exports.register = function(server, options, next) {
   server.route({
@@ -34,7 +34,7 @@ exports.register = function(server, options, next) {
         }
       }
     },
-    handler: Ctrl.User.new
+    handler: ApiCtrl.User.new
   });
   server.route({
     method: 'GET',
@@ -47,13 +47,14 @@ exports.register = function(server, options, next) {
       })
     }
   });
+  // Facebook login
   server.route({
     method: ['GET', 'POST'], // Must handle both GET and POST
     path: '/api/v1/facebook/login',   // The callback endpoint registered with the provider
     config: {
       auth: 'facebook'
     },
-    handler: Ctrl.User.loginFacebook
+    handler: ApiCtrl.User.loginFacebook
   });
 }
 

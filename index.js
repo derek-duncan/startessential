@@ -65,6 +65,17 @@ server.register(require('hapi-auth-bearer-token'), function (err) {
   });
 });
 
+// Cookie strategyserver.register(require('hapi-auth-cookie'), function (err) {
+
+server.register(require('hapi-auth-cookie'), function (err) {
+  server.auth.strategy('session', 'cookie', {
+    password: 'secret',
+    cookie: 'sid',
+    redirectTo: '/',
+    isSecure: false
+  });
+});
+
 // Facebook login strategy
 server.register(require('bell'), function (err) {
   server.auth.strategy('facebook', 'bell', {
