@@ -14,7 +14,7 @@ exports.image = function(file, date, done) {
   async.waterfall([
     function(done) {
       var name = file.hapi.filename;
-      var tmp_path = '/tmp/' + name);
+      var tmp_path = '/tmp/' + name;
       var stream = fs.createWriteStream(tmp_path);
 
       stream.on('error', function (err) {
