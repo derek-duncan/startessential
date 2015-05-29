@@ -14,12 +14,14 @@ var PostSchema = new Schema({
   day: String,
   title: String,
   content: String,
+  category: String,
   fb_post: String,
   share_token: String,
   new_share_token: {type: Boolean, default: false},
   date_created: {type: Date, default: moment},
   date_formatted: {type: String},
-  url: {type: String}
+  url: {type: String},
+  token: {type: String}
 });
 
 PostSchema.pre('save', function(next) {

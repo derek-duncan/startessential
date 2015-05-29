@@ -32,6 +32,7 @@ block body
         .final-content
           h3.title Customize and Post
           .tagline Enter your member number so we can create your distributor link
-          input.member-number(type='text' placeholder='(Optional) Young Living member number')
-          .cta
-            a.post-now(href='#') Post to Facebook
+          form(method='POST' action='/publish/#{post._id}')
+            input.member-number(name='memberNumber' type='text' placeholder='(Optional) Young Living member number' value='#{memberNumber ? memberNumber : ""}')
+            .cta
+              button.post-now(type='submit') Post to Facebook

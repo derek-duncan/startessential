@@ -1,21 +1,41 @@
 extends ../templates/layout.jade
 block head
+  script(type="text/javascript").
+    var idx = window.location.toString().indexOf("#_=_");
+    if (idx > 0) {
+      window.location = window.location.toString().substring(0, idx);
+      history.pushState('', document.title, window.location.pathname);
+    }
+    
   script(src='/js/build/moment.js')
 
 block body
-  div#post.posts
+  div#posts.posts
     header.header
       .header-content
         .logo-wrap
           a(href='/' title='Start Essential Logo')
             img.logo(src='/images/logo-white.png' width='200')
-        h3.title All Posts
+        .search-wrap
+          input.search(type='text' placeholder='Search for anything...')
+        nav.nav
+          ul.nav-list
+            li.nav-item 
+              a(href='') Explore
+            li.nav-item 
+              a(href='') Explore
+            li.nav-item 
+              a(href='') Explore
     main.main
-      for post in posts
-        .post
-          a(href='#{post.url}' title='#{post.title}')
-            .post-image-wrap
-              img.post-image(src='#{post.image_url}' width='300')
-            p.post-description #{post.content}
-            .tags
-              span.post-day #{post.day}
+      .main-content
+        for post in posts
+          .post
+            a(href='#{post.url}' title='#{post.title}')
+              .post-image-wrap
+                img.post-image(src='#{post.image_url}' width='300')
+              .post-info
+                h4.post-title #{post.title}
+                .post-tags
+                  span.post-day #{post.category}
+                  span &nbsp;|&nbsp;
+                  span.post-date #{fromDate(post.date_created)}

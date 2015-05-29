@@ -22,10 +22,16 @@ function findPost(request, reply) {
     if (err) return reply(Boom.wrap(err, 500))
     if (!post) return reply(Boom.notFound())
     // if (params.public === 'view') {
-      reply.view('app/post_view', {
+    User.findOne({_id: request.state.sid._id }, function(err, user) {
+      if (err) return reply(Boom.wrap(err, 500))
+      user = user || {}
+      console.log(user)
+      reply.view('app/post', {
         post: post,
-        title: post.title
+        title: post.title,
+        memberNumber: user.member_number
       })
+    })
     // } else {
     //   if (request.query.access === post.share_token) {
     //     reply.view('app/post', {
@@ -98,6 +104,7 @@ function updatePostAdmin(request, reply) {
         if (!post) return done(Boom.create(404, 'Could not find post'))
         post.title = request.payload.title;
         post.content = request.payload.content;
+        post.category = request.payload.category;
         post.day = request.payload.day;
         post.new_share_token = request.payload.new_share_token === 'on' ? true : false;
         return done(null, post)
@@ -130,6 +137,7 @@ function createPostAdmin(request, reply) {
       var post = new Post({
         title: request.payload.title,
         content: request.payload.content,
+        category: request.payload.category,
         day: request.payload.day
       })
       uploader.image(request.payload.image, post.date_created, function(err, image_url) {
@@ -191,7 +199,7 @@ function loginFacebookUser(request, reply) {
         user.facebook_id = profile.id;
       }
       request.auth.session.set(user);
-      return reply.redirect('/posts');
+      return reply.redirect('/posts').state('token', { id: user.id });
     }
   })
 }
@@ -201,10 +209,27 @@ function logoutUser(request, reply) {
   return reply.redirect('/');
 }
 
+function publishToFacebook(request, reply) {
+  var post_id = request.params.post_id;
+  if (request.payload && request.payload.memberNumber) {
+    User.findOne({ _id: request.state.sid._id }, function(err, user) {
+      if (err) return reply(Boom.wrap(err, 500))
+      user.member_number = request.payload.memberNumber;
+      user.save();
+    })
+  }
+  Post.findOne({ _id: post_id }, function(err, post) {
+    if (err) return reply(Boom.wrap(err, 500))
+    if (!post) return reply(Boom.notFound())
+    reply.redirect('http://www.facebook.com/share.php?u=http://startessential.com' + post.url)
+  })
+}
+
 module.exports = {
   Post: {
     find: findPost,
-    findAll: findAllPosts
+    findAll: findAllPosts,
+    publishToFacebook: publishToFacebook
   },
   Admin: {
     index: indexAdmin,

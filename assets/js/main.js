@@ -166,16 +166,46 @@ $(function() {
 });
 
 if ($('#post').length) {
-  var mnInput = $('.member-number');
-  var postNow = $('.post-now');
-  var lsNumber = localStorage.getItem('memberNumber') || '';
-  if (lsNumber.length) {
-    mnInput.val(lsNumber);
-  } else {
-    postNow.on('click touchend', function(e) {
-      localStorage.setItem('memberNumber', mnInput.val());
+  // var mnInput = $('.member-number');
+  // var postNow = $('.post-now');
+  // var lsNumber = localStorage.getItem('memberNumber') || '';
+  // if (lsNumber.length) {
+  //   mnInput.val(lsNumber);
+  // } else {
+  //   postNow.on('click touchend', function(e) {
+  //     localStorage.setItem('memberNumber', mnInput.val());
+  //   })
+  // }
+}
+
+if ($('#posts').length) {
+  var post = $('.post');
+  var postImageWrap = post.find('.post-image-wrap');
+
+  $('img').load(function() {
+    postImageWrap.each(function() {
+      var wrap = $(this);
+      var wrapHeight = $(this).outerHeight();
+      var postImage = wrap.find('.post-image');
+      var postImageHeight = postImage.height()
+      postImage.css({
+        top: 'auto',
+        bottom: -postImageHeight + wrapHeight
+      })
+      if (postImageHeight > wrapHeight) {
+        var heightDifference = postImageHeight - wrapHeight
+        if ($('html.no-touch').length) {
+          wrap.hover(function() {
+            postImage.toggleClass('scroll')
+          })
+        } else {
+          wrap.on('touchend', function() {
+            postImage.toggleClass('scroll')
+          })
+        }
+      }
     })
-  }
+  })
 }
 
 $.extend({

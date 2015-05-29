@@ -36,8 +36,20 @@ server.views({
   },
   isCached: false,
   relativeTo: __dirname,
-  path: 'views',
-  helpersPath: 'views/helpers'
+  path: './views',
+  helpersPath: './views/helpers'
+});
+
+server.ext('onPreResponse', function(request, reply) {
+  var response = request.response;
+  if (response.variety === 'view') {
+    var context = response.source.context;
+    fs.readdirSync(__dirname + '/views/helpers').forEach(function (file) {
+      context[file.split('.')[0]] = require(__dirname + '/views/helpers/' + file);
+    });
+    return reply.continue();
+  }
+  return reply.continue();
 });
 
 // Authentication strategy
@@ -65,7 +77,7 @@ server.register(require('hapi-auth-bearer-token'), function (err) {
   });
 });
 
-// Cookie strategyserver.register(require('hapi-auth-cookie'), function (err) {
+// Cookie strategy
 
 server.register(require('hapi-auth-cookie'), function (err) {
   server.auth.strategy('session', 'cookie', {

@@ -14,6 +14,11 @@ block body
         option(value='Friday') Friday
         option(value='Saturday') Saturday
     div.form-section
+      label Category
+      select(name='category')
+        option(value='Applications' selected=post.category == 'Applications') Applications
+        option(value='Aroma' selected=post.category == 'Aroma') Aroma
+    div.form-section
       label Title
       input(type='text' name='title')
     div.form-section

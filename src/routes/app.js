@@ -58,6 +58,10 @@ exports.register = function(server, options, next) {
     method: 'GET',
     path: '/posts/{year}/{month}/{day}',
     config: {
+      auth: {
+        strategy: 'session',
+        mode: 'optional'
+      },
       validate: {
         params: {
           year: Joi.string().min(4).max(4),
@@ -67,6 +71,22 @@ exports.register = function(server, options, next) {
       }
     },
     handler: AppCtrl.Post.find
+  })
+
+  server.route({
+    method: ['GET', 'POST'],
+    path: '/publish/{post_id}',
+    config: {
+      auth: {
+        strategy: 'session'
+      },
+      validate: {
+        params: {
+          post_id: Joi.string()
+        }
+      }
+    },
+    handler: AppCtrl.Post.publishToFacebook
   })
 
   // Admin
@@ -118,6 +138,7 @@ exports.register = function(server, options, next) {
         payload: {
           title: Joi.string(),
           content: Joi.string(),
+          category: Joi.string(),
           day: Joi.string(),
           image: Joi.any()
         }

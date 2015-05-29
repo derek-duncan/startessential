@@ -27,6 +27,7 @@
     "hapi-auth-basic": "^2.0.0",
     "hapi-auth-bearer-token": "^3.1.1",
     "hapi-auth-cookie": "^2.2.0",
+    "iron": "^2.1.2",
     "jade": "^1.9.2",
     "joi": "^6.4.1",
     "lodash": "^3.8.0",
