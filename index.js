@@ -45,7 +45,10 @@ server.ext('onPreResponse', function(request, reply) {
   if (response.variety === 'view') {
     var context = response.source.context;
     fs.readdirSync(__dirname + '/views/helpers').forEach(function (file) {
-      context[file.split('.')[0]] = require(__dirname + '/views/helpers/' + file);
+      if (file.indexOf('.js') >= 0 && context) {
+        var name = file.split('.')[0];
+        context[name] = require(__dirname + '/views/helpers/' + file);
+      }
     });
     return reply.continue();
   }
