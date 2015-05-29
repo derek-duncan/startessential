@@ -198,7 +198,7 @@ function loginFacebookUser(request, reply) {
         user.facebook_connected = true;
         user.facebook_id = profile.id;
       }
-      request.auth.session.set(JSON.stringify(user));
+      request.auth.session.set(user);
       return reply.redirect('/posts');
     }
   })
@@ -212,7 +212,7 @@ function logoutUser(request, reply) {
 function publishToFacebook(request, reply) {
   var post_id = request.params.post_id;
   if (request.payload && request.payload.memberNumber) {
-    User.findOne({ _id: JSON.parse(request.state.sid)._id }, function(err, user) {
+    User.findOne({ _id: request.state.sid._id }, function(err, user) {
       if (err) return reply(Boom.wrap(err, 500))
       user.member_number = request.payload.memberNumber;
       user.save();
