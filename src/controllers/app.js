@@ -141,7 +141,7 @@ function createPostAdmin(request, reply) {
         day: request.payload.day
       })
       uploader.image(request.payload.image, post.date_created, function(err, image_url) {
-        if (err) return done(err)
+        if (err) return done(Boom.wrap(err, 500))
         post.image_url = image_url
         return done(null, post)
       })
