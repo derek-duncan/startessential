@@ -10,6 +10,16 @@ var fs = require('fs');
 var server = new Hapi.Server()
 var mongoose = require('mongoose')
 
+var childProcess = require("child_process");
+var oldSpawn = childProcess.spawn;
+function mySpawn() {
+    console.log('spawn called');
+    console.log(arguments);
+    var result = oldSpawn.apply(this, arguments);
+    return result;
+}
+childProcess.spawn = mySpawn;
+
 // Connect to mongodb
 var connect = function () {
   var options = { server: { socketOptions: { keepAlive: 1 } } };
