@@ -22,7 +22,8 @@ var UserSchema = new Schema({
   facebook_connected: {type: Boolean, default: false},
   facebook_id: String,
   token: String,
-  password_set: {type: Boolean, default: false}
+  password_set: {type: Boolean, default: false},
+  scope: {type: String, default: 'user'}
 });
 
 UserSchema.pre('save', function(next) {

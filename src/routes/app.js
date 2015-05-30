@@ -93,18 +93,36 @@ exports.register = function(server, options, next) {
   server.route({
     method: 'GET',
     path: '/admin',
+    config: {
+      auth: {
+        strategy: 'session',
+        scope: ['admin']
+      }
+    },
     handler: AppCtrl.Admin.index
   })
 
   server.route({
     method: 'GET',
     path: '/admin/posts',
+    config: {
+      auth: {
+        strategy: 'session',
+        scope: ['admin']
+      }
+    },
     handler: AppCtrl.Admin.findAllPosts
   })
 
   server.route({
     method: 'GET',
     path: '/admin/posts/{id}',
+    config: {
+      auth: {
+        strategy: 'session',
+        scope: ['admin']
+      }
+    },
     handler: AppCtrl.Admin.findPost
   })
 
@@ -112,8 +130,14 @@ exports.register = function(server, options, next) {
     method: 'POST',
     config: {
       payload: {
-        output: 'stream'
+        output: 'stream',
+        parse: true,
+        maxBytes: 209715200
       },
+      auth: {
+        strategy: 'session',
+        scope: ['admin']
+      }
     },
     path: '/admin/posts/{id}',
     handler: AppCtrl.Admin.updatePost
@@ -122,6 +146,12 @@ exports.register = function(server, options, next) {
   server.route({
     method: 'GET',
     path: '/admin/new',
+    config: {
+      auth: {
+        strategy: 'session',
+        scope: ['admin']
+      }
+    },
     handler: function(request, reply) {
       reply.view('admin/new_post.jade')
     }
@@ -135,6 +165,10 @@ exports.register = function(server, options, next) {
         output: 'stream',
         parse: true,
         maxBytes: 209715200
+      },
+      auth: {
+        strategy: 'session',
+        scope: ['admin']
       },
       validate: {
         payload: {

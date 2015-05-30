@@ -402,6 +402,10 @@ body {
   outline: none;
   background: #FFFEEF; }
 
+.share-url a {
+  display: block;
+  margin: 10px 0; }
+
 .post-img {
   display: block;
   margin: 15px 0; }

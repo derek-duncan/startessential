@@ -97,7 +97,23 @@ server.register(require('hapi-auth-cookie'), function (err) {
     password: 'secret',
     cookie: 'sid',
     redirectTo: '/',
-    isSecure: false
+    isSecure: false,
+    validateFunc: function(session, callback) {
+      var User = mongoose.model('User');
+      User.findOne({_id: session._id}, function(err, user) {
+        if (err) callback(err)
+        if (!user) callback(null, false)
+        if (user.scope === 'admin') {
+          callback(null, true, {
+            scope: 'admin'
+          })
+        } else {
+          callback(null, true, {
+            scope: 'user'
+          })
+        }
+      })
+    }
   });
 });
 

@@ -24,7 +24,7 @@ block body
           .post-header
             h4.daily-title #{post.title}
             div.post-now 
-              a(href='#') Post Now
+              a(href='/publish/#{post._id}') Post Now
           article.post-content
             .post-copy
               .description #{post.content}
