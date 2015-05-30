@@ -132,7 +132,9 @@ exports.register = function(server, options, next) {
     path: '/admin/new',
     config: {
       payload: {
-        output: 'stream'
+        output: 'stream',
+        parse: true,
+        maxBytes: 209715200
       },
       validate: {
         payload: {
