@@ -20,6 +20,7 @@ exports.image = function(file, date, done) {
       stream.on('error', function (err) {
         return done(Boom.wrap(err, 500))
       });
+
       file.pipe(stream);
       file.on('end', function (err) {
         fs.chmod(tmp_path, '755', function(err) {
@@ -39,18 +40,10 @@ exports.image = function(file, date, done) {
         },
         versions: [
           {
-            original: true
-          },
-          {
             suffix: '-large',
             quality: 80,
             maxHeight: 1040,
             maxWidth: 1040,
-          },
-          {
-            suffix: '-medium',
-            maxHeight: 780,
-            maxWidth: 780
           },
           {
             suffix: '-small',
