@@ -27,7 +27,8 @@ exports.image = function(file, date, done) {
 
       // Handle errors.
       upload.on('error', function (error) {
-        return done(Boom.wrap(error, 500))
+        console.log(error)
+        return done(error)
       });
 
       // Handle progress.
@@ -36,7 +37,7 @@ exports.image = function(file, date, done) {
 
       // Handle upload completion.
       upload.on('uploaded', function (details) {
-        done(null, details.Location);
+        return done(null, details.Location);
       });
 
       // Pipe the incoming filestream through compression, and up to S3.
