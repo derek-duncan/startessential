@@ -27,8 +27,10 @@ exports.image = function(file, date, done) {
 
       // Handle errors.
       upload.on('error', function (error) {
-        console.log(error)
-        return done(error)
+        if (error) {
+          console.log(error)
+          return done(error)
+        }
       });
 
       // Handle progress.
