@@ -8,8 +8,8 @@ var AWS      = require('aws-sdk'),
     s3Stream = require('s3-upload-stream')(new AWS.S3());
 
 var awsConfig = {
-  id: 'AKIAIATRZOG65BYVOFOQ',
-  secretKey: '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',
+  accessKeyId: 'AKIAIATRZOG65BYVOFOQ',
+  secretAccessKey: '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',
   region: 'us-west-2'
 };
 
