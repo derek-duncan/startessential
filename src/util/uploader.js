@@ -2,19 +2,18 @@ var async = require('async');
 var moment = require('moment');
 var path = require('path');
 var Boom = require('boom');
-var fs       = require('fs');
+var fs = require('fs');
+var AWS = require('aws-sdk');
 
 exports.image = function(file, date, done) {
-  var AWS      = require('aws-sdk'),
-      s3Stream = require('s3-upload-stream')(new AWS.S3());
 
-  var awsConfig = {
+  AWS.config.update({
     accessKeyId: 'AKIAIATRZOG65BYVOFOQ',
     secretAccessKey: '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',
     region: 'us-west-2'
-  };
+  });
 
-  AWS.config.update(awsConfig);
+  var s3Stream = require('s3-upload-stream')(new AWS.S3());
 
   async.waterfall([
     function(done) {
