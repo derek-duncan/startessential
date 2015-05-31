@@ -627,6 +627,21 @@ body {
           margin-top: 15px; } }
       #front section.join .join-form button.join-submit:hover {
         background: #ff5c5c; }
+  #front section.join .join-facebook {
+    display: inline-block;
+    padding: 15px 25px;
+    background: #4A659F;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 140%; }
+    #front section.join .join-facebook:hover {
+      background: #657fb7; }
+  #front section.join .facebook-explain {
+    font-size: 80%;
+    color: #888;
+    width: 40%;
+    margin: 20px auto 0; }
 
 .footer {
   background: #f9f9f9; }
@@ -856,6 +871,32 @@ body {
       height: 0;
       overflow: hidden;
       border-bottom: 1px solid #979797; }
+
+#thankyou .app .app-inner {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 60px 0; }
+  @media (max-width: 768px) {
+    #thankyou .app .app-inner {
+      width: 90%; } }
+
+#thankyou .app .app-title {
+  font-size: 180%;
+  margin: 0; }
+
+#thankyou .app .app-link {
+  padding: 15px 30px;
+  margin-top: 30px;
+  display: inline-block;
+  font-size: 140%;
+  font-weight: 600;
+  background: #FF8F8F;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none; }
+  #thankyou .app .app-link:hover {
+    background: #ff5c5c; }
 
 #post .header {
   width: 100%;
@@ -1173,6 +1214,7 @@ body {
 
 #posts .main .post {
   width: 30%;
+  display: inline-block;
   margin: 20px;
   box-sizing: border-box; }
   #posts .main .post a {

@@ -7,6 +7,7 @@ var User = mongoose.model('User');
 var Post = mongoose.model('Post');
 var moment = require('moment');
 var uploader = require('../util/uploader');
+var Email = require('../util/email');
 
 function findPost(request, reply) {
   var params = request.params;
@@ -168,40 +169,72 @@ function indexAdmin(request, reply) {
     }
   ], function(err, users) {
     if (err) reply(err);
-    reply.view('admin/index', {
-      users: users
-    });
+    if (request.query.friend) {
+      console.log(request.query.friend)
+      reply.view('admin/index', {
+        users: users
+      }).state('friend', request.query.friend);
+    } else {
+      reply.view('admin/index', {
+        users: users
+      });
+    }
   })
 }
 
 function loginFacebookUser(request, reply) {
   var profile = request.auth.credentials.profile;
-  User.findOne({email: profile.email}, function(err, user) {
-    if (err) return reply(Boom.wrap(err, 500))
-    if (!user) {
-      var newUser = new User({
-        email: profile.email,
-        first_name: profile.name.first,
-        last_name: profile.name.last,
-        facebook_connected: true,
-        facebook_id: profile.id
+  async.waterfall([
+    function(done) {
+      User.findOne({email: profile.email}, function(err, user) {
+        if (err) return reply(Boom.wrap(err, 500))
+        if (!user) {
+          var newUser = new User({
+            email: profile.email,
+            first_name: profile.name.first,
+            last_name: profile.name.last,
+            facebook_connected: true,
+            facebook_id: profile.id
+          })
+          Email.send(newUser.email, function(err) {
+            if (err) console.log(Boom.wrap(err, 500));
+          })
+          return done(null, newUser, true)
+        } else {
+          if (!user.facebook_connected) {
+            user.first_name = user.first_name || profile.name.first;
+            user.last_name = user.last_name || profile.name.last;
+            user.facebook_connected = true;
+            user.facebook_id = profile.id;
+          }
+          return done(null, user, false)
+        }
       })
-      newUser.save(function(err) {
+    }, function(user, isNew, done) {
+      if (request.state.friend && isNew) {
+        User.findOne({ referral_id: request.state.friend }, function(err, friend_user) {
+          if (err) return done(Boom.wrap(err, 500))
+          if (!friend_user) return done(null, user) // if the friend doesnt exist, just create a new account
+          friend_user.friends.push(user._id);
+          user.friend = friend_user._id;
+
+          friend_user.save(function(err) {
+            if (err) return done(Boom.wrap(err, 500))
+
+            return done(null, user);
+          })
+        })
+      } else {
+        return done(null, user)
+      }
+    }, function(user, done) {
+      user.save(function(err) {
         if (err) return reply(Boom.wrap(err, 500))
         request.auth.session.set(user);
-        return reply.redirect('/posts');
+        return reply.redirect('/thankyou').unstate('friend');
       })
-    } else {
-      if (!user.facebook_connected) {
-        user.first_name = user.first_name || profile.name.first;
-        user.last_name = user.last_name || profile.name.last;
-        user.facebook_connected = true;
-        user.facebook_id = profile.id;
-      }
-      request.auth.session.set(user);
-      return reply.redirect('/posts');
     }
-  })
+  ])
 }
 
 function logoutUser(request, reply) {

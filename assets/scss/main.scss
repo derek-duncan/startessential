@@ -338,6 +338,25 @@ body {
         }
       }
     }
+
+    .join-facebook {
+      display: inline-block;
+      padding: 15px 25px;
+      background: #4A659F;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 140%;
+      &:hover {
+        background: lighten(#4A659F, 10%);
+      }
+    }
+    .facebook-explain {
+      font-size: 80%;
+      color: #888;
+      width: 40%;
+      margin: 20px auto 0;
+    }
   }
 }
 

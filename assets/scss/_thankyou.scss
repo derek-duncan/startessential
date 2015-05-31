@@ -264,4 +264,33 @@
       }
     }
   }
+  .app {
+    .app-inner {
+      width: 60%;
+      margin: 0 auto;
+      text-align: center;
+      padding: 60px 0;
+      @media (max-width: $ipad) {
+        width: 90%;
+      }
+    }
+    .app-title {
+      font-size: 180%;
+      margin: 0;
+    }
+    .app-link {
+      padding: 15px 30px;
+      margin-top: 30px;
+      display: inline-block;
+      font-size: 140%;
+      font-weight: 600;
+      background: $red;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      &:hover {
+        background: $shade-red;
+      }
+    }
+  }
 }

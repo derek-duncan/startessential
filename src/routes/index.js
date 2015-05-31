@@ -11,7 +11,7 @@ exports.register = function(server, options, next) {
         title: 'Everything you need to grow your Essential Oil business',
         header: 'Everything you need to grow your Essential Oil business',
         version: 1
-      });
+      }).state('friend', request.query.friend);
     }
   })
   server.route({

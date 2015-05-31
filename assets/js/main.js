@@ -14,6 +14,9 @@ $(function() {
 
     localStorage.setItem('friend', JSON.stringify(data));
 
+    var joinFacebook = $('.join-facebook');
+    joinFacebook.attr('href', joinFacebook.attr('href') + '?friend=' + data.referral_id)
+
     //////
 
     var joinButton = $('.join-submit');
