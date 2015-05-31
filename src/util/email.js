@@ -1,21 +1,55 @@
-function sendEmail(email, done) {
-  var MailChimpAPI = require('mailchimp').MailChimpAPI;
-  var MailChimpAPIKey = 'f07d6c72ff341a4c4a9fbc3c2c2845ae-us9';
-  var api;
-  try {
-    api = new MailChimpAPI(MailChimpAPIKey, { version : '2.0' });
-  } catch (error) {
-    return done(new Error('Error while adding email to Mail Chimp.'));
+var nodemailer = require('nodemailer');
+var mg = require('nodemailer-mailgun-transport');
+
+// This is your API key that you retrieve from www.mailgun.com/cp (free up to 10K monthly emails)
+var auth = {
+  auth: {
+    api_key: 'key-2d2b5fef649be1fc3fef9446f3ec7794',
+    domain: 'startessential.com'
   }
-  api.call('lists', 'subscribe', { id: 'b61c1b85db', email: { email: email }, double_optin: false }, function(err) {
-    if (err) {
-      return done(err);
-    }
-    //Successfully registered user
+}
+
+var nodemailerMailgun = nodemailer.createTransport(mg(auth));
+
+function sendEmail(email, done) {
+  nodemailerMailgun.sendMail({
+    from: 'Start Essential',
+    to: email, // An array if you have multiple recipients.
+    subject: 'Hey you, awesome!',
+    'h:Reply-To': 'admin@startessential.com',
+    //You can use "html:" to send HTML email content. It's magic!
+    html: '<b>Thank you for joining Start Essential!</b>' +
+          '</br>' +
+          '<a href="http://startessential.com/posts">Get started!</a>',
+  }, function (err, info) {
+    if (err) return done(err)
+    return done(null);
+  });
+}
+
+function saveToList(user, done) {
+  var api_key = auth.auth.api_key;
+  var domain = auth.auth.domain;
+  var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
+
+  user.email = user.email || '';
+  user.name = user.name || '';
+
+  var data = {
+    subscribed: true,
+    address: user.email,
+    name: user.name
+  }
+
+  var list = mailgun.lists('mail@startessential.com');
+
+  list.members().create(data, function (err, res) {
+    if (err) return done(err)
     return done(null);
   });
 }
 
 module.exports = {
-  send: sendEmail
+  send: sendEmail,
+  save: saveToList
 }

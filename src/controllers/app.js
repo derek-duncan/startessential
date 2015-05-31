@@ -196,6 +196,9 @@ function loginFacebookUser(request, reply) {
             facebook_connected: true,
             facebook_id: profile.id
           })
+          Email.save({ email: newUser.email, name: newUser.first_name + ' ' + newUser.last_name }, function(err) {
+            if (err) console.log(Boom.wrap(err, 500));
+          })
           Email.send(newUser.email, function(err) {
             if (err) console.log(Boom.wrap(err, 500));
           })

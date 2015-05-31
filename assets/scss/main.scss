@@ -356,6 +356,9 @@ body {
       color: #888;
       width: 40%;
       margin: 20px auto 0;
+      @media (max-width: $phone) {
+        width: 80%;
+      }
     }
   }
 }

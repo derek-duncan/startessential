@@ -60,7 +60,7 @@ exports.register = function(server, options, next) {
     config: {
       auth: {
         strategy: 'session',
-        mode: 'optional'
+        mode: 'try'
       },
       validate: {
         params: {

@@ -10,9 +10,20 @@
       flex-flow: row nowrap;
       justify-content: space-between;
       align-items: center;
+      @media (max-width: $phone) {
+        flex-flow: column wrap;
+        justify-content: center;
+        & > * {
+          margin: 5px 0;
+        }
+      }
     }
     .logo-wrap {
       align-self: flex-start;
+      @media (max-width: $phone) {
+        margin-bottom: 15px;
+        align-self: auto;
+      }
       img.logo {
         width: 150px;
         height: auto;
@@ -20,6 +31,9 @@
     }
     .search-wrap {
       width: 20%;
+      @media (max-width: $phone) {
+        width: 100%;
+      }
       .search {
         -webkit-appearance: none;
         padding: 15px 20px;
@@ -44,6 +58,12 @@
         color: #fff;
         font-size: 130%;
         font-weight: 600;
+        @media (max-width: $phone) {
+          width: 50%;
+          padding: 10px;
+          margin: 0;
+          box-sizing: border-box;
+        }
         &:hover {
           text-decoration: underline;
         }
@@ -58,6 +78,9 @@
     .main-content {
       width: 60%;
       margin: 40px auto 0;
+      @media (max-width: $phone) {
+        width: 80%;
+      }
     }
 
     .post {
@@ -65,6 +88,10 @@
       display: inline-block;
       margin: 20px;
       box-sizing: border-box;
+      @media (max-width: $phone) {
+        width: 100%;
+        margin: 20px 0;
+      }
       a {
         text-decoration: none;
         color: $dark;

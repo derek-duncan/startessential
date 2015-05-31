@@ -7,7 +7,10 @@ exports.register = function(server, options, next) {
       //if (switchReq) {
       //  return reply.redirect('/v2')
       //}
-      reply.view('index', {
+      if (request.auth.isAuthenticated) {
+        return reply.redirect('/posts');
+      }
+      return reply.view('index', {
         title: 'Everything you need to grow your Essential Oil business',
         header: 'Everything you need to grow your Essential Oil business',
         version: 1
