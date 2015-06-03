@@ -126,7 +126,8 @@ server.register(require('bell'), function (err) {
     password: 'my_secret',
     clientId: '1589098114709228',
     clientSecret: '7fc1cf34eb3fe7daa129331790276b8b',
-    isSecure: false     // Terrible idea but required if not using HTTPS
+    isSecure: false,     // Terrible idea but required if not using HTTPS
+    scope: ['publish_actions']
   });
 });
 
