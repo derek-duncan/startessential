@@ -8,6 +8,7 @@ var Post = mongoose.model('Post');
 var moment = require('moment');
 var uploader = require('../util/uploader');
 var Email = require('../util/email');
+var Request = require('request');
 
 function findPost(request, reply) {
   var params = request.params;
@@ -268,7 +269,32 @@ function publishToFacebook(request, reply) {
   Post.findOne({ _id: post_id }, function(err, post) {
     if (err) return reply(Boom.wrap(err, 500))
     if (!post) return reply(Boom.notFound())
-    reply.redirect('http://www.facebook.com/share.php?u=http://startessential.com' + post.url)
+    var fb_id = request.state.sid.facebook_id;
+    var member_number = request.payload.memberNumber || request.state.sid.member_number;
+
+    var content;
+    if (member_number) {
+      content =
+        post.title +
+        '\n\n' +
+        post.content +
+        '\n\n' +
+        'Sign up with me at https://www.youngliving.com/signup/?site=US&sponsorid='+member_number+'&enrollerid='+member_number;
+    } else {
+      content =
+        post.title +
+        '\n\n' +
+        post.content;
+    }
+    var fbPost = {
+      caption: content,
+      url: post.image_url,
+      access_token: request.state.sid.token
+    }
+    Request.post({ url: 'https://graph.facebook.com/v2.3/' + fb_id + '/photos', form: fbPost }, function(err, res, body) {
+      if (err) return reply(Boom.wrap(err, 500))
+      return reply.redirect('/posts')
+    })
   })
 }
 
