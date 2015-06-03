@@ -270,7 +270,13 @@ function publishToFacebook(request, reply) {
     if (err) return reply(Boom.wrap(err, 500))
     if (!post) return reply(Boom.notFound())
     var fb_id = request.state.sid.facebook_id;
-    var member_number = request.payload.memberNumber || request.state.sid.member_number;
+    var member_number;
+    if (request.payload) {
+      member_number = request.payload.memberNumber;
+    }
+    if (request.state.sid) {
+      member_number = request.state.sid.member_number;
+    }
 
     var content;
     if (member_number) {
