@@ -970,6 +970,14 @@ body {
 #post .main {
   background: #fff;
   overflow: auto; }
+  #post .main .tools {
+    background: #eee; }
+    #post .main .tools .tools-inner {
+      width: 80%;
+      margin: 0 auto;
+      padding: 15px 0; }
+      #post .main .tools .tools-inner a {
+        color: #aaa; }
   #post .main .intro {
     background: #fff;
     width: 100%; }

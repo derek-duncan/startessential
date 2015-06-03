@@ -8,6 +8,17 @@ block head
   meta(property='og:image' content='#{post.image_url}')
 
 block body
+  script.
+    if (!{user_exists}) {
+      User = {
+        token: "#{user.token}",
+        id: "#{user.facebook_id}"
+      }
+    }
+    Post = {
+      content: '#{post.content}',
+      image_url: '#{post.image_url}',
+    }
   div#post
     header.header
       .header-content
@@ -15,6 +26,9 @@ block body
           img.logo(src='/images/logo-white.png' width='200')
         h3.title Today's Post <span class='right'><span class='mob-hide'>| </span>#{post.day} <span class="small">the</span> 10<sup>th</sup></span>
     main.main
+      section.tools
+        .tools-inner
+          a(href='/posts') < Back to all posts
       section.intro
         .intro-content
           h3.title Daily Essential Oils Post
@@ -23,8 +37,9 @@ block body
         .post
           .post-header
             h4.daily-title #{post.title}
-            div.post-now 
-              a(href='/publish/#{post._id}') Post Now
+            if user
+              div.post-now 
+                a(href='/publish/#{post._id}') Post Now
           article.post-content
             .post-copy
               .description #{post.content}
@@ -36,4 +51,8 @@ block body
           form(method='POST' action='/publish/#{post._id}')
             input.member-number(name='memberNumber' type='text' placeholder='(Optional) Young Living member number' value='#{memberNumber ? memberNumber : ""}')
             .cta
-              button.post-now(type='submit') Post to Facebook
+              button.post-now(type='submit')
+                if user_exists
+                  | Post to Facebook
+                else 
+                  | Sign up to post

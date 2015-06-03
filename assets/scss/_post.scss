@@ -63,6 +63,17 @@
   .main {
     background: #fff;
     overflow: auto;
+    .tools {
+      background: #eee;
+      .tools-inner {
+        width: 80%;
+        margin: 0 auto;
+        padding: 15px 0;
+        a {
+          color: #aaa;
+        }
+      }
+    }
     .intro {
       background: #fff;
       width: 100%;

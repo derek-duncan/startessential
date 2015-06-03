@@ -23,16 +23,25 @@ function findPost(request, reply) {
     if (err) return reply(Boom.wrap(err, 500))
     if (!post) return reply(Boom.notFound())
     // if (params.public === 'view') {
-    User.findOne({_id: request.state.sid._id }, function(err, user) {
-      if (err) return reply(Boom.wrap(err, 500))
-      user = user || {}
-      console.log(user)
+    if (request.state.sid) {
+      User.findOne({_id: request.state.sid._id }, function(err, user) {
+        if (err) return reply(Boom.wrap(err, 500))
+        user = user || {}
+        reply.view('app/post', {
+          post: post,
+          title: post.title,
+          user: user,
+          user_exists: true
+        })
+      })
+    } else {
       reply.view('app/post', {
         post: post,
         title: post.title,
-        memberNumber: user.member_number
+        user: {},
+        user_exists: false
       })
-    })
+    }
     // } else {
     //   if (request.query.access === post.share_token) {
     //     reply.view('app/post', {
@@ -184,6 +193,7 @@ function indexAdmin(request, reply) {
 
 function loginFacebookUser(request, reply) {
   var profile = request.auth.credentials.profile;
+  console.log(request.auth)
   async.waterfall([
     function(done) {
       User.findOne({email: profile.email}, function(err, user) {
@@ -231,6 +241,7 @@ function loginFacebookUser(request, reply) {
         return done(null, user)
       }
     }, function(user, done) {
+      user.token = request.auth.credentials.token;
       user.save(function(err) {
         if (err) return reply(Boom.wrap(err, 500))
         request.auth.session.set(user);

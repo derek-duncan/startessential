@@ -96,22 +96,24 @@ server.register(require('hapi-auth-cookie'), function (err) {
   server.auth.strategy('session', 'cookie', {
     password: 'secret',
     cookie: 'sid',
-    redirectTo: '/',
+    redirectTo: '/facebook/login',
     isSecure: false,
+    redirectOnTry: false,
     validateFunc: function(session, callback) {
       var User = mongoose.model('User');
       User.findOne({_id: session._id}, function(err, user) {
-        if (err) callback(err)
-        if (!user) callback(null, false)
+        if (err) return callback(err)
+        if (!user) return callback(null, false)
         if (user.scope === 'admin') {
-          callback(null, true, {
+          return callback(null, true, {
             scope: 'admin'
           })
         } else {
-          callback(null, true, {
+          return callback(null, true, {
             scope: 'user'
           })
         }
+        return callback(null, false)
       })
     }
   });

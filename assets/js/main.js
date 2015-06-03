@@ -169,26 +169,32 @@ $(function() {
 });
 
 if ($('#post').length) {
-  // var mnInput = $('.member-number');
-  // var postNow = $('.post-now');
-  // var lsNumber = localStorage.getItem('memberNumber') || '';
-  // if (lsNumber.length) {
-  //   mnInput.val(lsNumber);
-  // } else {
-  //   postNow.on('click touchend', function(e) {
-  //     localStorage.setItem('memberNumber', mnInput.val());
-  //   })
-  // }
+  $.ajaxSetup({ cache: true });
+  $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
+    FB.init({
+      appId: '1589098114709228',
+      version: 'v2.3', // or v2.0, v2.1, v2.0
+    });
+    $('.post-now a').on('click', function(e) {
+      e.preventDefault();
+      FB.api('/' + User.id + '/photos', 'post', {
+        caption: Post.content,
+        url: Post.image_url,
+        access_token: User.token
+      }, function(response) {
+        console.log(response)
+      });
+    })
+  });
 }
 
 if ($('#posts').length) {
   var post = $('.post');
-  var postImageWrap = post.find('.post-image-wrap');
 
   $('img').load(function() {
-    postImageWrap.each(function() {
-      var wrap = $(this);
-      var wrapHeight = $(this).outerHeight();
+    post.each(function() {
+      var wrap = $(this).find('.post-image-wrap');
+      var wrapHeight = wrap.outerHeight();
       var postImage = wrap.find('.post-image');
       var postImageHeight = postImage.height()
       postImage.css({
@@ -198,12 +204,16 @@ if ($('#posts').length) {
       if (postImageHeight > wrapHeight) {
         var heightDifference = postImageHeight - wrapHeight
         if ($('html.no-touch').length) {
-          wrap.hover(function() {
-            postImage.toggleClass('scroll')
+          wrap.on('mouseover', function() {
+            postImage.addClass('scroll')
+          })
+          wrap.on('mouseout', function() {
+            postImage.removeClass('scroll')
           })
         } else {
-          wrap.on('touchend', function() {
-            postImage.toggleClass('scroll')
+          wrap.on('touchstart', function() {
+            if (postImage.hasClass('scroll')) postImage.removeClass('scroll')
+            else postImage.addClass('scroll')
           })
         }
       }
