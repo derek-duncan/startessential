@@ -1,0 +1,24 @@
+extends templates/layout
+block head
+  meta(property='og:title' content='Start Essential')
+  meta(property='og:type' content='website')
+  meta(property='og:url' content='http://startessential.com')
+  meta(property='og:description' content='We design incredible infographics and social media posts so you can use them to grow your business.')
+  meta(property='og:image' content='http://startessential.com/images/logo-color.png')
+block body
+  #register
+    header.header
+      div.header-top.cf
+        h1.logo
+          img(src='/images/logo-color.png' alt='Start Essential resources logo' width='300')
+    main.main
+      form(action="" method="POST")
+        script(
+          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_test_QSKUtc94PM7XpNBHBmC3LyLA"
+          data-amount="500"
+          data-name="Start Essential"
+          data-description="5 Downloads/Month ($5.00)"
+          data-image="/images/me.jpg"
+          data-allowRememberMe='false'
+          data-email='mail@me.com')

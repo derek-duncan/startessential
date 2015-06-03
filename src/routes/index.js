@@ -39,6 +39,15 @@ exports.register = function(server, options, next) {
   })
   server.route({
     method: 'GET',
+    path: '/register',
+    handler: function (request, reply) {
+      reply.view('register', {
+        title: 'Register for Start Essential'
+      });
+    }
+  })
+  server.route({
+    method: 'GET',
     path: '/{param*}',
     handler: {
       directory: {
