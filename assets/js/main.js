@@ -20,86 +20,32 @@ $(function() {
     //////
 
     var joinButton = $('.join-submit');
-    var joinEmail = $('.join-input');
+    var joinNumber = $('.join-input');
 
-    joinButton.on('click touchend', submitEmail)
-    joinEmail.on('keydown', function(e){
+    joinButton.on('click touchend', submitNumber)
+    joinNumber.on('keydown', function(e){
       if (e.keyCode === 13) {
-        submitEmail(e);
+        submitNumber(e);
       }
     })
 
-    // Steps //
-    var step = $('.howto-step')
-    var stepNumber = step.find('.step-number')
-    stepNumber.css({
-      height: stepNumber.outerWidth()
-    });
-    $(window).resize(function() {
-      stepNumber.css({
-        height: stepNumber.outerWidth()
-      });
-    })
+    function submitNumber(e) {
+      e.preventDefault();
+      var number = joinNumber.val();
+      localStorage.setItem('se_member_number', number);
+      window.location.href = window.location.origin + '/register';
+    }
 
     // GA Events //
     var ctaTop = $('.cta-top');
     var joinSubmit = $('.join-submit');
 
     ctaTop.on('click touchend', function(e) {
-      console.log('clicked')
       ga('send', 'event', 'button', 'click', 'top cta')
     })
     joinSubmit.on('click touchend', function(e) {
       ga('send', 'event', 'button', 'click', 'join submit')
     })
-
-    function submitEmail(e) {
-      e.preventDefault()
-      if (joinEmail.val().length > 3) {
-        toggleButtonState()
-        $.ajax({
-          method: "POST",
-          url: "/api/v1/users",
-          data: { email: joinEmail.val(), friend: friend },
-          dataType: 'JSON',
-          headers: {
-            'Authorization': 'Bearer 123'
-          }
-        })
-        .error(function(xhr) {
-          console.log(xhr);
-          _emailError(xhr.status)
-        })
-        .success(function(usr) {
-          localStorage.setItem('user', JSON.stringify(usr))
-          window.location.href = "http://" + window.location.hostname + "/thankyou";
-        })
-      }
-    }
-
-    function _emailError(code) {
-      var msg = $('.join-msg')
-      switch (code) {
-        case 409:
-          msg.text('This email address is already registered. You might try another one :)')
-          break;
-        case 400:
-          msg.text('It doesn\'t look like you entered a valid email address. Try giving it another go')
-          break;
-        case 403:
-          msg.text('You have registered too many email addresses on this IP address. Be sure to share with friends if you want more signups!')
-          break;
-        case 500:
-          msg.text('There was an error on our side while registering your email. Try giving it another shot! We\'re so sorry.')
-          break;
-        case 401:
-          msg.text('Invalid credentials')
-          break;
-        default:
-          msg.text('Something went wrong while registering your email. Could you give it another shot? Thanks!')
-      }
-      toggleButtonState()
-    }
 
     function toggleButtonState() {
       if (joinButton.text().indexOf('Submitting') > -1) {
