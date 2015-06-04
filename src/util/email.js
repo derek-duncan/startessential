@@ -13,7 +13,7 @@ var nodemailerMailgun = nodemailer.createTransport(mg(auth));
 
 function sendEmail(email, done) {
   nodemailerMailgun.sendMail({
-    from: 'Start Essential',
+    from: 'admin@startessential.com',
     to: email, // An array if you have multiple recipients.
     subject: 'Hey you, awesome!',
     'h:Reply-To': 'admin@startessential.com',

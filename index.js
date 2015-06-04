@@ -10,16 +10,6 @@ var fs = require('fs');
 var server = new Hapi.Server()
 var mongoose = require('mongoose')
 
-var childProcess = require("child_process");
-var oldSpawn = childProcess.spawn;
-function mySpawn() {
-    console.log('spawn called');
-    console.log(arguments);
-    var result = oldSpawn.apply(this, arguments);
-    return result;
-}
-childProcess.spawn = mySpawn;
-
 // Connect to mongodb
 var connect = function () {
   var options = { server: { socketOptions: { keepAlive: 1 } } };
@@ -51,15 +41,25 @@ server.views({
 });
 
 server.ext('onPreResponse', function(request, reply) {
+
   var response = request.response;
   if (response.variety === 'view') {
     var context = response.source.context;
+
+    // Add Helpers for Jade templates
     fs.readdirSync(__dirname + '/views/helpers').forEach(function (file) {
       if (file.indexOf('.js') >= 0 && context) {
         var name = file.split('.')[0];
         context[name] = require(__dirname + '/views/helpers/' + file);
       }
     });
+
+    // Add Message to Jade templates
+    var validator = require('validator');
+    var queryMessage = request.query.message;
+    if (queryMessage) {
+      context.message = validator.escape(queryMessage)
+    }
     return reply.continue();
   }
   return reply.continue();
@@ -96,7 +96,7 @@ server.register(require('hapi-auth-cookie'), function (err) {
   server.auth.strategy('session', 'cookie', {
     password: 'secret',
     cookie: 'sid',
-    redirectTo: '/facebook/login',
+    redirectTo: '/login',
     isSecure: false,
     redirectOnTry: false,
     validateFunc: function(session, callback) {
@@ -106,11 +106,15 @@ server.register(require('hapi-auth-cookie'), function (err) {
         if (!user) return callback(null, false)
         if (user.scope === 'admin') {
           return callback(null, true, {
-            scope: 'admin'
+            scope: ['pre_authenticated', 'authenticated', 'admin']
+          })
+        } else if (user.scope === 'pre_authenticated') {
+          return callback(null, true, {
+            scope: 'pre_authenticated'
           })
         } else {
           return callback(null, true, {
-            scope: 'user'
+            scope: ['pre_authenticated', 'authenticated']
           })
         }
         return callback(null, false)
@@ -126,6 +130,9 @@ server.register(require('bell'), function (err) {
     password: 'my_secret',
     clientId: '1589098114709228',
     clientSecret: '7fc1cf34eb3fe7daa129331790276b8b',
+    providerParams: {
+      display: 'popup'
+    },
     isSecure: false,     // Terrible idea but required if not using HTTPS
     scope: ['email', 'public_profile', 'user_friends', 'publish_actions']
   });
@@ -144,6 +151,11 @@ server.register({register: require('./src/routes/index')}, function(err) {
 // App routes
 server.register({register: require('./src/routes/app')}, function(err) {
   if (err) server.log('error', err)
+})
+
+server.auth.default({
+  strategy: 'session',
+  scope: 'pre_authenticated'
 })
 
 module.exports = server;

@@ -594,6 +594,7 @@ body {
     margin-top: 20px;
     position: relative;
     width: 40%;
+    max-width: 450px;
     margin: 0 auto;
     font-size: 120%; }
     @media (max-width: 768px) {
@@ -603,21 +604,26 @@ body {
       #front section.join .join-form {
         width: 80%; } }
     #front section.join .join-form input.join-input {
-      padding: 20px 20% 20px 20px;
+      padding: 20px;
+      box-sizing: border-box;
       width: 100%;
       outline: none;
-      color: #7D7D7D; }
+      color: #7D7D7D;
+      text-align: center;
+      display: block; }
     #front section.join .join-form button.join-submit {
-      position: absolute;
+      position: relative;
       outline: none;
-      top: 11px;
-      right: 11px;
       -webkit-appearance: none;
       color: #fff;
       font-weight: 600;
       border: none;
       background: #FF8F8F;
-      padding: 10px 20px; }
+      padding: 15px 20px;
+      box-sizing: border-box;
+      width: 100%;
+      display: block;
+      margin-top: 10px; }
       @media (max-width: 520px) {
         #front section.join .join-form button.join-submit {
           position: relative;
@@ -627,16 +633,6 @@ body {
           margin-top: 15px; } }
       #front section.join .join-form button.join-submit:hover {
         background: #ff5c5c; }
-  #front section.join .join-facebook {
-    display: inline-block;
-    padding: 15px 25px;
-    background: #4A659F;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 140%; }
-    #front section.join .join-facebook:hover {
-      background: #657fb7; }
   #front section.join .facebook-explain {
     font-size: 80%;
     color: #888;
@@ -1298,3 +1294,18 @@ body {
     margin: 0 0 10px 0; }
   #posts .main .post .post-tags {
     color: #B1B1B1; }
+
+#register {
+  text-align: center; }
+  #register .main {
+    padding-bottom: 40px; }
+  #register .fb-login {
+    display: inline-block;
+    padding: 15px 25px;
+    background: #4A659F;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 140%; }
+    #register .fb-login:hover {
+      background: #657fb7; }

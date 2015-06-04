@@ -46,7 +46,8 @@
     "s3-upload-stream": "^1.0.7",
     "s3-uploader": "^0.8.1",
     "stripe": "^3.3.4",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "validator": "^3.40.0"
   },
   "devDependencies": {
     "browserify": "^10.1.3",

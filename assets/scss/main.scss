@@ -301,6 +301,7 @@ body {
       margin-top: 20px;
       position: relative;
       width: 40%;
+      max-width: 450px;
       margin: 0 auto;
       font-size: 120%;
       @media (max-width: $ipad) {
@@ -310,22 +311,27 @@ body {
         width: 80%;
       }
       input.join-input {
-        padding: 20px 20% 20px 20px;
+        padding: 20px;
+        box-sizing: border-box;
         width: 100%;
         outline: none;
         color: $gray;
+        text-align: center;
+        display: block;
       }
       button.join-submit {
-        position: absolute;
+        position: relative;
         outline: none;
-        top: 11px;
-        right: 11px;
         -webkit-appearance: none;
         color: #fff;
         font-weight: 600;
         border: none;
         background: $red;
-        padding: 10px 20px;
+        padding: 15px 20px;
+        box-sizing: border-box;
+        width: 100%;
+        display: block;
+        margin-top: 10px;
         @media (max-width: $phone) {
           position: relative;
           width: 100%;
@@ -339,18 +345,6 @@ body {
       }
     }
 
-    .join-facebook {
-      display: inline-block;
-      padding: 15px 25px;
-      background: #4A659F;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 140%;
-      &:hover {
-        background: lighten(#4A659F, 10%);
-      }
-    }
     .facebook-explain {
       font-size: 80%;
       color: #888;
@@ -381,3 +375,4 @@ body {
 @import 'thankyou';
 @import 'post';
 @import 'posts';
+@import 'register';

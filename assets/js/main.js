@@ -23,7 +23,13 @@ $(function() {
     var joinNumber = $('.join-input');
 
     joinButton.on('click touchend', submitNumber)
-    joinNumber.on('keydown', function(e){
+    joinNumber.on('keyup', function(e){
+      if ($.isNumeric(this.value) === false) {
+         this.value = this.value.slice(0, -1);
+      }
+      if (this.value.length > 7) {
+         this.value = this.value.slice(0, -1);
+      }
       if (e.keyCode === 13) {
         submitNumber(e);
       }
@@ -32,8 +38,9 @@ $(function() {
     function submitNumber(e) {
       e.preventDefault();
       var number = joinNumber.val();
-      localStorage.setItem('se_member_number', number);
-      window.location.href = window.location.origin + '/register';
+      toggleButtonState();
+      //document.cookie = 'se_member_number='+number+';path=/register;max-age=60*60;'
+      window.location.href = window.location.origin + '/register?se_member_number=' + number;
     }
 
     // GA Events //
@@ -55,6 +62,15 @@ $(function() {
       }
     }
 
+  }
+
+  if ($('#register').length) {
+    var NumberBlock = {
+      label: $('.number-label'),
+      data: $('.number-data')
+    }
+
+    NumberBlock.data.text($.getQueryParameters().se_member_number)
   }
 
   if ($('#thankyou').length) {

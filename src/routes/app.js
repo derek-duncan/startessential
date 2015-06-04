@@ -29,6 +29,15 @@ exports.register = function(server, options, next) {
 
   server.route({
     method: ['GET', 'POST'], // Must handle both GET and POST
+    path: '/facebook/register',   // The callback endpoint registered with the provider
+    config: {
+      auth: 'facebook'
+    },
+    handler: AppCtrl.User.facebookRegister
+  });
+
+  server.route({
+    method: ['GET', 'POST'], // Must handle both GET and POST
     path: '/facebook/login',   // The callback endpoint registered with the provider
     config: {
       auth: 'facebook'
@@ -49,7 +58,10 @@ exports.register = function(server, options, next) {
     method: 'GET',
     path: '/posts',
     config: {
-      auth: 'session'
+      auth: {
+        strategy: 'session',
+        scope: ['authenticated']
+      }
     },
     handler: AppCtrl.Post.findAll
   })
@@ -60,7 +72,8 @@ exports.register = function(server, options, next) {
     config: {
       auth: {
         strategy: 'session',
-        mode: 'try'
+        mode: 'try',
+        scope: ['authenticated'],
       },
       validate: {
         params: {
@@ -78,7 +91,8 @@ exports.register = function(server, options, next) {
     path: '/publish/{post_id}',
     config: {
       auth: {
-        strategy: 'session'
+        strategy: 'session',
+        scope: ['authenticated']
       },
       validate: {
         params: {
@@ -87,6 +101,16 @@ exports.register = function(server, options, next) {
       }
     },
     handler: AppCtrl.Post.publishToFacebook
+  })
+
+  // Register
+  server.route({
+    method: ['GET', 'POST'],
+    path: '/register/finish',
+    config: {
+      auth: 'session'
+    },
+    handler: AppCtrl.User.stripeRegister
   })
 
   // Admin
@@ -128,6 +152,7 @@ exports.register = function(server, options, next) {
 
   server.route({
     method: 'POST',
+    path: '/admin/posts/{id}',
     config: {
       payload: {
         output: 'stream',
@@ -139,7 +164,6 @@ exports.register = function(server, options, next) {
         scope: ['admin']
       }
     },
-    path: '/admin/posts/{id}',
     handler: AppCtrl.Admin.updatePost
   })
 

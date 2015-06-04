@@ -192,9 +192,83 @@ function indexAdmin(request, reply) {
   })
 }
 
+function registerWithStripe(request, reply) {
+  if (request.method === 'get') {
+    reply.view('register_finish', {
+      title: 'Register for Start Essential',
+      email: request.state.sid.email
+    });
+  }
+  if (request.method === 'post') {
+    var stripe = require('stripe')('sk_test_8T9RioM6rUcrweVcJ0VluRyG');
+
+    User.findOne({ _id: request.state.sid._id }, function(err, user) {
+      if (err) return reply(Boom.wrap(err, 500))
+      if (!user) return reply(Boom.unauthorized('You must have an user account to setup payment'))
+
+      var stripeData = {
+        source: request.payload.stripeToken,
+        plan: 'basic',
+        email: request.state.sid.email
+      }
+
+      async.waterfall([
+        function(done) {
+          if (user.stripe.id) {
+            stripe.customers.update( user.stripe.id, stripeData, function(err, customer) {
+              if (err) return done(Boom.badImplementation('', err))
+              return done(null, customer)
+            });
+          } else {
+            stripe.customers.create(stripeData, function(err, customer) {
+              if (err) reply(Boom.badImplementation())
+              return done(null, customer)
+            })
+          }
+        }
+      ], function(err, customer) {
+        if (err) return reply(err)
+
+        user.stripe.id = customer.id;
+        user.stripe.subscription = customer.subscriptions.data[0].plan.id
+        user.scope = 'authenticated';
+        user.save()
+        return reply.redirect('/posts')
+      })
+
+    })
+  }
+}
+
 function loginFacebookUser(request, reply) {
   var profile = request.auth.credentials.profile;
-  console.log(request.auth)
+
+  async.waterfall([
+    function(done) {
+      User.findOne({ _id: request.state.sid._id }, function(err, user) {
+        if (err) return reply(Boom.badImplementation())
+        if (!user) return reply.redirect('/register?message=' + encodeURIComponent('You are not registered'))
+
+        if (user.scope === 'pre_authenticated') {
+          return reply.redirect('/register/finish?message=' + encodeURIComponent('You need to fix this'))
+        }
+        return done(null)
+      })
+    }
+  ], function(err) {
+    if (err) return reply(err)
+    if (request.query.redirect) {
+      return reply.redirect(redirect)
+    }
+    return reply.redirect('/posts')
+  })
+}
+
+function registerFacebookUser(request, reply) {
+  var profile = request.auth.credentials.profile;
+  console.log(request.state)
+  var memberNumber = request.state.se_member_number || null;
+
   async.waterfall([
     function(done) {
       User.findOne({email: profile.email}, function(err, user) {
@@ -205,7 +279,8 @@ function loginFacebookUser(request, reply) {
             first_name: profile.name.first,
             last_name: profile.name.last,
             facebook_connected: true,
-            facebook_id: profile.id
+            facebook_id: profile.id,
+            member_number: memberNumber
           })
           Email.save({ email: newUser.email, name: newUser.first_name + ' ' + newUser.last_name }, function(err) {
             if (err) console.log(Boom.wrap(err, 500));
@@ -215,39 +290,41 @@ function loginFacebookUser(request, reply) {
           })
           return done(null, newUser, true)
         } else {
-          if (!user.facebook_connected) {
-            user.first_name = user.first_name || profile.name.first;
-            user.last_name = user.last_name || profile.name.last;
-            user.facebook_connected = true;
-            user.facebook_id = profile.id;
-          }
           return done(null, user, false)
         }
       })
     }, function(user, isNew, done) {
-      if (request.state.friend && isNew) {
-        User.findOne({ referral_id: request.state.friend }, function(err, friend_user) {
-          if (err) return done(Boom.wrap(err, 500))
-          if (!friend_user) return done(null, user) // if the friend doesnt exist, just create a new account
-          friend_user.friends.push(user._id);
-          user.friend = friend_user._id;
-
-          friend_user.save(function(err) {
+      if (isNew) {
+        if (request.state.friend) {
+          User.findOne({ referral_id: request.state.friend }, function(err, friend_user) {
             if (err) return done(Boom.wrap(err, 500))
+            if (!friend_user) return done(null, user, isNew) // if the friend doesnt exist, just create a new account
 
-            return done(null, user);
+            friend_user.friends.push(user._id);
+            user.friend = friend_user._id;
+
+            friend_user.save(function(err) {
+              if (err) return done(Boom.wrap(err, 500))
+              return done(null, user, isNew);
+            })
           })
+        } else {
+          return done(null, user, isNew)
+        }
+      } else {
+        return done(null, user, isNew)
+      }
+    }, function(user, isNew, done) {
+      if (isNew) {
+        user.token = request.auth.credentials.token;
+        user.save(function(err) {
+          if (err) return reply(Boom.wrap(err, 500))
+          request.auth.session.set(user);
+          return reply.redirect('/register/finish').unstate('friend');
         })
       } else {
-        return done(null, user)
+        return reply.redirect('/facebook/login')
       }
-    }, function(user, done) {
-      user.token = request.auth.credentials.token;
-      user.save(function(err) {
-        if (err) return reply(Boom.wrap(err, 500))
-        request.auth.session.set(user);
-        return reply.redirect('/thankyou').unstate('friend');
-      })
     }
   ])
 }
@@ -318,6 +395,8 @@ module.exports = {
     createPost: createPostAdmin
   },
   User: {
+    stripeRegister: registerWithStripe,
+    facebookRegister: registerFacebookUser,
     facebookLogin: loginFacebookUser,
     logout: logoutUser
   }

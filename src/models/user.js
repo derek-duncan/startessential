@@ -22,8 +22,12 @@ var UserSchema = new Schema({
   facebook_connected: {type: Boolean, default: false},
   facebook_id: String,
   token: String,
+  stripe: {
+    id: String,
+    subscription: { type: String, default: 'basic' },
+  },
   password_set: {type: Boolean, default: false},
-  scope: {type: String, default: 'user'}
+  scope: {type: String, default: 'pre_authenticated'}
 });
 
 UserSchema.pre('save', function(next) {

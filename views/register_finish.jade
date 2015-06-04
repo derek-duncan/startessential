@@ -1,0 +1,14 @@
+extends templates/register
+block body
+  .details
+  .pay
+    form(action="/register/finish" method="POST")
+      script(
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="pk_test_QSKUtc94PM7XpNBHBmC3LyLA"
+        data-amount="500"
+        data-name="Start Essential"
+        data-description="5 Downloads/Month ($5.00)"
+        data-image="/images/me.jpg"
+        data-allowRememberMe='false'
+        data-email='#{email}')

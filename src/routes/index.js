@@ -2,6 +2,9 @@ exports.register = function(server, options, next) {
   server.route({
     method: 'GET',
     path: '/',
+    config: {
+      auth: false
+    },
     handler: function (request, reply) {
       //var switchReq = _getRandomInt(0, 1);
       //if (switchReq) {
@@ -20,6 +23,9 @@ exports.register = function(server, options, next) {
   server.route({
     method: 'GET',
     path: '/v2',
+    config: {
+      auth: false
+    },
     handler: function (request, reply) {
       reply.view('index', {
         title: 'Everything you need to grow your Essential Oil business',
@@ -31,6 +37,9 @@ exports.register = function(server, options, next) {
   server.route({
     method: 'GET',
     path: '/thankyou',
+    config: {
+      auth: false
+    },
     handler: function (request, reply) {
       reply.view('thankyou', {
         title: 'Thank you for joining Start Essential!'
@@ -39,16 +48,34 @@ exports.register = function(server, options, next) {
   })
   server.route({
     method: 'GET',
-    path: '/register',
+    path: '/login',
+    config: {
+      auth: false
+    },
     handler: function (request, reply) {
-      reply.view('register', {
-        title: 'Register for Start Essential'
+      reply.view('login', {
+        title: 'Login to Start Essential'
       });
     }
   })
   server.route({
     method: 'GET',
+    path: '/register',
+    config: {
+      auth: false
+    },
+    handler: function (request, reply) {
+      reply.view('register', {
+        title: 'Register for Start Essential'
+      }).state('se_member_number', request.query.se_member_number);
+    }
+  })
+  server.route({
+    method: 'GET',
     path: '/{param*}',
+    config: {
+      auth: false
+    },
     handler: {
       directory: {
         path: 'assets'

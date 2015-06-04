@@ -1,0 +1,21 @@
+#register {
+  text-align: center;
+
+  .main {
+    padding-bottom: 40px;
+  }
+
+  .fb-login {
+    display: inline-block;
+    padding: 15px 25px;
+    background: #4A659F;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 140%;
+    &:hover {
+      background: lighten(#4A659F, 10%);
+    }
+  }
+
+}
