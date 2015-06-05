@@ -89,7 +89,7 @@
       .title {
         font-size: 200%;
         font-weight: 300;
-        margin-top: 0;
+        margin: 0;
       }
       .details {
         margin: 20px 0 0;
@@ -106,7 +106,7 @@
       background: #f9f9f9;
     }
     .post {
-      width: 40%;
+      width: 60%;
       margin: 0 auto;
       margin-top: -90px;
       border-radius: 5px;
@@ -130,7 +130,7 @@
         }
         .daily-title {
           margin: 0;
-          font: 140% 'Museo Slab';
+          font: 160% 'Museo Slab';
           color: #194e64;
           flex: 1;
         }
@@ -144,7 +144,7 @@
             text-decoration: none;
             display: inline-block;
             padding: 10px 15px;
-            background: #43609C;
+            background: $btn-blue;
             color: #fff;
             border-radius: 5px;
             font-weight: 600;
@@ -152,7 +152,7 @@
               padding: 5px 15px;
             }
             &:hover {
-              background: darken(#43609C, 10%);
+              background: darken($btn-blue, 10%);
             }
           }
         }
@@ -257,11 +257,13 @@
         font-size: 140%;
         font-weight: 600;
         text-decoration: none;
-        background: #43609C;
+        background: $btn-blue;
         color: #fff;
         border-radius: 5px;
+        -webkit-appearance: none;
+        border: none;
         &:hover {
-          background: darken(#43609C, 10%);
+          background: darken($btn-blue, 10%);
         }
       }
     }

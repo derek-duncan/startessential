@@ -1033,7 +1033,7 @@ body {
     #post .main .intro .title {
       font-size: 200%;
       font-weight: 300;
-      margin-top: 0; }
+      margin: 0; }
     #post .main .intro .details {
       margin: 20px 0 0;
       font-size: 120%;
@@ -1045,7 +1045,7 @@ body {
     padding: 40px 0;
     background: #f9f9f9; }
   #post .main .post {
-    width: 40%;
+    width: 60%;
     margin: 0 auto;
     margin-top: -90px;
     border-radius: 5px; }
@@ -1081,7 +1081,7 @@ body {
           padding: 15px 0; } }
       #post .main .post .post-header .daily-title {
         margin: 0;
-        font: 140% 'Museo Slab';
+        font: 160% 'Museo Slab';
         color: #194e64;
         -webkit-box-flex: 1;
         -webkit-flex: 1;
@@ -1097,7 +1097,7 @@ body {
           text-decoration: none;
           display: inline-block;
           padding: 10px 15px;
-          background: #43609C;
+          background: #4A90E2;
           color: #fff;
           border-radius: 5px;
           font-weight: 600; }
@@ -1105,7 +1105,7 @@ body {
             #post .main .post .post-header .post-now a {
               padding: 5px 15px; } }
           #post .main .post .post-header .post-now a:hover {
-            background: #344a78; }
+            background: #2275d7; }
     #post .main .post .post-content {
       box-sizing: border-box;
       background: #fff;
@@ -1200,11 +1200,13 @@ body {
       font-size: 140%;
       font-weight: 600;
       text-decoration: none;
-      background: #43609C;
+      background: #4A90E2;
       color: #fff;
-      border-radius: 5px; }
+      border-radius: 5px;
+      -webkit-appearance: none;
+      border: none; }
       #post .final .cta .post-now:hover {
-        background: #344a78; }
+        background: #2275d7; }
 
 #posts .header {
   width: 100%;
