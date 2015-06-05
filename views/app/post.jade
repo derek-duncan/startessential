@@ -47,9 +47,13 @@ block body
       section.final
         .final-content
           h3.title Customize and Post
-          .tagline Enter your member number so we can create your distributor link
+          .tagline
+            if user.member_number
+              | Your member number is listed below. Feel free to update this in the settings if this has changed.
+            else
+              | Enter your member number so we can create your distributor link
           form(method='POST' action='/publish/#{post._id}')
-            input.member-number(name='memberNumber' type='text' placeholder='(Optional) Young Living member number' value='#{user.member_number ? user.member_number : ""}')
+            input.member-number(name='memberNumber' type='text' placeholder='(Optional) Young Living member number' disabled=(user.member_number ? 'disabled' : undefined) value='#{user.member_number ? user.member_number : ""}')
             .cta
               button.post-now(type='submit')
                 if user_exists

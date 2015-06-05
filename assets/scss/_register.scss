@@ -1,20 +1,141 @@
+$maxWidth: 50%;
+$maxWidthMobile: 90%;
+
+@mixin contentWidth() {
+  max-width: $maxWidth;
+  margin: 0 auto;
+  @media (max-width: $phone) {
+    max-width: $maxWidthMobile;
+  }
+}
+
 #register {
-  text-align: center;
+  text-align: left;
+
+  .header {
+    .header-inner {
+      @include contentWidth();
+    }
+    .logo {
+      img {
+        max-width: 140px;
+      }
+    }
+  }
 
   .main {
     padding-bottom: 40px;
   }
 
-  .fb-login {
-    display: inline-block;
-    padding: 15px 25px;
-    background: #4A659F;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 140%;
-    &:hover {
-      background: lighten(#4A659F, 10%);
+  .message {
+    @include contentWidth();
+    margin: 20px auto;
+
+    color: $red;
+    border: 1px solid $red;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .details {
+    .number {
+      background: #ECECEC;
+      margin: 0 0 20px;
+      .number-inner {
+        padding: 10px 0;
+        color: #A4A4A4;
+        @include contentWidth();
+      }
+      .number-label {
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin: 0 0 5px;
+      }
+      .number-data {
+        font: monospace 12px;
+        margin: 0;
+      }
+    }
+    .copy {
+      @include contentWidth();
+      margin: 40px auto;
+      font-size: 140%;
+      text-align: left;
+    }
+  }
+
+  .register {
+    text-align: left;
+    @include contentWidth();
+    .fb-login {
+      display: inline-block;
+      padding: 15px 25px;
+      background: #4A659F;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 140%;
+      &:hover {
+        background: lighten(#4A659F, 10%);
+      }
+    }
+  }
+
+  // Plans
+
+  .plans {
+    @include contentWidth();
+    padding-left: 30px;
+    box-sizing: border-box;
+    border-left: 5px solid $red;
+
+    .plan {
+      font-size: 100%;
+      text-align: left;
+      width: 50%;
+      box-sizing: border-box;
+      position: relative;
+      padding: 10px 0;
+      .plan-banner {
+        color: #A5C7AC;
+        width: 100%;
+        background: #fff;
+        font-weight: 500;
+        font-size: 130%;
+        margin-bottom: 10px;
+      }
+      .plan-name {
+        font-size: 260%;
+        margin: 0;
+      }
+      .plan-features {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+        .plan-feature {
+          font-size: 140%;
+          font-weight: 500;
+          color: #747474;
+          margin: 15px 0;
+        }
+      }
+      .plan-tagline {
+        font-size: 220%;
+        font-family: 'Claire Hand';
+        color: $red;
+        margin: 30px 0 20px;
+      }
+      form {
+        margin: 0;
+      }
+      .plan-secure {
+        margin: 20px 0 0;
+        color: #E0E0E0;
+        .secure-text {
+          padding-left: 5px;
+        }
+      }
     }
   }
 

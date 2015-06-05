@@ -241,6 +241,10 @@
       @media (max-width: $phone) {
         width: 100%;
       }
+      &:disabled {
+        background: #eee;
+        color: #aaa;
+      }
       &:focus {
         border-color: #aaa;
       }

@@ -50,10 +50,16 @@ exports.register = function(server, options, next) {
     method: 'GET',
     path: '/login',
     config: {
-      auth: false
+      auth: {
+        strategy: 'session',
+        mode: 'try'
+      }
     },
     handler: function (request, reply) {
-      reply.view('login', {
+      if (request.auth.isAuthenticated && request.state.sid.scope !== 'pre_authenticated') {
+        return reply.redirect('/posts')
+      }
+      return reply.view('login', {
         title: 'Login to Start Essential'
       });
     }

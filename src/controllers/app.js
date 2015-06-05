@@ -245,12 +245,14 @@ function loginFacebookUser(request, reply) {
 
   async.waterfall([
     function(done) {
-      User.findOne({ _id: request.state.sid._id }, function(err, user) {
+      User.findOne({ facebook_id: profile.id }, function(err, user) {
         if (err) return reply(Boom.badImplementation())
         if (!user) return reply.redirect('/register?message=' + encodeURIComponent('You are not registered'))
 
+        request.auth.session.set(user);
+
         if (user.scope === 'pre_authenticated') {
-          return reply.redirect('/register/finish?message=' + encodeURIComponent('You need to fix this'))
+          return reply.redirect('/register/finish?message=' + encodeURIComponent('Please add payment information'))
         }
         return done(null)
       })

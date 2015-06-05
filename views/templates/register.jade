@@ -8,10 +8,11 @@ html
   body
     #register
       header.header
-        div.header-top.cf
+        div.header-inner.cf
           h1.logo
             img(src='/images/logo-color.png' alt='Start Essential resources logo' width='300')
       main.main
-        | #{message}
+        if message
+          .message #{message}
         block body
     include _footer.jade

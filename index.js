@@ -54,6 +54,10 @@ server.ext('onPreResponse', function(request, reply) {
       }
     });
 
+    if (request.state.sid) {
+      context.sid = request.state.sid;
+    }
+
     // Add Message to Jade templates
     var validator = require('validator');
     var queryMessage = request.query.message;

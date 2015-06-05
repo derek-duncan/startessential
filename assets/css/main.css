@@ -389,19 +389,29 @@ body {
         width: 40%; } }
     #front .header-top h1.logo img {
       width: 100%; }
-  #front .header-top a.cta-top {
-    margin-top: 15px;
-    padding: 10px 20px;
+  #front .header-top .header-actions {
     float: right;
+    margin-top: 20px; }
+  #front .header-top a.cta-top, #front .header-top a.login-top {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 10px 20px;
     background: #FF8F8F;
     color: #fff;
     text-decoration: none;
-    font-weight: 600; }
+    font-weight: 600;
+    border: 1px solid #FF8F8F; }
     @media (max-width: 520px) {
-      #front .header-top a.cta-top {
+      #front .header-top a.cta-top, #front .header-top a.login-top {
         margin-top: 10px; } }
-    #front .header-top a.cta-top:hover {
+    #front .header-top a.cta-top:hover, #front .header-top a.login-top:hover {
       background: #ff5c5c; }
+  #front .header-top a.login-top {
+    background: transparent;
+    color: #FF8F8F; }
+    #front .header-top a.login-top:hover {
+      background: #FF8F8F;
+      color: #fff; }
 
 #front .header-middle {
   clear: both;
@@ -572,6 +582,8 @@ body {
   padding: 70px 0 100px;
   background: #fffff6;
   text-align: center; }
+  #front section.join.logged {
+    padding: 70px 0; }
   #front section.join .join-icon {
     max-width: 80px;
     margin-bottom: 20px; }
@@ -583,7 +595,7 @@ body {
       #front section.join .join-sub_head {
         max-width: 60%; } }
   #front section.join .join-desc {
-    max-width: 60%;
+    max-width: 40%;
     margin: 40px auto;
     font-size: 120%;
     color: #7D7D7D; }
@@ -603,6 +615,28 @@ body {
     @media (max-width: 520px) {
       #front section.join .join-form {
         width: 80%; } }
+    #front section.join .join-form p.join-sample-link {
+      position: absolute;
+      left: 100%;
+      text-align: left;
+      margin: 0;
+      margin-left: 40px;
+      top: 0;
+      padding: 15px;
+      font-size: 80%;
+      color: #333;
+      overflow: hidden;
+      -webkit-transition: all 0.3s;
+              transition: all 0.3s;
+      opacity: 0;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid #ccc; }
+      #front section.join .join-form p.join-sample-link a {
+        display: block;
+        margin: 7px 0;
+        color: #FF8F8F; }
+      #front section.join .join-form p.join-sample-link.show {
+        opacity: 1; }
     #front section.join .join-form input.join-input {
       padding: 20px;
       box-sizing: border-box;
@@ -641,6 +675,17 @@ body {
     @media (max-width: 520px) {
       #front section.join .facebook-explain {
         width: 80%; } }
+  #front section.join .login-button {
+    padding: 10px 20px;
+    border: 1px solid #FF8F8F;
+    border-radius: 5px;
+    background: transparent;
+    color: #FF8F8F;
+    font-size: 120%;
+    text-decoration: none; }
+    #front section.join .login-button:hover {
+      background: #FF8F8F;
+      color: #fff; }
 
 .footer {
   background: #f9f9f9; }
@@ -1142,6 +1187,9 @@ body {
     @media (max-width: 520px) {
       #post .final .member-number {
         width: 100%; } }
+    #post .final .member-number:disabled {
+      background: #eee;
+      color: #aaa; }
     #post .final .member-number:focus {
       border-color: #aaa; }
   #post .final .cta {
@@ -1296,16 +1344,117 @@ body {
     color: #B1B1B1; }
 
 #register {
-  text-align: center; }
+  text-align: left; }
+  #register .header .header-inner {
+    max-width: 50%;
+    margin: 0 auto; }
+    @media (max-width: 520px) {
+      #register .header .header-inner {
+        max-width: 90%; } }
+  #register .header .logo img {
+    max-width: 140px; }
   #register .main {
     padding-bottom: 40px; }
-  #register .fb-login {
-    display: inline-block;
-    padding: 15px 25px;
-    background: #4A659F;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 140%; }
-    #register .fb-login:hover {
-      background: #657fb7; }
+  #register .message {
+    max-width: 50%;
+    margin: 0 auto;
+    margin: 20px auto;
+    color: #FF8F8F;
+    border: 1px solid #FF8F8F;
+    padding: 10px;
+    box-sizing: border-box; }
+    @media (max-width: 520px) {
+      #register .message {
+        max-width: 90%; } }
+  #register .details .number {
+    background: #ECECEC;
+    margin: 0 0 20px; }
+    #register .details .number .number-inner {
+      padding: 10px 0;
+      color: #A4A4A4;
+      max-width: 50%;
+      margin: 0 auto; }
+      @media (max-width: 520px) {
+        #register .details .number .number-inner {
+          max-width: 90%; } }
+    #register .details .number .number-label {
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin: 0 0 5px; }
+    #register .details .number .number-data {
+      font: monospace 12px;
+      margin: 0; }
+  #register .details .copy {
+    max-width: 50%;
+    margin: 0 auto;
+    margin: 40px auto;
+    font-size: 140%;
+    text-align: left; }
+    @media (max-width: 520px) {
+      #register .details .copy {
+        max-width: 90%; } }
+  #register .register {
+    text-align: left;
+    max-width: 50%;
+    margin: 0 auto; }
+    @media (max-width: 520px) {
+      #register .register {
+        max-width: 90%; } }
+    #register .register .fb-login {
+      display: inline-block;
+      padding: 15px 25px;
+      background: #4A659F;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 140%; }
+      #register .register .fb-login:hover {
+        background: #657fb7; }
+  #register .plans {
+    max-width: 50%;
+    margin: 0 auto;
+    padding-left: 30px;
+    box-sizing: border-box;
+    border-left: 5px solid #FF8F8F; }
+    @media (max-width: 520px) {
+      #register .plans {
+        max-width: 90%; } }
+    #register .plans .plan {
+      font-size: 100%;
+      text-align: left;
+      width: 50%;
+      box-sizing: border-box;
+      position: relative;
+      padding: 10px 0; }
+      #register .plans .plan .plan-banner {
+        color: #A5C7AC;
+        width: 100%;
+        background: #fff;
+        font-weight: 500;
+        font-size: 130%;
+        margin-bottom: 10px; }
+      #register .plans .plan .plan-name {
+        font-size: 260%;
+        margin: 0; }
+      #register .plans .plan .plan-features {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0; }
+        #register .plans .plan .plan-features .plan-feature {
+          font-size: 140%;
+          font-weight: 500;
+          color: #747474;
+          margin: 15px 0; }
+      #register .plans .plan .plan-tagline {
+        font-size: 220%;
+        font-family: 'Claire Hand';
+        color: #FF8F8F;
+        margin: 30px 0 20px; }
+      #register .plans .plan form {
+        margin: 0; }
+      #register .plans .plan .plan-secure {
+        margin: 20px 0 0;
+        color: #E0E0E0; }
+        #register .plans .plan .plan-secure .secure-text {
+          padding-left: 5px; }

@@ -21,6 +21,7 @@ $(function() {
 
     var joinButton = $('.join-submit');
     var joinNumber = $('.join-input');
+    var joinSampleLink = $('.join-sample-link');
 
     joinButton.on('click touchend', submitNumber)
     joinNumber.on('keyup', function(e){
@@ -29,6 +30,14 @@ $(function() {
       }
       if (this.value.length > 7) {
          this.value = this.value.slice(0, -1);
+      }
+      if (this.value.length === 7) {
+        joinSampleLink.addClass('show')
+        var text =
+          'We created a signup link so you can quickly signup people!' +
+          '<a href="/n/'+this.value+'" target="_blank">http://startessential.com/n/'+this.value+'</a>' +
+          'Click <b>Get Started</b> to get access to the rest of Start Essential'
+        joinSampleLink.html(text);
       }
       if (e.keyCode === 13) {
         submitNumber(e);
@@ -43,6 +52,14 @@ $(function() {
       window.location.href = window.location.origin + '/register?se_member_number=' + number;
     }
 
+    function toggleButtonState() {
+      if (joinButton.text().indexOf('Submitting') > -1) {
+        joinButton.text('Step inside');
+      } else {
+        joinButton.text('Submitting...');
+      }
+    }
+
     // GA Events //
     var ctaTop = $('.cta-top');
     var joinSubmit = $('.join-submit');
@@ -53,15 +70,6 @@ $(function() {
     joinSubmit.on('click touchend', function(e) {
       ga('send', 'event', 'button', 'click', 'join submit')
     })
-
-    function toggleButtonState() {
-      if (joinButton.text().indexOf('Submitting') > -1) {
-        joinButton.text('Step inside');
-      } else {
-        joinButton.text('Submitting...');
-      }
-    }
-
   }
 
   if ($('#register').length) {

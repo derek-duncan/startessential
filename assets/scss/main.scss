@@ -58,19 +58,32 @@ body {
         width: 100%;
       }
     }
-    a.cta-top {
-      margin-top: 15px;
-      padding: 10px 20px;
+    .header-actions {
       float: right;
+      margin-top: 20px;
+    }
+    a.cta-top, a.login-top {
+      display: inline-block;
+      margin: 0 5px;
+      padding: 10px 20px;
       background: $red;
       color: #fff;
       text-decoration: none;
       font-weight: 600;
+      border: 1px solid $red;
       @media (max-width: $phone) {
         margin-top: 10px;
       }
       &:hover {
         background: $shade-red;
+      }
+    }
+    a.login-top {
+      background: transparent;
+      color: $red;
+      &:hover {
+        background: $red;
+        color: #fff;
       }
     }
   }
@@ -274,6 +287,9 @@ body {
     padding: 70px 0 100px;
     background: lighten(#FFFEE7, 3%);
     text-align: center;
+    &.logged {
+      padding: 70px 0;
+    }
     .join-icon {
       max-width: 80px;
       margin-bottom: 20px;
@@ -289,7 +305,7 @@ body {
       }
     }
     .join-desc {
-      max-width: $content-width;
+      max-width: 40%;
       margin: 40px auto;
       font-size: 120%;
       color: $gray;
@@ -309,6 +325,30 @@ body {
       }
       @media (max-width: $phone) {
         width: 80%;
+      }
+      p.join-sample-link {
+        position: absolute;
+        left: 100%;
+        text-align: left;
+        margin: 0;
+        margin-left: 40px;
+        top: 0;
+        padding: 15px;
+        font-size: 80%;
+        color: #333;
+        overflow: hidden;
+        transition: all 0.3s;
+        opacity: 0;
+        background: rgba(255,255,255,0.7);
+        border: 1px solid #ccc;
+        a {
+          display: block;
+          margin: 7px 0;
+          color: $red;
+        }
+        &.show {
+          opacity: 1;
+        }
       }
       input.join-input {
         padding: 20px;
@@ -352,6 +392,19 @@ body {
       margin: 20px auto 0;
       @media (max-width: $phone) {
         width: 80%;
+      }
+    }
+    .login-button {
+      padding: 10px 20px;
+      border: 1px solid $red;
+      border-radius: 5px;
+      background: transparent;
+      color: $red;
+      font-size: 120%;
+      text-decoration: none;
+      &:hover {
+        background: $red;
+        color: #fff;
       }
     }
   }

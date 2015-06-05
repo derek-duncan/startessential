@@ -11,7 +11,9 @@ block body
       div.header-top.cf
         h1.logo
           img(src='/images/logo-color.png' alt='Start Essential resources logo' width='300')
-        a.cta-top(href="#join" title="Join Start Essential for free") Join for free
+        .header-actions
+          a.cta-top(href="#join" title="Join Start Essential") Join now
+          a.login-top(href="/login" title="Login to Start Essential") Login
       div.header-middle.content.cf
         h2 #{header}
         p We design incredible infographics and social media posts so you can use them to grow your business.
@@ -50,15 +52,18 @@ block body
             h3.info-sub_head Save time with our social media calendar
             p.info-desc We know you're incredibly busy, and designing custom images and posts take a really long time! Because of that, we carefully create a Social Media Calender to give you a week-long supply of posts and images. Just copy and paste!
 
-    section.join
-      img.join-icon(src='/images/join_icon.png' width='100' alt='Request an invitation icon')
-      .join-content#join
-        h2.join-sub_head Sign up and receive FREE daily infographics and Facbook posts
-        p.join-desc Start Essential is still growing and is only available to beta members. If you would like to get free access to all this valuable content and help Start Essential grow, you just need your email address! <b>Sign up below to join</b> and be one of the first to use Start Essential.
-        p.join-msg
-         .join-form
-           input.join-input(type='text' maxlength='7' placeholder='Your Young Living member number')
-           button.join-submit(type='submit') Get Started
+    section.join(class=(sid ? 'logged' : undefined))
+      if sid
+        a.login-button(href='/login') Login to your account
+      else
+        img.join-icon(src='/images/join_icon.png' width='100' alt='Request an invitation icon')
+        .join-content#join
+          h2.join-sub_head Are you ready to get access? Get started with just your Young Living distributor number!
+          p.join-desc Enter your Young Living distributor number below. We'll use this to customize <b>ALL</b> the images and content you post from Start Essential. We think it's really cool!
+          .join-form
+            p.join-sample-link
+            input.join-input(type='text' maxlength='7' placeholder='Your Young Living member number')
+            button.join-submit(type='submit') Get Started
 block scripts
   script.
     ga('set', {

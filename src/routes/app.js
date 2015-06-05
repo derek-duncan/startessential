@@ -56,6 +56,23 @@ exports.register = function(server, options, next) {
 
   server.route({
     method: 'GET',
+    path: '/n/{number}',
+    config: {
+      auth: false,
+      validate: {
+        params: {
+          number: Joi.string().min(7).max(7)
+        }
+      }
+    },
+    handler: function(request, reply) {
+      var number = request.params.number;
+      reply.redirect('https://www.youngliving.com/signup/?site=US&sponsorid='+number+'&enrollerid='+number)
+    }
+  })
+
+  server.route({
+    method: 'GET',
     path: '/posts',
     config: {
       auth: {
@@ -72,7 +89,6 @@ exports.register = function(server, options, next) {
     config: {
       auth: {
         strategy: 'session',
-        mode: 'try',
         scope: ['authenticated'],
       },
       validate: {
