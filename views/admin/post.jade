@@ -33,6 +33,9 @@ block body
       img.post-img(width='150' src='#{post.image_url}')
       input.post-file(type='file' name='image')
     div.form-section
+      label Featured
+      input(type='checkbox' name='featured' checked=post.featured)
+    div.form-section
       label Generate new share link
       input(type='checkbox' name='new_share_token')
     div.form-section

@@ -21,7 +21,8 @@ var PostSchema = new Schema({
   date_created: {type: Date, default: moment},
   date_formatted: {type: String},
   url: {type: String},
-  token: {type: String}
+  token: {type: String},
+  featured: {type: Boolean, default: false}
 });
 
 PostSchema.pre('save', function(next) {

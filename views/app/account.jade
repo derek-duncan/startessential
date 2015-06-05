@@ -1,0 +1,17 @@
+extends ../templates/layout.jade
+block body
+  div#account
+    include ../templates/_header
+    main.main
+      h2.page-title Account Settings
+      .settings
+        form.settings-form(action='/account/settings' method='POST')
+          input(type='hidden' name='_id' value=user._id)
+          .input-group
+            label Member Number
+            input(type='text' maxlength='7' name='memberNumber' value=user.member_number)
+          .input-group
+            label Email
+            input(type='text' name='email' value=user.email)
+          .input-group
+            button(type='submit') Save

@@ -1,0 +1,13 @@
+header.header
+  .header-content
+    .logo-wrap
+      a(href='/' title='Start Essential Logo')
+        img.logo(src='/images/logo-white.png' width='200')
+    nav.nav
+      ul.nav-list
+        li.nav-item 
+          a(class=(active === 'explore' ? 'active' : undefined) href='/posts') Explore
+        li.nav-item 
+          a(class=(active === 'account' ? 'active' : undefined) href='/account') Account
+        li.nav-item 
+          a(href='/logout') Logout

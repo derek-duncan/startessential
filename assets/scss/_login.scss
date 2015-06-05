@@ -1,0 +1,18 @@
+#login {
+  @import "header";
+  text-align: center;
+  .login-button {
+    font-size: 130%;
+    padding: 15px 25px;
+    background: $btn-blue;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 30px;
+    &:hover {
+      background: darken($btn-blue, 10%)
+    }
+  }
+}

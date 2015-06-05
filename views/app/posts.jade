@@ -10,32 +10,40 @@ block head
   script(src='/js/build/moment.js')
 
 block body
-  div#posts.posts
-    header.header
-      .header-content
-        .logo-wrap
-          a(href='/' title='Start Essential Logo')
-            img.logo(src='/images/logo-white.png' width='200')
-        .search-wrap
-          input.search(type='text' placeholder='Search for anything...')
-        nav.nav
-          ul.nav-list
-            li.nav-item 
-              a(href='') Explore
-            li.nav-item 
-              a(href='') Explore
-            li.nav-item 
-              a(href='/logout') Logout
+  div#posts
+    include ../templates/_header
     main.main
+      .post-featured
+        .post-featured-inner.cf
+          p.post-featured-label Daily Infographic
+          .post-featured-image-wrap
+            img(src=featured.image_url)
+          .post-featured-details
+            h4.details-title=featured.title
+            p.details-content=featured.content
+            a.details-link(href=featured.url) View Graphic
+            a.details-save(href=featured.url) Save
       .main-content
-        for post in posts
-          .post
-            a(href='#{post.url}' title='#{post.title}')
-              .post-image-wrap
-                img.post-image(src='#{post.image_url}' width='300')
-              .post-info
-                h4.post-title #{post.title}
-                .post-tags
-                  span.post-day #{post.category}
-                  span &nbsp;|&nbsp;
-                  span.post-date #{fromDate(post.date_created)}
+        .posts
+          h4.posts-title Recent graphics
+          .posts-recent
+            for post in posts
+              +postBlock(post)
+          .posts-catories
+            each category, key in categories
+              h4.posts-title=key
+              for post in category
+                +postBlock(post)
+mixin postBlock(post)
+  .post
+    .post-image-wrap
+      img.post-image(src='#{post.image_url}' width='300')
+    a(href='#{post.url}' title='#{post.title}')
+      .post-info
+        h4.post-title #{post.title}
+        .post-tags
+          span.post-day #{post.category}
+          span &nbsp;|&nbsp;
+          span.post-date #{fromDate(post.date_created)}
+        .post-actions
+          a.post-link(href=post.url title=post.title) View graphic 

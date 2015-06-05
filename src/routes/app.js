@@ -80,7 +80,7 @@ exports.register = function(server, options, next) {
         scope: ['authenticated']
       }
     },
-    handler: AppCtrl.Post.findAll
+    handler: AppCtrl.Post.allPosts
   })
 
   server.route({
@@ -127,6 +127,32 @@ exports.register = function(server, options, next) {
       auth: 'session'
     },
     handler: AppCtrl.User.stripeRegister
+  })
+
+  // User
+
+  server.route({
+    method: 'GET',
+    path: '/account',
+    handler: AppCtrl.User.accountView
+  })
+  server.route({
+    method: 'POST',
+    path: '/account/settings',
+    config: {
+      auth: {
+        strategy: 'session',
+        scope: ['authenticated']
+      },
+      validate: {
+        payload: {
+          _id: Joi.any(),
+          memberNumber: Joi.string().min(7).max(7),
+          email: Joi.string().email()
+        }
+      }
+    },
+    handler: AppCtrl.User.accountSettings
   })
 
   // Admin
@@ -216,7 +242,8 @@ exports.register = function(server, options, next) {
           content: Joi.string(),
           category: Joi.string(),
           day: Joi.string(),
-          image: Joi.any()
+          image: Joi.any(),
+          featured: Joi.any()
         }
       }
     },

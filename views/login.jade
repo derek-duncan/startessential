@@ -1,3 +1,5 @@
 extends templates/layout
 block body
-  a(href='/facebook/login') Login to Facebook
+  #login
+    include templates/_header
+    a.login-button(href='/facebook/login') Login with Facebook

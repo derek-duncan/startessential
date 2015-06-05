@@ -9,6 +9,10 @@ var auth = {
   }
 }
 
+var api_key = auth.auth.api_key;
+var domain = auth.auth.domain;
+var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
+
 var nodemailerMailgun = nodemailer.createTransport(mg(auth));
 
 function sendEmail(email, done) {
@@ -28,10 +32,6 @@ function sendEmail(email, done) {
 }
 
 function saveToList(user, done) {
-  var api_key = auth.auth.api_key;
-  var domain = auth.auth.domain;
-  var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
-
   user.email = user.email || '';
   user.name = user.name || '';
 
@@ -49,7 +49,19 @@ function saveToList(user, done) {
   });
 }
 
+function updateEmailInList(oldAddress, newAddress, done) {
+  var list = mailgun.lists('mail@startessential.com');
+
+  list.members(oldAddress).update({email: newAddress}, function (err, res) {
+    if (done) {
+      if (err) return done(err)
+      return done(null);
+    }
+  });
+}
+
 module.exports = {
   send: sendEmail,
-  save: saveToList
+  save: saveToList,
+  update: updateEmailInList
 }

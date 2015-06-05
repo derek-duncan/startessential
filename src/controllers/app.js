@@ -9,6 +9,7 @@ var moment = require('moment');
 var uploader = require('../util/uploader');
 var Email = require('../util/email');
 var Request = require('request');
+var Constants = require('../constants');
 
 function findPost(request, reply) {
   var params = request.params;
@@ -72,6 +73,91 @@ function findAllPosts(request, reply) {
   })
 }
 
+function allPostsView(request, reply) {
+  async.waterfall([
+    function(done) {
+      async.parallel({
+        posts: function(done) {
+          Post.find({}, function(err, posts) {
+            if (err) return done(Boom.wrap(err, 500))
+            return done(null, posts)
+          })
+        },
+        featured: function(done) {
+          Post.findOne({ featured: true }, function(err, featured) {
+            if (err) return done(Boom.badImplementation('', err))
+            return done(null, featured)
+          })
+        }
+      }, done)
+    }, function(results, done) {
+      async.each(Constants.CATEGORIES, function(category, done) {
+        Post.find({category: category}).limit(3).exec(function(err, posts) {
+          var obj = {}
+          obj[category] = posts;
+          results.categories = results.categories || {};
+          _.extend(results.categories, obj)
+          return done()
+        })
+      }, function(err) {
+        return done(null, results)
+      })
+    }
+  ], function(err, results) {
+    if (err) reply(err)
+    reply.view('app/posts', {
+      featured: results.featured,
+      posts: results.posts,
+      categories: results.categories,
+      active: 'explore'
+    })
+  })
+}
+
+function accountViewUser(request, reply) {
+  User.findOne({_id: request.state.sid._id}, function(err, user) {
+    if (err || !user) return reply(Boom.forbidden());
+    return reply.view('app/account', {
+      title: 'Your Start Essential Account',
+      user: user,
+      active: 'account'
+    });
+  })
+}
+
+function accountSettingsUser(request, reply) {
+  if (request.state.sid._id === request.payload._id) {
+    async.waterfall([
+      function(done) {
+        // This may possibly save before all the db requests finish
+        User.findOne({ _id: request.payload._id }, function(err, user) {
+          if (err) return done(Boom.badImplementation('', err))
+          if (!user) return done(Boom.forbidden())
+          user.member_number = request.payload.memberNumber;
+
+          if (user.email !== request.payload.email) {
+            User.findOne({email: request.payload.email}, function(err, userExists) {
+              if (userExists) {
+                return done(Boom.conflict('That email address is already registered'))
+              }
+              Email.update(user.email, request.payload.email);
+              user.email = request.payload.email;
+              return done(null, user)
+            })
+          }
+          return done(null, user)
+        })
+      }
+    ], function(err, user) {
+      user.save(function() {
+        return reply.redirect('/account')
+      })
+    })
+  } else {
+    return reply(Boom.forbidden())
+  }
+}
+
 function findAllPostsAdmin(request, reply) {
   async.waterfall([
     function(done) {
@@ -118,6 +204,7 @@ function updatePostAdmin(request, reply) {
         post.category = request.payload.category;
         post.day = request.payload.day;
         post.new_share_token = request.payload.new_share_token === 'on' ? true : false;
+        post.featured = request.payload.featured === 'on' ? true : false
         return done(null, post)
       })
     }, function(post, done) {
@@ -149,7 +236,8 @@ function createPostAdmin(request, reply) {
         title: request.payload.title,
         content: request.payload.content,
         category: request.payload.category,
-        day: request.payload.day
+        day: request.payload.day,
+        featured: request.payload.featured === 'on' ? true : false
       })
       uploader.image(request.payload.image, post.date_created, function(err, image_url) {
         if (err) return done(Boom.wrap(err, 500))
@@ -387,7 +475,8 @@ module.exports = {
   Post: {
     find: findPost,
     findAll: findAllPosts,
-    publishToFacebook: publishToFacebook
+    publishToFacebook: publishToFacebook,
+    allPosts: allPostsView
   },
   Admin: {
     index: indexAdmin,
@@ -400,6 +489,8 @@ module.exports = {
     stripeRegister: registerWithStripe,
     facebookRegister: registerFacebookUser,
     facebookLogin: loginFacebookUser,
-    logout: logoutUser
+    logout: logoutUser,
+    accountView: accountViewUser,
+    accountSettings: accountSettingsUser
   }
 }

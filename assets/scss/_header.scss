@@ -1,0 +1,78 @@
+.header {
+  width: 100%;
+  background: $red;
+  .header-content {
+    padding: 15px 0;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: $phone) {
+      flex-flow: column wrap;
+      justify-content: center;
+      & > * {
+        margin: 5px 0;
+      }
+    }
+  }
+  .logo-wrap {
+    align-self: flex-start;
+    @media (max-width: $phone) {
+      margin-bottom: 15px;
+      align-self: auto;
+    }
+    img.logo {
+      width: 150px;
+      height: auto;
+    }
+  }
+  .search-wrap {
+    width: 20%;
+    @media (max-width: $phone) {
+      width: 100%;
+    }
+    .search {
+      -webkit-appearance: none;
+      padding: 15px 20px;
+      border-radius: 40px;
+      border: none;
+      text-align: center;
+      box-sizing: border-box;
+      width: 100%;
+      outline: none;
+    }
+  }
+  .nav {
+    ul.nav-list {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    li.nav-item {
+      display: inline-block;
+      margin: 0 10px;
+      vertical-align: middle;
+      color: #fff;
+      font-size: 130%;
+      font-weight: 400;
+      @media (max-width: $phone) {
+        width: 50%;
+        padding: 10px;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+        &.active {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
