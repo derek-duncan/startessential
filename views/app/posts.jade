@@ -13,17 +13,18 @@ block body
   div#posts
     include ../templates/_header
     main.main
-      .post-featured
-        .post-featured-inner.cf
-          p.post-featured-label Daily Infographic
-          .post-featured-image-wrap
-            img(src=featured.image_url)
-          .post-featured-details
-            h4.details-title=featured.title
-            p.details-category=featured.category
-            p.details-content=featured.content
-            a.details-link(href=featured.url) View Graphic
-            a.details-save(href=featured.url) Save
+      if featured
+        .post-featured
+          .post-featured-inner.cf
+            p.post-featured-label Daily Infographic
+            .post-featured-image-wrap
+              img(src=featured.image_url)
+            .post-featured-details
+              h4.details-title=featured.title
+              p.details-category=featured.category
+              p.details-content=featured.content
+              a.details-link(href=featured.url) View Graphic
+              a.details-save(href=featured.url) Save
       .main-content
         .posts
           h4.posts-title Recent graphics
