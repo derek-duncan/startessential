@@ -114,7 +114,7 @@ server.register(require('hapi-auth-cookie'), function (err) {
           })
         } else if (user.scope === 'pre_authenticated') {
           return callback(null, true, {
-            scope: 'pre_authenticated'
+            scope: ['pre_authenticated', 'admin']
           })
         } else {
           return callback(null, true, {
