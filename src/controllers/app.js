@@ -10,6 +10,7 @@ var uploader = require('../util/uploader');
 var Email = require('../util/email');
 var Request = require('request');
 var Constants = require('../constants');
+var stripe = require('stripe')('sk_test_8T9RioM6rUcrweVcJ0VluRyG');
 
 function findPost(request, reply) {
   var params = request.params;
@@ -158,6 +159,20 @@ function accountSettingsUser(request, reply) {
   }
 }
 
+function accountRemoveUser(request, reply) {
+  User.findOne({_id: request.payload._id}, function(err, user) {
+    if (err || !user) return reply(Boom.forbidden());
+    user.deleted = true;
+    user.scope = 'pre_authorized';
+    Email.remove(user.email, function(err) {
+    })
+    stripe.customers.del(user.stripe.id);
+    user.save(function() {
+      return reply.redirect('/logout');
+    })
+  })
+}
+
 function findAllPostsAdmin(request, reply) {
   async.waterfall([
     function(done) {
@@ -205,13 +220,15 @@ function updatePostAdmin(request, reply) {
         post.day = request.payload.day;
         post.new_share_token = request.payload.new_share_token === 'on' ? true : false;
         post.featured = request.payload.featured === 'on' ? true : false
+
         return done(null, post)
       })
     }, function(post, done) {
       if (request.payload.image.hapi.filename.length) {
-        uploader.image(request.payload.image, post.date_formatted, function(err, image_url) {
+        uploader.image(request.payload.image, request.payload.image.hapi.filename, post.date_formatted, function(err, details) {
           if (err) return done(err)
-          post.image_url = image_url
+          post.image_url = details.Location
+          post.image_key = details.Key
           return done(null, post)
         })
       } else {
@@ -239,9 +256,10 @@ function createPostAdmin(request, reply) {
         day: request.payload.day,
         featured: request.payload.featured === 'on' ? true : false
       })
-      uploader.image(request.payload.image, post.date_created, function(err, image_url) {
+      uploader.image(request.payload.image, request.payload.image.hapi.filename, post.date_formatted, function(err, details) {
         if (err) return done(Boom.wrap(err, 500))
-        post.image_url = image_url
+        post.image_url = details.Location
+        post.image_key = details.Key
         return done(null, post)
       })
     },
@@ -288,7 +306,6 @@ function registerWithStripe(request, reply) {
     });
   }
   if (request.method === 'post') {
-    var stripe = require('stripe')('sk_test_8T9RioM6rUcrweVcJ0VluRyG');
 
     User.findOne({ _id: request.state.sid._id }, function(err, user) {
       if (err) return reply(Boom.wrap(err, 500))
@@ -320,6 +337,7 @@ function registerWithStripe(request, reply) {
         user.stripe.id = customer.id;
         user.stripe.subscription = customer.subscriptions.data[0].plan.id
         user.scope = 'authenticated';
+        user.deleted = false; // just incase they are reactivating their account
         user.save()
         return reply.redirect('/posts')
       })
@@ -491,6 +509,7 @@ module.exports = {
     facebookLogin: loginFacebookUser,
     logout: logoutUser,
     accountView: accountViewUser,
-    accountSettings: accountSettingsUser
+    accountSettings: accountSettingsUser,
+    accountRemove: accountRemoveUser
   }
 }

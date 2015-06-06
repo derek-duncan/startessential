@@ -191,6 +191,13 @@ if ($('#posts').length) {
   })
 }
 
+if ($('#account').length) {
+  $('.remove-form button').on('click', function(e) {
+    var c = confirm('Are you sure you would like to remove your account to Start Essential?')
+    return c;
+  })
+}
+
 $.extend({
   getQueryParameters : function(str) {
 	  return (str || document.location.search).replace(/(^\?)/,'').split("&").map(function(n){return n = n.split("="),this[n[0]] = n[1],this}.bind({}))[0];

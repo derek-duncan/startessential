@@ -27,12 +27,22 @@ var UserSchema = new Schema({
     subscription: { type: String, default: 'basic' },
   },
   password_set: {type: Boolean, default: false},
-  scope: {type: String, default: 'pre_authenticated'}
+  scope: {type: String, default: 'pre_authenticated'},
+  deleted: {type: Boolean, default: false}
 });
+
+UserSchema.virtual('full_name').get(function () {
+  return this.first_name + ' ' + this.last_name;
+});
+
+UserSchema.virtual('distributor_link').get(function() {
+  return 'http://startessential.com/n/' + this.member_number
+})
 
 UserSchema.pre('save', function(next) {
   var self = this;
   if (self.isNew) {
+    self.updateMemberNumber(self.member_number)
     createReferral(function(id) {
       self.referral_id = id
       next()

@@ -60,8 +60,20 @@ function updateEmailInList(oldAddress, newAddress, done) {
   });
 }
 
+function removeFromEmailList(address, done) {
+  var list = mailgun.lists('mail@startessential.com');
+
+  list.members(address).delete(function(err) {
+    if (done) {
+      if (err) return done(err)
+      return done(null)
+    }
+  })
+}
+
 module.exports = {
   send: sendEmail,
   save: saveToList,
-  update: updateEmailInList
+  update: updateEmailInList,
+  remove: removeFromEmailList
 }

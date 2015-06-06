@@ -15,6 +15,11 @@
     .input-group {
       margin-bottom: 20px;
       font-size: 130%;
+      &.fade {
+        input {
+          background: #f2f2f2;
+        }
+      }
     }
     label {
       display: block;
@@ -47,6 +52,19 @@
       &:hover {
         background: $shade-red;
       }
+    }
+  }
+  .remove-form {
+    margin-top: 40px;
+    button {
+      -webkit-appearance: none;
+      background: none;
+      border: none;
+      box-shadow: none;
+      text-decoration: underline;
+      padding: 0;
+      color: #ccc;
+      outline: none;
     }
   }
 }

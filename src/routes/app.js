@@ -138,6 +138,17 @@ exports.register = function(server, options, next) {
   })
   server.route({
     method: 'POST',
+    path: '/account/remove',
+    handler: AppCtrl.User.accountRemove,
+    config: {
+      auth: {
+        strategy: 'session',
+        scope: ['authenticated']
+      }
+    }
+  })
+  server.route({
+    method: 'POST',
     path: '/account/settings',
     config: {
       auth: {

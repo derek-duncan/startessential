@@ -1366,6 +1366,12 @@ body {
     #posts .main .post-featured .post-featured-details .details-title {
       font-size: 200%;
       margin: 0 0 15px; }
+    #posts .main .post-featured .post-featured-details .details-category {
+      display: inline-block;
+      padding: 5px 10px;
+      border: 1px solid #FF8F8F;
+      color: #FF8F8F;
+      margin: 0; }
     #posts .main .post-featured .post-featured-details .details-content {
       padding: 15px;
       box-sizing: border-box;
@@ -1727,6 +1733,8 @@ body {
   #account .settings .input-group {
     margin-bottom: 20px;
     font-size: 130%; }
+    #account .settings .input-group.fade input {
+      background: #f2f2f2; }
   #account .settings label {
     display: block;
     margin-bottom: 10px;
@@ -1754,6 +1762,18 @@ body {
     font-weight: 600; }
     #account .settings button[type=submit]:hover {
       background: #ff5c5c; }
+
+#account .remove-form {
+  margin-top: 40px; }
+  #account .remove-form button {
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-decoration: underline;
+    padding: 0;
+    color: #ccc;
+    outline: none; }
 
 #login {
   text-align: center; }

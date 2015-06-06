@@ -75,6 +75,13 @@
           font-size: 200%;
           margin: 0 0 15px;
         }
+        .details-category {
+          display: inline-block;
+          padding: 5px 10px;
+          border: 1px solid $red;
+          color: $red;
+          margin: 0;
+        }
         .details-content {
           padding: 15px;
           box-sizing: border-box;

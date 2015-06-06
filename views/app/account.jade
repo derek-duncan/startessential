@@ -5,6 +5,9 @@ block body
     main.main
       h2.page-title Account Settings
       .settings
+        .input-group.fade
+          label Your Distributor Signup Link
+          input(type='text' readonly name='memberNumber' value=user.distributor_link)
         form.settings-form(action='/account/settings' method='POST')
           input(type='hidden' name='_id' value=user._id)
           .input-group
@@ -15,3 +18,7 @@ block body
             input(type='text' name='email' value=user.email)
           .input-group
             button(type='submit') Save
+      .other
+        form.remove-form(action='/account/remove' method='POST')
+          input(type='hidden' name='_id' value=user._id)
+          button(type='submit') Delete Account

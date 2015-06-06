@@ -20,6 +20,7 @@ block body
             img(src=featured.image_url)
           .post-featured-details
             h4.details-title=featured.title
+            p.details-category=featured.category
             p.details-content=featured.content
             a.details-link(href=featured.url) View Graphic
             a.details-save(href=featured.url) Save
@@ -31,9 +32,10 @@ block body
               +postBlock(post)
           .posts-catories
             each category, key in categories
-              h4.posts-title=key
-              for post in category
-                +postBlock(post)
+              if category.length
+                h4.posts-title=key
+                for post in category
+                  +postBlock(post)
 mixin postBlock(post)
   .post
     .post-image-wrap

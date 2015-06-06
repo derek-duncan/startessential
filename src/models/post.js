@@ -11,6 +11,7 @@ var Schema = mongoose.Schema;
 
 var PostSchema = new Schema({
   image_url: {type: String, default: ''},
+  image_key: {type: String},
   day: String,
   title: String,
   content: String,
@@ -24,6 +25,11 @@ var PostSchema = new Schema({
   token: {type: String},
   featured: {type: Boolean, default: false}
 });
+
+PostSchema.methods.customize = function(user_id, done) {
+  var uploader = require('../util/uploader');
+  uploader.customize(this.image_key, user_id, done)
+}
 
 PostSchema.pre('save', function(next) {
   var self = this;
