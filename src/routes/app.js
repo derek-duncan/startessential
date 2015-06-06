@@ -134,7 +134,13 @@ exports.register = function(server, options, next) {
   server.route({
     method: 'GET',
     path: '/account',
-    handler: AppCtrl.User.accountView
+    handler: AppCtrl.User.accountView,
+    config: {
+      auth: {
+        strategy: 'session',
+        scope: ['authenticated']
+      }
+    }
   })
   server.route({
     method: 'POST',
