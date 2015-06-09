@@ -38,7 +38,10 @@ exports.register = function(server, options, next) {
     method: 'GET',
     path: '/thankyou',
     config: {
-      auth: false
+      auth: {
+        strategy: 'session',
+        scope: ['authenticated']
+      }
     },
     handler: function (request, reply) {
       reply.view('thankyou', {

@@ -102,6 +102,56 @@ exports.register = function(server, options, next) {
     handler: AppCtrl.Post.find
   })
 
+  // Save posts
+
+  server.route({
+    method: ['POST'],
+    path: '/posts/{id}/save',
+    config: {
+      auth: {
+        strategy: 'session',
+        scope: ['authenticated'],
+      },
+      validate: {
+        params: {
+          id: Joi.string(),
+        }
+      }
+    },
+    handler: AppCtrl.User.savePost
+  })
+
+  server.route({
+    method: ['POST'],
+    path: '/save/{id}/remove',
+    config: {
+      auth: {
+        strategy: 'session',
+        scope: ['authenticated'],
+      },
+      validate: {
+        params: {
+          id: Joi.string(),
+        }
+      }
+    },
+    handler: AppCtrl.User.saveRemovePost
+  })
+
+  server.route({
+    method: 'GET',
+    path: '/saved',
+    config: {
+      auth: {
+        strategy: 'session',
+        scope: ['authenticated'],
+      }
+    },
+    handler: AppCtrl.Post.saved
+  })
+
+  // Publish post
+
   server.route({
     method: ['GET', 'POST'],
     path: '/publish/{post_id}',
@@ -252,16 +302,6 @@ exports.register = function(server, options, next) {
       auth: {
         strategy: 'session',
         scope: ['admin']
-      },
-      validate: {
-        payload: {
-          title: Joi.string(),
-          content: Joi.string(),
-          category: Joi.string(),
-          day: Joi.string(),
-          image: Joi.any(),
-          featured: Joi.any()
-        }
       }
     },
     handler: AppCtrl.Admin.createPost

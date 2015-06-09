@@ -135,11 +135,11 @@
     margin-top: 50px;
   }
   section.goals {
-    padding: 20px 0 80px;
+    padding: 20px 0 40px;
     background: #FAFAFA;
 
     @media (max-width: $phone) {
-      padding-bottom: 50px;
+      padding-bottom: 40px;
     }
     .goals-inner {
       width: 60%;
@@ -152,116 +152,8 @@
     h3.goals-title {
       font-size: 180%;
     }
-    .options {
-      margin-top: 50px;
-      .option {
-        width: 25%;
-        padding: 0 30px;
-        color: #2D2D2D;
-        display: inline-block;
-        vertical-align: top;
-        box-sizing: border-box;
-
-        &.yus {
-          color: $red;
-          .option-stat {
-            background: $red;
-            color: #fff;
-          }
-          .option-success {
-            display: block;
-          }
-        }
-
-        @media (max-width: $phone) {
-          width: 100%;
-          margin: 15px 0;
-        }
-        p.option-stat {
-          padding: 15px;
-          background: #E3EBF3;
-          color: #686868;
-          display: inline-block;
-          margin: 0;
-          font-size: 140%;
-          font-weight: 600;
-          span {
-            font-size: 70%;
-          }
-        }
-        p.option-text {
-          font-weight: 600;
-          font-size: 140%;
-          margin-top: 20px;
-          span {
-            font-size: 70%;
-            margin-top: 5px;
-            display: block;
-          }
-
-          @media (max-width: $ipad) {
-            font-size: 120%;
-          }
-        }
-        p.option-success {
-          display: none;
-        }
-      }
-    }
-    .goals-reached {
-      width: 100%;
-      margin-top: 30px;
-      @media (max-width: $phone) {
-        display: none;
-      }
-      .dot-sec {
-        width: 25%;
-        display: inline-block;
-        text-align: center;
-        position: relative;
-        &:first-child, &:last-child {
-          hr {
-            width: 50%;
-            transform: translateX(0);
-          }
-        }
-        &:last-child {
-          hr {
-            right: 50%;
-            left: auto;
-          }
-        }
-        &.yus {
-          .dot {
-            background: $red;
-            border-color: #fff;
-          }
-          hr {
-            border-color: $red;
-          }
-        }
-      }
-      .dot, hr {
-        vertical-align: middle;
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%);
-      }
-      .dot {
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        border: 1px solid #979797;
-        background: #fff;
-        z-index: 10;
-      }
-      hr {
-        width: 100%;
-        top: 4px;
-        height: 0;
-        overflow: hidden;
-        border-bottom: 1px solid #979797;
-      }
+    p.goals-description {
+      font-size: 120%;
     }
   }
   .app {

@@ -5,9 +5,15 @@ header.header
         img.logo(src='/images/logo-white.png' width='200')
     nav.nav
       ul.nav-list
-        li.nav-item 
+        li.nav-item#posts-link
           a(class=(active === 'explore' ? 'active' : undefined) href='/posts') Explore
-        li.nav-item 
+        li.nav-item#saved-link
+          a(class=(active === 'saved' ? 'active' : undefined) href='/saved') Saved
+        li.nav-item#account-link
           a(class=(active === 'account' ? 'active' : undefined) href='/account') Account
         li.nav-item 
           a(href='/logout') Logout
+if message
+  .messages
+    p= message
+

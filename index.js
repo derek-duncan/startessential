@@ -40,6 +40,15 @@ server.views({
   helpersPath: './views/helpers'
 });
 
+server.ext('onRequest', function(request, reply) {
+  if (request.url.path == '/login' && request.headers.referer) {
+    var referer_url = request.headers.referer.split('/').slice(3);
+    var redirect_url = '/' + referer_url.join('/');
+    request.setUrl('/login?redirect=' + redirect_url);
+  }
+  return reply.continue();
+});
+
 server.ext('onPreResponse', function(request, reply) {
 
   var response = request.response;

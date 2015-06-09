@@ -40,23 +40,23 @@ var uploader = {
 
         // Handle upload completion.
         upload.on('uploaded', function (details) {
-          console.log(details)
           return done(null, details);
         });
 
         // Pipe the incoming filestream through compression, and up to S3.
         stream.pipe(upload);
       }
-    ], function(err, image_url) {
+    ], function(err, details) {
       if (err) {
         return done(err)
       }
-      return done(null, image_url);
+      return done(null, details);
     });
   },
 
-  customize: function(key, user_id, done) {
+  customize: function(key, user_id, options, done) {
     var s3 = new AWS.S3();
+    var overlayer = require('../util/overlay');
     var gm = require('gm');
     var params = {
       Bucket: 'startessentialuploads',
@@ -65,10 +65,13 @@ var uploader = {
     var readStream = s3.getObject(params).createReadStream();
 
     gm(readStream)
-      .resize(240, 240)
       .stream(function (err, stdout, stderr) {
-        uploader.image(stdout, key, user_id, function(err, details) {
-          return done(null, details)
+        overlayer.link(stdout, options, function(err, stream) {
+          if (err) console.log(err)
+          uploader.image(stream, key, user_id, function(err, details) {
+            console.log('made it after upload')
+            return done(null, details)
+          })
         })
       });
   }

@@ -6,7 +6,6 @@ block head
       window.location = window.location.toString().substring(0, idx);
       history.pushState('', document.title, window.location.pathname);
     }
-    
   script(src='/js/build/moment.js')
 
 block body
@@ -17,14 +16,19 @@ block body
         .post-featured
           .post-featured-inner.cf
             p.post-featured-label Daily Infographic
+            .cf
             .post-featured-image-wrap
               img(src=featured.image_url)
             .post-featured-details
               h4.details-title=featured.title
               p.details-category=featured.category
               p.details-content=featured.content
-              a.details-link(href=featured.url) View Graphic
-              a.details-save(href=featured.url) Save
+              form(action='/posts/#{featured._id}/save' method='POST')
+                a.details-link(href=featured.url) View Graphic
+                if (isSaved(featured._id, sid))
+                  button.details-save(type='submit' disabled) Saved
+                else
+                  button.details-save(type='submit') Save
       .main-content
         .posts
           h4.posts-title Recent graphics
@@ -37,6 +41,24 @@ block body
                 h4.posts-title=key
                 for post in category
                   +postBlock(post)
+
+block scripts
+  script.
+    var tour = new Tour({
+      steps: [
+      {
+        element: '.post-featured-label',
+        title: 'Weekly graphics',
+        content: 'We post new graphics Tuesday and Friday each week.',
+        placement: 'bottom'
+      }
+    ]});
+
+    // Initialize the tour
+    tour.init();
+    // Start the tour
+    tour.start();
+
 mixin postBlock(post)
   .post
     .post-image-wrap
@@ -49,4 +71,9 @@ mixin postBlock(post)
           span &nbsp;|&nbsp;
           span.post-date #{fromDate(post.date_created)}
         .post-actions
-          a.post-link(href=post.url title=post.title) View graphic 
+          form(action='/posts/#{post._id}/save' method='POST')
+            a.post-link(href=post.url title=post.title) View graphic 
+            if (isSaved(post._id, sid))
+              button.post-save(type='submit' disabled) Saved
+            else
+              button.post-save(type='submit') Save

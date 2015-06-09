@@ -24,8 +24,13 @@ $phone: 520px;
 }
 
 .cf {
+  clear: both;
   overflow: auto;
   zoom: 1;
+}
+
+html, body {
+  height: 100%;
 }
 
 body {
@@ -33,6 +38,10 @@ body {
   color: $dark;
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
+}
+
+.all-content {
+  min-height: 100%;
 }
 
 #front {
@@ -380,7 +389,7 @@ body {
           left: 0;
           margin-top: 15px;
         }
-        &:hover {
+        &:hover:not(:disabled) {
           background: $shade-red;
         }
       }
@@ -425,6 +434,20 @@ body {
   }
 }
 
+.messages {
+  max-width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  p {
+    display: inline-block;
+    color: $red;
+    padding: 10px 15px;
+    font-size: 90%;
+    border: 1px solid $red;
+    margin: 10px auto;
+  }
+}
+
 
 @import 'thankyou';
 @import 'post';
@@ -432,3 +455,4 @@ body {
 @import 'register';
 @import 'account';
 @import 'login';
+@import 'saved';

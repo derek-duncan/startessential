@@ -4,6 +4,19 @@ $(function() {
     $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
   });
 
+  stickFooter()
+  $(window).resize(stickFooter)
+
+  function stickFooter() {
+    var footer = $('.footer');
+    var push = $('.push');
+    var footer_h = footer.outerHeight();
+    var header_h = $('.header').outerHeight()
+    var all_content = $('.all-content')
+    all_content.css('margin-bottom', -(footer_h))
+    footer.add(push).height(footer_h)
+  }
+
   if ($('#front').length) {
     var friend = $.getQueryParameters().friend;
 
@@ -23,15 +36,21 @@ $(function() {
     var joinNumber = $('.join-input');
     var joinSampleLink = $('.join-sample-link');
 
+    joinButton.attr('disabled', 'disabled');
+
     joinButton.on('click touchend', submitNumber)
     joinNumber.on('keyup', function(e){
       if ($.isNumeric(this.value) === false) {
-         this.value = this.value.slice(0, -1);
+        this.value = this.value.slice(0, -1);
       }
       if (this.value.length > 7) {
-         this.value = this.value.slice(0, -1);
+        this.value = this.value.slice(0, -1);
+      }
+      if (this.value.length < 7) {
+        joinButton.attr('disabled', 'disabled');
       }
       if (this.value.length === 7) {
+        joinButton.removeAttr('disabled');
         joinSampleLink.addClass('show')
         var text =
           'We created a signup link so you can quickly signup people!' +
@@ -82,48 +101,13 @@ $(function() {
   }
 
   if ($('#thankyou').length) {
-    var user = JSON.parse(localStorage.getItem('user'));
     var shareLink = $('.share-link')
 
-    shareLink.val('http://startessential.com/?friend=' + user.referral_id)
     shareLink[0].setSelectionRange(0, 9999);
     shareLink.on('click touchend', function() {
       shareLink[0].setSelectionRange(0, 9999);
     })
 
-    var user_id = $.getQueryParameters().id || user._id;
-
-    $.ajax({
-      method: "GET",
-      url: "/api/v1/users/" + user_id,
-      dataType: 'JSON'
-    })
-    .done(function(usr) {
-      localStorage.setItem('user', JSON.stringify(usr))
-      user = usr
-    })
-
-    var option = $('.option');
-    var dot = $('.dot-sec');
-    for (i = 1; i <= user.friends.length; i++) {
-      var k = Math.floor(i/5)*5;
-      if (k % 5 == 0 && k !== 0) {
-        var index = k / 5 - 1;
-        option.eq(index).addClass('yus');
-        dot.eq(index).addClass('yus');
-      }
-    }
-
-    var shareStatus = $('.share-status');
-    if (user.friends.length) {
-      var plural;
-      if (user.friends.length === 1) {
-        plural = ' friend has joined!'
-      } else {
-        plural = ' friends have joined!'
-      }
-      shareStatus.text(user.friends.length + plural + ' Great job... you\'re getting closer to the prize!');
-    }
     // GA Events //
     var shareFB = $('.share-fb');
     var shareTW = $('.share-tw');

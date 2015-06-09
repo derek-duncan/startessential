@@ -16,25 +16,41 @@ var PostSchema = new Schema({
   title: String,
   content: String,
   category: String,
-  fb_post: String,
   share_token: String,
   new_share_token: {type: Boolean, default: false},
   date_created: {type: Date, default: moment},
   date_formatted: {type: String},
   url: {type: String},
   token: {type: String},
-  featured: {type: Boolean, default: false}
+  featured: {type: Boolean, default: false},
+  options: {
+    x: Number,
+    y: Number,
+    size: Number,
+    color: String,
+    font: String
+  }
 });
 
 PostSchema.methods.customize = function(user_id, done) {
+  var self = this;
+  var User = mongoose.model('User');
   var uploader = require('../util/uploader');
-  uploader.customize(this.image_key, user_id, done)
+  User.findOne({_id: user_id}, function(err, user) {
+    if (err) return done(err);
+    var options = {
+      x: self.options.x,
+      y: self.options.y,
+      size: self.options.size,
+      color: self.options.color,
+      text: user.distributor_link
+    }
+    uploader.customize(self.image_key, user_id, options, done)
+  })
 }
 
 PostSchema.pre('save', function(next) {
   var self = this;
-  var imgTag = '<br><img src="' + self.image_url +'">'
-  self.fb_post = self.content + imgTag;
   if (this.isNew) {
     self.date_formatted = moment(self.date_created).format('MM/DD/YYYY');
     self.url = '/posts/' + moment(self.date_created).format('YYYY/MM/DD');

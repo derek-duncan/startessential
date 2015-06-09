@@ -1,0 +1,98 @@
+#saved {
+  @import "header";
+  .main {
+    max-width: 60%;
+    margin: 60px auto;
+    @media (max-width: $phone) {
+      max-width: 90%;
+    }
+  }
+  .page-title {
+    color: #666666;
+    font-size: 210%;
+    font-weight: 600;
+  }
+  .save {
+    position: relative;
+    @media (max-width: $phone) {
+      margin: 15px 0;
+    }
+    .save-image-wrap, .save-text, .save-title, .save-old, .save-posted {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    a {
+      text-decoration: none;
+    }
+    .save-image-wrap {
+      max-height: 100px;
+      width: 200px;
+      overflow: hidden;
+      @media (max-width: $phone) {
+        width: 100%;
+      }
+      .save-image {
+        width: 100%;
+      }
+    }
+    form.save-remove {
+      button {
+        -webkit-appearance: none;
+        color: #ccc;
+        text-decoration: underline;
+        border: none;
+        background: none;
+        padding: 0;
+        &:hover {
+          color: $shade-red;
+        }
+      }
+    }
+    .save-text {
+      margin-left: 30px;
+      @media (max-width: $phone) {
+        margin: 0;
+        padding: 15px;
+      }
+    }
+    .save-title {
+      font-size: 140%;
+      font-weight: 400;
+      color: $red;
+      /*margin-bottom: 10px;*/
+      margin: 0;
+      @media (max-width: 1330px) {
+        display: block;
+        /*margin: 0 0 10px 0;*/
+      }
+    }
+    .save-right {
+      right: 10px;
+      top: 35px;
+      position: absolute;
+      @media (max-width: 1330px) {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: block;
+      }
+      .save-posted, .save-old {
+        color: $btn-blue;
+        padding: 5px 10px;
+        margin: 0 5px;
+        border: 1px solid $btn-blue;
+        border-radius: 2px;
+        text-decoration: none;
+        display: inline-block
+      }
+      .save-old {
+        color: #ccc;
+        border-color: #ccc;
+        margin-left: 0;
+      }
+    }
+    &:nth-of-type(odd) {
+      background: lighten($red, 20%);
+    }
+  }
+}

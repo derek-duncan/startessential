@@ -33,6 +33,15 @@ block body
       img.post-img(width='150' src='#{post.image_url}')
       input.post-file(type='file' name='image')
     div.form-section
+      label Position X
+      input(type='text' value='#{post.options.x}' name='pos_x')
+    div.form-section
+      label Position Y
+      input(type='text' value='#{post.options.y}' name='pos_y')
+    div.form-section
+      label Font Size
+      input(type='text' value='#{post.options.size ? post.options.size : ""}' name='font_size')
+    div.form-section
       label Featured
       input(type='checkbox' name='featured' checked=post.featured)
     div.form-section
