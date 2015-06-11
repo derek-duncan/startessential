@@ -1,4 +1,4 @@
-extends ../templates/layout.jade
+extends ../templates/naked.jade
 block head
   meta(property='og:title' content='#{graphic._post.title}')
   meta(property='og:site_name' content='Start Essential')
@@ -6,9 +6,28 @@ block head
   meta(property='og:description' content='#{graphic._post.content}')
   meta(property='og:image' content='#{graphic.custom_image.url}')
 block body
-  div#saved
-    include ../templates/_header
+  div#preview
     main.main
       .main-content
-        h2.page-title= graphic._post.title
-        img(src=graphic.custom_image.url)
+        .graphic
+          .graphic-inner.cf
+            .graphic-image-wrap
+              img.graphic-image(src=graphic.custom_image.url)
+            .graphic-details
+              h1.details-title= graphic._post.title
+              p.details-content= graphic._post.content
+              if sid
+                if sid._id == graphic._user._id
+                  .share-facebook.details-link(data-url='http://startessential.com/preview/#{graphic.short_code}') Share on Facebook
+        .tour
+          .tour-inner
+            h2.tour-label Start using Essential Oils
+            a.signup-link(href=graphic._user.distributor_link) Signup now
+block scripts
+  script(src='/js/build/jquery.sticky-kit.min.js')
+  script.
+    $(window).load(function() {
+      $('.graphic-details').stick_in_parent({
+        offset_top: 20
+      })
+    })

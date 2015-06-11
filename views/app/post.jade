@@ -39,8 +39,8 @@ block body
           .post-header
             h4.daily-title #{post.title}
             if user
-              div.post-now 
-                a(href='/publish/#{post._id}') Post Now
+              form.post-now(action='/posts/#{post._id}/save' method='POST')
+                button(type='submit') Post Now
           article.post-content
             .post-copy
               .description #{post.content}

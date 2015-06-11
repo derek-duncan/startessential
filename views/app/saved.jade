@@ -9,11 +9,10 @@ block body
           .saved
             each save in saved
               .save
-                a(href=save._post.url)
+                a(href='/preview/#{save.short_code}')
                   .save-image-wrap
                     img.save-image(src=save.custom_image.url)
                   .save-text
-                    pre= save.short_code
                     h4.save-title= save._post.title
                     //-form.save-remove(action='/save/#{save._id}/remove' method='POST')
                       button(type='submit') Remove

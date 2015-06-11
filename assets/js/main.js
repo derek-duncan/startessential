@@ -123,10 +123,9 @@ $(function() {
 });
 
 if ($('#post').length) {
-  //$('.post-now a').on('click', function(e) {
-  //  e.preventDefault();
-  //  toggleSaving()
-  //})
+  $('.post-now button').on('click', function(e) {
+    toggleSaving()
+  })
 }
 
 if ($('#posts').length) {
@@ -169,6 +168,21 @@ if ($('#account').length) {
   })
 }
 
+if ($('#preview').length) {
+  var img = $('.graphic-image-wrap');
+  var details = $('.graphic-details');
+  details.css('margin-left', img.width());
+  $(window).resize(function() {
+    details.css('margin-left', img.width());
+  })
+
+  var shareBtn = $('.share-facebook');
+  shareBtn.on('click', function(e) {
+    var self = $(this);
+    fbShare(self.attr('data-url'))
+  })
+}
+
 window.fbAsyncInit = function() {
   FB.init({
     appId: '1589098114709228',
@@ -176,13 +190,12 @@ window.fbAsyncInit = function() {
     version: 'v2.3'
   });
 };
+
 function fbShare(url) {
-  toggleSaving();
   FB.ui({
     method: 'share',
     href: url
   }, function(response){
-    toggleSaving()
   });
 }
 

@@ -136,16 +136,18 @@
         }
         .post-now {
           display: inline-block;
+          margin: 0;
           @media (max-width: $phone) {
             margin-top: 10px;
             font-size: 90%;
           }
-          a {
+          button {
             text-decoration: none;
             display: inline-block;
             padding: 10px 15px;
             background: $btn-blue;
             color: #fff;
+            border: none;
             border-radius: 5px;
             font-weight: 600;
             @media (max-width: $phone) {
