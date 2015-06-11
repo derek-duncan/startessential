@@ -11,6 +11,15 @@ html
          js.src = "//connect.facebook.net/en_US/sdk.js";
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
+
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId: '1589098114709228',
+          xfbml: true,
+          version: 'v2.3'
+        });
+      };
+
     .saving-overlay
       .saving-overlay-text Saving...
     .all-content

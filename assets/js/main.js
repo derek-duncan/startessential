@@ -190,14 +190,6 @@ if ($('#preview').length) {
   })
 }
 
-window.fbAsyncInit = function() {
-  FB.init({
-    appId: '1589098114709228',
-    xfbml: true,
-    version: 'v2.3'
-  });
-};
-
 function fbShare(url) {
   FB.ui({
     method: 'share',
