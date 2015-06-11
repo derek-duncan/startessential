@@ -9,7 +9,6 @@ $(function() {
     if ($.getQueryParameters().message) {
       window.location = window.location.toString().split('?')[0];
     }
-    return url.split("?")[0];
   }
 
   stickFooter()
