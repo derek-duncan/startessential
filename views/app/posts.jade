@@ -21,6 +21,7 @@ block body
               img(src=featured.image_url)
             .post-featured-details
               h4.details-title=featured.title
+              .cf
               p.details-category=featured.category
               p.details-content=featured.content
               form(action='/posts/#{featured._id}/save' method='POST')
@@ -47,10 +48,58 @@ block scripts
     var tour = new Tour({
       steps: [
       {
+        element: '.logo-wrap',
+        title: 'A Short Tour',
+        content: 'Hi #{sid.first_name}! Take this short tour to learn how to use Start Essential.',
+        placement: 'right'
+      },
+      {
+        element: '.record-counter',
+        title: 'Saved Posts',
+        content: 'Here\'s a quick view of how many saves you have left. It will reset every week.',
+        placement: 'left'
+      },
+      {
+        element: '.nav-list',
+        title: 'Navigation',
+        content: 'This is your navigation menu. Use it to move around the site.',
+        placement: 'left'
+      },
+      {
         element: '.post-featured-label',
-        title: 'Weekly graphics',
-        content: 'We post new graphics Tuesday and Friday each week.',
+        title: 'Weekly Graphics',
+        content: 'Look for new graphics every Tuesday and Friday!',
         placement: 'bottom'
+      },
+      {
+        element: '.details-title',
+        title: 'Graphic Title',
+        content: 'The title will always give an overview of the topics covered in its graphic.',
+        placement: 'bottom'
+      },
+      {
+        element: '.details-category',
+        title: 'Graphic Category',
+        content: 'You can view similar graphics in this category below.',
+        placement: 'bottom'
+      },
+      {
+        element: '.details-link',
+        title: 'View Graphic',
+        content: 'Use this link to get a full view of the graphic and post it to facebook.',
+        placement: 'bottom'
+      },
+      {
+        element: '.details-save',
+        title: 'Save Graphic',
+        content: 'Saving a graphic will allow you to download and customize this graphic with your distributor links. It will also contribute to your weekly download limit, but that will reset every week for more downloads!',
+        placement: 'bottom'
+      },
+      {
+        element: '.main-content',
+        title: 'You\'re Ready!',
+        content: 'We post new graphics every week, so keep your eye open for them. Start browsing around the different categories and find an infographic that you would like to share :D Let us know if you have any questions!',
+        placement: 'top'
       }
     ]});
 

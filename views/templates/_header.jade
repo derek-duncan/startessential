@@ -4,6 +4,7 @@ header.header
       a(href='/posts' title='Start Essential Logo')
         img.logo(src='/images/logo-white.png' width='200')
     nav.nav
+      span.record-counter #{sid.records.downloaded}/#{sid.records.downloads} Saved
       ul.nav-list
         li.nav-item#posts-link
           a(class=(active === 'explore' ? 'active' : undefined) href='/posts') Explore

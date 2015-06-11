@@ -13,6 +13,7 @@ block body
                   .save-image-wrap
                     img.save-image(src=save.custom_image.url)
                   .save-text
+                    pre= save.short_code
                     h4.save-title= save._post.title
                     //-form.save-remove(action='/save/#{save._id}/remove' method='POST')
                       button(type='submit') Remove

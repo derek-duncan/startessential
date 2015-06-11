@@ -8,6 +8,7 @@ block head
   meta(property='og:image' content='#{post.image_url}')
 
 block body
+
   script.
     if (!{user_exists}) {
       User = {

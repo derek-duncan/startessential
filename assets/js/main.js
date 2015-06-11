@@ -123,23 +123,10 @@ $(function() {
 });
 
 if ($('#post').length) {
-  // $.ajaxSetup({ cache: true });
-  // $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
-  //   FB.init({
-  //     appId: '1589098114709228',
-  //     version: 'v2.3', // or v2.0, v2.1, v2.0
-  //   });
-    // $('.post-now a').on('click', function(e) {
-    //   e.preventDefault();
-    //   FB.api('/' + User.id + '/photos', 'post', {
-    //     caption: Post.content,
-    //     url: Post.image_url,
-    //     access_token: User.token
-    //   }, function(response) {
-    //     console.log(response)
-    //   });
-    // })
-  // });
+  //$('.post-now a').on('click', function(e) {
+  //  e.preventDefault();
+  //  toggleSaving()
+  //})
 }
 
 if ($('#posts').length) {
@@ -180,6 +167,28 @@ if ($('#account').length) {
     var c = confirm('Are you sure you would like to remove your account to Start Essential?')
     return c;
   })
+}
+
+window.fbAsyncInit = function() {
+  FB.init({
+    appId: '1589098114709228',
+    xfbml: true,
+    version: 'v2.3'
+  });
+};
+function fbShare(url) {
+  toggleSaving();
+  FB.ui({
+    method: 'share',
+    href: url
+  }, function(response){
+    toggleSaving()
+  });
+}
+
+function toggleSaving() {
+  var overlay = $('.saving-overlay');
+  overlay.toggle();
 }
 
 $.extend({

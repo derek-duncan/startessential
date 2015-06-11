@@ -2,8 +2,8 @@
 
 var Hapi = require('hapi');
 var Good = require('good');
-var constants = require('./src/config/constants.js');
-var routes = require('./src/routes/index.js');
+var constants = require('./lib/config/constants.js');
+var routes = require('./lib/routes/index.js');
 var _ = require('underscore');
 var fs = require('fs');
 
@@ -21,8 +21,8 @@ mongoose.connection.on('error', console.log);
 mongoose.connection.on('disconnected', connect);
 
 // Bootstrap models
-fs.readdirSync(__dirname + '/src/models').forEach(function (file) {
-  if (file.indexOf('.js') >= 0) require(__dirname + '/src/models/' + file);
+fs.readdirSync(__dirname + '/lib/models').forEach(function (file) {
+  if (file.indexOf('.js') >= 0) require(__dirname + '/lib/models/' + file);
 });
 
 var port = 3000;
@@ -154,15 +154,15 @@ server.register(require('bell'), function (err) {
 
 // Add all the routes within the routes folder
 // API routes
-server.register({register: require('./src/routes/api')}, function(err) {
+server.register({register: require('./lib/routes/api')}, function(err) {
   if (err) server.log('error', err)
 })
 // Index routes
-server.register({register: require('./src/routes/index')}, function(err) {
+server.register({register: require('./lib/routes/index')}, function(err) {
   if (err) server.log('error', err)
 })
 // App routes
-server.register({register: require('./src/routes/app')}, function(err) {
+server.register({register: require('./lib/routes/app')}, function(err) {
   if (err) server.log('error', err)
 })
 

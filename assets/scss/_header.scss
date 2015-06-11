@@ -45,10 +45,26 @@
     }
   }
   .nav {
+    @media (max-width: $phone) {
+      text-align: center;
+    }
+    span.record-counter {
+      display: inline-block;
+      padding: 10px;
+      margin-right: 20px;
+      background: darken($red, 3%);
+      color: #CF4F4C;
+      font-weight: 600;
+      cursor: default;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
     ul.nav-list {
       padding: 0;
       margin: 0;
       list-style: none;
+      display: inline-block;
+      vertical-align: middle;
     }
     li.nav-item {
       display: inline-block;
@@ -62,6 +78,7 @@
         padding: 10px;
         margin: 0;
         box-sizing: border-box;
+        text-align: center;
       }
       &:hover {
         text-decoration: underline;

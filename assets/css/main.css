@@ -373,6 +373,17 @@ body {
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased; }
 
+.saving-overlay {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  background: RGBA(179, 252, 187, 0.9);
+  font-size: 120%; }
+
 .all-content {
   min-height: 100%; }
 
@@ -1202,10 +1213,25 @@ body {
       box-sizing: border-box;
       width: 100%;
       outline: none; }
+  @media (max-width: 520px) {
+    #posts .header .nav {
+      text-align: center; } }
+  #posts .header .nav span.record-counter {
+    display: inline-block;
+    padding: 10px;
+    margin-right: 20px;
+    background: #ff8080;
+    color: #CF4F4C;
+    font-weight: 600;
+    cursor: default;
+    text-transform: uppercase;
+    vertical-align: middle; }
   #posts .header .nav ul.nav-list {
     padding: 0;
     margin: 0;
-    list-style: none; }
+    list-style: none;
+    display: inline-block;
+    vertical-align: middle; }
   #posts .header .nav li.nav-item {
     display: inline-block;
     margin: 0 10px;
@@ -1218,7 +1244,8 @@ body {
         width: 50%;
         padding: 10px;
         margin: 0;
-        box-sizing: border-box; } }
+        box-sizing: border-box;
+        text-align: center; } }
     #posts .header .nav li.nav-item:hover {
       text-decoration: underline; }
     #posts .header .nav li.nav-item a {
@@ -1300,7 +1327,8 @@ body {
         box-shadow: 0 0 8px #ccc; } }
     #posts .main .post-featured .post-featured-details .details-title {
       font-size: 200%;
-      margin: 0 0 15px; }
+      margin: 0 0 15px;
+      display: inline-block; }
     #posts .main .post-featured .post-featured-details .details-category {
       display: inline-block;
       padding: 5px 10px;
@@ -1640,10 +1668,25 @@ body {
       box-sizing: border-box;
       width: 100%;
       outline: none; }
+  @media (max-width: 520px) {
+    #account .header .nav {
+      text-align: center; } }
+  #account .header .nav span.record-counter {
+    display: inline-block;
+    padding: 10px;
+    margin-right: 20px;
+    background: #ff8080;
+    color: #CF4F4C;
+    font-weight: 600;
+    cursor: default;
+    text-transform: uppercase;
+    vertical-align: middle; }
   #account .header .nav ul.nav-list {
     padding: 0;
     margin: 0;
-    list-style: none; }
+    list-style: none;
+    display: inline-block;
+    vertical-align: middle; }
   #account .header .nav li.nav-item {
     display: inline-block;
     margin: 0 10px;
@@ -1656,7 +1699,8 @@ body {
         width: 50%;
         padding: 10px;
         margin: 0;
-        box-sizing: border-box; } }
+        box-sizing: border-box;
+        text-align: center; } }
     #account .header .nav li.nav-item:hover {
       text-decoration: underline; }
     #account .header .nav li.nav-item a {
@@ -1784,10 +1828,25 @@ body {
         box-sizing: border-box;
         width: 100%;
         outline: none; }
+    @media (max-width: 520px) {
+      #login .header .nav {
+        text-align: center; } }
+    #login .header .nav span.record-counter {
+      display: inline-block;
+      padding: 10px;
+      margin-right: 20px;
+      background: #ff8080;
+      color: #CF4F4C;
+      font-weight: 600;
+      cursor: default;
+      text-transform: uppercase;
+      vertical-align: middle; }
     #login .header .nav ul.nav-list {
       padding: 0;
       margin: 0;
-      list-style: none; }
+      list-style: none;
+      display: inline-block;
+      vertical-align: middle; }
     #login .header .nav li.nav-item {
       display: inline-block;
       margin: 0 10px;
@@ -1800,7 +1859,8 @@ body {
           width: 50%;
           padding: 10px;
           margin: 0;
-          box-sizing: border-box; } }
+          box-sizing: border-box;
+          text-align: center; } }
       #login .header .nav li.nav-item:hover {
         text-decoration: underline; }
       #login .header .nav li.nav-item a {
@@ -1881,10 +1941,25 @@ body {
       box-sizing: border-box;
       width: 100%;
       outline: none; }
+  @media (max-width: 520px) {
+    #saved .header .nav {
+      text-align: center; } }
+  #saved .header .nav span.record-counter {
+    display: inline-block;
+    padding: 10px;
+    margin-right: 20px;
+    background: #ff8080;
+    color: #CF4F4C;
+    font-weight: 600;
+    cursor: default;
+    text-transform: uppercase;
+    vertical-align: middle; }
   #saved .header .nav ul.nav-list {
     padding: 0;
     margin: 0;
-    list-style: none; }
+    list-style: none;
+    display: inline-block;
+    vertical-align: middle; }
   #saved .header .nav li.nav-item {
     display: inline-block;
     margin: 0 10px;
@@ -1897,7 +1972,8 @@ body {
         width: 50%;
         padding: 10px;
         margin: 0;
-        box-sizing: border-box; } }
+        box-sizing: border-box;
+        text-align: center; } }
     #saved .header .nav li.nav-item:hover {
       text-decoration: underline; }
     #saved .header .nav li.nav-item a {
