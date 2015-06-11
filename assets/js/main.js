@@ -4,6 +4,14 @@ $(function() {
     $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
   });
 
+  removeMessageFromUrl();
+  function removeMessageFromUrl() {
+    if ($.getQueryParameters().message) {
+      window.location = window.location.toString().split('?')[0];
+    }
+    return url.split("?")[0];
+  }
+
   stickFooter()
   $(window).resize(stickFooter)
 
