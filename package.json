@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    'ssh': 'ssh -i ~/.ssh/Derek.pem ec2-user@ec2-52-25-41-42.us-west-2.compute.amazonaws.com'
   },
   "repository": {
     "type": "git",

@@ -18,7 +18,7 @@ block body
             p.post-featured-label Daily Infographic
             .cf
             .post-featured-image-wrap
-              img(src=featured.image_url)
+              img(src=featured.image.normal.Location)
             .post-featured-details
               h4.details-title=featured.title
               .cf
@@ -111,7 +111,7 @@ block scripts
 mixin postBlock(post)
   .post
     .post-image-wrap
-      img.post-image(src='#{post.image_url}' width='300')
+      img.post-image(src='#{post.image.normal.Location}' width='300')
     a(href='#{post.url}' title='#{post.title}')
       .post-info
         h4.post-title #{post.title}

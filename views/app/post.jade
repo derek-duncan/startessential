@@ -5,7 +5,7 @@ block head
   meta(property='og:site_name' content='Start Essential')
   meta(property='og:url' content='http://startessential.com/posts/#{post.date_formatted}')
   meta(property='og:description' content='#{post.content}')
-  meta(property='og:image' content='#{post.image_url}')
+  meta(property='og:image' content='#{post.image.normal.Location}')
 
 block body
 
@@ -18,7 +18,7 @@ block body
     }
     Post = {
       content: '#{post.content}',
-      image_url: '#{post.image_url}',
+      image_url: '#{post.image.normal.Location}',
     }
   div#post
     header.header
@@ -44,7 +44,7 @@ block body
           article.post-content
             .post-copy
               .description #{post.content}
-              img.image(src='#{post.image_url}')
+              img.image(src='#{post.image.normal.Location}')
       section.final
         .final-content
           h3.title Customize and Post
