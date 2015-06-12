@@ -63,7 +63,7 @@ server.ext('onPreResponse', function(request, reply) {
       }
     });
 
-    if (request.state.sid) {
+    if (request.state.sid && context) {
       context.sid = request.state.sid;
     }
 
