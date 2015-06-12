@@ -186,15 +186,16 @@ if ($('#preview').length) {
   var shareBtn = $('.share-facebook');
   shareBtn.on('click', function(e) {
     var self = $(this);
-    fbShare(self.attr('data-url'))
+    fbShare(self.attr('data-code'))
   })
 }
 
-function fbShare(url) {
+function fbShare(code) {
   FB.ui({
     method: 'share',
-    href: url
+    href: window.location.origin + '/preview/' + code
   }, function(response){
+    window.location.href = window.location.origin + '/publish/' + code;
   });
 }
 

@@ -1,5 +1,13 @@
 #preview {
   @import "header";
+  .back {
+    border-top: 1px solid #FAFAFA;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    a {
+      color: $red;
+    }
+  }
   .main {
     .main-content {
       margin: 0 auto;

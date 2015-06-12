@@ -2173,6 +2173,13 @@ body.naked .logo {
       #preview .header .nav li.nav-item a.active {
         text-decoration: underline; }
 
+#preview .back {
+  border-top: 1px solid #FAFAFA;
+  padding: 10px 30px;
+  box-sizing: border-box; }
+  #preview .back a {
+    color: #FF8F8F; }
+
 #preview .main .main-content {
   margin: 0 auto; }
 
