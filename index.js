@@ -1,19 +1,21 @@
 "use strict";
 
+var _ = require('lodash')
+var CONSTANTS = require('_/config/constants')
+var async = require('async')
+var mongoose = require('mongoose')
+
 var Hapi = require('hapi');
 var Good = require('good');
-var constants = require('./lib/config/constants.js');
-var routes = require('./lib/routes/index.js');
-var _ = require('underscore');
+var routes = require('_/routes/index.js');
 var fs = require('fs');
 
 var server = new Hapi.Server()
-var mongoose = require('mongoose')
 
 // Connect to mongodb
 var connect = function () {
   var options = { server: { socketOptions: { keepAlive: 1 } } };
-  mongoose.connect(constants.database['database'], options);
+  mongoose.connect(CONSTANTS.database['database'], options);
 };
 connect();
 

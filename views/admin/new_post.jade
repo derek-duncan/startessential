@@ -1,5 +1,21 @@
 extends ../templates/admin.jade
 
+block head
+  link(rel='stylesheet' type='text/css' href='/css/lib/jquery-ui.min.css')
+  link(rel='stylesheet' type='text/css' href='/css/lib/tag-it.min.css')
+  link(rel='stylesheet' type='text/css' href='/css/lib/tag-it.zendesk.css')
+block scripts
+  script(type='text/javascript' src='/js/build/jquery-ui.min.js')
+  script(type='text/javascript' src='/js/build/tag-it.min.js')
+  script.
+    $(document).ready(function() {
+      var tags = '#{tags}'.split(',');
+      $('#tags').tagit({
+        allowSpaces: true,
+        availableTags: tags
+      })
+    })
+
 block body
   h2 Today's Post
   form.new-post-form(action='/admin/new' method='POST' enctype="multipart/form-data")
@@ -18,6 +34,9 @@ block body
       select(name='category')
         option(value='Applications') Applications
         option(value='Aroma') Aroma
+    div.form-section
+      label Tags
+      input#tags(type='text' name='tags' placeholder='Separate tags with a comma')
     div.form-section
       label Title
       input(type='text' name='title')

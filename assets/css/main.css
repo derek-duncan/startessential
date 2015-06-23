@@ -1471,8 +1471,8 @@ body.naked .logo {
       top: 0;
       left: 0;
       width: 100%;
-      -webkit-transition: all 1s;
-              transition: all 1s; }
+      -webkit-transition: all 2s;
+              transition: all 2s; }
       #posts .main .posts .post .post-image-wrap .post-image.scroll {
         bottom: 0 !important; }
   #posts .main .posts .post .post-info {
