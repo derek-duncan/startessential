@@ -12,7 +12,12 @@ $(function() {
   }
 
   stickFooter()
-  $(window).resize(stickFooter)
+  recordCounterArrange()
+
+  $(window).resize(function() {
+    stickFooter()
+    recordCounterArrange()
+  })
 
   function stickFooter() {
     var footer = $('.footer');
@@ -22,6 +27,17 @@ $(function() {
     var all_content = $('.all-content')
     all_content.css('margin-bottom', -(footer_h))
     footer.add(push).height(footer_h)
+  }
+
+  function recordCounterArrange() {
+    var wWidth, counter, logo;
+    wWidth = $(window).width()
+    counter = $('.record-counter')
+    logo = $('.logo-wrap')
+
+    if (wWidth <= 520) {
+      counter.insertAfter(logo.find('a'))
+    }
   }
 
   if ($('#front').length) {
@@ -150,19 +166,11 @@ if ($('#posts').length) {
       })
       if (postImageHeight > wrapHeight) {
         var heightDifference = postImageHeight - wrapHeight
-        if ($('html.no-touch').length) {
-          wrap.on('mouseover', function() {
-            postImage.addClass('scroll')
-          })
-          wrap.on('mouseout', function() {
-            postImage.removeClass('scroll')
-          })
-        } else {
-          wrap.on('touchstart', function() {
-            if (postImage.hasClass('scroll')) postImage.removeClass('scroll')
-            else postImage.addClass('scroll')
-          })
-        }
+        wrap.on('touchstart click', function() {
+          postImage = $(this).find('.post-image')
+          if (postImage.hasClass('scroll')) postImage.removeClass('scroll')
+          else postImage.addClass('scroll')
+        })
       }
     })
   })
