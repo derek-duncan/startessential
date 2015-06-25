@@ -1,4 +1,11 @@
 $(function() {
+
+  $.extend({
+    getQueryParameters : function(str) {
+      return (str || document.location.search).replace(/(^\?)/,'').split("&").map(function(n){return n = n.split("="),this[n[0]] = n[1],this}.bind({}))[0];
+    }
+  });
+
   $('a[href*=#]').on('click', function(e){
     e.preventDefault();
     $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
@@ -143,89 +150,227 @@ $(function() {
       ga('send', 'event', 'share', 'click', 'twitter')
     })
   }
-});
 
-if ($('#post').length) {
-  $('.post-now button').on('click', function(e) {
-    toggleSaving()
-  })
-}
+  if ($('#post').length) {
+    $('.post-now button').on('click', function(e) {
+      toggleSaving()
+    })
+  }
 
-if ($('#posts').length) {
-  var post = $('.post');
+  if ($('#posts').length) {
+    var post = $('.post');
 
-  $('img').load(function() {
-    post.each(function() {
-      var wrap = $(this).find('.post-image-wrap');
-      var wrapHeight = wrap.outerHeight();
-      var postImage = wrap.find('.post-image');
-      var postImageHeight = postImage.height()
-      postImage.css({
-        top: 'auto',
-        bottom: -postImageHeight + wrapHeight
+    $('img').load(function() {
+      post.each(function() {
+        var wrap = $(this).find('.post-image-wrap');
+        var wrapHeight = wrap.outerHeight();
+        var postImage = wrap.find('.post-image');
+        var postImageHeight = postImage.height()
+        postImage.css({
+          top: 'auto',
+          bottom: -postImageHeight + wrapHeight
+        })
+        if (postImageHeight > wrapHeight) {
+          var heightDifference = postImageHeight - wrapHeight
+          if ($('html.no-touch').length) {
+            wrap.on('click', function() {
+              postImage = $(this).find('.post-image')
+              if (postImage.hasClass('scroll')) postImage.removeClass('scroll')
+              else postImage.addClass('scroll')
+            })
+          } else {
+            wrap.on('touchstart', function() {
+              postImage = $(this).find('.post-image')
+              if (postImage.hasClass('scroll')) postImage.removeClass('scroll')
+              else postImage.addClass('scroll')
+            })
+          }
+        }
       })
-      if (postImageHeight > wrapHeight) {
-        var heightDifference = postImageHeight - wrapHeight
-        if ($('html.no-touch').length) {
-          wrap.on('click', function() {
-            postImage = $(this).find('.post-image')
-            if (postImage.hasClass('scroll')) postImage.removeClass('scroll')
-            else postImage.addClass('scroll')
-          })
-        } else {
-          wrap.on('touchstart', function() {
-            postImage = $(this).find('.post-image')
-            if (postImage.hasClass('scroll')) postImage.removeClass('scroll')
-            else postImage.addClass('scroll')
-          })
+    })
+
+    var $grid;
+    var numberLoaded = 0;
+    var isLoading = false;
+
+    // Masonry magic
+    $grid = $('.grid').masonry({
+      itemSelector: '.grid-item',
+      gutter: '.gutter-sizer',
+      percentPosition: true,
+      //transitionDuration: 0
+    })
+
+    refreshLayout()
+    function refreshLayout() {
+      $grid.imagesLoaded().progress( function() {
+        $grid.masonry('layout');
+        stickFooter()
+      });
+    }
+
+    $(window).scroll(function() {
+      var wHeight = $(window).height()
+      var scrollTop = $(window).scrollTop()
+      var bottomOfDoc = $(document).height() - wHeight
+      if (scrollTop + wHeight * 0.5 >= bottomOfDoc) {
+        if (!isLoading) {
+          getNextGraphics();
         }
       }
     })
-  })
-}
+    // Ajax graphics
+    function getNextGraphics() {
+      $.ajax({
+        url: '/api/v1/posts',
+        beforeSend: function(xhr) {
+          isLoading = true
+          xhr.setRequestHeader('Authorization', 'Bearer ' + Cookies.get('api_token'))
+        },
+        dataType: 'json',
+        data: {
+          limit: 4,
+          //offset: 0
+          offset: numberLoaded
+        },
+        success: function(graphics) {
+          if (graphics.posts.length) {
+            createGraphics(graphics)
+          } else {
+            $('.graphics-end').addClass('show')
+          }
+        }
+      })
 
-if ($('#account').length) {
-  $('.remove-form button').on('click', function(e) {
-    var c = confirm('Are you sure you would like to remove your account to Start Essential?')
-    return c;
-  })
-}
+      function createGraphics(graphics) {
+        var elements = []
+        numberLoaded += graphics.posts.length
+        $.each(graphics.posts, function(i) {
+          var graphic = graphics.posts[i]
 
-if ($('#preview').length) {
-  calcMargin();
-  $(window).resize(calcMargin)
+          var wrapper = $('<div class="grid-item"/>')
 
-  function calcMargin() {
-    if ($(window).width() > 520) {
-      var img = $('.graphic-image-wrap');
-      var details = $('.graphic-details');
-      details.css('margin-left', img.width() + 30);
+          var link = $('<a/>', {
+            href: '/posts/' + graphic.url_path,
+            title: graphic.title
+          })
+
+          var imageWrap = $('<div class="graphic-image-wrap"/>')
+          var image = $('<img/>', {
+            src: graphic.image.small.Location,
+            class: 'graphic-image'
+          })
+          imageWrap.append(image)
+
+          var info = $('<div class="graphic-info"/>')
+
+          var title = $('<h4/>', {
+            class: 'graphic-title',
+            text: graphic.title
+          })
+          info.append(title)
+
+          var tags = $('<div class="graphic-tags"/>')
+          var category = $('<span/>', {
+            class: 'graphic-category',
+            text: graphic.category
+          })
+          tags.append(category)
+          var line = $('<span/>', {
+            html: '&nbsp;|&nbsp;'
+          })
+          tags.append(line)
+          var date = $('<span/>', {
+            class: 'graphic-date',
+            text: moment(graphic.date_created).fromNow()
+          })
+          tags.append(date)
+          info.append(tags)
+
+          var actions = $('<div class="graphic-actions">')
+          var form = $('<form/>', {
+            action: '/posts/' + graphic._id + '/save',
+            method: 'POST'
+          })
+          var graphicLink = $('<a/>', {
+            title: graphic.title,
+            href: '/posts/' + graphic.url_path,
+            text: 'View Graphic'
+          })
+          form.append(graphicLink)
+          var graphicSave = $('<button/>', {
+            class: 'graphic-save',
+            type: 'submit',
+            text: graphic.isSaved ? 'Saved' : 'Save',
+            disabled: graphic.isSaved
+          })
+          form.append(graphicSave)
+          actions.append(form)
+
+          info.append(actions)
+
+          link.append(imageWrap)
+          link.append(info)
+          wrapper.append(link)
+
+          elements.push(wrapper)
+        })
+        elements = $($.map(elements, function(el) {
+          return el.get()
+        }))
+        $grid.append(elements).masonry('appended', elements);
+        toggleLoaderState()
+        refreshLayout()
+        isLoading = false
+      }
+      function toggleLoaderState() {
+        var loader = $('.graphics-loader')
+        var isHidden = loader.hasClass('hide')
+        if (isHidden) loader.removeClass('hide')
+        else loader.addClass('hide')
+      }
     }
+
   }
 
-  var shareBtn = $('.share-facebook');
-  shareBtn.on('click', function(e) {
-    var self = $(this);
-    fbShare(self.attr('data-code'))
-  })
-}
-
-function fbShare(code) {
-  FB.ui({
-    method: 'share',
-    href: window.location.origin + '/preview/' + code
-  }, function(response){
-    window.location.href = window.location.origin + '/publish/' + code;
-  });
-}
-
-function toggleSaving() {
-  var overlay = $('.saving-overlay');
-  overlay.toggle();
-}
-
-$.extend({
-  getQueryParameters : function(str) {
-	  return (str || document.location.search).replace(/(^\?)/,'').split("&").map(function(n){return n = n.split("="),this[n[0]] = n[1],this}.bind({}))[0];
+  if ($('#account').length) {
+    $('.remove-form button').on('click', function(e) {
+      var c = confirm('Are you sure you would like to remove your account to Start Essential?')
+      return c;
+    })
   }
+
+  if ($('#preview').length) {
+    calcMargin();
+    $(window).resize(calcMargin)
+
+    function calcMargin() {
+      if ($(window).width() > 520) {
+        var img = $('.graphic-image-wrap');
+        var details = $('.graphic-details');
+        details.css('margin-left', img.width() + 30);
+      }
+    }
+
+    var shareBtn = $('.share-facebook');
+    shareBtn.on('click', function(e) {
+      var self = $(this);
+      fbShare(self.attr('data-code'))
+    })
+  }
+
+  function fbShare(code) {
+    FB.ui({
+      method: 'share',
+      href: window.location.origin + '/preview/' + code
+    }, function(response){
+      window.location.href = window.location.origin + '/publish/' + code;
+    });
+  }
+
+  function toggleSaving() {
+    var overlay = $('.saving-overlay');
+    overlay.toggle();
+  }
+
 });

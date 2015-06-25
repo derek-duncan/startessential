@@ -6,7 +6,6 @@ block head
       window.location = window.location.toString().substring(0, idx);
       history.pushState('', document.title, window.location.pathname);
     }
-  script(src='/js/build/moment.js')
 
 block body
   div#posts
@@ -31,19 +30,40 @@ block body
                 else
                   button.details-save(type='submit') Save
       .main-content
-        .posts
-          h4.posts-title Recent graphics
-          .posts-recent
-            for post in posts
+        .graphics
+          h4.graphics-title Graphics
+          .graphics-recent.grid
+            .gutter-sizer
+            //-for post in posts
               +postBlock(post)
-          .posts-catories
-            each category, key in categories
-              if category.length
-                h4.posts-title=key
-                for post in category
-                  +postBlock(post)
+          .graphics-loader
+            img(src='/images/ajax-loader.gif')
+          .graphics-end No more graphics
+
+mixin postBlock(post)
+  .grid-item
+    a(href='#{post.url}' title='#{post.title}')
+      .graphic-image-wrap
+        img.graphic-image(src='#{post.image.small.Location}' width='300')
+      .graphic-info
+        h4.graphic-title #{post.title}
+        .graphic-tags
+          span.graphic-category #{post.category}
+          span &nbsp;|&nbsp;
+          span.graphic-date #{fromDate(post.date_created)}
+        .graphic-actions
+          form(action='/posts/#{post._id}/save' method='POST')
+            a.graphic-link(href=post.url title=post.title) View graphic 
+            if (isSaved(post._id, sid))
+              button.graphic-save(type='submit' disabled) Saved
+            else
+              button.graphic-save(type='submit') Save
 
 block scripts
+  script(src='/js/build/moment.js')
+  script(type='text/javascript' src='/js/build/jquery.cookie.js')
+  script(type='text/javascript' src='/js/build/imagesloaded.min.js')
+  script(type='text/javascript' src='/js/build/masonry.min.js')
   script.
     var tour = new Tour({
       steps: [
@@ -108,21 +128,3 @@ block scripts
     // Start the tour
     tour.start();
 
-mixin postBlock(post)
-  .post
-    .post-image-wrap
-      img.post-image(src='#{post.image.normal.Location}' width='300')
-    a(href='#{post.url}' title='#{post.title}')
-      .post-info
-        h4.post-title #{post.title}
-        .post-tags
-          span.post-day #{post.category}
-          span &nbsp;|&nbsp;
-          span.post-date #{fromDate(post.date_created)}
-        .post-actions
-          form(action='/posts/#{post._id}/save' method='POST')
-            a.post-link(href=post.url title=post.title) View graphic 
-            if (isSaved(post._id, sid))
-              button.post-save(type='submit' disabled) Saved
-            else
-              button.post-save(type='submit') Save

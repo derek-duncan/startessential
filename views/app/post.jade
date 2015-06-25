@@ -1,14 +1,5 @@
 extends ../templates/layout.jade
-block head
-  meta(property='og:title' content='#{post.title}')
-  meta(property='og:type' content='article')
-  meta(property='og:site_name' content='Start Essential')
-  meta(property='og:url' content='http://startessential.com/posts/#{post.date_formatted}')
-  meta(property='og:description' content='#{post.content}')
-  meta(property='og:image' content='#{post.image.normal.Location}')
-
 block body
-
   script.
     if (!{user_exists}) {
       User = {
@@ -21,11 +12,7 @@ block body
       image_url: '#{post.image.normal.Location}',
     }
   div#post
-    header.header
-      .header-content
-        a.logo-wrap(href='/' title='Start Essential Logo')
-          img.logo(src='/images/logo-white.png' width='200')
-        h3.title Today's Graphic <span class='right'><span class='mob-hide'>| </span>#{post.day} <span class="small">the</span> 10<sup>th</sup></span>
+    include ../templates/_header
     main.main
       section.tools
         .tools-inner

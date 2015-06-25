@@ -95,17 +95,39 @@ server.register(require('hapi-auth-bearer-token'), function (err) {
     validateFunc: function(token, callback) {
 
       var request = this;
+      var User = mongoose.model('User')
 
-      // Use a real strategy here,
-      // comparing with a token from your database for example
-      if(token === "39109*089a8a--_asjlu716CVae3ER"){
-        callback(null, true, {
-          scope: 'admin',
-          token: token
+      if (!token) return callback(null, false)
+
+      User.decode(token, function(err, decoded) {
+        User.findOne({_id: decoded.uid}, function(err, user) {
+          if (user) {
+            var scopeIsValid = user.scope === decoded.scope
+            if (scopeIsValid) {
+              var scope = []
+              switch (decoded.scope) {
+                case 'pre_authenticated':
+                  scope = ['pre_authenticated']
+                  break;
+                case 'authenticated':
+                  scope = ['pre_authenticated', 'authenticated']
+                  break;
+                case 'admin':
+                  scope = ['pre_authenticated', 'authenticated', 'admin']
+                  break;
+                default:
+                  scope = ['pre_authenticated']
+                  break;
+              }
+              return callback(null, true, {
+                scope: scope,
+                token: token
+              })
+            }
+          }
+          return callback(null, false)
         })
-      } else {
-        callback(null, false)
-      }
+      })
     }
   });
 });

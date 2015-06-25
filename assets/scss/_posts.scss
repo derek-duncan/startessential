@@ -2,7 +2,7 @@
   @import "header";
   .main {
     .main-content {
-      margin: 60px auto 0;
+      margin: 40px auto 0;
       width: 90%;
       @media (max-width: $phone) {
         width: 80%;
@@ -165,22 +165,48 @@
       }
     }
 
-    .posts {
-      .posts-title {
+    .graphics {
+      padding-bottom: 30px;
+      .graphics-title {
         color: #666666;
         font-size: 210%;
         font-weight: 600;
-        margin: 0 0 20px;
+        margin: 0 0 40px;
       }
-      .post {
-        width: 30%;
-        display: inline-block;
-        margin: 20px;
-        box-sizing: border-box;
-        @media (max-width: $phone) {
-          width: 100%;
-          margin: 20px 0;
+      .graphics-loader {
+        text-align: center;
+        &.hide {
+          display: none;
         }
+      }
+      .graphics-end {
+        display: none;
+        text-align: center;
+        color: #ccc;
+        margin: 15px 0;
+        padding: 0;
+        &.show {
+          display: block;
+        }
+      }
+      $gutterSize: 0.75% * 2;
+      .grid {
+        width: 100%;
+      }
+      .gutter-sizer {
+        width: $gutterSize;
+      }
+      .grid-item {
+        width: 25% - $gutterSize;
+        margin-bottom: $gutterSize / 2;
+        @media (max-width: 768px) {
+          width: 50% - $gutterSize;
+        }
+        @media (max-width: $phone) {
+          width: 100% - $gutterSize;
+          margin-bottom: 5%;
+        }
+
         a {
           text-decoration: none;
           color: $dark;
@@ -188,14 +214,9 @@
             color: lighten($dark, 10%);
           }
         }
-        .post-image-wrap {
-          width: 100%;
-          height: 0px;
-          padding-bottom: 56.25%;
-          overflow: hidden;
+        .graphic-image-wrap {
           position: relative;
           &:after {
-            content: '';
             width: 100%;
             height: 100%;
             position: absolute;
@@ -204,29 +225,30 @@
             background: transparent;
             box-shadow: 0 0 6px #CBCBCB inset;
           }
-          .post-image {
-            position: absolute;
-            top: 0;
-            left: 0;
+          .graphic-image {
             width: 100%;
-            transition: all 2s;
-            &.scroll {
-              bottom: 0 !important;
-            }
           }
         }
-        .post-info {
-          margin: 15px 0;
+        .graphic-info {
+          padding: 15px;
+          box-sizing: border-box;
+          border: 1px solid #DEDEDE;
+          box-shadow: 0 1px 0 #ccc;
+          border-top: none;
+          background: #fff;
         }
-        .post-title {
+        .graphic-title {
           font-size: 120%;
           font-weight: 400;
           margin: 0 0 10px 0;
         }
-        .post-tags {
+        .graphic-tags {
           color: #B1B1B1;
         }
-        .post-actions {
+        form {
+          margin: 0;
+        }
+        .graphic-actions {
           margin: 10px 0 0;
           a {
             display: inline-block;
@@ -235,7 +257,7 @@
               color: darken(#4A90E2, 10%);
             }
           }
-          .post-save {
+          .graphic-save {
             -webkit-appearance: none;
             color: $red;
             padding: 0;
