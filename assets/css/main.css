@@ -2454,12 +2454,14 @@ body.naked .logo {
         margin-top: 3px;
         background: #FF8F8F; } }
 
-#preview .back {
-  border-top: 1px solid #FAFAFA;
-  padding: 10px 30px;
-  box-sizing: border-box; }
-  #preview .back a {
-    color: #FF8F8F; }
+#preview .tools {
+  background: #eee; }
+  #preview .tools .tools-inner {
+    width: 90%;
+    margin: 0 auto;
+    padding: 15px 0; }
+    #preview .tools .tools-inner a {
+      color: #aaa; }
 
 #preview .main {
   padding: 0; }

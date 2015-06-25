@@ -1,11 +1,14 @@
 #preview {
   @import "header";
-  .back {
-    border-top: 1px solid #FAFAFA;
-    padding: 10px 30px;
-    box-sizing: border-box;
-    a {
-      color: $red;
+  .tools {
+    background: #eee;
+    .tools-inner {
+      width: 90%;
+      margin: 0 auto;
+      padding: 15px 0;
+      a {
+        color: #aaa;
+      }
     }
   }
   .main {
