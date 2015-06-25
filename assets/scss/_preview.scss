@@ -9,6 +9,7 @@
     }
   }
   .main {
+    padding: 0;
     .main-content {
       margin: 0 auto;
     }
@@ -37,6 +38,7 @@
         width: 90%;
         margin: 0 auto;
         padding: 30px 0;
+        box-sizing: border-box;
       }
       .graphic-label {
         color: #666666;
@@ -64,73 +66,77 @@
         }
       }
       .graphic-details {
-        width: 60%;
-        margin-left: 40%;
-        padding: 0 40px;
+        width: 56%;
+        margin-left: 44%;
+        padding: 25px;
         box-sizing: border-box;
-        /*animation: 1s slideOver forwards;*/
+        background: #fff;
+        border: 1px solid #EAEAEA;
+        border-bottom: 1px solid #C1C1C1;
+        box-sizing: border-box;
         @media (max-width: $phone) {
           width: 100%;
-          float: none;
-          padding: 10px 20px;
-          margin: 0 !important;
-          box-sizing: border-box;
+          margin: 0;
+          font-size: 80%;
           animation: none;
-          font-size: 60%;
-          background: #fff;
-          position: absolute;
-          bottom: 20px;
-          left: 0;
-          text-align: center;
-          box-shadow: 0 0 8px #ccc;
+          border-top: none;
         }
         .details-title {
           font-size: 200%;
           margin: 0;
           display: inline-block;
+          color: #313131;
         }
         .details-content {
-          padding: 15px;
           box-sizing: border-box;
-          background: #fff;
-          border: 1px solid #E7E4CB;
           max-width: 80%;
-          margin: 20px 0;
-          font-size: 140%;
+          letter-spacing: .7;
+          font-size: 120%;
           font-weight: 300;
           cursor: default;
           @media (max-width: $phone) {
             margin-left: auto;
             margin-right: auto;
             max-width: 90%;
-            margin: 10px 0;
+            margin: 10px 0 15px;
+            font-size: 120%;
           }
+        }
+        form {
+          margin: 0;
         }
         .details-link, .details-save {
           text-decoration: none;
           font-size: 140%;
           font-weight: 600;
-          padding: 15px 20px;
-          border-radius: 5px;
+          padding: 10px 20px;
+          border-radius: 4px;
           display: inline-block;
           margin: 0;
           transition: all 0.3s;
           border: none;
+          box-sizing: border-box;
+          text-align: center;
           @media (max-width: $phone) {
             padding: 10px 15px;
+            width: 100%;
+            margin: 3px 0;
           }
         }
         .details-link {
           color: #fff;
           background: #4A90E2;
           margin-right: 10px;
+          border: 1px solid #4A90E2;
           &:hover {
             background: darken(#4A90E2, 10%);
+            border-color: darken(#4A90E2, 10%);
           }
         }
         .details-save {
           color: $red;
           background: #fff;
+          border: 1px solid $red;
           &:hover, &:disabled {
             background: $red;
             color: #fff;

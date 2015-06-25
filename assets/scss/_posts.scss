@@ -26,6 +26,7 @@
         width: 90%;
         margin: 0 auto;
         padding: 30px 0 0;
+        box-sizing: border-box;
       }
       .post-featured-label {
         color: #666666;
@@ -67,6 +68,8 @@
           float: none;
           margin: 0;
           font-size: 80%;
+          animation: none;
+          border-top: none;
         }
         .details-title {
           font-size: 200%;
@@ -108,16 +111,22 @@
           margin: 0;
           transition: all 0.3s;
           border: none;
+          box-sizing: border-box;
+          text-align: center;
           @media (max-width: $phone) {
             padding: 10px 15px;
+            width: 100%;
+            margin: 3px 0;
           }
         }
         .details-link {
           color: #fff;
           background: #4A90E2;
           margin-right: 10px;
+          border: 1px solid #4A90E2;
           &:hover {
             background: darken(#4A90E2, 10%);
+            border-color: darken(#4A90E2, 10%);
           }
         }
         .details-save {

@@ -166,11 +166,19 @@ if ($('#posts').length) {
       })
       if (postImageHeight > wrapHeight) {
         var heightDifference = postImageHeight - wrapHeight
-        wrap.on('touchstart click', function() {
-          postImage = $(this).find('.post-image')
-          if (postImage.hasClass('scroll')) postImage.removeClass('scroll')
-          else postImage.addClass('scroll')
-        })
+        if ($('html.no-touch').length) {
+          wrap.on('click', function() {
+            postImage = $(this).find('.post-image')
+            if (postImage.hasClass('scroll')) postImage.removeClass('scroll')
+            else postImage.addClass('scroll')
+          })
+        } else {
+          wrap.on('touchstart', function() {
+            postImage = $(this).find('.post-image')
+            if (postImage.hasClass('scroll')) postImage.removeClass('scroll')
+            else postImage.addClass('scroll')
+          })
+        }
       }
     })
   })
@@ -184,12 +192,16 @@ if ($('#account').length) {
 }
 
 if ($('#preview').length) {
-  var img = $('.graphic-image-wrap');
-  var details = $('.graphic-details');
-  details.css('margin-left', img.width());
-  $(window).resize(function() {
-    details.css('margin-left', img.width());
-  })
+  calcMargin();
+  $(window).resize(calcMargin)
+
+  function calcMargin() {
+    if ($(window).width() > 520) {
+      var img = $('.graphic-image-wrap');
+      var details = $('.graphic-details');
+      details.css('margin-left', img.width() + 30);
+    }
+  }
 
   var shareBtn = $('.share-facebook');
   shareBtn.on('click', function(e) {

@@ -27,6 +27,11 @@ fs.readdirSync(__dirname + '/lib/models').forEach(function (file) {
   if (file.indexOf('.js') >= 0) require(__dirname + '/lib/models/' + file);
 });
 
+// Bootstrap cron jobs
+fs.readdirSync(__dirname + '/lib/cron').forEach(function (file) {
+  if (file.indexOf('.js') >= 0) require(__dirname + '/lib/cron/' + file);
+});
+
 var port = 3000;
 server.connection({
   port: port

@@ -7,7 +7,7 @@ block body
       .settings
         .input-group.fade
           label Your weekly download limit will reset on
-          input(type='text' readonly value=readableDate(user.records.current_week))
+          input(type='text' readonly value=readableDate(user.records.week_renew_date))
         .input-group.fade
           label Your distributor signup link
           input(type='text' readonly value=user.distributor_link)
