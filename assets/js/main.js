@@ -158,37 +158,6 @@ $(function() {
   }
 
   if ($('#posts').length) {
-    var post = $('.post');
-
-    $('img').load(function() {
-      post.each(function() {
-        var wrap = $(this).find('.post-image-wrap');
-        var wrapHeight = wrap.outerHeight();
-        var postImage = wrap.find('.post-image');
-        var postImageHeight = postImage.height()
-        postImage.css({
-          top: 'auto',
-          bottom: -postImageHeight + wrapHeight
-        })
-        if (postImageHeight > wrapHeight) {
-          var heightDifference = postImageHeight - wrapHeight
-          if ($('html.no-touch').length) {
-            wrap.on('click', function() {
-              postImage = $(this).find('.post-image')
-              if (postImage.hasClass('scroll')) postImage.removeClass('scroll')
-              else postImage.addClass('scroll')
-            })
-          } else {
-            wrap.on('touchstart', function() {
-              postImage = $(this).find('.post-image')
-              if (postImage.hasClass('scroll')) postImage.removeClass('scroll')
-              else postImage.addClass('scroll')
-            })
-          }
-        }
-      })
-    })
-
     var $grid;
     var numberLoaded = 0;
     var isLoading = false;
@@ -201,13 +170,7 @@ $(function() {
       //transitionDuration: 0
     })
 
-    refreshLayout()
-    function refreshLayout() {
-      $grid.imagesLoaded().progress( function() {
-        $grid.masonry('layout');
-        stickFooter()
-      });
-    }
+    getNextGraphics()
 
     $(window).scroll(function() {
       var wHeight = $(window).height()
@@ -321,13 +284,23 @@ $(function() {
         $grid.append(elements).masonry('appended', elements);
         toggleLoaderState()
         refreshLayout()
-        isLoading = false
       }
+      function refreshLayout() {
+        $grid.imagesLoaded().progress( function() {
+          $grid.masonry('layout');
+          stickFooter()
+        });
+      }
+
       function toggleLoaderState() {
         var loader = $('.graphics-loader')
-        var isHidden = loader.hasClass('hide')
-        if (isHidden) loader.removeClass('hide')
-        else loader.addClass('hide')
+        if (isLoading) {
+          isLoading = false
+          loader.addClass('hide')
+        } else {
+          isLoading = true
+          loader.removeClass('hide')
+        }
       }
     }
 
@@ -341,8 +314,23 @@ $(function() {
   }
 
   if ($('#preview').length) {
+
+    var shareBtn = $('.share-facebook');
+    shareBtn.on('click', function(e) {
+      var self = $(this);
+      fbShare(self.attr('data-code'))
+    })
+  }
+
+  if ($('#preview, #post').length) {
     calcMargin();
     $(window).resize(calcMargin)
+
+    $(window).load(function() {
+      $('.graphic-details').stick_in_parent({
+        offset_top: $('.naked').length ? 20 : 85
+      })
+    })
 
     function calcMargin() {
       if ($(window).width() > 520) {
@@ -351,12 +339,6 @@ $(function() {
         details.css('margin-left', img.width() + 30);
       }
     }
-
-    var shareBtn = $('.share-facebook');
-    shareBtn.on('click', function(e) {
-      var self = $(this);
-      fbShare(self.attr('data-code'))
-    })
   }
 
   function fbShare(code) {
@@ -369,8 +351,8 @@ $(function() {
   }
 
   function toggleSaving() {
-    var overlay = $('.saving-overlay');
-    overlay.toggle();
+    var body = $('body')
+    body.toggleClass('saving')
   }
 
 });

@@ -1,45 +1,23 @@
 extends ../templates/layout.jade
 block body
-  script.
-    if (!{user_exists}) {
-      User = {
-        token: "#{user.token}",
-        id: "#{user.facebook_id}"
-      }
-    }
-    Post = {
-      content: '#{post.content}',
-      image_url: '#{post.image.normal.Location}',
-    }
   div#post
     include ../templates/_header
     main.main
       section.tools
         .tools-inner
           a(href='/posts') < Back to all graphics
-      section.intro
-        .intro-content
-          h3.title #{post.day}'s Essential Oils Graphic
-          //-p.details 
-      section.post-wrap
-        .post
-          .post-header
-            h4.daily-title #{post.title}
-            if user
-              form.post-now(action='/posts/#{post._id}/save' method='POST')
-                button(type='submit') Post Now
-          article.post-content
-            .post-copy
-              .description #{post.content}
-              img.image(src='#{post.image.normal.Location}')
+      .main-content
+        .graphic
+          .graphic-inner.cf
+            .graphic-image-wrap
+              img.graphic-image(src=post.image.small.Location)
+            .graphic-details
+              h1.details-title= post.title
+              p.details-content= post.content
       section.final
         .final-content
           h3.title Customize and Post
-          .tagline
-            if user.member_number
-              | Your member number is listed below. Feel free to update this in the settings if this has changed.
-            else
-              | Enter your member number so we can create your distributor link
+          .tagline Your member number is listed below. Feel free to update this in the settings if this has changed.
           form(method='POST' action='/publish/#{post._id}')
             input.member-number(name='memberNumber' type='text' placeholder='(Optional) Young Living member number' disabled=(user.member_number ? 'disabled' : undefined) value='#{user.member_number ? user.member_number : ""}')
             .cta
@@ -48,3 +26,5 @@ block body
                   | Post to Facebook
                 else 
                   | Sign up to post
+block scripts
+  script(src='/js/build/jquery.sticky-kit.min.js')

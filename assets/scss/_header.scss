@@ -5,6 +5,34 @@
   }
 }
 
+.saving-overlay {
+  display: none;
+  position: relative;
+  z-index: 999;
+  height: 30px;
+  line-height: 30px;
+  width: 100%;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  background: $red;
+  color: #903838;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+body.saving {
+  .header {
+    height: 95px !important;
+  }
+  .main {
+    padding-top: 95px;
+  }
+  .saving-overlay {
+    display: block;
+  }
+}
+
 .header {
   width: 100%;
   background: #fff;

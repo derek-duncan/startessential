@@ -40,18 +40,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.saving-overlay {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  z-index: 100;
-  width: 100%;
-  padding: 10px 0;
-  text-align: center;
-  background: RGBA(179, 252, 187, 0.9);
-  font-size: 120%;
-}
-
 .all-content {
   min-height: 100%;
 }
@@ -432,16 +420,6 @@ body {
   }
 }
 
-body.naked {
-  .header {
-    padding: 15px 0;
-    text-align: center;
-  }
-  .logo {
-    max-width: 150px;
-  }
-}
-
 .footer {
   background: #f9f9f9;
   .footer-content {
@@ -473,9 +451,23 @@ body.naked {
 
 @import 'thankyou';
 @import 'post';
+@import "header";
 @import 'posts';
 @import 'register';
 @import 'account';
 @import 'login';
 @import 'saved';
 @import 'preview';
+
+body.naked {
+  .header {
+    padding: 15px 0;
+    text-align: center;
+    height: auto;
+    position: relative;
+  }
+  .logo {
+    max-width: 150px;
+  }
+}
+
