@@ -1,9 +1,11 @@
 "use strict";
 
 var _ = require('lodash')
-var CONSTANTS = require('_/config/constants')
+var db_constants = require('_/config/constants')
+var constants = require('_/constants')
 var async = require('async')
 var mongoose = require('mongoose')
+var _message = require('_/util/createMessage')
 
 var Hapi = require('hapi');
 var Good = require('good');
@@ -15,7 +17,7 @@ var server = new Hapi.Server()
 // Connect to mongodb
 var connect = function () {
   var options = { server: { socketOptions: { keepAlive: 1 } } };
-  mongoose.connect(CONSTANTS.database['database'], options);
+  mongoose.connect(db_constants.database['database'], options);
 };
 connect();
 
@@ -48,11 +50,13 @@ server.views({
 });
 
 server.ext('onRequest', function(request, reply) {
+  // create a redirect url
   if (request.url.path == '/login' && request.headers.referer) {
     var referer_url = request.headers.referer.split('/').slice(3);
     var redirect_url = '/' + referer_url.join('/');
     request.setUrl('/login?redirect=' + redirect_url);
   }
+
   return reply.continue();
 });
 
@@ -70,6 +74,7 @@ server.ext('onPreResponse', function(request, reply) {
       }
     });
 
+    // Attach the sid cookie to every view
     if (request.state.sid && context) {
       context.sid = request.state.sid;
     }
@@ -80,11 +85,21 @@ server.ext('onPreResponse', function(request, reply) {
     if (queryMessage) {
       context.message = validator.escape(queryMessage)
     }
+
+    // Trigger request logging
+    var exclude = ['css', 'images', 'js', 'fonts']
+    var path_start = request.path.split('/')[1]
+    if (!_.includes(exclude, path_start)) {
+      var sid = request.state.sid || {}
+      request.log(['request', 'uid'], sid._id)
+    }
+
     return reply.continue();
   }
   return reply.continue();
 });
 
+var User = mongoose.model('User');
 // Authentication strategy
 server.register(require('hapi-auth-bearer-token'), function (err) {
 
@@ -95,7 +110,6 @@ server.register(require('hapi-auth-bearer-token'), function (err) {
     validateFunc: function(token, callback) {
 
       var request = this;
-      var User = mongoose.model('User')
 
       if (!token) return callback(null, false)
 
@@ -106,17 +120,17 @@ server.register(require('hapi-auth-bearer-token'), function (err) {
             if (scopeIsValid) {
               var scope = []
               switch (decoded.scope) {
-                case 'pre_authenticated':
-                  scope = ['pre_authenticated']
+                case constants.SCOPE.PRE_AUTHENTICATED:
+                  scope = [constants.SCOPE.PRE_AUTHENTICATED]
                   break;
-                case 'authenticated':
-                  scope = ['pre_authenticated', 'authenticated']
+                case constants.SCOPE.AUTHENTICATED:
+                  scope = [constants.SCOPE.PRE_AUTHENTICATED, constants.SCOPE.AUTHENTICATED]
                   break;
-                case 'admin':
-                  scope = ['pre_authenticated', 'authenticated', 'admin']
+                case constants.SCOPE.ADMIN:
+                  scope = [constants.SCOPE.PRE_AUTHENTICATED, constants.SCOPE.AUTHENTICATED, constants.SCOPE.ADMIN]
                   break;
                 default:
-                  scope = ['pre_authenticated']
+                  scope = [constants.SCOPE.PRE_AUTHENTICATED]
                   break;
               }
               return callback(null, true, {
@@ -138,28 +152,34 @@ server.register(require('hapi-auth-cookie'), function (err) {
   server.auth.strategy('session', 'cookie', {
     password: 'secret',
     cookie: 'sid',
-    redirectTo: '/login',
+    redirectTo: '/login' + _message('Please login to access this content'),
     isSecure: false,
     redirectOnTry: false,
+    ttl: (60 * 1000) /* seconds */ * 60 /* minutes */ * 24 /* hours */ * 7 /* days */,
     validateFunc: function(session, callback) {
-      var User = mongoose.model('User');
       User.findOne({_id: session._id}, function(err, user) {
-        if (err) return callback(err)
+        if (err) return callback(err, false)
         if (!user) return callback(null, false)
-        if (user.scope === 'admin') {
-          return callback(null, true, {
-            scope: ['pre_authenticated', 'authenticated', 'admin']
-          })
-        } else if (user.scope === 'pre_authenticated') {
-          return callback(null, true, {
-            scope: ['pre_authenticated', 'admin']
-          })
-        } else {
-          return callback(null, true, {
-            scope: ['pre_authenticated', 'authenticated']
-          })
+        if (!user.logged_in) return callback(null, false)
+
+        var scope = []
+        switch (user.scope) {
+          case constants.SCOPE.PRE_AUTHENTICATED:
+            scope = [constants.SCOPE.PRE_AUTHENTICATED]
+            break;
+          case constants.SCOPE.AUTHENTICATED:
+            scope = [constants.SCOPE.PRE_AUTHENTICATED, constants.SCOPE.AUTHENTICATED]
+            break;
+          case constants.SCOPE.ADMIN:
+            scope = [constants.SCOPE.PRE_AUTHENTICATED, constants.SCOPE.AUTHENTICATED, constants.SCOPE.ADMIN]
+            break;
+          default:
+            scope = [constants.SCOPE.PRE_AUTHENTICATED]
+            break;
         }
-        return callback(null, false)
+        return callback(null, true, {
+          scope: scope
+        })
       })
     }
   });
@@ -197,7 +217,7 @@ server.register({register: require('./lib/routes/app')}, function(err) {
 
 server.auth.default({
   strategy: 'session',
-  scope: 'pre_authenticated'
+  scope: constants.SCOPE.PRE_AUTHENTICATED
 })
 
 module.exports = server;
@@ -210,10 +230,31 @@ server.register({
       events: {
         response: '*',
         log: '*',
-        error: '*',
-        request: '*'
+        error: '*'
       }
-    }]
+    },{
+      reporter: require('good-file'),
+      events: {
+        request: '*'
+      },
+      config: './log/application.log',
+    },{
+      reporter: require('good-file'),
+      events: {
+        error: '*'
+      },
+      config: './log/error.log',
+    },{
+      reporter: require('good-file'),
+      events: {
+        log: '*'
+      },
+      config: './log/log.log',
+    }],
+    filter: {
+      key: 'api_token',
+      value: 'censor'
+    }
   }
 }, function (err) {
   if (err) {

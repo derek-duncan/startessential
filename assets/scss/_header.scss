@@ -21,15 +21,15 @@
   font-size: 14px;
 }
 
-body.saving {
+body.messages {
   .header {
     height: 95px !important;
   }
   .main {
-    padding-top: 95px;
+    padding-top: 95px !important;
   }
   .saving-overlay {
-    display: block;
+    display: block !important;
   }
 }
 

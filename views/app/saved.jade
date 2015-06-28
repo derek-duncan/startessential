@@ -16,10 +16,10 @@ block body
                     h4.save-title= save._post.title
                     //-form.save-remove(action='/save/#{save._id}/remove' method='POST')
                       button(type='submit') Remove
+                    a.save-download(href=save.custom_image.url target='_blank' title='Download your customized graphic') Download
                     .save-right
-                      if save.isOld
-                        span.save-old Outdated Link
-                      if save.posted
-                        span.save-posted Posted to Facebook
+                      span.save-customized 
+                        span.fa.fa-check
+                        | &nbsp;Customized
         else
           p.none You haven't saved any posts yet. <a href='/posts'>Browse</a> around to find some of your favorites!

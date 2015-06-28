@@ -61,6 +61,9 @@ block body
       label Font Size
       input(type='text' value='#{post.options.size ? post.options.size : ""}' name='font_size')
     div.form-section
+      label Font Color
+      input(type='text' value='#{post.options.color ? post.options.color : ""}' name='color')
+    div.form-section
       label Featured
       input(type='checkbox' name='featured' checked=post.featured)
     div.form-section

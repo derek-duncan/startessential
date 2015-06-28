@@ -11,11 +11,8 @@ $(function() {
     $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
   });
 
-  removeMessageFromUrl();
-  function removeMessageFromUrl() {
-    if ($.getQueryParameters().message) {
-      window.location = window.location.toString().split('?')[0];
-    }
+  if ($.getQueryParameters().message) {
+    toggleMessages()
   }
 
   stickFooter()
@@ -153,7 +150,7 @@ $(function() {
 
   if ($('#post').length) {
     $('.post-now button').on('click', function(e) {
-      toggleSaving()
+      toggleMessages()
     })
   }
 
@@ -350,9 +347,14 @@ $(function() {
     });
   }
 
-  function toggleSaving() {
+  function toggleMessages() {
     var body = $('body')
-    body.toggleClass('saving')
+    body.toggleClass('messages')
+    if (body.hasClass('messages')) {
+      setTimeout(function() {
+        toggleMessages()
+      }, 7000)
+    }
   }
 
 });

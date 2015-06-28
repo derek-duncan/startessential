@@ -434,21 +434,6 @@ body {
   }
 }
 
-.messages {
-  max-width: 90%;
-  margin: 0 auto;
-  text-align: center;
-  p {
-    display: inline-block;
-    color: $red;
-    padding: 10px 15px;
-    font-size: 90%;
-    border: 1px solid $red;
-    margin: 10px auto;
-  }
-}
-
-
 @import 'thankyou';
 @import 'post';
 @import "header";

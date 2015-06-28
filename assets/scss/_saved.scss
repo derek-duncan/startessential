@@ -1,7 +1,7 @@
 #saved {
   @import "header";
   .main {
-    max-width: 60%;
+    max-width: 80%;
     margin: 30px auto;
     @media (max-width: $phone) {
       max-width: 90%;
@@ -14,7 +14,16 @@
   }
   .save {
     position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 33.3333%;
+    box-sizing: border-box;
+    padding: 15px;
+    @media (max-width: $ipad) {
+      width: 50%;
+    }
     @media (max-width: $phone) {
+      width: 100%;
       margin: 15px 0;
     }
     .save-image-wrap, .save-text, .save-title, .save-old, .save-posted {
@@ -25,13 +34,12 @@
       text-decoration: none;
     }
     .save-image-wrap {
-      max-height: 100px;
-      width: 200px;
+      max-height: 200px;
+      width: 100%;
+      position: relative;
       overflow: hidden;
-      @media (max-width: $phone) {
-        width: 100%;
-      }
       .save-image {
+        top: 0;
         width: 100%;
       }
     }
@@ -49,50 +57,39 @@
       }
     }
     .save-text {
-      margin-left: 30px;
-      @media (max-width: $phone) {
-        margin: 0;
-        padding: 15px;
-      }
+      margin: 0;
+      padding: 20px 15px;
+      border: 1px solid #eee;
+      box-shadow: 0 1px 0 #ccc;
+      width: 100%;
+      box-sizing: border-box;
     }
     .save-title {
       font-size: 140%;
       font-weight: 400;
-      color: $red;
-      /*margin-bottom: 10px;*/
+      color: $dark;
       margin: 0;
       @media (max-width: 1330px) {
         display: block;
-        /*margin: 0 0 10px 0;*/
+      }
+    }
+    .save-download {
+      display: block;
+      margin: 10px 0 5px;
+      color: $red;
+      font-size: 110%;
+      &:hover {
+        color: $shade-red;
       }
     }
     .save-right {
-      right: 10px;
-      top: 35px;
-      position: absolute;
-      @media (max-width: 1330px) {
-        position: relative;
-        top: 0;
-        left: 0;
-        display: block;
-      }
-      .save-posted, .save-old {
-        color: $btn-blue;
-        padding: 5px 10px;
-        margin: 0 5px;
-        border: 1px solid $btn-blue;
-        border-radius: 2px;
+      position: relative;
+      .save-customized {
+        color: $gray;
         text-decoration: none;
-        display: inline-block
+        display: inline-block;
+        cursor: pointer;
       }
-      .save-old {
-        color: #ccc;
-        border-color: #ccc;
-        margin-left: 0;
-      }
-    }
-    &:nth-of-type(odd) {
-      background: lighten($red, 20%);
     }
   }
 }

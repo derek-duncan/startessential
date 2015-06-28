@@ -1,6 +1,10 @@
 header.header
   .saving-overlay
-    .saving-overlay-text Saving...
+    .saving-overlay-text
+      if message
+        | #{message}
+      else
+        | Saving...
   .header-content
     .logo-wrap
       a(href='/posts' title='Start Essential Logo')
@@ -17,7 +21,4 @@ header.header
           a(class=(active === 'account' ? 'active' : undefined) href='/account') Account
         li.nav-item 
           a(href='/logout') Logout
-if message
-  .messages
-    p= message
 

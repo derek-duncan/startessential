@@ -14,6 +14,11 @@ block body
             .graphic-details
               h1.details-title= post.title
               p.details-content= post.content
+              form(action='/posts/#{post._id}/save' method='POST')
+                if (isSaved(post._id, sid))
+                  button.details-save(type='submit' disabled) Saved
+                else
+                  button.details-save(type='submit') Save
       section.final
         .final-content
           h3.title Customize and Post

@@ -705,18 +705,6 @@ body {
     .footer .footer-content .disclaimer {
       font-size: 80%; }
 
-.messages {
-  max-width: 90%;
-  margin: 0 auto;
-  text-align: center; }
-  .messages p {
-    display: inline-block;
-    color: #FF8F8F;
-    padding: 10px 15px;
-    font-size: 90%;
-    border: 1px solid #FF8F8F;
-    margin: 10px auto; }
-
 #thankyou .header {
   width: 100%;
   background: #FF8F8F;
@@ -877,7 +865,8 @@ body {
     background: #ff5c5c; }
 
 #post .tools {
-  background: #eee; }
+  background: #eee;
+  border-bottom: 2px solid #ECECEC; }
   #post .tools .tools-inner {
     width: 90%;
     margin: 0 auto;
@@ -895,15 +884,6 @@ body {
     position: relative;
     -webkit-animation: 0.7s fadeIn forwards;
             animation: 0.7s fadeIn forwards; }
-    #post .main .graphic:after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      box-shadow: 0 1px 15px #ccc inset;
-      pointer-events: none; }
     #post .main .graphic .graphic-inner {
       width: 90%;
       margin: 0 auto;
@@ -971,7 +951,7 @@ body {
             font-size: 120%; } }
       #post .main .graphic .graphic-details form {
         margin: 0; }
-      #post .main .graphic .graphic-details .details-link, #post .main .graphic .graphic-details .details-save {
+      #post .main .graphic .graphic-details .details-download, #post .main .graphic .graphic-details .details-link, #post .main .graphic .graphic-details .details-save {
         text-decoration: none;
         font-size: 140%;
         font-weight: 600;
@@ -985,7 +965,7 @@ body {
         box-sizing: border-box;
         text-align: center; }
         @media (max-width: 520px) {
-          #post .main .graphic .graphic-details .details-link, #post .main .graphic .graphic-details .details-save {
+          #post .main .graphic .graphic-details .details-download, #post .main .graphic .graphic-details .details-link, #post .main .graphic .graphic-details .details-save {
             padding: 10px 15px;
             width: 100%;
             margin: 3px 0; } }
@@ -997,16 +977,15 @@ body {
         #post .main .graphic .graphic-details .details-link:hover {
           background: #2275d7;
           border-color: #2275d7; }
-      #post .main .graphic .graphic-details .details-save {
+      #post .main .graphic .graphic-details .details-save, #post .main .graphic .graphic-details .details-download {
         color: #FF8F8F;
         background: #fff;
         border: 1px solid #FF8F8F; }
-        #post .main .graphic .graphic-details .details-save:hover, #post .main .graphic .graphic-details .details-save:disabled {
+        #post .main .graphic .graphic-details .details-save:hover, #post .main .graphic .graphic-details .details-save:disabled, #post .main .graphic .graphic-details .details-download:hover, #post .main .graphic .graphic-details .details-download:disabled {
           background: #FF8F8F;
           color: #fff; }
       #post .main .graphic .graphic-details .share-facebook {
         display: inline-block;
-        padding: 15px 20px;
         background: #4A90E2;
         color: #fff;
         border-radius: 5px;
@@ -1128,14 +1107,14 @@ body {
   vertical-align: middle;
   font-size: 14px; }
 
-body.saving .header {
+body.messages .header {
   height: 95px !important; }
 
-body.saving .main {
-  padding-top: 95px; }
+body.messages .main {
+  padding-top: 95px !important; }
 
-body.saving .saving-overlay {
-  display: block; }
+body.messages .saving-overlay {
+  display: block !important; }
 
 .header {
   width: 100%;
@@ -1291,14 +1270,14 @@ body.saving .saving-overlay {
   vertical-align: middle;
   font-size: 14px; }
 
-#posts body.saving .header {
+#posts body.messages .header {
   height: 95px !important; }
 
-#posts body.saving .main {
-  padding-top: 95px; }
+#posts body.messages .main {
+  padding-top: 95px !important; }
 
-#posts body.saving .saving-overlay {
-  display: block; }
+#posts body.messages .saving-overlay {
+  display: block !important; }
 
 #posts .header {
   width: 100%;
@@ -1511,7 +1490,7 @@ body.saving .saving-overlay {
     #posts .main .post-featured .post-featured-details .details-category {
       display: inline-block;
       padding: 0 10px 0 0;
-      color: #D5D5D5;
+      color: #B1B1B1;
       margin: 0; }
     #posts .main .post-featured .post-featured-details .details-content {
       box-sizing: border-box;
@@ -1805,14 +1784,14 @@ body.saving .saving-overlay {
   vertical-align: middle;
   font-size: 14px; }
 
-#account body.saving .header {
+#account body.messages .header {
   height: 95px !important; }
 
-#account body.saving .main {
-  padding-top: 95px; }
+#account body.messages .main {
+  padding-top: 95px !important; }
 
-#account body.saving .saving-overlay {
-  display: block; }
+#account body.messages .saving-overlay {
+  display: block !important; }
 
 #account .header {
   width: 100%;
@@ -2025,12 +2004,12 @@ body.saving .saving-overlay {
     color: #903838;
     vertical-align: middle;
     font-size: 14px; }
-  #login body.saving .header {
+  #login body.messages .header {
     height: 95px !important; }
-  #login body.saving .main {
-    padding-top: 95px; }
-  #login body.saving .saving-overlay {
-    display: block; }
+  #login body.messages .main {
+    padding-top: 95px !important; }
+  #login body.messages .saving-overlay {
+    display: block !important; }
   #login .header {
     width: 100%;
     background: #fff;
@@ -2197,14 +2176,14 @@ body.saving .saving-overlay {
   vertical-align: middle;
   font-size: 14px; }
 
-#saved body.saving .header {
+#saved body.messages .header {
   height: 95px !important; }
 
-#saved body.saving .main {
-  padding-top: 95px; }
+#saved body.messages .main {
+  padding-top: 95px !important; }
 
-#saved body.saving .saving-overlay {
-  display: block; }
+#saved body.messages .saving-overlay {
+  display: block !important; }
 
 #saved .header {
   width: 100%;
@@ -2340,7 +2319,7 @@ body.saving .saving-overlay {
         background: #FF8F8F; } }
 
 #saved .main {
-  max-width: 60%;
+  max-width: 80%;
   margin: 30px auto; }
   @media (max-width: 520px) {
     #saved .main {
@@ -2352,9 +2331,18 @@ body.saving .saving-overlay {
   font-weight: 600; }
 
 #saved .save {
-  position: relative; }
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 33.3333%;
+  box-sizing: border-box;
+  padding: 15px; }
+  @media (max-width: 768px) {
+    #saved .save {
+      width: 50%; } }
   @media (max-width: 520px) {
     #saved .save {
+      width: 100%;
       margin: 15px 0; } }
   #saved .save .save-image-wrap, #saved .save .save-text, #saved .save .save-title, #saved .save .save-old, #saved .save .save-posted {
     display: inline-block;
@@ -2362,13 +2350,12 @@ body.saving .saving-overlay {
   #saved .save a {
     text-decoration: none; }
   #saved .save .save-image-wrap {
-    max-height: 100px;
-    width: 200px;
+    max-height: 200px;
+    width: 100%;
+    position: relative;
     overflow: hidden; }
-    @media (max-width: 520px) {
-      #saved .save .save-image-wrap {
-        width: 100%; } }
     #saved .save .save-image-wrap .save-image {
+      top: 0;
       width: 100%; }
   #saved .save form.save-remove button {
     -webkit-appearance: none;
@@ -2380,45 +2367,34 @@ body.saving .saving-overlay {
     #saved .save form.save-remove button:hover {
       color: #ff5c5c; }
   #saved .save .save-text {
-    margin-left: 30px; }
-    @media (max-width: 520px) {
-      #saved .save .save-text {
-        margin: 0;
-        padding: 15px; } }
+    margin: 0;
+    padding: 20px 15px;
+    border: 1px solid #eee;
+    box-shadow: 0 1px 0 #ccc;
+    width: 100%;
+    box-sizing: border-box; }
   #saved .save .save-title {
     font-size: 140%;
     font-weight: 400;
-    color: #FF8F8F;
-    /*margin-bottom: 10px;*/
+    color: #282828;
     margin: 0; }
     @media (max-width: 1330px) {
       #saved .save .save-title {
-        display: block;
-        /*margin: 0 0 10px 0;*/ } }
-  #saved .save .save-right {
-    right: 10px;
-    top: 35px;
-    position: absolute; }
-    @media (max-width: 1330px) {
-      #saved .save .save-right {
-        position: relative;
-        top: 0;
-        left: 0;
         display: block; } }
-    #saved .save .save-right .save-posted, #saved .save .save-right .save-old {
-      color: #4A90E2;
-      padding: 5px 10px;
-      margin: 0 5px;
-      border: 1px solid #4A90E2;
-      border-radius: 2px;
+  #saved .save .save-download {
+    display: block;
+    margin: 10px 0 5px;
+    color: #FF8F8F;
+    font-size: 110%; }
+    #saved .save .save-download:hover {
+      color: #ff5c5c; }
+  #saved .save .save-right {
+    position: relative; }
+    #saved .save .save-right .save-customized {
+      color: #7D7D7D;
       text-decoration: none;
-      display: inline-block; }
-    #saved .save .save-right .save-old {
-      color: #ccc;
-      border-color: #ccc;
-      margin-left: 0; }
-  #saved .save:nth-of-type(odd) {
-    background: #fff5f5; }
+      display: inline-block;
+      cursor: pointer; }
 
 #preview .main {
   padding-top: 65px; }
@@ -2441,14 +2417,14 @@ body.saving .saving-overlay {
   vertical-align: middle;
   font-size: 14px; }
 
-#preview body.saving .header {
+#preview body.messages .header {
   height: 95px !important; }
 
-#preview body.saving .main {
-  padding-top: 95px; }
+#preview body.messages .main {
+  padding-top: 95px !important; }
 
-#preview body.saving .saving-overlay {
-  display: block; }
+#preview body.messages .saving-overlay {
+  display: block !important; }
 
 #preview .header {
   width: 100%;
@@ -2584,7 +2560,8 @@ body.saving .saving-overlay {
         background: #FF8F8F; } }
 
 #preview .tools {
-  background: #eee; }
+  background: #eee;
+  border-bottom: 2px solid #ECECEC; }
   #preview .tools .tools-inner {
     width: 90%;
     margin: 0 auto;
@@ -2601,15 +2578,6 @@ body.saving .saving-overlay {
     position: relative;
     -webkit-animation: 0.7s fadeIn forwards;
             animation: 0.7s fadeIn forwards; }
-    #preview .main .graphic:after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      box-shadow: 0 1px 15px #ccc inset;
-      pointer-events: none; }
     #preview .main .graphic .graphic-inner {
       width: 90%;
       margin: 0 auto;
@@ -2677,7 +2645,7 @@ body.saving .saving-overlay {
             font-size: 120%; } }
       #preview .main .graphic .graphic-details form {
         margin: 0; }
-      #preview .main .graphic .graphic-details .details-link, #preview .main .graphic .graphic-details .details-save {
+      #preview .main .graphic .graphic-details .details-download, #preview .main .graphic .graphic-details .details-link, #preview .main .graphic .graphic-details .details-save {
         text-decoration: none;
         font-size: 140%;
         font-weight: 600;
@@ -2691,7 +2659,7 @@ body.saving .saving-overlay {
         box-sizing: border-box;
         text-align: center; }
         @media (max-width: 520px) {
-          #preview .main .graphic .graphic-details .details-link, #preview .main .graphic .graphic-details .details-save {
+          #preview .main .graphic .graphic-details .details-download, #preview .main .graphic .graphic-details .details-link, #preview .main .graphic .graphic-details .details-save {
             padding: 10px 15px;
             width: 100%;
             margin: 3px 0; } }
@@ -2703,16 +2671,15 @@ body.saving .saving-overlay {
         #preview .main .graphic .graphic-details .details-link:hover {
           background: #2275d7;
           border-color: #2275d7; }
-      #preview .main .graphic .graphic-details .details-save {
+      #preview .main .graphic .graphic-details .details-save, #preview .main .graphic .graphic-details .details-download {
         color: #FF8F8F;
         background: #fff;
         border: 1px solid #FF8F8F; }
-        #preview .main .graphic .graphic-details .details-save:hover, #preview .main .graphic .graphic-details .details-save:disabled {
+        #preview .main .graphic .graphic-details .details-save:hover, #preview .main .graphic .graphic-details .details-save:disabled, #preview .main .graphic .graphic-details .details-download:hover, #preview .main .graphic .graphic-details .details-download:disabled {
           background: #FF8F8F;
           color: #fff; }
       #preview .main .graphic .graphic-details .share-facebook {
         display: inline-block;
-        padding: 15px 20px;
         background: #4A90E2;
         color: #fff;
         border-radius: 5px;
