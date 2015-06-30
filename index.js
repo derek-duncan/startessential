@@ -49,6 +49,8 @@ server.views({
   helpersPath: './views/helpers'
 });
 
+var User = mongoose.model('User');
+
 server.ext('onRequest', function(request, reply) {
   // create a redirect url
   if (request.url.path == '/login' && request.headers.referer) {
@@ -74,11 +76,6 @@ server.ext('onPreResponse', function(request, reply) {
       }
     });
 
-    // Attach the sid cookie to every view
-    if (request.state.sid && context) {
-      context.sid = request.state.sid;
-    }
-
     // Add Message to Jade templates
     var validator = require('validator');
     var queryMessage = request.query.message;
@@ -94,12 +91,14 @@ server.ext('onPreResponse', function(request, reply) {
       request.log(['request', 'uid'], sid._id)
     }
 
-    return reply.continue();
+    // Attach the sid cookie to every view
+    if (request.state.sid && context) {
+      context.sid = request.state.sid;
+    }
   }
   return reply.continue();
 });
 
-var User = mongoose.model('User');
 // Authentication strategy
 server.register(require('hapi-auth-bearer-token'), function (err) {
 
