@@ -68,6 +68,12 @@ server.ext('onPreResponse', function(request, reply) {
   if (response.variety === 'view') {
     var context = response.source.context;
 
+    // Attach the sid cookie to every view
+    console.log(request.state)
+    if (request.state.sid && context) {
+      context.sid = request.state.sid;
+    }
+
     // Add Helpers for Jade templates
     fs.readdirSync(__dirname + '/views/helpers').forEach(function (file) {
       if (file.indexOf('.js') >= 0 && context) {
@@ -89,11 +95,6 @@ server.ext('onPreResponse', function(request, reply) {
     if (!_.includes(exclude, path_start)) {
       var sid = request.state.sid || {}
       request.log(['request', 'uid'], sid._id)
-    }
-
-    // Attach the sid cookie to every view
-    if (request.state.sid && context) {
-      context.sid = request.state.sid;
     }
   }
   return reply.continue();

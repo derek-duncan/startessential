@@ -21,6 +21,7 @@
     "calibrate": "^2.0.1",
     "cron": "^1.0.9",
     "crypto": "0.0.3",
+    "email-templates": "^2.0.0-beta.1",
     "fastclick": "^1.0.6",
     "gm": "^1.18.1",
     "good": "^6.1.2",
