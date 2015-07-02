@@ -1,27 +1,23 @@
 extends templates/layout
 block body
   #thankyou
-    header.header
-      .header-inner.cf
-        h1.logo
-          a(href='/' title='Start Essential homepage')
-            img(src='/images/logo-white.png' alt='Start Essential resources logo' width='100')
-        p.thanks Thank you for signing up!
-    section.info
-      h3.info-tagline Grow even faster by sharing with your downlines
-      h2.info-title INVITE FRIENDS &amp;<br> EARN MORE
-      p.info-desc Share your special link through email, Facebook, or Twitter to add a free month to your subscription for every 3 friends that sign up.
-      .share-form
-        input.share-link(type='text' value='http://startessential.com/?friend=#{sid.referral_id}')
-        .share-links
-          a.share-fb(href='' title='Share on facebook to grow faster') Share on Facebook
-          a.share-tw(href='' title='Share on twitter to grow faster') Share on Twitter
-    section.goals
-      .goals-inner
-        h3.goals-title How it works
-        p.goals-description For every 3 friends that signup through your link above, you'll recieve an additional FREE month using Start Essential!
-    section.app
-      .app-inner
-        h3.app-title Browse the Latest Posts and Get Started!
-        a.app-link(href='/posts') Step Inside
-        
+    include templates/_header
+    main.main
+      section.info
+        h3.info-tagline Grow even faster by sharing with your downlines
+        h2.info-title INVITE FRIENDS &amp;<br> EARN MORE
+        p.info-desc Share your special link through email, Facebook, or Twitter to add a free month to your subscription for every 3 friends that sign up.
+        .share-form
+          input.share-link(type='text' value='http://startessential.com/?friend=#{sid.referral_id}')
+          .share-links
+            a.share-fb(href='' title='Share on facebook to grow faster') Share on Facebook
+            a.share-tw(href='' title='Share on twitter to grow faster') Share on Twitter
+      section.goals
+        .goals-inner
+          h3.goals-title How it works
+          p.goals-description For every 3 friends that signup through your link above, you'll recieve an additional FREE month using Start Essential!
+      section.app
+        .app-inner
+          h3.app-title Browse the Latest Posts and Get Started!
+          a.app-link(href='/posts') Step Inside
+          

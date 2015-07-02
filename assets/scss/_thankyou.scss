@@ -1,47 +1,4 @@
 #thankyou {
-  .header {
-    width: 100%;
-    background: $red;
-    padding: 15px 0;
-    color: #fff;
-    text-align: center;
-    font-size: 120%;
-    .header-inner {
-      width: 30%;
-      margin: 0 auto;
-      @media (max-width: $ipad) {
-        width: 60%;
-      }
-      @media (max-width: $phone) {
-        width: 90%;
-      }
-    }
-    h1.logo {
-      float: left;
-      margin: 0;
-      a {
-        outline: none;
-      }
-      img {
-        width: 130px;
-      }
-    }
-    p.thanks {
-      float: right;
-      margin: 0;
-      margin-top: 12px;
-      font-weight: 600;
-      @media (max-width: $ipad) {
-        margin-top: 15px;
-      }
-    }
-    h1.logo, p.thanks {
-      @media (max-width: $phone) {
-        float: none;
-        width: 100%;
-      }
-    }
-  }
   section.info {
     padding: 50px 0;
     text-align: center;

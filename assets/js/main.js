@@ -359,7 +359,7 @@ $(function() {
   function toggleMessages(noHide) {
     var body = $('body')
     body.toggleClass('messages')
-    if (noHide) {
+    if (!noHide) {
       if (body.hasClass('messages')) {
         setTimeout(function() {
           toggleMessages()

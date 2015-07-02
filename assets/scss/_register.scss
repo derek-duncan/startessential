@@ -12,31 +12,9 @@ $maxWidthMobile: 90%;
 #register {
   text-align: left;
 
-  .header {
-    .header-inner {
-      @include contentWidth();
-    }
-    .logo {
-      img {
-        max-width: 140px;
-      }
-    }
+  .header-content {
+    max-width: $maxWidth;
   }
-
-  .main {
-    padding-bottom: 40px;
-  }
-
-  .message {
-    @include contentWidth();
-    margin: 20px auto;
-
-    color: $red;
-    border: 1px solid $red;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-
   .details {
     .number {
       background: #ECECEC;
