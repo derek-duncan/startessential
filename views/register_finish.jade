@@ -15,6 +15,7 @@ block body
         li.plan-feature Cancel Anytime
       p.plan-tagline That's $1.25 per Graphic
       form(action="/register/finish" method="POST")
+        input(type="hidden" name="crumb" value=crumb)
         script(
           src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="pk_test_QSKUtc94PM7XpNBHBmC3LyLA"

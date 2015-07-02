@@ -15,6 +15,11 @@ $(function() {
     toggleMessages()
   }
 
+  $(document).on('click', '.graphic-save, .details-save', function() {
+    console.log('clicked')
+    toggleMessages()
+  })
+
   stickFooter()
   recordCounterArrange()
 
@@ -153,7 +158,6 @@ $(function() {
       toggleMessages()
     })
   }
-
   if ($('#posts').length) {
     var $grid;
     var numberLoaded = 0;
@@ -252,6 +256,12 @@ $(function() {
             action: '/posts/' + graphic._id + '/save',
             method: 'POST'
           })
+          var csrfToken = $('<input />', {
+            type: 'hidden',
+            name: 'crumb',
+            value: window.csrf
+          })
+          form.append(csrfToken)
           var graphicLink = $('<a/>', {
             title: graphic.title,
             href: '/posts/' + graphic.url_path,

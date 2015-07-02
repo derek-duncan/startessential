@@ -15,6 +15,7 @@ block body
               h1.details-title= post.title
               p.details-content= post.content
               form(action='/posts/#{post._id}/save' method='POST')
+                input(type="hidden" name="crumb" value=crumb)
                 if (isSaved(post._id, sid))
                   button.details-save(type='submit' disabled) Saved
                 else
@@ -24,6 +25,7 @@ block body
           h3.title Customize and Post
           .tagline Your member number is listed below. Feel free to update this in the settings if this has changed.
           form(method='POST' action='/publish/#{post._id}')
+            input(type="hidden" name="crumb" value=crumb)
             input.member-number(name='memberNumber' type='text' placeholder='(Optional) Young Living member number' disabled=(user.member_number ? 'disabled' : undefined) value='#{user.member_number ? user.member_number : ""}')
             .cta
               button.post-now(type='submit')

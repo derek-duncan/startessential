@@ -23,6 +23,7 @@ block body
     input(type='text' value='http://startessential.com/posts/#{date}')
     a.share-link(href='http://startessential.com/posts/#{date}') View Post
   form.new-post-form(action='/admin/posts/#{post._id}' method='POST' enctype="multipart/form-data")
+    input(type="hidden" name="crumb" value=crumb)
     div.form-section
       label Day
       select(name='day')

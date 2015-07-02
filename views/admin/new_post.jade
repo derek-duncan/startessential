@@ -19,6 +19,7 @@ block scripts
 block body
   h2 Today's Post
   form.new-post-form(action='/admin/new' method='POST' enctype="multipart/form-data")
+    input(type="hidden" name="crumb" value=crumb)
     div.form-section
       label Day
       select(name='day')

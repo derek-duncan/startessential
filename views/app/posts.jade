@@ -6,6 +6,7 @@ block head
       window.location = window.location.toString().substring(0, idx);
       history.pushState('', document.title, window.location.pathname);
     }
+    window.csrf = '#{crumb}';
 
 block body
   div#posts
@@ -24,6 +25,7 @@ block body
               p.details-category=featured.category
               p.details-content=featured.content
               form(action='/posts/#{featured._id}/save' method='POST')
+                input(type="hidden" name="crumb" value=crumb)
                 a.details-link(href=featured.url) View Graphic
                 if (isSaved(featured._id, sid))
                   button.details-save(type='submit' disabled) Saved
@@ -53,6 +55,7 @@ mixin postBlock(post)
           span.graphic-date #{fromDate(post.date_created)}
         .graphic-actions
           form(action='/posts/#{post._id}/save' method='POST')
+            input(type="hidden" name="crumb" value=crumb)
             a.graphic-link(href=post.url title=post.title) View graphic 
             if (isSaved(post._id, sid))
               button.graphic-save(type='submit' disabled) Saved
