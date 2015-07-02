@@ -334,7 +334,7 @@ $(function() {
 
     $(window).load(function() {
       $('.graphic-details').stick_in_parent({
-        offset_top: $('.naked').length ? 20 : 85
+        offset_top: 85
       })
     })
 

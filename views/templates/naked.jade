@@ -3,32 +3,8 @@ html
   block head
   body.naked
     #fb-root
-    script.
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
 
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId: '1589098114709228',
-          xfbml: true,
-          version: 'v2.3'
-        });
-      };
-
-    .saving-overlay
-      .saving-overlay-text Saving...
     .all-content
-      header.header
-        a.logo-link(href='/')
-          img.logo(src='/images/logo-color.png')
-      if message
-        .messages
-          p= message
       block body
       .push
     include _footer.jade

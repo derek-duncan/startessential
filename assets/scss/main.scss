@@ -444,15 +444,3 @@ body {
 @import 'saved';
 @import 'preview';
 
-body.naked {
-  .header {
-    padding: 15px 0;
-    text-align: center;
-    height: auto;
-    position: relative;
-  }
-  .logo {
-    max-width: 150px;
-  }
-}
-

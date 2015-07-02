@@ -1,4 +1,4 @@
-extends ../templates/naked.jade
+extends ../templates/layout.jade
 block head
   meta(property='og:title' content='#{graphic._post.title}')
   meta(property='og:site_name' content='Start Essential')
@@ -6,12 +6,30 @@ block head
   meta(property='og:description' content='#{graphic._post.content}')
   meta(property='og:image' content='#{graphic.custom_image.url}')
 block body
-  div#preview
-    if sid
+  #fb-root
+    script.
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId: '1589098114709228',
+          xfbml: true,
+          version: 'v2.3'
+        });
+      };
+
+  div#preview.naked
+    include ../templates/_header-naked.jade
+    main.main
       section.tools
         .tools-inner
           a(href='/posts') < Back to all graphics
-    main.main
       .main-content
         .graphic
           .graphic-inner.cf

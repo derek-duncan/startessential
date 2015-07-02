@@ -167,3 +167,17 @@ body.messages {
     }
   }
 }
+
+.naked {
+  .header-content {
+    display: block !important;
+    text-align: center;
+  }
+  .logo-wrap {
+    display: inline-block;
+  }
+  .logo {
+    max-width: 150px;
+  }
+}
+

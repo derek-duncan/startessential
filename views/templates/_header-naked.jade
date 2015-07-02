@@ -1,0 +1,15 @@
+header.header
+  .saving-overlay
+    .saving-overlay-text
+      if message
+        | #{message}
+      else
+        | Saving...
+  .header-content
+    .logo-wrap
+      if sid
+        a(href='/posts')
+          img.logo(src='/images/logo-color.png')
+      else
+        a(href='/')
+          img.logo(src='/images/logo-color.png')

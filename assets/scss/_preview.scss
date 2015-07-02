@@ -1,8 +1,6 @@
 #preview {
-  @import "header";
   @import 'includes/tools';
   .main {
-    padding: 0;
     @import 'includes/graphics';
     .tour {
       .tour-inner {
