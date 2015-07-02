@@ -16,8 +16,7 @@ $(function() {
   }
 
   $(document).on('click', '.graphic-save, .details-save', function() {
-    console.log('clicked')
-    toggleMessages()
+    toggleMessages(true)
   })
 
   stickFooter()
@@ -357,13 +356,15 @@ $(function() {
     });
   }
 
-  function toggleMessages() {
+  function toggleMessages(noHide) {
     var body = $('body')
     body.toggleClass('messages')
-    if (body.hasClass('messages')) {
-      setTimeout(function() {
-        toggleMessages()
-      }, 7000)
+    if (noHide) {
+      if (body.hasClass('messages')) {
+        setTimeout(function() {
+          toggleMessages()
+        }, 7000)
+      }
     }
   }
 

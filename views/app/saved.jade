@@ -11,12 +11,12 @@ block body
               .save
                 a(href='/preview/#{save.short_code}')
                   .save-image-wrap
-                    img.save-image(src=save.custom_image.url)
+                    img.save-image(src=save.custom_image.small.Url)
                   .save-text
                     h4.save-title= save._post.title
                     //-form.save-remove(action='/save/#{save._id}/remove' method='POST')
                       button(type='submit') Remove
-                    a.save-download(href=save.custom_image.url target='_blank' title='Download your customized graphic') Download
+                    a.save-download(href=save.custom_image.original.Url target='_blank' title='Download your customized graphic') Download
                     .save-right
                       span.save-customized 
                         span.fa.fa-check

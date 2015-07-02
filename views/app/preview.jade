@@ -16,14 +16,14 @@ block body
         .graphic
           .graphic-inner.cf
             .graphic-image-wrap
-              img.graphic-image(src=graphic.custom_image.url)
+              img.graphic-image(src=graphic.custom_image.normal.Url)
             .graphic-details
               h1.details-title= graphic._post.title
               p.details-content= graphic._post.content
               if sid
                 if sid._id == graphic._user._id
                   .share-facebook.details-link(data-code=graphic.short_code) Share on Facebook
-                  a.details-download(href=graphic.custom_image.url target='_blank') Download
+                  a.details-download(href=graphic.custom_image.original.Url target='_blank') Download
         .tour
           .tour-inner
             h2.tour-label Start using Essential Oils

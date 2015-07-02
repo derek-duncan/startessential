@@ -5,7 +5,6 @@ global._ = require('lodash');
 
 var attachFastClick = require('fastclick');
 
-var Router = require('react-router');
 var { DefaultRoute, Link, Route, RouteHandler } = Router;
 var router = require('./src/router');
 
