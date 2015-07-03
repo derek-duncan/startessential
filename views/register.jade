@@ -10,13 +10,34 @@ block body
     include templates/_header-naked
     main.main
       .details
-        .number
-          .number-inner
-            p.number-label Member Number
-            p.number-data
         .copy
-          h3 Wonderful!
-          p We already have everything we need to customize your Start Essential images. In order to post these images, please connect your Facebook account. This will allow you to login, save your information, and post the daily images to your Facebook wall. We will never post without your consent.
+          h3 Start your 30-day free trial
+          p A <span>simple</span> way to create customized essential oil graphics.
 
       .register
-        a.fb-login(href='/facebook/register') Register with Facebook
+        .register-form
+          form(action='/register/pre' method='POST')
+            input(type='hidden' name='crumb' value=crumb)
+            .form-block
+              label Member number
+              input(type='text' value=(memberNumber || undefined) name='memberNumber' maxlength='7')
+            .form-block
+              label Coupon (optional)
+              input(type='text' name='coupon')
+            .form-block
+              label I agree to terms and conditions
+              input(type='checkbox' value='agree' name='termsAgree')
+            .form-block
+              button.fb-login(type='submit') Register with Facebook
+        .register-extra
+          h4.extra-title What you get
+          .question-block
+            ul.value-list
+              li.value-item 30-day free trial
+              li.value-item Save 2 graphics / week
+                ul.value-list.sub
+                  li.value-item 8 graphics / month
+              li.value-item Simply $10 / month
+                ul.value-list.sub
+                  li.value-item That's only $1.25 a graphic
+              li.value-item Cancel anytime

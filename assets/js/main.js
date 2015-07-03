@@ -123,12 +123,6 @@ $(function() {
   }
 
   if ($('#register').length) {
-    var NumberBlock = {
-      label: $('.number-label'),
-      data: $('.number-data')
-    }
-
-    NumberBlock.data.text($.getQueryParameters().se_member_number)
   }
 
   if ($('#thankyou').length) {

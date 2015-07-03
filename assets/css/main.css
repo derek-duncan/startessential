@@ -369,7 +369,7 @@ html, body {
 
 body {
   font: 100% "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  color: #282828;
+  color: #314046;
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased; }
 
@@ -1580,9 +1580,9 @@ body.messages .saving-overlay {
           margin-bottom: 5%; } }
       #posts .main .graphics .grid-item a {
         text-decoration: none;
-        color: #282828; }
+        color: #314046; }
         #posts .main .graphics .grid-item a:hover {
-          color: #424242; }
+          color: #465b64; }
       #posts .main .graphics .grid-item .graphic-image-wrap {
         position: relative; }
         #posts .main .graphics .grid-item .graphic-image-wrap:after {
@@ -1629,101 +1629,139 @@ body.messages .saving-overlay {
             color: #ccc; }
 
 #register {
-  text-align: left; }
-  #register .header-content {
-    max-width: 50%; }
-  #register .details .number {
-    background: #ECECEC;
-    margin: 0 0 20px; }
-    #register .details .number .number-inner {
-      padding: 10px 0;
-      color: #A4A4A4;
-      max-width: 50%;
-      margin: 0 auto; }
-      @media (max-width: 520px) {
-        #register .details .number .number-inner {
-          max-width: 90%; } }
-    #register .details .number .number-label {
-      font-size: 12px;
-      font-weight: 500;
-      text-transform: uppercase;
-      margin: 0 0 5px; }
-    #register .details .number .number-data {
-      font: monospace 12px;
-      margin: 0; }
-  #register .details .copy {
-    max-width: 50%;
-    margin: 0 auto;
-    margin: 40px auto;
-    font-size: 140%;
-    text-align: left; }
-    @media (max-width: 520px) {
-      #register .details .copy {
-        max-width: 90%; } }
+  width: 60%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 0; }
+  @media (max-width: 768px) {
+    #register {
+      width: 70%; } }
+  @media (max-width: 520px) {
+    #register {
+      width: 90%; } }
+  #register .details {
+    text-align: center; }
+    #register .details .copy h3 {
+      font-size: 260%;
+      margin: 0;
+      color: #314046; }
+    #register .details .copy p {
+      margin: 5px 0 0;
+      color: #888;
+      font-size: 140%; }
+      #register .details .copy p span {
+        color: #FF8F8F;
+        font-style: italic; }
   #register .register {
     text-align: left;
-    max-width: 50%;
-    margin: 0 auto; }
-    @media (max-width: 520px) {
-      #register .register {
-        max-width: 90%; } }
-    #register .register .fb-login {
-      display: inline-block;
-      padding: 15px 25px;
-      background: #4A659F;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 140%; }
-      #register .register .fb-login:hover {
-        background: #657fb7; }
-  #register .plans {
-    max-width: 50%;
-    margin: 0 auto;
-    padding-left: 30px;
+    margin: 30px 0 0;
+    padding: 40px;
+    width: 100%;
     box-sizing: border-box;
-    border-left: 5px solid #FF8F8F; }
-    @media (max-width: 520px) {
-      #register .plans {
-        max-width: 90%; } }
-    #register .plans .plan {
-      font-size: 100%;
-      text-align: left;
-      width: 50%;
+    border: 1px solid #ddd;
+    font-size: 130%; }
+    #register .register .register-form {
+      padding-right: 30px;
       box-sizing: border-box;
-      position: relative;
-      padding: 10px 0; }
-      #register .plans .plan .plan-banner {
-        color: #A5C7AC;
-        width: 100%;
-        background: #fff;
-        font-weight: 500;
-        font-size: 130%;
-        margin-bottom: 10px; }
-      #register .plans .plan .plan-name {
-        font-size: 260%;
-        margin: 0; }
-      #register .plans .plan .plan-features {
-        list-style: none;
-        padding: 0;
+      display: inline-block;
+      width: 60%;
+      border-right: 1px solid #ddd;
+      vertical-align: top; }
+      @media (max-width: 520px) {
+        #register .register .register-form {
+          border: none;
+          border-bottom: 1px solid #ddd; } }
+      #register .register .register-form .form-block {
         margin: 20px 0; }
-        #register .plans .plan .plan-features .plan-feature {
-          font-size: 140%;
-          font-weight: 500;
-          color: #747474;
-          margin: 15px 0; }
-      #register .plans .plan .plan-tagline {
-        font-size: 220%;
-        font-family: 'Claire Hand';
-        color: #FF8F8F;
-        margin: 30px 0 20px; }
-      #register .plans .plan form {
-        margin: 0; }
-      #register .plans .plan .plan-secure {
-        margin: 20px 0 0;
-        color: #E0E0E0; }
-        #register .plans .plan .plan-secure .secure-text {
-          padding-left: 5px; }
+        #register .register .register-form .form-block:nth-of-type(1) {
+          margin-top: 0; }
+        #register .register .register-form .form-block:last-child {
+          margin-bottom: 0; }
+        #register .register .register-form .form-block label {
+          display: block;
+          margin: 0 0 15px;
+          font-size: 120%;
+          font-weight: 600; }
+        #register .register .register-form .form-block input {
+          padding: 10px 15px;
+          box-shadow: border-box;
+          border: 1px solid #ccc;
+          width: 100%;
+          border-radius: 5px;
+          outline: none; }
+          #register .register .register-form .form-block input:disabled {
+            background: #f2f2f2; }
+        #register .register .register-form .form-block .fb-login {
+          display: inline-block;
+          margin: 0 auto;
+          padding: 15px 25px;
+          background: #4A90E2;
+          color: #fff;
+          text-decoration: none;
+          font-size: 120%;
+          font-weight: 600;
+          width: 100%;
+          box-sizing: border-box;
+          border-radius: 5px;
+          text-align: center;
+          -webkit-appearance: none;
+          border: none; }
+          #register .register .register-form .form-block .fb-login:hover {
+            background: #2275d7; }
+    #register .register .register-extra {
+      display: inline-block;
+      width: 40%;
+      padding-left: 30px;
+      box-sizing: border-box;
+      vertical-align: top; }
+      #register .register .register-extra h4.extra-title {
+        margin: 0 0 15px;
+        font-size: 130%; }
+      #register .register .register-extra .question-block {
+        margin: 15px 0; }
+        #register .register .register-extra .question-block:first-child {
+          margin-top: 0; }
+        #register .register .register-extra .question-block .question-title {
+          font-size: 100%;
+          margin: 0 0 10px; }
+        #register .register .register-extra .question-block p {
+          font-size: 90%;
+          margin-top: 0; }
+    @media (max-width: 520px) {
+      #register .register .register-form, #register .register .register-extra {
+        width: 100%;
+        padding: 30px 0; }
+        #register .register .register-form:first-child, #register .register .register-extra:first-child {
+          padding-top: 0; }
+        #register .register .register-form:last-child, #register .register .register-extra:last-child {
+          padding-bottom: 0; } }
+    #register .register .value-list {
+      padding: 0;
+      margin: 0; }
+      #register .register .value-list .value-item {
+        margin: 10px 0;
+        list-style: none;
+        padding-left: 25px; }
+      #register .register .value-list .value-item:before {
+        content: '\f00c';
+        font-family: FontAwesome;
+        display: inline-block;
+        color: #ccc;
+        width: 25px;
+        margin-left: -25px; }
+      #register .register .value-list.sub .value-item:before {
+        content: '\f1c5'; }
+  #register .plan {
+    font-size: 100%;
+    text-align: left;
+    width: 100%; }
+    #register .plan form {
+      margin: 0; }
+    #register .plan .plan-secure {
+      margin: 20px 0 0;
+      color: #bbb; }
+      #register .plan .plan-secure .secure-text {
+        padding-left: 5px; }
 
 #account {
   /*.naked {*/
@@ -2304,11 +2342,11 @@ body.messages .saving-overlay {
           margin-top: 3px;
           background: #FF8F8F; } }
   #saved .main {
-    max-width: 80%;
-    margin: 30px auto; }
+    max-width: 90%;
+    margin: 10px auto; }
     @media (max-width: 520px) {
       #saved .main {
-        max-width: 90%; } }
+        max-width: 80%; } }
   #saved .page-title {
     color: #666666;
     font-size: 210%;
@@ -2359,7 +2397,7 @@ body.messages .saving-overlay {
     #saved .save .save-title {
       font-size: 140%;
       font-weight: 400;
-      color: #282828;
+      color: #314046;
       margin: 0; }
       @media (max-width: 1330px) {
         #saved .save .save-title {

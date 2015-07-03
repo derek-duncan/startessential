@@ -7,11 +7,15 @@ block head
   meta(property='og:image' content='#{graphic.custom_image.url}')
 block body
   div#preview
-    include ../templates/_header-naked.jade
+    if sid
+      include ../templates/_header.jade
+    else
+      include ../templates/_header-naked.jade
     main.main
-      section.tools
-        .tools-inner
-          a(href='/posts') < Back to all graphics
+      if sid
+        section.tools
+          .tools-inner
+            a(href='/posts') < Back to all graphics
       .main-content
         .graphic
           .graphic-inner.cf

@@ -1,10 +1,10 @@
 #saved {
   @import "header";
   .main {
-    max-width: 80%;
-    margin: 30px auto;
+    max-width: 90%;
+    margin: 10px auto;
     @media (max-width: $phone) {
-      max-width: 90%;
+      max-width: 80%;
     }
   }
   .page-title {

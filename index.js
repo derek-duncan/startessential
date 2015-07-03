@@ -50,6 +50,7 @@ server.views({
 });
 
 var User = mongoose.model('User');
+var validateUser = require('_/util/validateUser');
 
 server.ext('onRequest', function(request, reply) {
   // create a redirect url
@@ -69,7 +70,6 @@ server.ext('onPreResponse', function(request, reply) {
     var context = response.source.context;
 
     // Attach the sid cookie to every view
-    console.log(request.state)
     if (request.state.sid && context) {
       context.sid = request.state.sid;
     }
@@ -114,33 +114,7 @@ server.register(require('hapi-auth-bearer-token'), function (err) {
       if (!token) return callback(null, false)
 
       User.decode(token, function(err, decoded) {
-        User.findOne({_id: decoded.uid}, function(err, user) {
-          if (user) {
-            var scopeIsValid = user.scope === decoded.scope
-            if (scopeIsValid) {
-              var scope = []
-              switch (decoded.scope) {
-                case constants.SCOPE.PRE_AUTHENTICATED:
-                  scope = [constants.SCOPE.PRE_AUTHENTICATED]
-                  break;
-                case constants.SCOPE.AUTHENTICATED:
-                  scope = [constants.SCOPE.PRE_AUTHENTICATED, constants.SCOPE.AUTHENTICATED]
-                  break;
-                case constants.SCOPE.ADMIN:
-                  scope = [constants.SCOPE.PRE_AUTHENTICATED, constants.SCOPE.AUTHENTICATED, constants.SCOPE.ADMIN]
-                  break;
-                default:
-                  scope = [constants.SCOPE.PRE_AUTHENTICATED]
-                  break;
-              }
-              return callback(null, true, {
-                scope: scope,
-                token: token
-              })
-            }
-          }
-          return callback(null, false)
-        })
+        validateUser.validate(decoded.uid, { token: token }, callback)
       })
     }
   });
@@ -157,30 +131,7 @@ server.register(require('hapi-auth-cookie'), function (err) {
     redirectOnTry: false,
     ttl: (60 * 1000) /* seconds */ * 60 /* minutes */ * 24 /* hours */ * 7 /* days */,
     validateFunc: function(session, callback) {
-      User.findOne({_id: session._id}, function(err, user) {
-        if (err) return callback(err, false)
-        if (!user) return callback(null, false)
-        if (!user.logged_in) return callback(null, false)
-
-        var scope = []
-        switch (user.scope) {
-          case constants.SCOPE.PRE_AUTHENTICATED:
-            scope = [constants.SCOPE.PRE_AUTHENTICATED]
-            break;
-          case constants.SCOPE.AUTHENTICATED:
-            scope = [constants.SCOPE.PRE_AUTHENTICATED, constants.SCOPE.AUTHENTICATED]
-            break;
-          case constants.SCOPE.ADMIN:
-            scope = [constants.SCOPE.PRE_AUTHENTICATED, constants.SCOPE.AUTHENTICATED, constants.SCOPE.ADMIN]
-            break;
-          default:
-            scope = [constants.SCOPE.PRE_AUTHENTICATED]
-            break;
-        }
-        return callback(null, true, {
-          scope: scope
-        })
-      })
+      validateUser.validate(session._id, {}, callback)
     }
   });
 });
@@ -204,7 +155,7 @@ server.register(require('bell'), function (err) {
 
 server.register({ register: require('crumb'), options: {}}, function (err) {
   if (err) {
-    throw err;
+    server.log(['error', 'crumb'], err)
   }
 });
 
@@ -227,8 +178,20 @@ server.auth.default({
   scope: constants.SCOPE.PRE_AUTHENTICATED
 })
 
+// Cookie definitions
+var cookiePassword = 'qowrDS&_(R)E(*#)(*WDFF)';
+
+server.state('se_register', {
+  encoding: 'iron',
+  password: cookiePassword,
+  path: '/',
+  ignoreErrors: false,
+  clearInvalid: true
+})
+
 module.exports = server;
 
+// Register logger
 server.register({
   register: Good,
   options: {
@@ -269,6 +232,7 @@ server.register({
   }
 });
 
+// Start server
 server.start(function () {
   server.log('info', 'Server running at: ' + server.info.uri);
 });

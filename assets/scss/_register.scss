@@ -1,118 +1,175 @@
-$maxWidth: 50%;
-$maxWidthMobile: 90%;
-
-@mixin contentWidth() {
-  max-width: $maxWidth;
-  margin: 0 auto;
-  @media (max-width: $phone) {
-    max-width: $maxWidthMobile;
-  }
-}
-
 #register {
-  text-align: left;
-
-  .header-content {
-    max-width: $maxWidth;
+  width: 60%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 0;
+  @media (max-width: $ipad) {
+    width: 70%;
+  }
+  @media (max-width: $phone) {
+    width: 90%;
   }
   .details {
-    .number {
-      background: #ECECEC;
-      margin: 0 0 20px;
-      .number-inner {
-        padding: 10px 0;
-        color: #A4A4A4;
-        @include contentWidth();
-      }
-      .number-label {
-        font-size: 12px;
-        font-weight: 500;
-        text-transform: uppercase;
-        margin: 0 0 5px;
-      }
-      .number-data {
-        font: monospace 12px;
-        margin: 0;
-      }
-    }
+    text-align: center;
     .copy {
-      @include contentWidth();
-      margin: 40px auto;
-      font-size: 140%;
-      text-align: left;
+      h3 {
+        font-size: 260%;
+        margin: 0;
+        color: $dark;
+      }
+      p {
+        margin: 5px 0 0;
+        color: #888;
+        font-size: 140%;
+        span {
+          color: $red;
+          font-style: italic;
+        }
+      }
     }
   }
 
   .register {
     text-align: left;
-    @include contentWidth();
-    .fb-login {
+    margin: 30px 0 0;
+    padding: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    font-size: 130%;
+    .register-form {
+      padding-right: 30px;
+      box-sizing: border-box;
       display: inline-block;
-      padding: 15px 25px;
-      background: #4A659F;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 140%;
-      &:hover {
-        background: lighten(#4A659F, 10%);
+      width: 60%;
+      border-right: 1px solid #ddd;
+      vertical-align: top;
+      @media (max-width: $phone) {
+        border: none;
+        border-bottom: 1px solid #ddd;
+      }
+      .form-block {
+        margin: 20px 0;
+        &:nth-of-type(1) {
+          margin-top: 0;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+        label {
+          display: block;
+          margin: 0 0 15px;
+          font-size: 120%;
+          font-weight: 600;
+        }
+        input {
+          padding: 10px 15px;
+          box-shadow: border-box;
+          border: 1px solid #ccc;
+          width: 100%;
+          border-radius: 5px;
+          outline: none;
+          &:disabled {
+            background: #f2f2f2;
+          }
+        }
+        .fb-login {
+          display: inline-block;
+          margin: 0 auto;
+          padding: 15px 25px;
+          background: $btn-blue;
+          color: #fff;
+          text-decoration: none;
+          font-size: 120%;
+          font-weight: 600;
+          width: 100%;
+          box-sizing: border-box;
+          border-radius: 5px;
+          text-align: center;
+          -webkit-appearance: none;
+          border: none;
+          &:hover {
+            background: darken($btn-blue, 10%);
+          }
+        }
+      }
+    }
+    .register-extra {
+      display: inline-block;
+      width: 40%;
+      padding-left: 30px;
+      box-sizing: border-box;
+      vertical-align: top;
+      h4.extra-title {
+        margin: 0 0 15px;
+        font-size: 130%;
+      }
+      .question-block {
+        margin: 15px 0;
+        &:first-child {
+          margin-top: 0;
+        }
+        .question-title {
+          font-size: 100%;
+          margin: 0 0 10px;
+        }
+        p {
+          font-size: 90%;
+          margin-top: 0;
+        }
+      }
+    }
+    .register-form, .register-extra {
+      @media (max-width: $phone) {
+        width: 100%;
+        padding: 30px 0;
+        &:first-child {
+          padding-top: 0;
+        }
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
+    }
+    .value-list {
+      $icon-padding: 25px;
+      padding: 0;
+      margin: 0;
+      .value-item {
+        margin: 10px 0;
+        list-style: none;
+        padding-left: $icon-padding;
+      }
+      .value-item:before {
+        content: '\f00c';
+        font-family: FontAwesome;
+        display: inline-block;
+        color: #ccc;
+        width: $icon-padding;
+        margin-left: -$icon-padding;
+      }
+      &.sub {
+        .value-item:before {
+          content: '\f1c5';
+        }
       }
     }
   }
 
   // Plans
 
-  .plans {
-    @include contentWidth();
-    padding-left: 30px;
-    box-sizing: border-box;
-    border-left: 5px solid $red;
-
-    .plan {
-      font-size: 100%;
-      text-align: left;
-      width: 50%;
-      box-sizing: border-box;
-      position: relative;
-      padding: 10px 0;
-      .plan-banner {
-        color: #A5C7AC;
-        width: 100%;
-        background: #fff;
-        font-weight: 500;
-        font-size: 130%;
-        margin-bottom: 10px;
-      }
-      .plan-name {
-        font-size: 260%;
-        margin: 0;
-      }
-      .plan-features {
-        list-style: none;
-        padding: 0;
-        margin: 20px 0;
-        .plan-feature {
-          font-size: 140%;
-          font-weight: 500;
-          color: #747474;
-          margin: 15px 0;
-        }
-      }
-      .plan-tagline {
-        font-size: 220%;
-        font-family: 'Claire Hand';
-        color: $red;
-        margin: 30px 0 20px;
-      }
-      form {
-        margin: 0;
-      }
-      .plan-secure {
-        margin: 20px 0 0;
-        color: #E0E0E0;
-        .secure-text {
-          padding-left: 5px;
-        }
+  .plan {
+    font-size: 100%;
+    text-align: left;
+    width: 100%;
+    form {
+      margin: 0;
+    }
+    .plan-secure {
+      margin: 20px 0 0;
+      color: #bbb;
+      .secure-text {
+        padding-left: 5px;
       }
     }
   }

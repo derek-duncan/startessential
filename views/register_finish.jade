@@ -5,30 +5,44 @@ block body
     main.main
       .details
         .copy
-          h4 Final step
-          p Time to choose a plan! Don't worry, you can give any of them a shot with a 1 month free trial. Select the <b>Starter Plan</b> and enter your credit card information. Thank you for choosing Start Essential. We are so excited to help you grow your essential oils business!
-      .plans
-        .plan
-          h4.plan-name Starter Plan
-          div.plan-banner 1 month free trial
-          ul.plan-features
-            li.plan-feature 2 new graphics / week
-            li.plan-feature Download 8 graphics / month
-            li.plan-feature $10 / month
-            li.plan-feature Cancel Anytime
-          p.plan-tagline That's $1.25 per Graphic
-          form(action="/register/finish" method="POST")
-            input(type="hidden" name="crumb" value=crumb)
-            script(
-              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="pk_test_QSKUtc94PM7XpNBHBmC3LyLA"
-              data-amount="1000"
-              data-name="Start Essential"
-              data-description="Starter plan"
-              data-image="/images/me.jpg"
-              data-allowRememberMe='false'
-              data-email='#{email}'
-              data-label='Pay with card')
-          .plan-secure
-            img.secure-icon(src='/images/secure_icon.png' width='16')
-            span.secure-text Secured with Stripe
+          h3 Finalize your account
+          p We are so excited to help you grow your essential oils business!
+      .register
+        .register-form
+          .plan
+            form(action="/register/finish" method="POST")
+              input(type="hidden" name="crumb" value=crumb)
+              .form-block
+                label Add payment
+                script(
+                  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="pk_test_QSKUtc94PM7XpNBHBmC3LyLA"
+                  data-amount="1000"
+                  data-name="Start Essential"
+                  data-description="Starter plan"
+                  data-image="/images/me.jpg"
+                  data-allowRememberMe='false'
+                  data-email='#{email}'
+                  data-label='Pay with card')
+                .plan-secure
+                  img.secure-icon(src='/images/secure_icon.png' width='16')
+                  span.secure-text Secured with Stripe
+              .form-block
+                label What you get
+                ul.value-list
+                  li.value-item 30-day free trial
+                  li.value-item Save 2 graphics / week
+                    ul.value-list.sub
+                      li.value-item 8 graphics / month
+                  li.value-item $10 / month
+                    ul.value-list.sub
+                      li.value-item That's only $1.25 a graphic
+                  li.value-item Cancel anytime
+        .register-extra
+          h4.extra-title FAQ
+          .question-block
+            h5.question-title Why do I have to add payment?
+            p Adding a payment method allows you to download and use graphics. Once your free trial ends, your monthly subscription will begin.
+          .question-block
+            h5.question-title Can I cancel anytime?
+            p Yes. We would really miss you, but you can cancel your subscription at any time. No strings attached.
