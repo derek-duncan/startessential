@@ -1,8 +1,10 @@
+var Login = require('../components/Login.jsx')
+
 var Index = React.createClass({
   render: function() {
     return (
       <div>
-        <h1>Howdy index</h1>
+        <Login />
       </div>
     )
   }

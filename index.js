@@ -153,11 +153,11 @@ server.register(require('bell'), function (err) {
 
 // Add Crumb plugin
 
-server.register({ register: require('crumb'), options: {}}, function (err) {
-  if (err) {
-    server.log(['error', 'crumb'], err)
-  }
-});
+//server.register({ register: require('crumb'), options: {}}, function (err) {
+//  if (err) {
+//    server.log(['error', 'crumb'], err)
+//  }
+//});
 
 // Add all the routes within the routes folder
 // API routes

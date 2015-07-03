@@ -55,6 +55,8 @@
     "s3-uploader": "^0.8.1",
     "shortid": "^2.2.2",
     "stripe": "^3.3.4",
+    "superagent": "^1.2.0",
+    "superagent-defaults": "^0.1.12",
     "underscore": "^1.8.3",
     "validator": "^3.40.0"
   },

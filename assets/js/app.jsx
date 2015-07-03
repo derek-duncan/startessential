@@ -2,6 +2,8 @@ global.React = require('react/addons')
 global.Reflux = require('reflux')
 global.Router = require('react-router')
 global._ = require('lodash');
+global.UserStore = require('./src/stores/UserStore.js')
+global.Actions = require('./src/actions/Actions.js')
 
 var attachFastClick = require('fastclick');
 
