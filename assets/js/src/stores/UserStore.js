@@ -27,17 +27,28 @@ var UserStore = Reflux.createStore({
     };
     this.updateUser(updated);
 
-    this.trigger(this.user)
-    //this.getRemoteUser(updated.uid);
+    this.getRemoteUser(updated.uid);
   },
-  updateUser: function(user, key) {
-    var data = key ? this.user[key] : this.user;
-    _.merge(data, user);
+  onGetUserCompleted: function(userProfile) {
+    this.updateUser(userProfile);
+
+    this.trigger(this.user);
+  },
+  updateUser: function(updatedUser) {
+    this.user = _.merge(this.user, updatedUser);
 
     localStorage.setItem('se_user', JSON.stringify(this.user));
+    this.trigger(this.user)
+  },
+  getRemoteUser: function(uid) {
+    Actions.getUser(uid)
   },
   getDefaultUser: function() {
     return this.user;
+  },
+  onLogout: function() {
+    this.user = _.clone(defaultUser);
+    localStorage.setItem('se_user', JSON.stringify(this.user));
   },
   isLoggedIn: function() {
     return this.user.isLoggedIn;

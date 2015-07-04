@@ -103,7 +103,7 @@ server.ext('onPreResponse', function(request, reply) {
 // Authentication strategy
 server.register(require('hapi-auth-bearer-token'), function (err) {
 
-  server.auth.strategy('simple', 'bearer-access-token', {
+  server.auth.strategy('bearer', 'bearer-access-token', {
     allowQueryToken: true,
     allowMultipleHeaders: false,
     accessTokenName: 'access_token',
@@ -153,11 +153,11 @@ server.register(require('bell'), function (err) {
 
 // Add Crumb plugin
 
-//server.register({ register: require('crumb'), options: {}}, function (err) {
-//  if (err) {
-//    server.log(['error', 'crumb'], err)
-//  }
-//});
+server.register({ register: require('crumb'), options: {}}, function (err) {
+  if (err) {
+    server.log(['error', 'crumb'], err)
+  }
+});
 
 // Add all the routes within the routes folder
 // API routes
