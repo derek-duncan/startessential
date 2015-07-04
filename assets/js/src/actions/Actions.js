@@ -7,7 +7,8 @@ var actions = Reflux.createActions({
   'setTitle': {},
   'addMessage': {},
   'resetMessage': {},
-  'getGraphics': {asyncResult: true}
+  'getGraphics': {asyncResult: true},
+  'saveGraphic': {asyncResult: true}
 });
 
 actions.login.listen(function(fbID) {
@@ -31,6 +32,15 @@ actions.getUser.listen(function(uid) {
 actions.getGraphics.listen(function(limit, offset) {
   var self = this;
   API.getGraphics(limit, offset).then(function(data) {
+    return self.completed(data);
+  }).catch(function(err) {
+    return self.failed(err);
+  })
+})
+
+actions.saveGraphic.listen(function(graphic_id, uid) {
+  var self = this;
+  API.saveGraphic(graphic_id, uid).then(function(data) {
     return self.completed(data);
   }).catch(function(err) {
     return self.failed(err);

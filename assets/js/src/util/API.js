@@ -1,5 +1,4 @@
-var defaults = require('superagent-defaults');
-var request = defaults();
+var request = require('superagent');
 var _ = require('lodash');
 
 function responseHandler(resolve, reject, err, response) {
@@ -10,6 +9,16 @@ function responseHandler(resolve, reject, err, response) {
     Actions.logout();
   }
   return reject(response.body.message)
+}
+
+function bearer(req) {
+  var api_token = UserStore.getDefaultUser().api_token;
+
+  if (api_token && api_token.token) req.set('Authorization', 'Bearer ' + api_token.token);
+}
+
+function crumb(req) {
+  
 }
 
 var API = {
@@ -25,7 +34,7 @@ var API = {
     return new Promise((resolve, reject) => {
       request
         .get('/api/v1/users/'+uid)
-        .set('Authorization', 'Bearer ' + UserStore.getDefaultUser().api_token.token)
+        .use(bearer)
         .end(responseHandler.bind(this, resolve, reject));
     });
   },
@@ -33,11 +42,23 @@ var API = {
     return new Promise((resolve, reject) => {
       request
         .get('/api/v1/posts')
+        .use(bearer)
         .query({
           limit: limit,
           offset: offset
         })
-        .set('Authorization', 'Bearer ' + UserStore.getDefaultUser().api_token.token)
+        .end(responseHandler.bind(this, resolve, reject));
+    });
+  },
+  saveGraphic: function(graphic_id, uid) {
+    return new Promise((resolve, reject) => {
+      request
+        .post('/api/v1/saves')
+        .use(bearer)
+        .send({
+          uid: uid,
+          graphic_id: graphic_id
+        })
         .end(responseHandler.bind(this, resolve, reject));
     });
   },

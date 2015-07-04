@@ -1,6 +1,10 @@
+// Requires
 var DocumentTitle = require('react-document-title');
-var Message = require('../components/Message.jsx');
 var { Link, RouteHandler, Navigation } = Router;
+
+// Components
+var Header = require('../components/Header.jsx');
+var Message = require('../components/Message.jsx');
 
 var App = React.createClass({
   mixins: [
@@ -28,9 +32,13 @@ var App = React.createClass({
     return (
       <DocumentTitle title={this.state.title}>
         <div>
-          <Message />
-          <h1>Welcome to Start Essential</h1>
-          <RouteHandler {...this.props} user={ this.state.user } />
+          <Header user={this.state.user} />
+          <div className='all-content'>
+            <main className='main'>
+              <RouteHandler {...this.props} user={ this.state.user } />
+            </main>
+          </div>
+          <div className='push'></div>
         </div>
       </DocumentTitle>
     )

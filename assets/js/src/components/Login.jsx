@@ -1,8 +1,15 @@
 // Requires
 var { State, Navigation } = Router;
 
+// Components
+var Loading = require('../components/Loading.jsx');
+
+// Mixins
+var loadingMixin = require('../mixins/loading.js');
+
 var Login = React.createClass({
   mixins: [
+    loadingMixin,
     State,
     Navigation,
     Reflux.listenTo(UserStore, 'onStoreUpdate')
@@ -15,18 +22,14 @@ var Login = React.createClass({
         xfbml: true,
         version: 'v2.3'
       });
-
-      FB.getLoginStatus(function(response) {
-        this.statusChangeCallback(response);
-      }.bind(this));
     }.bind(this);
   },
   checkLoginState: function() {
     FB.getLoginStatus(function(response) {
-      this.statusChangeCallback(response);
+      this._statusChangeCallback(response);
     }.bind(this));
   },
-  statusChangeCallback: function(response) {
+  _statusChangeCallback: function(response) {
     if (response.status === 'connected') {
       Actions.login(response.authResponse.userID)
     } else if (response.status === 'not_authorized') { // not logged into app
@@ -34,21 +37,25 @@ var Login = React.createClass({
     }
   },
   handleClick: function(event) {
+    this.toggleLoading();
     FB.login(this.checkLoginState(), {
       scope: 'email, public_profile, user_friends, publish_actions'
     });
   },
   onStoreUpdate: function(user) {
+    this.toggleLoading();
     var nextPath = this.getQuery().nextPath;
     if (nextPath) {
       this.transitionTo(nextPath);
     } else {
-      this.transitionTo('profile');
+      this.transitionTo('account');
     }
   },
   render: function() {
     return (
-      <a href="#" onClick={this.handleClick}>Login</a>
+      <Loading isLoading={this.state.loading}>
+        <a href="#" onClick={this.handleClick}>Login</a>
+      </Loading>
     )
   }
 })

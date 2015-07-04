@@ -30,29 +30,26 @@ var Graphics = React.createClass({
       graphics: graphics
     })
   },
+  handleClick: function(graphic_id) {
+    Actions.saveGraphic(graphic_id, UserStore.getDefaultUser().uid);
+  },
   render: function() {
+    var self = this;
     var graphics = [];
 
     this.state.graphics.forEach(function(graphic) {
       graphics.push(
-        <div className='graphic'>
+        <div className='graphic' onClick={self.handleClick.bind(this, graphic._id)}>
           <img src={graphic.image.small.Location} width='200' />
           <h2>{graphic.title}</h2>
         </div>
       )
     })
-
-    var loaded;
-    if (this.state.loading) {
-      loaded = <Loading />;
-    } else {
-      loaded = graphics;
-    }
     return (
-      <div>
+      <Loading isLoading={this.state.loading}>
         <h2>Graphics</h2>
-        {loaded}
-      </div>
+        {graphics}
+      </Loading>
     )
   }
 })
