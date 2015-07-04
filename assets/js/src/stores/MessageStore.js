@@ -1,3 +1,4 @@
+// Actions
 var Actions = require('../actions/Actions.js');
 
 var MessageStore = Reflux.createStore({

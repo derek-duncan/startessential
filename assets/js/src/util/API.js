@@ -3,7 +3,6 @@ var request = defaults();
 var _ = require('lodash');
 
 function responseHandler(resolve, reject, err, response) {
-  console.log(this)
   if (response.ok) {
     return resolve(response.body.data);
   }
@@ -26,10 +25,22 @@ var API = {
     return new Promise((resolve, reject) => {
       request
         .get('/api/v1/users/'+uid)
-        .set('access_token', UserStore.getDefaultUser().token.token)
+        .set('Authorization', 'Bearer ' + UserStore.getDefaultUser().api_token.token)
         .end(responseHandler.bind(this, resolve, reject));
     });
-  }
+  },
+  getGraphics: function(limit, offset) {
+    return new Promise((resolve, reject) => {
+      request
+        .get('/api/v1/posts')
+        .query({
+          limit: limit,
+          offset: offset
+        })
+        .set('Authorization', 'Bearer ' + UserStore.getDefaultUser().api_token.token)
+        .end(responseHandler.bind(this, resolve, reject));
+    });
+  },
 };
 
 module.exports = API;

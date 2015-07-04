@@ -12,7 +12,7 @@ var Profile = React.createClass({
     return (
       <div>
         <h2>Profile</h2>
-        <b>{this.props.user.first_name}</b>
+        <p>{this.props.user.first_name}</p>
         <a onClick={this.handleClick} href='#'>Get User</a>
       </div>
     )

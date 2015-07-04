@@ -114,7 +114,7 @@ server.register(require('hapi-auth-bearer-token'), function (err) {
       if (!token) return callback(null, false)
 
       User.decode(token, function(err, decoded) {
-        validateUser.validate(decoded.uid, { token: token }, callback)
+        validateUser.validate(decoded.uid, { api_token: token }, callback)
       })
     }
   });
@@ -153,11 +153,11 @@ server.register(require('bell'), function (err) {
 
 // Add Crumb plugin
 
-server.register({ register: require('crumb'), options: {}}, function (err) {
-  if (err) {
-    server.log(['error', 'crumb'], err)
-  }
-});
+//server.register({ register: require('crumb'), options: {}}, function (err) {
+//  if (err) {
+//    server.log(['error', 'crumb'], err)
+//  }
+//});
 
 // Add all the routes within the routes folder
 // API routes

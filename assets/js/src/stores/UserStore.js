@@ -1,5 +1,8 @@
-var Actions = require('../actions/Actions.js');
+// Requires
 var { Navigation } = Router;
+
+// Actions
+var Actions = require('../actions/Actions.js');
 
 var defaultUser = {
   uid: '',
@@ -22,7 +25,7 @@ var UserStore = Reflux.createStore({
   onLoginCompleted: function(user) {
     var updated = {
       uid: user._id,
-      token: user.api_token,
+      api_token: user.api_token,
       isLoggedIn: true
     };
     this.updateUser(updated);

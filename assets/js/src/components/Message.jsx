@@ -1,7 +1,6 @@
 // Requires
-var Reflux = require('reflux'),
-    Actions = require('../actions/Actions'),
-    { Navigation } = require('react-router');
+var Actions = require('../actions/Actions');
+var { Navigation } = Router;
 
 // Stores
 var MessageStore = require('../stores/MessageStore');
