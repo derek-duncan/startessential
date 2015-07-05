@@ -2,20 +2,23 @@
 var Actions = require('../actions/Actions.js');
 
 var UserRecordsStore = Reflux.createStore({
-  listenables: Actions,
-
   init: function() {
-    this.listenTo(UserStore, this.onUserUpdate)
+    this.listenToMany(Actions);
+    this.listenTo(UserStore, this.onUserUpdate);
 
-    this.records = {
-      downloads: 2,
-      downloaded: 0
-    }
+    this.records = {}
     return this.records;
   },
   onSaveGraphicCompleted: function() {
-    this.records.downloaded += 1;
-    this.trigger(this.records)
+    if (this.records.downloaded < this.records.downloads) {
+      this.records.downloaded += 1;
+      this.trigger(this.records)
+    } else {
+      Actions.addMessage({
+        type: 'info',
+        text: 'You do not have any downloads left for the week'
+      })
+    }
   },
   onUserUpdate: function(user) {
     this.records = user.records;

@@ -1,36 +1,20 @@
 // Requires
 var { Navigation } = Router;
 
+// Stores
+var AuthStore = require('../stores/AuthStore.js');
+
 // Actions
 var Actions = require('../actions/Actions.js');
-
-var defaultUser = {
-  uid: '',
-  token: '',
-  isLoggedIn: false
-};
 
 var UserStore = Reflux.createStore({
   listenables: Actions,
 
   init: function() {
-    var localUser = localStorage.getItem('se_user');
-    if (!localUser) {
-      this.user = _.clone(defaultUser);
-    } else {
-      this.user = JSON.parse(localUser);
-    }
+    //this.listenTo(AuthStore, 'onAuthUpdate');
+    this.user = {};
+    this.getRemoteUser(AuthStore.auth.uid);
     return this.user;
-  },
-  onLoginCompleted: function(user) {
-    var updated = {
-      uid: user._id,
-      api_token: user.api_token,
-      isLoggedIn: true
-    };
-    this.updateUser(updated);
-
-    this.getRemoteUser(updated.uid);
   },
   onGetUserCompleted: function(userProfile) {
     this.updateUser(userProfile);
@@ -40,7 +24,6 @@ var UserStore = Reflux.createStore({
   updateUser: function(updatedUser) {
     this.user = _.merge(this.user, updatedUser);
 
-    localStorage.setItem('se_user', JSON.stringify(this.user));
     this.trigger(this.user)
   },
   getRemoteUser: function(uid) {
@@ -48,13 +31,6 @@ var UserStore = Reflux.createStore({
   },
   getDefaultUser: function() {
     return this.user;
-  },
-  onLogout: function() {
-    this.user = _.clone(defaultUser);
-    localStorage.setItem('se_user', JSON.stringify(this.user));
-  },
-  isLoggedIn: function() {
-    return this.user.isLoggedIn;
   }
 })
 

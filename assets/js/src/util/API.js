@@ -12,7 +12,7 @@ function responseHandler(resolve, reject, err, response) {
 }
 
 function bearer(req) {
-  var api_token = UserStore.getDefaultUser().api_token;
+  var api_token = AuthStore.auth.api_token;
 
   if (api_token && api_token.token) req.set('Authorization', 'Bearer ' + api_token.token);
 }

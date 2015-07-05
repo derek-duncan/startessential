@@ -25,7 +25,7 @@ var Message = React.createClass({
       }
     }
     return (
-      <div className='messages'>{message}</div>
+      <span>{message}</span>
     )
   }
 })
