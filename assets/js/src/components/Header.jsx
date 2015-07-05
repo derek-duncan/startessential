@@ -26,6 +26,9 @@ var Header = React.createClass({
               <li className='nav-item' id='#posts-link'>
                 <Link to='explore'>Explore</Link>
               </li>
+              <li className='nav-item' id='#saved-link'>
+                <Link to='saved'>Saved</Link>
+              </li>
               <li className='nav-item' id='#account-link'>
                 <Link to='account'>Account</Link>
               </li>

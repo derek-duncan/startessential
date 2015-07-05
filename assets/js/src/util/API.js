@@ -2,11 +2,8 @@ var request = require('superagent');
 var _ = require('lodash');
 
 function responseHandler(resolve, reject, err, response) {
-  if (response.ok) {
+  if (response.body.status === 'success') {
     return resolve(response.body.data);
-  }
-  if (response.status === 401) {
-    Actions.logout();
   }
   return reject(response.body.message)
 }
@@ -18,7 +15,6 @@ function bearer(req) {
 }
 
 function crumb(req) {
-  
 }
 
 var API = {
@@ -38,14 +34,33 @@ var API = {
         .end(responseHandler.bind(this, resolve, reject));
     });
   },
-  getGraphics: function(limit, offset) {
+  getGraphics: function(options) {
     return new Promise((resolve, reject) => {
       request
         .get('/api/v1/posts')
         .use(bearer)
+        .query(options)
+        .end(responseHandler.bind(this, resolve, reject));
+    });
+  },
+  getSaves: function(uid) {
+    return new Promise((resolve, reject) => {
+      request
+        .get('/api/v1/saves')
+        .use(bearer)
         .query({
-          limit: limit,
-          offset: offset
+          uid: uid
+        })
+        .end(responseHandler.bind(this, resolve, reject));
+    });
+  },
+  getSave: function(save_code, uid) {
+    return new Promise((resolve, reject) => {
+      request
+        .get('/api/v1/saves/' + save_code)
+        .use(bearer)
+        .query({
+          uid: uid
         })
         .end(responseHandler.bind(this, resolve, reject));
     });

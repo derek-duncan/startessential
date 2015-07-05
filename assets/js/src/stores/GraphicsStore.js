@@ -5,12 +5,18 @@ var GraphicsStore = Reflux.createStore({
   listenables: Actions,
 
   init: function() {
-    this.graphics = [];
+    this.graphics = {
+      all: [],
+      featured: {}
+    };
   },
-  // message is an object with type and message values
+  onGetFeaturedCompleted: function(featured) {
+    this.graphics.featured = _.isArray(featured) ? featured[0] : featured;
+    this.trigger(this.graphics);
+  },
   onGetGraphicsCompleted: function(graphics) {
-    this.graphics = graphics;
-    this.trigger(this.graphics)
+    this.graphics.all = graphics;
+    this.trigger(this.graphics);
   },
 })
 

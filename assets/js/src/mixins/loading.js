@@ -4,9 +4,9 @@ module.exports = {
       loading: false
     }
   },
-  toggleLoading: function() {
+  toggleLoading: function(value) {
     this.setState({
-      loading: !this.state.loading
+      loading: typeof value !== 'undefined' ? value : !this.state.loading
     });
   },
 }

@@ -40,7 +40,7 @@ var AuthStore = Reflux.createStore({
   },
   onLogout: function() {
     this.auth = _.clone(defaultAuth);
-    localStorage.setItem('se_auth', JSON.stringify(this.auth));
+    localStorage.setItem('se_auth', JSON.stringify(defaultAuth));
   },
   isLoggedIn: function() {
     return this.auth.isLoggedIn;

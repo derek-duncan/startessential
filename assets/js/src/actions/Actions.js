@@ -8,13 +8,16 @@ var actions = Reflux.createActions({
   'addMessage': {},
   'resetMessage': {},
   'getGraphics': {asyncResult: true},
+  'getFeatured': {asyncResult: true},
+  'getSaves': {asyncResult: true},
+  'getSave': {asyncResult: true},
   'saveGraphic': {asyncResult: true}
 });
 
 actions.login.listen(function(fbID) {
   var self = this;
   API.login(fbID).then(function(data) {
-    return self.completed(data.user);
+    return self.completed(data);
   }).catch(function(err) {
     return self.failed(err);
   })
@@ -29,10 +32,38 @@ actions.getUser.listen(function(uid) {
   })
 })
 
-actions.getGraphics.listen(function(limit, offset) {
+actions.getGraphics.listen(function(options) {
   var self = this;
-  API.getGraphics(limit, offset).then(function(data) {
+  API.getGraphics(options).then(function(data) {
     return self.completed(data);
+  }).catch(function(err) {
+    return self.failed(err);
+  })
+})
+
+actions.getFeatured.listen(function(options) {
+  options.featured = true;
+  var self = this;
+  API.getGraphics(options).then(function(data) {
+    return self.completed(data);
+  }).catch(function(err) {
+    return self.failed(err);
+  })
+})
+
+actions.getSaves.listen(function(uid) {
+  var self = this;
+  API.getSaves(uid).then(function(data) {
+    return self.completed(data);
+  }).catch(function(err) {
+    return self.failed(err);
+  })
+})
+
+actions.getSave.listen(function(save_code, uid) {
+  var self = this;
+  API.getSave(save_code, uid).then(function(save) {
+    return self.completed(save);
   }).catch(function(err) {
     return self.failed(err);
   })

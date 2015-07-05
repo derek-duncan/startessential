@@ -4,6 +4,8 @@ var App = require('./pages/App.jsx');
 var Index = require('./pages/Index.jsx');
 var Account = require('./pages/Account.jsx');
 var Explore = require('./pages/Explore.jsx');
+var Saved = require('./pages/Saved.jsx');
+var Save = require('./pages/Save.jsx');
 var Logout = require('./pages/Logout.jsx');
 
 module.exports = (
@@ -11,6 +13,8 @@ module.exports = (
     <Route name='index' path='/app' handler={Index} />
     <Route name='account' path='/app/account' handler={Account} />
     <Route name='explore' path='/app/explore' handler={Explore} />
+    <Route name='saved' path='/app/saved' handler={Saved} />
+    <Route name='save' path='/app/preview/:save_code' handler={Save} />
     <Route name='logout' path='/app/logout' handler={Logout} />
   </Route>
 );
