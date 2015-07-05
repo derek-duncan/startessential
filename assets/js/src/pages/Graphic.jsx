@@ -1,5 +1,5 @@
 // Stores
-var SaveStore = require('../stores/SaveStore.js');
+var GraphicStore = require('../stores/GraphicStore.js');
 
 // Mixins
 var authMixin = require('../mixins/auth.js');
@@ -8,42 +8,43 @@ var loadingMixin = require('../mixins/loading.js');
 // Components
 var Loading = require('../components/Loading.jsx');
 
-var Save = React.createClass({
+var Graphic = React.createClass({
   mixins: [
     authMixin,
     loadingMixin,
-    Reflux.listenTo(SaveStore, 'onStoreUpdate'),
+    Reflux.listenTo(GraphicStore, 'onStoreUpdate'),
   ],
   getInitialState: function() {
     return {
-      save: []
+      graphic: {}
     }
   },
   componentWillMount: function() {
     this.toggleLoading();
-    Actions.getSave(this.props.params.save_code, AuthStore.auth.uid);
+    Actions.getGraphic(this.props.params.graphic_url);
   },
-  onStoreUpdate: function(save) {
-    Actions.setTitle(save._post.title + ' - Start Essential');
+  onStoreUpdate: function(graphic) {
+    Actions.setTitle(graphic.title + ' - Start Essential');
     this.toggleLoading();
     this.setState({
-      save: save
+      graphic: graphic
     })
   },
   render: function() {
     var self = this;
-    var save = this.state.save;
+    var graphic = this.state.graphic;
 
     return (
       <Loading isLoading={this.state.loading}>
         <div className='graphic'>
-          <img src={_.get(save, 'custom_image.small.Url')} width='200' />
-          <h2>{_.get(save, '_post.title')}</h2>
+          <img src={_.get(graphic, 'image.small.Location')} width='200' />
+          <h2>{_.get(graphic, '_post.title')}</h2>
         </div>
       </Loading>
     )
   }
 })
 
-module.exports = Save;
+module.exports = Graphic;
+
 

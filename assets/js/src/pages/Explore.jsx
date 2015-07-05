@@ -1,3 +1,6 @@
+// Require
+var { Link } = Router;
+
 // Stores
 var GraphicsStore = require('../stores/GraphicsStore.js');
 var UserSavesStore = require('../stores/UserSavesStore.js');
@@ -57,12 +60,16 @@ var Graphics = React.createClass({
     var graphics = [];
     var featured;
 
-    featured = (
-      <div className='featured'>
-        <img src={_.get(this.state.featured, 'image.small.Location')} width='200'/>
-        <h1>{_.get(this.state.featured, 'title')}</h1>
-      </div>
-    )
+    if (_.isEmpty(this.state.featured)) {
+      featured = <div></div>;
+    } else {
+      featured = (
+        <div className='featured'>
+          <img src={_.get(this.state.featured, 'image.small.Location')} width='200'/>
+          <Link to='graphic' params={{ graphic_url: _.get(this.state.featured, 'url_path') }}>{_.get(this.state.featured, 'title')}</Link>
+        </div>
+      )
+    }
 
     this.state.graphics.forEach(function(graphic) {
       var graphicClass = cx({
@@ -72,7 +79,7 @@ var Graphics = React.createClass({
       graphics.push(
         <div className={graphicClass} onClick={self.handleClick.bind(this, graphic._id)}>
           <img src={graphic.image.small.Location} width='200' />
-          <h2>{graphic.title}</h2>
+          <Link to='graphic' params={{ graphic_url: _.get(graphic, 'url_path') }}>{_.get(graphic, 'title')}</Link>
         </div>
       )
     })

@@ -43,6 +43,14 @@ var API = {
         .end(responseHandler.bind(this, resolve, reject));
     });
   },
+  getGraphic: function(graphic_url) {
+    return new Promise((resolve, reject) => {
+      request
+        .get('/api/v1/posts/'+graphic_url)
+        .use(bearer)
+        .end(responseHandler.bind(this, resolve, reject));
+    });
+  },
   getSaves: function(uid) {
     return new Promise((resolve, reject) => {
       request
