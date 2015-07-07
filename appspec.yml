@@ -1,0 +1,13 @@
+version: 0.0
+os: linux
+files:
+   - source: /
+     destination: /home/ec2-user/se
+permissions:
+   - object: /home/ec2-user/se
+     pattern: "**"
+     owner: ec2-user
+     group: ec2-user
+     mode: 755
+     type:
+       - file
