@@ -1,15 +1,15 @@
 "use strict";
 
 var _ = require('lodash')
-var db_constants = require('_/config/constants')
-var constants = require('_/constants')
+var db_constants = require('lib/config/constants')
+var constants = require('lib/constants')
 var async = require('async')
 var mongoose = require('mongoose')
-var _message = require('_/util/createMessage')
+var _message = require('lib/util/createMessage')
 
 var Hapi = require('hapi');
 var Good = require('good');
-var routes = require('_/routes/index.js');
+var routes = require('lib/routes/index.js');
 var fs = require('fs');
 
 var server = new Hapi.Server()
@@ -50,7 +50,7 @@ server.views({
 });
 
 var User = mongoose.model('User');
-var validateUser = require('_/util/validateUser');
+var validateUser = require('lib/util/validateUser');
 
 server.ext('onRequest', function(request, reply) {
   // create a redirect url
