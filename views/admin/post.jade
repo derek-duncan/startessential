@@ -46,6 +46,9 @@ block body
       label Title
       input(type='text' value='#{post.title}' name='title')
     div.form-section
+      label Short Description
+      textarea(name='short_description' rows='6' value="#{post.short_description}") #{post.short_description}
+    div.form-section
       label Content
       textarea(name='content' rows='6' value="#{post.content}") #{post.content}
     div.form-section
@@ -67,9 +70,6 @@ block body
     div.form-section
       label Featured
       input(type='checkbox' name='featured' checked=post.featured)
-    div.form-section
-      label Generate new share link
-      input(type='checkbox' name='new_share_token')
     div.form-section
       button(type='submit') Save it
   pre #{post}

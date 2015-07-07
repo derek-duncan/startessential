@@ -23,7 +23,7 @@ block body
               h4.details-title=featured.title
               .cf
               p.details-category=featured.category
-              p.details-content=featured.content
+              .details-content !{featured.content_rendered}
               form(action='/posts/#{featured._id}/save' method='POST')
                 input(type="hidden" name="crumb" value=crumb)
                 a.details-link(href=featured.url) View Graphic

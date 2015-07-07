@@ -13,7 +13,7 @@ block body
               img.graphic-image(src=post.image.normal.Location)
             .graphic-details
               h1.details-title= post.title
-              p.details-content= post.content
+              .details-content !{post.content_rendered}
               form(action='/posts/#{post._id}/save' method='POST')
                 input(type="hidden" name="crumb" value=crumb)
                 if (isSaved(post._id, sid))

@@ -42,6 +42,7 @@
     "mailchimp-api": "^2.0.7",
     "mailgun-js": "^0.6.9",
     "mandrill-api": "^1.0.45",
+    "marked": "^0.3.3",
     "masonry-layout": "^3.3.0",
     "moment": "^2.10.3",
     "mongoose": "*",
