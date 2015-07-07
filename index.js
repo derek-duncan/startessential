@@ -90,6 +90,9 @@ server.ext('onPreResponse', function(request, reply) {
       context.message = validator.escape(queryMessage)
     }
 
+    // Add FB App id to templates
+    context.fb_app_id = constants.FB_APP_ID;
+
     // Trigger request logging
     var exclude = ['css', 'images', 'js', 'fonts']
     var path_start = request.path.split('/')[1]
@@ -142,8 +145,8 @@ server.register(require('bell'), function (err) {
   server.auth.strategy('facebook', 'bell', {
     provider: 'facebook',
     password: 'my_secret',
-    clientId: '1589098114709228',
-    clientSecret: '7fc1cf34eb3fe7daa129331790276b8b',
+    clientId: constants.FB_APP_ID,
+    clientSecret: constants.FB_APP_SECRET,
     providerParams: {
       display: 'popup'
     },
