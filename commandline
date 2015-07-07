@@ -1,1 +1,1 @@
-ssh -i ~/.ssh/Derek.pem ec2-user@ec2-52-25-41-42.us-west-2.compute.amazonaws.com
+ssh -i ~/.ssh/Derek.pem ec2-user@ec2-52-10-121-130.us-west-2.compute.amazonaws.com
