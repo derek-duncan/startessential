@@ -1,7 +1,6 @@
 "use strict";
 
 var _ = require('lodash')
-var db_constants = require('lib/config/constants')
 var constants = require('lib/constants')
 var async = require('async')
 var mongoose = require('mongoose')
@@ -12,16 +11,18 @@ var Good = require('good');
 var routes = require('lib/routes/index.js');
 var fs = require('fs');
 
+var env = process.env.NODE_ENV || 'development';
+
 var server = new Hapi.Server()
 
 // Connect to mongodb
 var connect = function () {
   var options = { server: { socketOptions: { keepAlive: 1 } } };
-  mongoose.connect(db_constants.database['database'], options);
+  mongoose.connect(constants.database[env].url, options);
 };
 connect();
 
-mongoose.connection.on('error', console.log);
+mongoose.connection.on('error', server.log);
 mongoose.connection.on('disconnected', connect);
 
 // Bootstrap models
@@ -34,7 +35,7 @@ fs.readdirSync(__dirname + '/lib/cron').forEach(function (file) {
   if (file.indexOf('.js') >= 0) require(__dirname + '/lib/cron/' + file);
 });
 
-var port = 3000;
+var port = constants.application[env].port;
 server.connection({
   port: port
 });
