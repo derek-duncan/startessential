@@ -53,7 +53,7 @@ block body
       textarea(name='content' rows='6' value="#{post.content}") #{post.content}
     div.form-section
       label Main image
-      img.post-img(width='150' src='#{post.image.original.Location}')
+      img.post-img(width='150' src='#{post.image.small.Location}')
       input.post-file(type='file' name='image')
     div.form-section
       label Position X
