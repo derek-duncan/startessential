@@ -15,43 +15,39 @@ block body
           a.cta-top(href="#join" title="Join Start Essential") Join now
           a.login-top(href="/login" title="Login to Start Essential") Login
       div.header-middle.content.cf
-        h2 An essential 
-        h2 An exclusive collection of Essential Oil graphics that enables Young Living distributors to find helpful resources
-        p We design incredible infographics and social media posts so you can use them to grow your business.
-      div.header-bottom.examples
-        div.example-blocks.cf
-          span.examples-tagline Sample Infographics
-          figure.example-block
-            img(src='/images/Card 1.jpg' width='300' alt='3 practical uses for thieves essential oil infographic')
-          figure.example-block
-            img(src='/images/Card 2.jpg' width='300' alt='best essential oil blend for allergies infographic')
-          figure.example-block
-            img(src='/images/Card 3.jpg' width='300' alt='Top essential oils for weight loss infographic')
+        h4.middle-tagline If you're a Young Living distributor, you're in luck
+        h2.middle-headline An Exclusive Collection of Essential Oil Graphics
+        p.middle-description Download authentic Young Living graphics already customized with your distibutor information and approved under Young Living's guidelines.
+        a.middle-cta(href='/join' title='Claim 30-Days of Free Access') Claim 30-Days of Free Access
+        .middle-next
+          p.middle-next-step Of course, if you would like to grab some more information about how it all works...
+          p.middle-next-action Just keep reading...
     section.info
-      h2.info-sub_head Finding images and writing content couldn't be easier
-      p.info-sub_desc Liven up your blog and social media with interesting, engaging images and content.
-      .info-blocks.cf
-        .info-block
-          img.info-image(src='/images/icon_3.png' width='100' alt='Improve your blog graph')
-          div.info-content
-            h3.info-sub_head Improve your blogs and posts engagement by <b>40%</b>
-            p.info-desc Did you know that 90% of information transmitted to the brain is visual? Studies have shown that people are 40% more likely to respond to a post with visual information then just plain text. Talk about growth!<br><span>Source: <a href="http://blog.hubspot.com/blog/tabid/6307/bid/33423/19-Reasons-You-Should-Include-Visual-Content-in-Your-Marketing-Data.aspx" title="Visual Content increases growth">hubspot.com</a></span>
-
-        .info-block
-          img.info-image(src='/images/icon_1.png' width='100' alt='Easily search essential oil infographics')
-          div.info-content
-            h3.info-sub_head Search images by oils, topic, terms, and more
-            p.info-desc Find the perfect image for your content. We professionally produce all our essential oil graphics, so you can be sure you'll get a high-quality, exciting image!
-        .info-block
-          img.info-image(src='/images/icon_4.png' width='100' alt='Customizable member number')
-          div.info-content
-            h3.info-sub_head Automatically add your <b>own</b> member number
-            p.info-desc All the images and posts we have will already have your member number and information on them. We do all the work for you. You can even download a customize <b>Get Started</b> flyer to guide new downlines.
-        .info-block
-          img.info-image(src='/images/icon_2.png' width='100' alt='Social media calendar')
-          div.info-content
-            h3.info-sub_head Save time with our social media calendar
-            p.info-desc We know you're incredibly busy, and designing custom images and posts take a really long time! Because of that, we carefully create a Social Media Calender to give you a week-long supply of posts and images. Just copy and paste!
+      .info-content
+        h2.info-sub_head Focus on sharing the oils you love without the hassle of finding or creating your own graphics
+        img.info-computer-example(src='/images/computer-example.png' width='600' alt='Start Essential landing page')
+    section.features
+      .features-content
+        .feature
+          img.feature-icon(src='/images/feature-1.png' width='300')
+          .feature-details
+            h3.feature-title Save time by quickly searching for exactly what you need
+            p.feature-description Overcome the challenge of finding practical, approved information with a valuable library of essential oil graphics all in one place.
+        .feature
+          img.feature-icon(src='/images/feature-2.png' width='300')
+          .feature-details
+            h3.feature-title Rest assured that the graphics you share are carefully created under FDA standards
+            p.feature-description We meticoulously write all our graphics with terminology provided under Young Living's guidelines.
+        .feature
+          img.feature-icon(src='/images/feature-3.png' width='300')
+          .feature-details
+            h3.feature-title Educate your downlines and friends 40% more effectively with graphics
+            p.feature-description Did you know that 90% of information transmitted to the brain is visual? Studies have shown that people are 40% more likely to respond to a post with visual information then just plain text. Talk about growth!
+        .feature
+          img.feature-icon(src='/images/feature-4.png' width='300')
+          .feature-details
+            h3.feature-title All our graphics are yours–automatically customized with your distributor information
+            p.feature-description All the images and posts you save will already have your distributor signup link on them. Now every post you share is an oppertunity to grow your downline!
 
     section.join(class=(sid ? 'logged' : undefined))
       if sid

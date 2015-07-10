@@ -1,0 +1,150 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'zlib', '--save' ]
+2 info using npm@2.5.1
+3 info using node@v0.12.0
+4 warn package.json StartEssential@1.0.0 No description
+5 warn package.json StartEssential@1.0.0 No README data
+6 warn package.json nodemailer-mailgun-transport@1.0.0 No repository field.
+7 warn package.json cluster@0.7.7 cluster is also the name of a node core module.
+8 warn package.json crypto@0.0.3 crypto is also the name of a node core module.
+9 silly cache add args [ 'zlib', null ]
+10 verbose cache add spec zlib
+11 silly cache add parsed spec { raw: 'zlib',
+11 silly cache add   scope: null,
+11 silly cache add   name: 'zlib',
+11 silly cache add   rawSpec: '',
+11 silly cache add   spec: '*',
+11 silly cache add   type: 'range' }
+12 verbose addNamed zlib@*
+13 silly addNamed semver.valid null
+14 silly addNamed semver.validRange *
+15 silly addNameRange { name: 'zlib', range: '*', hasData: false }
+16 silly mapToRegistry name zlib
+17 silly mapToRegistry using default registry
+18 silly mapToRegistry registry https://registry.npmjs.org/
+19 silly mapToRegistry uri https://registry.npmjs.org/zlib
+20 verbose addNameRange registry:https://registry.npmjs.org/zlib not in flight; fetching
+21 verbose request uri https://registry.npmjs.org/zlib
+22 verbose request no auth needed
+23 info attempt registry request try #1 at 11:34:50 PM
+24 verbose request id 91afd7aa3df2c4f9
+25 verbose etag "EBQNZSBGN9EL34IT3BLYCYHQA"
+26 http request GET https://registry.npmjs.org/zlib
+27 http 304 https://registry.npmjs.org/zlib
+28 silly get cb [ 304,
+28 silly get   { date: 'Fri, 10 Jul 2015 05:34:51 GMT',
+28 silly get     via: '1.1 varnish',
+28 silly get     'cache-control': 'max-age=60',
+28 silly get     etag: '"EBQNZSBGN9EL34IT3BLYCYHQA"',
+28 silly get     age: '0',
+28 silly get     connection: 'keep-alive',
+28 silly get     'x-served-by': 'cache-dfw1832-DFW',
+28 silly get     'x-cache': 'MISS',
+28 silly get     'x-cache-hits': '0',
+28 silly get     'x-timer': 'S1436506491.526561,VS0,VE64',
+28 silly get     vary: 'Accept' } ]
+29 verbose etag https://registry.npmjs.org/zlib from cache
+30 verbose get saving zlib to /Users/derekduncan/.npm/registry.npmjs.org/zlib/.cache.json
+31 silly addNameRange number 2 { name: 'zlib', range: '*', hasData: true }
+32 silly addNameRange versions [ 'zlib',
+32 silly addNameRange   [ '1.0.0', '1.0.1', '1.0.2', '1.0.3', '1.0.4', '1.0.5' ] ]
+33 verbose addNamed zlib@1.0.5
+34 silly addNamed semver.valid 1.0.5
+35 silly addNamed semver.validRange 1.0.5
+36 silly cache afterAdd zlib@1.0.5
+37 verbose afterAdd /Users/derekduncan/.npm/zlib/1.0.5/package/package.json not in flight; writing
+38 verbose afterAdd /Users/derekduncan/.npm/zlib/1.0.5/package/package.json written
+39 silly install resolved [ { name: 'zlib',
+39 silly install resolved     description: 'Simple, synchronous deflate/inflate for buffers',
+39 silly install resolved     version: '1.0.5',
+39 silly install resolved     homepage: 'https://github.com/kkaefer/node-zlib',
+39 silly install resolved     author: { name: 'Konstantin Käfer', email: 'kkaefer@gmail.com' },
+39 silly install resolved     repository: { type: 'git', url: 'git://github.com/kkaefer/node-zlib.git' },
+39 silly install resolved     engines: { node: '>=0.2.0' },
+39 silly install resolved     licenses: [ [Object] ],
+39 silly install resolved     main: './lib/zlib',
+39 silly install resolved     _npmJsonOpts:
+39 silly install resolved      { file: '/Users/kkaefer/.npm/zlib/1.0.5/package/package.json',
+39 silly install resolved        contributors: false,
+39 silly install resolved        serverjs: false,
+39 silly install resolved        wscript: true },
+39 silly install resolved     _id: 'zlib@1.0.5',
+39 silly install resolved     scripts: { preinstall: 'node-waf clean || true; node-waf configure build' },
+39 silly install resolved     dependencies: {},
+39 silly install resolved     devDependencies: {},
+39 silly install resolved     _engineSupported: true,
+39 silly install resolved     _npmVersion: '1.0.23',
+39 silly install resolved     _nodeVersion: 'v0.4.9',
+39 silly install resolved     _defaultsLoaded: true,
+39 silly install resolved     dist:
+39 silly install resolved      { shasum: '6e7c972fc371c645a6afb03ab14769def114fcc0',
+39 silly install resolved        tarball: 'http://registry.npmjs.org/zlib/-/zlib-1.0.5.tgz' },
+39 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object] ],
+39 silly install resolved     directories: {},
+39 silly install resolved     _shasum: '6e7c972fc371c645a6afb03ab14769def114fcc0',
+39 silly install resolved     _resolved: 'https://registry.npmjs.org/zlib/-/zlib-1.0.5.tgz',
+39 silly install resolved     _from: 'zlib@*',
+39 silly install resolved     bugs: { url: 'https://github.com/kkaefer/node-zlib/issues' },
+39 silly install resolved     readme: 'ERROR: No README data found!' } ]
+40 info install zlib@1.0.5 into /Users/derekduncan/Documents/startessential-new/site
+41 info installOne zlib@1.0.5
+42 verbose installOne of zlib to /Users/derekduncan/Documents/startessential-new/site not in flight; installing
+43 verbose lock using /Users/derekduncan/.npm/_locks/zlib-5693f4cd62a105c2.lock for /Users/derekduncan/Documents/startessential-new/site/node_modules/zlib
+44 silly install write writing zlib 1.0.5 to /Users/derekduncan/Documents/startessential-new/site/node_modules/zlib
+45 silly cache addNamed cb zlib@1.0.5
+46 verbose unbuild node_modules/zlib
+47 verbose gentlyRm vacuuming /Users/derekduncan/Documents/startessential-new/site/node_modules/zlib
+48 verbose tar unpack /Users/derekduncan/.npm/zlib/1.0.5/package.tgz
+49 verbose tar unpacking to /Users/derekduncan/Documents/startessential-new/site/node_modules/zlib
+50 verbose gentlyRm vacuuming /Users/derekduncan/Documents/startessential-new/site/node_modules/zlib
+51 silly gunzTarPerm modes [ '755', '644' ]
+52 silly gunzTarPerm extractEntry .gitignore
+53 silly gunzTarPerm extractEntry configure
+54 silly gunzTarPerm extractEntry index.js
+55 silly gunzTarPerm extractEntry LICENSE
+56 silly gunzTarPerm extractEntry Makefile
+57 silly gunzTarPerm extractEntry package.json
+58 silly gunzTarPerm extractEntry README.md
+59 silly gunzTarPerm extractEntry wscript
+60 silly gunzTarPerm extractEntry lib/zlib.js
+61 silly gunzTarPerm extractEntry src/node-zlib.cc
+62 silly gunzTarPerm extractEntry test/deflate.test.js
+63 silly gunzTarPerm extractEntry test/inflate.test.js
+64 info preinstall zlib@1.0.5
+65 verbose unsafe-perm in lifecycle false
+66 info zlib@1.0.5 Failed to exec preinstall script
+67 verbose unlock done using /Users/derekduncan/.npm/_locks/zlib-5693f4cd62a105c2.lock for /Users/derekduncan/Documents/startessential-new/site/node_modules/zlib
+68 verbose stack Error: zlib@1.0.5 preinstall: `node-waf clean || true; node-waf configure build`
+68 verbose stack Exit status 127
+68 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:213:16)
+68 verbose stack     at EventEmitter.emit (events.js:110:17)
+68 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:14:12)
+68 verbose stack     at ChildProcess.emit (events.js:110:17)
+68 verbose stack     at maybeClose (child_process.js:1008:16)
+68 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1080:5)
+69 verbose pkgid zlib@1.0.5
+70 verbose cwd /Users/derekduncan/Documents/startessential-new/site
+71 error Darwin 14.3.0
+72 error argv "node" "/usr/local/bin/npm" "install" "zlib" "--save"
+73 error node v0.12.0
+74 error npm  v2.5.1
+75 error code ELIFECYCLE
+76 error zlib@1.0.5 preinstall: `node-waf clean || true; node-waf configure build`
+76 error Exit status 127
+77 error Failed at the zlib@1.0.5 preinstall script 'node-waf clean || true; node-waf configure build'.
+77 error This is most likely a problem with the zlib package,
+77 error not with npm itself.
+77 error Tell the author that this fails on your system:
+77 error     node-waf clean || true; node-waf configure build
+77 error You can get their info via:
+77 error     npm owner ls zlib
+77 error There is likely additional logging output above.
+78 verbose exit [ 1, true ]
+79 verbose unbuild node_modules/zlib
+80 info preuninstall zlib@1.0.5
+81 info uninstall zlib@1.0.5
+82 verbose unbuild rmStuff zlib@1.0.5 from /Users/derekduncan/Documents/startessential-new/site/node_modules
+83 info postuninstall zlib@1.0.5
+84 verbose gentlyRm vacuuming /Users/derekduncan/Documents/startessential-new/site/node_modules/zlib
+85 silly gentlyRm purging /Users/derekduncan/Documents/startessential-new/site/node_modules/zlib
+86 silly gentlyRm quitting because other entries in /Users/derekduncan/Documents/startessential-new/site/node_modules
