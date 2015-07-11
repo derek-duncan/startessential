@@ -148,11 +148,6 @@
         width: $icon-padding;
         margin-left: -$icon-padding;
       }
-      &.sub {
-        .value-item:before {
-          content: '\f1c5';
-        }
-      }
     }
   }
 

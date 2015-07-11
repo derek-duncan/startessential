@@ -1747,8 +1747,6 @@ body.messages .saving-overlay {
         color: #ccc;
         width: 25px;
         margin-left: -25px; }
-      #register .register .value-list.sub .value-item:before {
-        content: '\f1c5'; }
   #register .plan {
     font-size: 100%;
     text-align: left;
