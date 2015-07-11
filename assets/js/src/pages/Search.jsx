@@ -46,7 +46,7 @@ var Search = React.createClass({
       results.push(
         <div className='result'>
           <img src={result.image.small.Location} width='200' />
-          <Link to='graphic' params={{ graphic_url: _.get(result, 'url_path') }}>{_.get(result, 'title')}</Link>
+          <h4>{result.title}</h4>
         </div>
       )
     })

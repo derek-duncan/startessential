@@ -169,9 +169,9 @@ server.register({register: require('./lib/routes/index')}, function(err) {
   if (err) server.log('error', err)
 })
 // App routes
-//server.register({register: require('./lib/routes/app')}, function(err) {
-//  if (err) server.log('error', err)
-//})
+server.register({register: require('./lib/routes/app')}, function(err) {
+  if (err) server.log('error', err)
+})
 
 server.auth.default({
   strategy: 'session',
