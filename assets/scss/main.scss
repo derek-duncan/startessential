@@ -55,6 +55,8 @@ body {
     padding: 20px 0;
     @media (max-width: $ipad) {
       width: 90%;
+      text-align: center;
+      border-bottom: 1px solid #eee;
     }
     h1.logo {
       margin: 0;
@@ -62,7 +64,9 @@ body {
       float: left;
       width: 10%;
       @media (max-width: $phone) {
-        width: 40%;
+        width: 50%;
+        float: none;
+        margin: 0 auto;
       }
       img {
         width: 100%;
@@ -70,6 +74,11 @@ body {
     }
     .header-actions {
       float: right;
+      @media (max-width: $phone) {
+        float: none;
+        width: 100%;
+        margin-top: 25px;
+      }
     }
     a.cta-top, a.login-top {
       display: inline-block;
@@ -81,7 +90,7 @@ body {
       font-weight: 600;
       border: 1px solid $red;
       @media (max-width: $phone) {
-        margin-top: 10px;
+        overflow: initial;
       }
       &:hover {
         background: $shade-red;
@@ -99,9 +108,12 @@ body {
   .header-middle {
     clear: both;
     width: 60%;
-    margin: 30px auto 0;
+    margin: 0 auto;
+    padding: 30px 0 80px;
+    position: relative;
+    overflow: initial;
     @media (max-width: $ipad) {
-      width: 80%;
+      width: 90%;
     }
     h4.middle-tagline {
       color: $red;
@@ -114,6 +126,10 @@ body {
       font-weight: 600;
       margin: 20px auto;
       max-width: 80%;
+      @media (max-width: $phone) {
+        max-width: 90%;
+        font-size: 250%;
+      }
     }
     p.middle-description {
       font-size: 130%;
@@ -124,6 +140,7 @@ body {
       margin: 0 auto;
       @media (max-width: $phone) {
         max-width: 90%;
+        font-size: 120%;
       }
     }
     a.middle-cta {
@@ -137,6 +154,9 @@ body {
       font-size: 130%;
       text-decoration: none;
       font-weight: 400;
+      @media (max-width: $phone) {
+        font-size: 110%;
+      }
     }
     .middle-next {
       .middle-next-step {
@@ -144,6 +164,13 @@ body {
         font-size: 90%;
         margin: 20px 0 0;
       }
+    }
+    .middle-arrow {
+      position: absolute;
+      height: 80px;
+      width: auto;
+      bottom: -40px;
+      right: 0;
     }
   }
   section.info {
@@ -157,13 +184,14 @@ body {
     background: -ms-linear-gradient(top, #fcfcfc 0%,#ffffff 10%,#ffffff 100%); /* IE10+ */
     background: linear-gradient(to bottom, #fcfcfc 0%,#ffffff 10%,#ffffff 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ffffff',GradientType=0 ); /* IE6-8 */
-    margin: 80px auto 0;
+    margin: 0 auto;
     .info-content {
       width: $content-width;
       margin: 0 auto;
       padding: 80px 0;
       @media (max-width: $ipad) {
-        width: 80%;
+        width: 90%;
+        padding: 50px 0 20px;
       }
     }
     h2.info-sub_head {
@@ -172,6 +200,9 @@ body {
       padding: 0;
       font-size: 190%;
       text-align: center;
+      @media (max-width: $phone) {
+        font-size: 160%;
+      }
     }
     img.info-computer-example {
       width: 100%;
@@ -185,6 +216,7 @@ body {
       padding: 80px 0;
       @media (max-width: $ipad) {
         width: 80%;
+        padding: 80px 0 20px;
       }
     }
     .feature {
@@ -197,10 +229,18 @@ body {
       &:last-child {
         padding-bottom: 0;
       }
+      @media (max-width: $phone) {
+        padding: 30px 0;
+        text-align: center;
+      }
       .feature-icon {
         width: 25%;
         display: inline-block;
         vertical-align: top;
+        @media (max-width: $phone) {
+          width: 100%;
+          margin: 0 auto;
+        }
       }
       .feature-details {
         width: 75%;
@@ -209,6 +249,12 @@ body {
         padding: 0 0 0 50px;
         vertical-align: top;
         font-size: 130%;
+        @media (max-width: $phone) {
+          width: 100%;
+          text-align: left;
+          margin: 25px 0 0;
+          padding: 0;
+        }
       }
       .feature-title {
         margin: 0 0 20px 0;
@@ -234,12 +280,15 @@ body {
       font-size: 140%;
       max-width: 60%;
       margin: 0 auto;
+      @media (max-width: $phone) {
+        max-width: 90%;
+      }
     }
     .join-sub_head {
       font-size: 240%;
       margin: 0 0 10px;
-      @media (max-width: $ipad) {
-        max-width: 60%;
+      @media (max-width: $phone) {
+        font-size: 180%;
       }
     }
     .join-offer {
@@ -247,14 +296,18 @@ body {
       font-weight: 600;
       color: #888888;
       margin: 0;
+      @media (max-width: $phone) {
+        font-size: 120%;
+      }
     }
     .join-desc {
       margin: 30px auto 20px;
       font-size: 120%;
       max-width: 90%;
       color: $dark;
-      @media (max-width: $ipad) {
-        max-width: 80%;
+      @media (max-width: $phone) {
+        font-size: 100%;
+        max-width: 100%;
       }
     }
     .join-form {
@@ -262,16 +315,17 @@ body {
       max-width: 60%;
       margin: 0 auto;
       font-size: 120%;
-      @media (max-width: $ipad) {
-        width: 60%;
-      }
       @media (max-width: $phone) {
-        width: 80%;
+        max-width: 100%;
+        font-size: 100%;
       }
       p.join-form-desc {
         font-size: 80%;
         color: $gray;
         margin: 0 0 20px;
+        @media (max-width: $phone) {
+          font-size: 95%;
+        }
       }
       input.join-input {
         padding: 20px;
@@ -302,6 +356,9 @@ body {
         &:hover:not(:disabled) {
           background: $shade-red;
         }
+        @media (max-width: $phone) {
+          font-size: 80%;
+        }
       }
     }
 
@@ -328,6 +385,9 @@ body {
     .unsure-statement {
       font-weight: 400;
       font-size: 90%;
+      @media (max-width: $phone) {
+        font-size: 110%;
+      }
       a {
         color: $red;
       }
@@ -343,8 +403,14 @@ body {
     width: 60%;
     text-align: center;
     color: #999999;
+    @media (max-width: $phone) {
+      width: 90%;
+    }
     .disclaimer {
       font-size: 80%;
+      @media (max-width: $phone) {
+        font-size: 100%;
+      }
     }
   }
 }
