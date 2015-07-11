@@ -7,8 +7,18 @@ var MessageStore = require('../stores/MessageStore');
 
 var Message = React.createClass({
   mixins: [
-    Reflux.connect(MessageStore, 'message')
+    Reflux.listenTo(MessageStore, 'onMessage')
   ],
+  getInitialState: function() {
+    return {
+      message: {}
+    }
+  },
+  onMessage: function(message) {
+    this.setState({
+      message: message
+    });
+  },
   render: function() {
     var message = '';
     if (_.isObject(this.state.message)) {

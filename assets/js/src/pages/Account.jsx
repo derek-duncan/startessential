@@ -6,7 +6,7 @@ var Profile = React.createClass({
     authMixin
   ],
   componentWillMount: function() {
-    Actions.setTitle('Account - Start Essential')
+    Actions.setTitle('Account | Start Essential')
   },
   render: function() {
     return (

@@ -24,7 +24,7 @@ var Graphic = React.createClass({
     Actions.getGraphic(this.props.params.graphic_url);
   },
   onStoreUpdate: function(graphic) {
-    Actions.setTitle(graphic.title + ' - Start Essential');
+    Actions.setTitle(graphic.title + ' | Start Essential');
     this.toggleLoading();
     this.setState({
       graphic: graphic

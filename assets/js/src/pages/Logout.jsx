@@ -11,7 +11,7 @@ var Logout = React.createClass({
     Reflux.listenTo(Actions.logout, 'onLogout')
   ],
   componentWillMount: function() {
-    Actions.setTitle('Logout - Start Essential')
+    Actions.setTitle('Logout | Start Essential')
   },
   componentDidMount: function() {
     Actions.logout();

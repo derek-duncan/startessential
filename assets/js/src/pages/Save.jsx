@@ -24,7 +24,7 @@ var Save = React.createClass({
     Actions.getSave(this.props.params.save_code, AuthStore.auth.uid);
   },
   onStoreUpdate: function(save) {
-    Actions.setTitle(save._post.title + ' - Start Essential');
+    Actions.setTitle(save._post.title + ' | Start Essential');
     this.toggleLoading();
     this.setState({
       save: save

@@ -25,7 +25,7 @@ var Saved = React.createClass({
   componentWillMount: function() {
     this.toggleLoading();
     Actions.getSaves(AuthStore.auth.uid);
-    Actions.setTitle('Saved - Start Essential');
+    Actions.setTitle('Saved | Start Essential');
   },
   onStoreUpdate: function(saves) {
     this.toggleLoading();

@@ -1,13 +1,6 @@
 var request = require('superagent');
 var _ = require('lodash');
 
-function responseHandler(resolve, reject, err, response) {
-  if (response.body.status === 'success') {
-    return resolve(response.body.data);
-  }
-  return reject(response.body.message)
-}
-
 function bearer(req) {
   var api_token = AuthStore.auth.api_token;
 
@@ -18,72 +11,65 @@ function crumb(req) {
 }
 
 var API = {
-  login: function(fbID) {
-    return new Promise((resolve, reject) => {
-      request
-        .post('/api/v1/login')
-        .send({ fbID: fbID })
-        .end(responseHandler.bind(this, resolve, reject));
-    });
+  login: function(fbID, done) {
+    request
+      .post('/api/v1/login')
+      .send({ fbID: fbID })
+      .end(done);
   },
-  getUser: function(uid) {
-    return new Promise((resolve, reject) => {
-      request
-        .get('/api/v1/users/'+uid)
-        .use(bearer)
-        .end(responseHandler.bind(this, resolve, reject));
-    });
+  getUser: function(uid, done) {
+    request
+      .get('/api/v1/users/'+uid)
+      .use(bearer)
+      .end(done);
   },
-  getGraphics: function(options) {
-    return new Promise((resolve, reject) => {
-      request
-        .get('/api/v1/posts')
-        .use(bearer)
-        .query(options)
-        .end(responseHandler.bind(this, resolve, reject));
-    });
+  getSearch: function(options, done) {
+    request
+      .get('/api/v1/search')
+      .use(bearer)
+      .query(options)
+      .end(done);
   },
-  getGraphic: function(graphic_url) {
-    return new Promise((resolve, reject) => {
-      request
-        .get('/api/v1/posts/'+graphic_url)
-        .use(bearer)
-        .end(responseHandler.bind(this, resolve, reject));
-    });
+  getGraphics: function(options, done) {
+    request
+      .get('/api/v1/posts')
+      .use(bearer)
+      .query(options)
+      .end(done);
   },
-  getSaves: function(uid) {
-    return new Promise((resolve, reject) => {
-      request
-        .get('/api/v1/saves')
-        .use(bearer)
-        .query({
-          uid: uid
-        })
-        .end(responseHandler.bind(this, resolve, reject));
-    });
+  getGraphic: function(graphic_url, done) {
+    request
+      .get('/api/v1/posts/'+graphic_url)
+      .use(bearer)
+      .end(done);
   },
-  getSave: function(save_code, uid) {
-    return new Promise((resolve, reject) => {
-      request
-        .get('/api/v1/saves/' + save_code)
-        .use(bearer)
-        .query({
-          uid: uid
-        })
-        .end(responseHandler.bind(this, resolve, reject));
-    });
+  getSaves: function(uid, done) {
+    request
+      .get('/api/v1/saves')
+      .use(bearer)
+      .query({
+        uid: uid
+      })
+      .end(done);
   },
-  saveGraphic: function(graphic_id, uid) {
-    return new Promise((resolve, reject) => {
-      request
-        .post('/api/v1/saves')
-        .use(bearer)
-        .send({
-          uid: uid,
-          graphic_id: graphic_id
-        })
-        .end(responseHandler.bind(this, resolve, reject));
-    });
+  getSave: function(save_code, uid, done) {
+    request
+      .get('/api/v1/saves/' + save_code)
+      .use(bearer)
+      .query({
+        uid: uid
+      })
+      .end(done);
+  },
+  saveGraphic: function(graphic_id, uid, done) {
+    request
+      .post('/api/v1/saves')
+      .use(bearer)
+      .send({
+        uid: uid,
+        graphic_id: graphic_id
+      })
+      .end(done);
   },
 };
 

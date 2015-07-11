@@ -8,10 +8,7 @@ var UserSavesStore = Reflux.createStore({
   listenables: Actions,
 
   init: function() {
-    this.listenTo(UserStore, this.onUserUpdate)
-
     this.saves = {
-      IDs: [],
       data: []
     }
     return this.saves;
@@ -28,10 +25,6 @@ var UserSavesStore = Reflux.createStore({
     this.saves = {
       data: saves
     }
-    this.trigger(this.saves)
-  },
-  onUserUpdate: function(user) {
-    this.saves.IDs = user.saved_posts
     this.trigger(this.saves)
   }
 })

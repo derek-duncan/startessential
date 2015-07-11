@@ -13,7 +13,9 @@ var UserStore = Reflux.createStore({
   init: function() {
     //this.listenTo(AuthStore, 'onAuthUpdate');
     this.user = {};
-    this.getRemoteUser(AuthStore.auth.uid);
+    if (AuthStore.auth.uid) {
+      this.getRemoteUser(AuthStore.auth.uid);
+    }
     return this.user;
   },
   onGetUserCompleted: function(userProfile) {

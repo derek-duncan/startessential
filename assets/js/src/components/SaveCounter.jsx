@@ -3,8 +3,12 @@ var UserRecordsStore = require('../stores/UserRecordsStore.js');
 var SaveCounter = React.createClass({
   mixins: [
     Reflux.listenTo(UserRecordsStore, 'onStoreUpdate'),
-    Reflux.connect(UserRecordsStore, 'records')
   ],
+  getDefaultProps: function() {
+    return {
+      user: {}
+    }
+  },
   getInitialState: function() {
     return {
       records: {}
@@ -17,7 +21,7 @@ var SaveCounter = React.createClass({
   },
   render: function() {
     var counter;
-    if (AuthStore.isLoggedIn()) {
+    if (!_.isEmpty(this.props.user)) {
       counter = <span className='record-counter'>{this.state.records.downloaded}/{this.state.records.downloads} Saved</span>
     } else {
       counter = <span></span>;

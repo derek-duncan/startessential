@@ -6,6 +6,11 @@ var SaveCounter = require('../components/SaveCounter.jsx');
 var Message = require('../components/Message.jsx');
 
 var Header = React.createClass({
+  getDefaultProps: function() {
+    return {
+      user: {}
+    }
+  },
   render: function() {
     return (
       <header className='header'>
@@ -21,7 +26,7 @@ var Header = React.createClass({
             </Link>
           </div>
           <nav className='nav'>
-            <SaveCounter />
+            <SaveCounter user={this.props.user} />
             <ul className='nav-list'>
               <li className='nav-item' id='#posts-link'>
                 <Link to='explore'>Explore</Link>

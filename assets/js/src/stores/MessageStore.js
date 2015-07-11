@@ -12,12 +12,14 @@ var MessageStore = Reflux.createStore({
     var messages = this.messages.slice();
     messages.push(message);
     this.trigger(messages[messages.length - 1]);
+    $('body').addClass('messages');
     setTimeout(() => {
       Actions.resetMessage();
     }, 5000);
   },
   onResetMessage: function() {
     this.messages = [];
+    $('body').removeClass('messages');
     this.trigger();
   }
 })

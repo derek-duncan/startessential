@@ -17,7 +17,7 @@ var Login = React.createClass({
   componentDidMount: function() {
     window.fbAsyncInit = function() {
       FB.init({
-        appId: '1589098114709228',
+        appId: '1611274339158272',
         cookie: true,
         xfbml: true,
         version: 'v2.3'
@@ -37,10 +37,17 @@ var Login = React.createClass({
     }
   },
   handleClick: function(event) {
-    this.toggleLoading();
-    FB.login(this.checkLoginState(), {
-      scope: 'email, public_profile, user_friends, publish_actions'
-    });
+    if (typeof FB !== 'undefined') {
+      this.toggleLoading();
+      FB.login(this.checkLoginState(), {
+        scope: 'email, public_profile, user_friends, publish_actions'
+      });
+    } else {
+      Actions.addMessage({
+        type: 'error',
+        text: 'Could not connect to Facebook. Please check your connection.'
+      });
+    }
   },
   onStoreUpdate: function(user) {
     this.toggleLoading();

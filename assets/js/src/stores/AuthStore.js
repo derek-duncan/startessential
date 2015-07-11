@@ -44,6 +44,9 @@ var AuthStore = Reflux.createStore({
   },
   isLoggedIn: function() {
     return this.auth.isLoggedIn;
+  },
+  hasUser: function() {
+    return this.auth.hasUser;
   }
 })
 
