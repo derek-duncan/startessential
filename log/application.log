@@ -1132,3 +1132,7 @@
 {"event":"request","timestamp":1436580113600,"tags":["request","uid"],"pid":11061,"id":"1436580113598:Dereks-MacBook-Air-2.local:11061:ibxvvjb5:10522","method":"get","path":"/"}
 {"event":"request","timestamp":1436584975950,"tags":["request","uid"],"pid":11061,"id":"1436584975942:Dereks-MacBook-Air-2.local:11061:ibxvvjb5:10532","method":"get","path":"/register"}
 {"event":"request","timestamp":1436585020655,"tags":["request","uid"],"pid":11060,"id":"1436585020631:Dereks-MacBook-Air-2.local:11060:ibxvvjeq:10558","method":"get","path":"/"}
+{"event":"request","timestamp":1436589481875,"tags":["request","uid"],"pid":11061,"id":"1436589481665:Dereks-MacBook-Air-2.local:11061:ibxvvjb5:10545","method":"get","path":"/preview/4k0jHvKO"}
+{"event":"request","timestamp":1436589646998,"tags":["request","uid"],"pid":11060,"id":"1436589646992:Dereks-MacBook-Air-2.local:11060:ibxvvjeq:10586","method":"get","path":"/"}
+{"event":"request","timestamp":1436589896298,"tags":["request","uid"],"pid":11060,"id":"1436589896294:Dereks-MacBook-Air-2.local:11060:ibxvvjeq:10591","method":"get","path":"/"}
+{"event":"request","timestamp":1436589926542,"tags":["request","uid"],"pid":11060,"id":"1436589926541:Dereks-MacBook-Air-2.local:11060:ibxvvjeq:10611","method":"get","path":"/"}
