@@ -460,10 +460,7 @@ body {
   #front .header-middle .middle-next .middle-next-step {
     color: #7D7D7D;
     font-size: 90%;
-    margin: 10px 0 15px; }
-  #front .header-middle .middle-next .middle-next-action {
-    font-weight: 400;
-    margin: 0; }
+    margin: 20px 0 0; }
 
 #front section.info {
   box-shadow: 3px 0 15px #f2f2f2 inset;
@@ -520,90 +517,39 @@ body {
     font-weight: 200;
     line-height: 1.5; }
 
-#front section.howto {
-  padding-bottom: 50px;
-  width: 60%;
-  margin: 0 auto; }
-  #front section.howto hr {
-    width: 100%;
-    margin: 15px auto 50px;
-    height: 0;
-    border: none;
-    border-top: 1px solid #b2b2b2; }
-  #front section.howto h2.howto-sub_head {
-    max-width: 90%;
-    margin: 0 auto;
-    font-size: 190%;
-    text-align: center; }
-  #front section.howto p.howto-sub_desc {
-    text-align: center;
-    font-size: 130%;
-    color: #7D7D7D; }
-  #front section.howto .howto-step {
-    margin: 70px 0;
-    width: 100%; }
-    #front section.howto .howto-step .step-number {
-      border-radius: 50%;
-      text-align: center;
-      font: 600 40px "claire_handbold";
-      margin-right: 5%;
-      width: 15%;
-      max-width: 120px;
-      height: 100px;
-      display: inline-block;
-      vertical-align: middle;
-      background: #F8F8F8;
-      color: #131313; }
-      #front section.howto .howto-step .step-number .step-number-inner {
-        display: table;
-        width: 100%;
-        height: 100%; }
-      #front section.howto .howto-step .step-number span {
-        display: table-cell;
-        vertical-align: middle; }
-    #front section.howto .howto-step .step-content {
-      font-weight: 300;
-      width: 80%;
-      display: inline-block;
-      vertical-align: middle; }
-      #front section.howto .howto-step .step-content h4.step-head {
-        font-size: 180%;
-        margin: 0 0 15px;
-        font-weight: inherit; }
-      #front section.howto .howto-step .step-content p.step-desc {
-        margin-bottom: 0;
-        font-size: 110%; }
-
 #front section.join {
   margin-top: 30px;
-  padding: 70px 0 100px;
+  padding: 70px 0 70px;
   background: #fffff6;
   text-align: center; }
   #front section.join.logged {
     padding: 70px 0; }
-  #front section.join .join-icon {
-    max-width: 80px;
-    margin-bottom: 20px; }
+  #front section.join .join-content {
+    font-size: 140%;
+    max-width: 60%;
+    margin: 0 auto; }
   #front section.join .join-sub_head {
-    max-width: 40%;
-    margin: 30px auto;
-    font-size: 180%; }
+    font-size: 240%;
+    margin: 0 0 20px; }
     @media (max-width: 768px) {
       #front section.join .join-sub_head {
         max-width: 60%; } }
+  #front section.join .join-offer {
+    font-size: 180%;
+    font-weight: 600;
+    color: #888888;
+    margin: 0; }
   #front section.join .join-desc {
-    max-width: 40%;
-    margin: 40px auto;
+    margin: 40px auto 20px;
     font-size: 120%;
-    color: #7D7D7D; }
+    max-width: 90%;
+    color: #314046; }
     @media (max-width: 768px) {
       #front section.join .join-desc {
         max-width: 80%; } }
   #front section.join .join-form {
-    margin-top: 20px;
     position: relative;
-    width: 40%;
-    max-width: 450px;
+    max-width: 60%;
     margin: 0 auto;
     font-size: 120%; }
     @media (max-width: 768px) {
@@ -612,28 +558,10 @@ body {
     @media (max-width: 520px) {
       #front section.join .join-form {
         width: 80%; } }
-    #front section.join .join-form p.join-sample-link {
-      position: absolute;
-      left: 100%;
-      text-align: left;
-      margin: 0;
-      margin-left: 40px;
-      top: 0;
-      padding: 15px;
+    #front section.join .join-form p.join-form-desc {
       font-size: 80%;
-      color: #333;
-      overflow: hidden;
-      -webkit-transition: all 0.3s;
-              transition: all 0.3s;
-      opacity: 0;
-      background: rgba(255, 255, 255, 0.7);
-      border: 1px solid #ccc; }
-      #front section.join .join-form p.join-sample-link a {
-        display: block;
-        margin: 7px 0;
-        color: #FF8F8F; }
-      #front section.join .join-form p.join-sample-link.show {
-        opacity: 1; }
+      color: #7D7D7D;
+      margin: 0 0 20px; }
     #front section.join .join-form input.join-input {
       padding: 20px;
       box-sizing: border-box;
@@ -644,34 +572,23 @@ body {
       display: block; }
     #front section.join .join-form button.join-submit {
       position: relative;
+      border: none;
       outline: none;
       -webkit-appearance: none;
-      color: #fff;
-      font-weight: 600;
-      border: none;
-      background: #FF8F8F;
-      padding: 15px 20px;
       box-sizing: border-box;
       width: 100%;
       display: block;
-      margin-top: 10px; }
-      @media (max-width: 520px) {
-        #front section.join .join-form button.join-submit {
-          position: relative;
-          width: 100%;
-          top: 0;
-          left: 0;
-          margin-top: 15px; } }
+      margin: 20px 0;
+      padding: 15px 20px;
+      background: #FF8F8F;
+      color: #fff;
+      border-radius: 4px;
+      border-bottom: 3px solid #BD6565;
+      font-size: 100%;
+      text-decoration: none;
+      font-weight: 400; }
       #front section.join .join-form button.join-submit:hover:not(:disabled) {
         background: #ff5c5c; }
-  #front section.join .facebook-explain {
-    font-size: 80%;
-    color: #888;
-    width: 40%;
-    margin: 20px auto 0; }
-    @media (max-width: 520px) {
-      #front section.join .facebook-explain {
-        width: 80%; } }
   #front section.join .login-button {
     padding: 10px 20px;
     border: 1px solid #FF8F8F;
@@ -683,6 +600,18 @@ body {
     #front section.join .login-button:hover {
       background: #FF8F8F;
       color: #fff; }
+
+#front section.unsure {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px 0;
+  text-align: center;
+  color: #7D7D7D; }
+  #front section.unsure .unsure-statement {
+    font-weight: 400;
+    font-size: 90%; }
+    #front section.unsure .unsure-statement a {
+      color: #FF8F8F; }
 
 .footer {
   background: #f9f9f9; }

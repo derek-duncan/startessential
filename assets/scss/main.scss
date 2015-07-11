@@ -142,11 +142,7 @@ body {
       .middle-next-step {
         color: $gray;
         font-size: 90%;
-        margin: 10px 0 15px;
-      }
-      .middle-next-action {
-        font-weight: 400;
-        margin: 0;
+        margin: 20px 0 0;
       }
     }
   }
@@ -217,108 +213,44 @@ body {
     }
   }
 
-  section.howto {
-    padding-bottom: 50px;
-    width: $content-width;
-    margin: 0 auto;
-    hr {
-      width: 100%;
-      margin: 15px auto 50px;
-      height: 0;
-      border: none;
-      border-top: 1px solid #b2b2b2;
-    }
-    h2.howto-sub_head {
-      max-width: 90%;
-      margin: 0 auto;
-      font-size: 190%;
-      text-align: center;
-    }
-    p.howto-sub_desc {
-      text-align: center;
-      font-size: 130%;
-      color: $gray;
-    }
-    .howto-step {
-      margin: 70px 0;
-      width: 100%;
-
-      .step-number {
-        border-radius: 50%;
-        text-align: center;
-        font: 600 40px 'claire_handbold';
-        margin-right: 5%;
-        width: 15%;
-        max-width: 120px;
-        height: 100px; // js takes care of things
-        display: inline-block;
-        vertical-align: middle;
-        background: #F8F8F8;
-        color: #131313;
-        .step-number-inner {
-          display: table;
-          width: 100%;
-          height: 100%;
-        }
-        span {
-          display: table-cell;
-          vertical-align: middle;
-        }
-      }
-      .step-content {
-        font-weight: 300;
-        width: 80%;
-        display: inline-block;
-        vertical-align: middle;
-        h4.step-head {
-          font-size: 180%;
-          margin: 0 0 15px;
-          font-weight: inherit;
-        }
-        p.step-desc {
-          margin-bottom: 0;
-          font-size: 110%;
-        }
-      }
-    }
-  }
-
   section.join {
     margin-top: 30px;
-    padding: 70px 0 100px;
+    padding: 70px 0 70px;
     background: lighten(#FFFEE7, 3%);
     text-align: center;
     &.logged {
       padding: 70px 0;
     }
-    .join-icon {
-      max-width: 80px;
-      margin-bottom: 20px;
-    }
     .join-content {
+      font-size: 140%;
+      max-width: 60%;
+      margin: 0 auto;
     }
     .join-sub_head {
-      max-width: 40%;
-      margin: 30px auto;
-      font-size: 180%;
+      font-size: 240%;
+      margin: 0 0 20px;
       @media (max-width: $ipad) {
         max-width: 60%;
       }
     }
+    .join-offer {
+      font-size: 180%;
+      font-weight: 600;
+      color: #888888;
+      margin: 0;
+    }
     .join-desc {
-      max-width: 40%;
-      margin: 40px auto;
+      margin: 40px auto 20px;
       font-size: 120%;
-      color: $gray;
+      max-width: 90%;
+      color: $dark;
       @media (max-width: $ipad) {
         max-width: 80%;
       }
     }
     .join-form {
-      margin-top: 20px;
       position: relative;
-      width: 40%;
-      max-width: 450px;
+      max-width: 60%;
       margin: 0 auto;
       font-size: 120%;
       @media (max-width: $ipad) {
@@ -327,29 +259,10 @@ body {
       @media (max-width: $phone) {
         width: 80%;
       }
-      p.join-sample-link {
-        position: absolute;
-        left: 100%;
-        text-align: left;
-        margin: 0;
-        margin-left: 40px;
-        top: 0;
-        padding: 15px;
+      p.join-form-desc {
         font-size: 80%;
-        color: #333;
-        overflow: hidden;
-        transition: all 0.3s;
-        opacity: 0;
-        background: rgba(255,255,255,0.7);
-        border: 1px solid #ccc;
-        a {
-          display: block;
-          margin: 7px 0;
-          color: $red;
-        }
-        &.show {
-          opacity: 1;
-        }
+        color: $gray;
+        margin: 0 0 20px;
       }
       input.join-input {
         padding: 20px;
@@ -362,39 +275,27 @@ body {
       }
       button.join-submit {
         position: relative;
+        border: none;
         outline: none;
         -webkit-appearance: none;
-        color: #fff;
-        font-weight: 600;
-        border: none;
-        background: $red;
-        padding: 15px 20px;
         box-sizing: border-box;
         width: 100%;
         display: block;
-        margin-top: 10px;
-        @media (max-width: $phone) {
-          position: relative;
-          width: 100%;
-          top: 0;
-          left: 0;
-          margin-top: 15px;
-        }
+        margin: 20px 0;
+        padding: 15px 20px;
+        background: $red;
+        color: #fff;
+        border-radius: 4px;
+        border-bottom: 3px solid #BD6565;
+        font-size: 100%;
+        text-decoration: none;
+        font-weight: 400;
         &:hover:not(:disabled) {
           background: $shade-red;
         }
       }
     }
 
-    .facebook-explain {
-      font-size: 80%;
-      color: #888;
-      width: 40%;
-      margin: 20px auto 0;
-      @media (max-width: $phone) {
-        width: 80%;
-      }
-    }
     .login-button {
       padding: 10px 20px;
       border: 1px solid $red;
@@ -406,6 +307,20 @@ body {
       &:hover {
         background: $red;
         color: #fff;
+      }
+    }
+  }
+  section.unsure {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+    color: $gray;
+    .unsure-statement {
+      font-weight: 400;
+      font-size: 90%;
+      a {
+        color: $red;
       }
     }
   }
