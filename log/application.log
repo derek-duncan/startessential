@@ -1136,3 +1136,5 @@
 {"event":"request","timestamp":1436589646998,"tags":["request","uid"],"pid":11060,"id":"1436589646992:Dereks-MacBook-Air-2.local:11060:ibxvvjeq:10586","method":"get","path":"/"}
 {"event":"request","timestamp":1436589896298,"tags":["request","uid"],"pid":11060,"id":"1436589896294:Dereks-MacBook-Air-2.local:11060:ibxvvjeq:10591","method":"get","path":"/"}
 {"event":"request","timestamp":1436589926542,"tags":["request","uid"],"pid":11060,"id":"1436589926541:Dereks-MacBook-Air-2.local:11060:ibxvvjeq:10611","method":"get","path":"/"}
+{"event":"request","timestamp":1436590092448,"tags":["request","uid"],"pid":11060,"id":"1436590092444:Dereks-MacBook-Air-2.local:11060:ibxvvjeq:10635","method":"get","path":"/"}
+{"event":"request","timestamp":1436590106917,"tags":["request","uid"],"pid":12358,"id":"1436590106884:Dereks-MacBook-Air-2.local:12358:ibyknm82:10000","method":"get","path":"/"}
