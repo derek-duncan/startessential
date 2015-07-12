@@ -30,7 +30,7 @@ var Saved = React.createClass({
   onStoreUpdate: function(saves) {
     this.toggleLoading();
     this.setState({
-      saves: saves.data
+      saves: saves
     })
   },
   render: function() {
