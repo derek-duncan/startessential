@@ -15,8 +15,8 @@ var cluster = require('cluster');
 var env = process.env.NODE_ENV || 'development';
 
 if (cluster.isMaster) {
-  var numCPUs = require('os').cpus().length;
-  for (var i = 0; i < numCPUs; i++) {
+  var workers = process.env.WEB_CONCURRENCY || 1;;
+  for (var i = 0; i < workers; i++) {
     cluster.fork();
   }
   cluster.on('exit', function() {
@@ -248,6 +248,9 @@ if (cluster.isMaster) {
 
   // Start server
   server.start(function () {
+    setInterval(function() {
+      console.log(process.memoryUsage().rss/1000000);
+    }, 3000);
     server.log('info', 'Server running at: ' + server.info.uri);
   });
 }
