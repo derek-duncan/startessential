@@ -1,3 +1,4 @@
+var Router = require('react-router');
 var { Route, DefaultRoute } = Router;
 
 var App = require('./pages/App.jsx');

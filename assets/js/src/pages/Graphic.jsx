@@ -1,3 +1,8 @@
+// Requires
+var Reflux = require('reflux');
+var Router = require('react-router');
+var Actions = require('../actions/Actions.js');
+
 // Stores
 var GraphicStore = require('../stores/GraphicStore.js');
 

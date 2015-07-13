@@ -1,5 +1,7 @@
 // Requires
-var Actions = require('../actions/Actions');
+var Reflux = require('reflux');
+var Router = require('react-router');
+var Actions = require('../actions/Actions.js');
 var { Navigation } = Router;
 
 var Loading = React.createClass({

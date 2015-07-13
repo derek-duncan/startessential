@@ -1,5 +1,8 @@
 // Requires
-var { Navigation } = Router;
+var Reflux = require('reflux');
+var Router = require('react-router');
+var Actions = require('../actions/Actions.js');
+import { Navigation } from 'react-router';
 
 // Stores
 var AuthStore = require('../stores/AuthStore.js');

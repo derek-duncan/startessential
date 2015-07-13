@@ -1,4 +1,6 @@
-// Actions
+// Requires
+var Reflux = require('reflux');
+var Router = require('react-router');
 var Actions = require('../actions/Actions.js');
 
 var SearchStore = Reflux.createStore({

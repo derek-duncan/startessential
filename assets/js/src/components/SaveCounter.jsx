@@ -1,3 +1,9 @@
+// Requires
+var Reflux = require('reflux');
+var Router = require('react-router');
+var Actions = require('../actions/Actions.js');
+
+// Stores
 var UserRecordsStore = require('../stores/UserRecordsStore.js');
 
 var SaveCounter = React.createClass({

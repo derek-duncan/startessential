@@ -1,4 +1,6 @@
-// Actions
+// Requires
+var Reflux = require('reflux');
+var Router = require('react-router');
 var Actions = require('../actions/Actions.js');
 
 var MessageStore = Reflux.createStore({
@@ -8,14 +10,16 @@ var MessageStore = Reflux.createStore({
     this.messages = [];
   },
   // message is an object with type and message values
-  onAddMessage: function(message) {
+  onAddMessage: function(message, noHide) {
     var messages = this.messages.slice();
     messages.push(message);
     this.trigger(messages[messages.length - 1]);
     $('body').addClass('messages');
-    setTimeout(() => {
-      Actions.resetMessage();
-    }, 5000);
+    if (!noHide) {
+      setTimeout(() => {
+        Actions.resetMessage();
+      }, 5000);
+    }
   },
   onResetMessage: function() {
     this.messages = [];

@@ -8,7 +8,7 @@ global.Actions = require('./src/actions/Actions.js')
 
 var attachFastClick = require('fastclick');
 
-var { DefaultRoute, Link, Route, RouteHandler } = Router;
+var { DefaultRoute, Link, Route, RouteHandler } = global.Router;
 var router = require('./src/router');
 
 router.run((Handler, state) => {

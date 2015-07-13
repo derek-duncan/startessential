@@ -1,3 +1,5 @@
+// Requires
+var Reflux = require('reflux');
 var API = require('../util/API.js');
 
 function responseHandler(err, response) {
@@ -71,6 +73,10 @@ actions.getSave.listen(function(save_code, uid) {
 
 actions.saveGraphic.listen(function(graphic_id, uid) {
   var self = this;
+  Actions.addMessage({
+    type: 'info', 
+    text: 'Saving graphic...'
+  }, true);
   API.saveGraphic(graphic_id, uid, responseHandler.bind(self))
 })
 

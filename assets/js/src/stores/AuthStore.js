@@ -1,8 +1,8 @@
 // Requires
-var { Navigation } = Router;
-
-// Actions
+var Reflux = require('reflux');
+var Router = require('react-router');
 var Actions = require('../actions/Actions.js');
+var { Navigation } = Router;
 
 var defaultAuth = {
   uid: '',

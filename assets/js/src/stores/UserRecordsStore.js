@@ -1,5 +1,10 @@
-// Actions
+// Requires
+var Reflux = require('reflux');
+var Router = require('react-router');
 var Actions = require('../actions/Actions.js');
+
+// Stores
+var UserStore = require('../stores/UserStore.js');
 
 var UserRecordsStore = Reflux.createStore({
   init: function() {
@@ -9,6 +14,10 @@ var UserRecordsStore = Reflux.createStore({
     this.records = {}
   },
   onSaveGraphicCompleted: function() {
+    Actions.addMessage({
+      type: 'info',
+      text: 'Successfully saved graphic'
+    });
     this.records.downloaded += 1;
     this.trigger(this.records)
   },

@@ -1,4 +1,7 @@
-// Require
+// Requires
+var Reflux = require('reflux');
+var Router = require('react-router');
+var Actions = require('../actions/Actions.js');
 var { Link } = Router;
 var MasonryMixin = require('react-masonry-mixin');
 var moment = require('moment');
