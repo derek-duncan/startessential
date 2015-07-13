@@ -1,5 +1,6 @@
 "use strict";
 
+require('newrelic');
 var _ = require('lodash')
 var constants = require('lib/constants')
 var async = require('async')
@@ -248,9 +249,6 @@ if (cluster.isMaster) {
 
   // Start server
   server.start(function () {
-    setInterval(function() {
-      console.log(process.memoryUsage().rss/1000000);
-    }, 3000);
     server.log('info', 'Server running at: ' + server.info.uri);
   });
 }
