@@ -13,6 +13,7 @@ var routes = require('lib/routes/index.js');
 var fs = require('fs');
 var cluster = require('cluster');
 var blocked = require('blocked');
+var toobusy = require('toobusy-js');
 
 var env = process.env.NODE_ENV || 'development';
 
@@ -68,6 +69,9 @@ if (cluster.isMaster) {
 
   server.ext('onRequest', function(request, reply) {
     // create a redirect url
+    if (toobusy()) {
+      return reply('We\'re too busy right now to handle any more users. Please keep retrying to get access. Thanks!').code(503);
+    }
     if (request.url.path == '/login' && request.headers.referer) {
       var referer_url = request.headers.referer.split('/').slice(3);
       var redirect_url = '/' + referer_url.join('/');

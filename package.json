@@ -59,6 +59,7 @@
     "s3-uploader": "^0.8.1",
     "shortid": "^2.2.2",
     "stripe": "^3.3.4",
+    "toobusy-js": "file:../../../../../tmp/npm-46085-0f9dac9f/git-cache-ff3c1f89bb8f/ed8b8bb6909a82ae3007940cd5ac42f0488b00ab",
     "underscore": "^1.8.3",
     "validator": "^3.40.0",
     "webworker-threads": "^0.5.6"
