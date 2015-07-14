@@ -12,6 +12,7 @@ var Good = require('good');
 var routes = require('lib/routes/index.js');
 var fs = require('fs');
 var cluster = require('cluster');
+var blocked = require('blocked');
 
 var env = process.env.NODE_ENV || 'development';
 
