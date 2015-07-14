@@ -112,17 +112,25 @@ $(function() {
 
     // GA Events //
     var ctaTop = $('.cta-top');
+    var ctaMiddle = $('.middle-cta');
     var joinSubmit = $('.join-submit');
 
     ctaTop.on('click touchend', function(e) {
-      ga('send', 'event', 'button', 'click', 'top cta')
+      ga('send', 'event', 'homepage', 'join', 'top')
+    })
+    ctaMiddle.on('click touchend', function(e) {
+      ga('send', 'event', 'homepage', 'join', 'middle')
     })
     joinSubmit.on('click touchend', function(e) {
-      ga('send', 'event', 'button', 'click', 'join submit')
+      ga('send', 'event', 'homepage', 'join', 'submit')
     })
   }
 
   if ($('#register').length) {
+    var fbRegister = $('.fb-login');
+    fbRegister.on('click touchend', function(e) {
+      ga('send', 'event', 'register', 'button')
+    })
   }
 
   if ($('#thankyou').length) {
@@ -357,6 +365,8 @@ $(function() {
       if (body.hasClass('messages')) {
         setTimeout(function() {
           toggleMessages()
+          var noQueryURL = window.location.origin + window.location.pathname;
+          history.pushState(null, null, noQueryURL);
         }, 7000)
       }
     }
