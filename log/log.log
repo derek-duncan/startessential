@@ -898,3 +898,7 @@
 {"event":"log","timestamp":1436938918691,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-2.local:3000","pid":79798}
 {"event":"log","timestamp":1436939254783,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-2.local:3000","pid":80390}
 {"event":"log","timestamp":1436939273194,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-2.local:3000","pid":80562}
+{"event":"log","timestamp":1436939289249,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-2.local:3000","pid":80826}
+{"event":"log","timestamp":1436939302290,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-2.local:3000","pid":81059}
+{"event":"log","timestamp":1436939386325,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-2.local:3000","pid":81179}
+{"event":"log","timestamp":1436939862789,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-2.local:3000","pid":81830}
