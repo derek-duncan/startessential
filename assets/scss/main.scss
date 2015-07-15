@@ -113,7 +113,11 @@ body {
     position: relative;
     overflow: initial;
     @media (max-width: $ipad) {
+      width: 80%;
+    }
+    @media (max-width: $phone) {
       width: 90%;
+      text-align: left;
     }
     h4.middle-tagline {
       color: $red;
@@ -127,7 +131,7 @@ body {
       margin: 20px auto;
       max-width: 80%;
       @media (max-width: $phone) {
-        max-width: 90%;
+        max-width: 100%;
         font-size: 250%;
       }
     }
@@ -139,7 +143,7 @@ body {
       max-width: 80%;
       margin: 0 auto;
       @media (max-width: $phone) {
-        max-width: 90%;
+        max-width: 100%;
         font-size: 120%;
       }
     }

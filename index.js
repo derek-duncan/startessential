@@ -148,7 +148,7 @@ if (cluster.isMaster) {
       password: 'secret',
       cookie: 'sid',
       redirectTo: '/login' + _message('Please login to access this content'),
-      isSecure: false,
+      isSecure: true,
       redirectOnTry: false,
       ttl: (60 * 1000) /* seconds */ * 60 /* minutes */ * 24 /* hours */ * 7 /* days */,
       validateFunc: function(session, callback) {
@@ -167,8 +167,8 @@ if (cluster.isMaster) {
       providerParams: {
         display: 'popup'
       },
-      isSecure: false,     // Terrible idea but required if not using HTTPS
-      scope: ['email', 'public_profile', 'user_friends', 'publish_actions']
+      isSecure: true,     // Terrible idea but required if not using HTTPS
+      scope: ['email', 'public_profile', 'user_friends']
     });
   });
 

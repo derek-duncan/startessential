@@ -437,7 +437,11 @@ body {
   overflow: initial; }
   @media (max-width: 768px) {
     #front .header-middle {
-      width: 90%; } }
+      width: 80%; } }
+  @media (max-width: 520px) {
+    #front .header-middle {
+      width: 90%;
+      text-align: left; } }
   #front .header-middle h4.middle-tagline {
     color: #FF8F8F;
     font-size: 130%;
@@ -450,7 +454,7 @@ body {
     max-width: 80%; }
     @media (max-width: 520px) {
       #front .header-middle h2.middle-headline {
-        max-width: 90%;
+        max-width: 100%;
         font-size: 250%; } }
   #front .header-middle p.middle-description {
     font-size: 130%;
@@ -461,7 +465,7 @@ body {
     margin: 0 auto; }
     @media (max-width: 520px) {
       #front .header-middle p.middle-description {
-        max-width: 90%;
+        max-width: 100%;
         font-size: 120%; } }
   #front .header-middle a.middle-cta {
     display: inline-block;
