@@ -109,6 +109,7 @@ if (cluster.isMaster) {
 
       // Add FB App id to templates
       context.fb_app_id = constants.FB_APP_ID;
+      context.stripe_key_pk = constants.STRIPE_KEY_PK;
 
       // Trigger request logging
       var exclude = ['css', 'images', 'js', 'fonts']

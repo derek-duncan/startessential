@@ -16,7 +16,7 @@ block body
                 label Add payment
                 script(
                   src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                  data-key=(process.env.NODE_ENV === 'production' ? "sk_live_6qb0aMgWyyQgxDz9iCmzeEzd" : "pk_test_QSKUtc94PM7XpNBHBmC3LyLA")
+                  data-key=stripe_key_pk
                   data-amount="1000"
                   data-name="Start Essential"
                   data-description="Starter plan"
