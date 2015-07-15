@@ -121,6 +121,7 @@ if (cluster.isMaster) {
     return reply.continue();
   });
 
+  var cookieSecure = process.env.NODE_ENV === 'production' ? true : false;
   // Authentication strategy
   server.register(require('hapi-auth-bearer-token'), function (err) {
 
@@ -148,7 +149,7 @@ if (cluster.isMaster) {
       password: 'secret',
       cookie: 'sid',
       redirectTo: '/login' + _message('Please login to access this content'),
-      isSecure: true,
+      isSecure: cookieSecure,
       redirectOnTry: false,
       ttl: (60 * 1000) /* seconds */ * 60 /* minutes */ * 24 /* hours */ * 7 /* days */,
       validateFunc: function(session, callback) {
@@ -167,7 +168,7 @@ if (cluster.isMaster) {
       providerParams: {
         display: 'popup'
       },
-      isSecure: true,     // Terrible idea but required if not using HTTPS
+      isSecure: cookieSecure,     // Terrible idea but required if not using HTTPS
       scope: ['email', 'public_profile', 'user_friends']
     });
   });

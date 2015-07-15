@@ -2546,3 +2546,11 @@
 {"event":"request","timestamp":1436929143290,"tags":["request","uid"],"pid":68482,"id":"1436929143287:Dereks-MacBook-Air-2.local:68482:ic46eqwc:10055","method":"get","path":"/"}
 {"event":"request","timestamp":1436932682248,"tags":["request","uid"],"pid":73550,"id":"1436932682211:Dereks-MacBook-Air-2.local:73550:ic48m4qh:10005","method":"get","path":"/"}
 {"event":"request","timestamp":1436932684252,"tags":["request","uid"],"pid":73550,"id":"1436932684249:Dereks-MacBook-Air-2.local:73550:ic48m4qh:10026","method":"get","path":"/"}
+{"event":"request","timestamp":1436935415652,"tags":["request","uid"],"pid":77764,"id":"1436935415573:Dereks-MacBook-Air-2.local:77764:ic4a5yuu:10000","method":"get","path":"/"}
+{"event":"request","timestamp":1436935513227,"tags":["request","uid"],"pid":77764,"id":"1436935513217:Dereks-MacBook-Air-2.local:77764:ic4a5yuu:10019","method":"get","path":"/register"}
+{"event":"request","timestamp":1436935645591,"tags":["request","uid"],"pid":77764,"id":"1436935645586:Dereks-MacBook-Air-2.local:77764:ic4a5yuu:10033","method":"get","path":"/register"}
+{"event":"request","timestamp":1436935750788,"tags":["request","uid"],"pid":77764,"id":"1436935750782:Dereks-MacBook-Air-2.local:77764:ic4a5yuu:10050","method":"get","path":"/register"}
+{"event":"request","timestamp":1436938774382,"tags":["request","uid"],"pid":79082,"id":"1436938774322:Dereks-MacBook-Air-2.local:79082:ic4c8pkb:10000","method":"get","path":"/register"}
+{"event":"request","timestamp":1436938779425,"tags":["request","uid"],"data":"55a5f21bd3728feb341d677d","pid":79082,"id":"1436938779408:Dereks-MacBook-Air-2.local:79082:ic4c8pkb:10014","method":"get","path":"/register/finish"}
+{"event":"request","timestamp":1436938799171,"tags":["request","uid"],"data":"55a5f21bd3728feb341d677d","pid":79082,"id":"1436938799161:Dereks-MacBook-Air-2.local:79082:ic4c8pkb:10028","method":"get","path":"/thankyou"}
+{"event":"request","timestamp":1436938802231,"tags":["request","uid"],"data":"55a5f21bd3728feb341d677d","pid":79082,"id":"1436938802190:Dereks-MacBook-Air-2.local:79082:ic4c8pkb:10037","method":"get","path":"/posts"}
