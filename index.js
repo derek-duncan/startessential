@@ -84,6 +84,12 @@ if (cluster.isMaster) {
   server.ext('onPreResponse', function(request, reply) {
 
     var response = request.response;
+    if (response.isBoom && response.output.statusCode === 404) {
+      return reply.view('404');
+    }
+    if (response.isBoom && response.output.statusCode === 500) {
+      return reply.view('500');
+    }
     if (response.variety === 'view') {
       var context = response.source.context;
 
