@@ -4,7 +4,10 @@
     text-align: center;
     font-weight: 600;
     a {
-      font-size: 100%;
+      font-size: 60%;
+      font-weight: 200;
+      color: $btn-blue;
+      text-decoration: none;
     }
   }
 }

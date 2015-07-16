@@ -70,7 +70,7 @@ if (cluster.isMaster) {
   server.ext('onRequest', function(request, reply) {
     // create a redirect url
     if (toobusy()) {
-      return reply('We\'re too busy right now to handle any more users. Please keep retrying to get access. Thanks!').code(503);
+      return reply.view('503');
     }
     if (request.url.path == '/login' && request.headers.referer) {
       var referer_url = request.headers.referer.split('/').slice(3);

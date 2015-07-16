@@ -712,7 +712,10 @@ body {
   text-align: center;
   font-weight: 600; }
   #error .main a {
-    font-size: 100%; }
+    font-size: 60%;
+    font-weight: 200;
+    color: #4A90E2;
+    text-decoration: none; }
 
 #thankyou section.info {
   padding: 50px 0;
