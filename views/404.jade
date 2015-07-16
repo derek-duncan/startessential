@@ -1,5 +1,7 @@
 extends templates/layout
 block body
   include ./templates/_header
-  main.main
-    p Could not be found
+  #error
+    main.main
+      p Could not be found
+      a(href='/') Return to homepage

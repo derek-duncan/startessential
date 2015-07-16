@@ -707,6 +707,13 @@ body {
         .footer .footer-content .disclaimer {
           font-size: 100%; } }
 
+#error .main {
+  font-size: 200%;
+  text-align: center;
+  font-weight: 600; }
+  #error .main a {
+    font-size: 100%; }
+
 #thankyou section.info {
   padding: 50px 0;
   text-align: center;

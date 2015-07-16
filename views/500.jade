@@ -1,5 +1,7 @@
 extends templates/layout
 block body
   include ./templates/_header
-  main.main
-    p There was an unexpected error. Please try again :)
+  #error
+    main.main
+      p There was an unexpected error. Please try again :)
+      a(href='/') Return to homepage
