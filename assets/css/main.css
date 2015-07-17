@@ -2028,7 +2028,7 @@ body.messages .saving-overlay {
       font-size: 140%; }
     #account .account-right .reference-tagline {
       font-size: 90%; }
-    #account .account-right .reference-link {
+    #account .account-right .share-link {
       width: 100%;
       padding: 10px 15px;
       border: 1px solid #ccc;
@@ -2041,6 +2041,21 @@ body.messages .saving-overlay {
       color: #7D7D7D;
       display: block;
       margin: 0 0 10px; }
+    #account .account-right .share-fb {
+      background: #43609C;
+      margin: 15px 0;
+      display: inline-block;
+      text-align: center;
+      color: #fff;
+      padding: 10px 25px;
+      text-decoration: none;
+      font-weight: 600; }
+      @media (max-width: 520px) {
+        #account .account-right .share-fb {
+          width: 100%;
+          margin: 1% 0; } }
+      #account .account-right .share-fb:hover {
+        background: #344a78; }
 
 #login {
   /*.naked {*/

@@ -319,6 +319,11 @@ $(function() {
       var c = confirm('Are you sure you would like to remove your account to Start Essential?')
       return c;
     })
+    $('.share-fb').on('click touchend', function(e) {
+      var self = $(this);
+      e.preventDefault()
+      fbShare(self.attr('data-url'))
+    })
   }
 
   if ($('#preview').length) {
@@ -353,8 +358,11 @@ $(function() {
     FB.ui({
       app_id: '1589098114709228',
       method: 'share',
-      href: url,
-      redirect_uri: window.location.href + '?message=Successfully%20shared'
+      href: url
+    }, function(response) {
+      if (!response.error_code) {
+        window.location.href = window.location.href + '?message=Successfully%20shared';
+      }
     });
   }
 

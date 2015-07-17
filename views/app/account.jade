@@ -31,5 +31,10 @@ block body
       .account-right
         h2.reference-title Reference Information &mdash; FREE stuff
         p.reference-tagline Share Start Essential with other Young Living distributors to receive additional FREE months on your subscription.
-        label Copy and share this link
-        input.reference-link(type='text' value='http://startessential.com/?friend=#{sid.referral_id}' readonly)
+        .share-form
+          label Copy and share this link
+          input.share-link(type='text' value='http://startessential.com/?friend=#{sid.referral_id}' readonly)
+          .share-links
+            a.share-fb(href='' data-url='http://startessential.com/?friend=#{sid.referral_id}' title='Share on facebook to grow faster') Share on Facebook
+            //-a.share-tw(href='' title='Share on twitter to grow faster') Share on Twitter
+
