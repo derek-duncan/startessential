@@ -349,12 +349,12 @@ $(function() {
     }
   }
 
-  function fbShare(code) {
+  function fbShare(url) {
     FB.ui({
+      app_id: '1589098114709228',
       method: 'share',
-      href: window.location.origin + '/preview/' + code
-    }, function(response){
-      window.location.href = window.location.origin + '/publish/' + code;
+      href: url,
+      redirect_uri: window.location.href + '?message=Successfully%20shared'
     });
   }
 

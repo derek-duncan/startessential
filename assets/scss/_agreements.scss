@@ -1,0 +1,10 @@
+#agreements {
+  .main {
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    @media (max-width: $phone) {
+      max-width: 90%;
+    }
+  }
+}

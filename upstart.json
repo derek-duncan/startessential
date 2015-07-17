@@ -1,0 +1,9 @@
+{
+  "name"             : "Start-Essential",
+  "script"           : "index.js",
+  "watch"            : ['index.js', 'lib'],
+  "ignore_watch"     : ["assets", "log", "node_modules", "views", ".git"],
+  "env": {
+    "NODE_APP": "."
+  }
+}

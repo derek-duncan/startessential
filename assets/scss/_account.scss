@@ -2,69 +2,101 @@
   @import "header";
   .main {
     max-width: 90%;
-    margin: 0 auto;
+    margin: 30px auto 0;
+    font-size: 130%;
   }
-  .page-title {
-    color: #666666;
-    font-size: 210%;
-    font-weight: 600;
-  }
-  .settings {
-    margin: 40px 0;
-    width: 100%;
-    .input-group {
-      margin-bottom: 20px;
-      font-size: 130%;
-      &.fade {
-        input {
-          background: #f2f2f2;
+  .account-left {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    .page-title {
+      color: #666666;
+      font-size: 180%;
+      font-weight: 600;
+      margin-top: 0;
+    }
+    .settings {
+      margin: 40px 0;
+      width: 80%;
+      .input-group {
+        margin-bottom: 20px;
+        &.fade {
+          input {
+            background: #f2f2f2;
+          }
+        }
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 120%;
+      }
+      input[type=text], input[type=email] {
+        padding: 10px 15px;
+        border: 1px solid #ccc;
+        outline: none;
+        color: #666;
+        width: 100%;
+        &:focus {
+          border-color: $gray;
+          color: #333;
+        }
+      }
+      button[type=submit] {
+        background: $red;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        -webkit-appearance: none;
+        font-weight: 600;
+        &:hover {
+          background: $shade-red;
         }
       }
     }
-    label {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 120%;
+    .remove-form {
+      margin-top: 40px;
+      font-size: 80%;
+      button {
+        -webkit-appearance: none;
+        background: none;
+        border: none;
+        box-shadow: none;
+        text-decoration: underline;
+        padding: 0;
+        color: #ccc;
+        outline: none;
+      }
     }
-    input[type=text], input[type=email] {
+  }
+  .account-right {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    .reference-title {
+      margin-top: 0;
+      color: #666;
+      font-size: 140%;
+    }
+    .reference-tagline {
+      font-size: 90%;
+    }
+    .reference-link {
+      width: 100%;
       padding: 10px 15px;
       border: 1px solid #ccc;
       outline: none;
       color: #666;
-      width: 50%;
-      @media (max-width: $phone) {
-        width: 100%;
-      }
-      &:focus {
-        border-color: $gray;
-        color: #333;
-      }
+      width: 100%;
+      background: #f2f2f2;
     }
-    button[type=submit] {
-      background: $red;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 5px;
-      outline: none;
-      border: none;
-      -webkit-appearance: none;
-      font-weight: 600;
-      &:hover {
-        background: $shade-red;
-      }
-    }
-  }
-  .remove-form {
-    margin-top: 40px;
-    button {
-      -webkit-appearance: none;
-      background: none;
-      border: none;
-      box-shadow: none;
-      text-decoration: underline;
-      padding: 0;
-      color: #ccc;
-      outline: none;
+    label {
+      font-size: 90%;
+      color: $gray;
+      display: block;
+      margin: 0 0 10px;
     }
   }
 }

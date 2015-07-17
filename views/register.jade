@@ -25,8 +25,8 @@ block body
               label Coupon (optional)
               input(type='text' name='coupon')
             .form-block
-              label I agree to terms and conditions
-              input(type='checkbox' value='agree' name='termsAgree')
+              label.inline.small I agree to the <a href='/privacy-policy' target='_blank'>Privacy Policy</a> and <a href='/terms-of-service' target='_blank'>Terms of Agreement</a>
+              input.inline(type='checkbox' value='agree' name='termsAgree')
             .form-block
               button.fb-login(type='submit') Register with Facebook
         .register-extra
@@ -40,4 +40,4 @@ block body
               li.value-item Simply $10 / month
                 ul.value-list.sub
                   li.value-item That's only $1.25 a graphic
-              li.value-item Cancel anytime
+              li.value-item Cancel anytime, no commitment

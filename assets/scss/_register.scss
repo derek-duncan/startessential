@@ -61,6 +61,18 @@
           margin: 0 0 15px;
           font-size: 120%;
           font-weight: 600;
+          a {
+            font-weight: 400;
+            text-decoration: none;
+            color: $btn-blue;
+            &:hover {
+              color: darken($btn-blue, 10%);
+            }
+          }
+          &.small {
+            font-size: 100%;
+            display: inline-block;
+          }
         }
         input {
           padding: 10px 15px;
@@ -71,6 +83,11 @@
           outline: none;
           &:disabled {
             background: #f2f2f2;
+          }
+        }
+        label, input {
+          &.inline {
+            display: inline-block;
           }
         }
         .fb-login {

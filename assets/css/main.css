@@ -717,6 +717,14 @@ body {
     color: #4A90E2;
     text-decoration: none; }
 
+#agreements .main {
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto; }
+  @media (max-width: 520px) {
+    #agreements .main {
+      max-width: 90%; } }
+
 #thankyou section.info {
   padding: 50px 0;
   text-align: center;
@@ -1694,6 +1702,15 @@ body.messages .saving-overlay {
           margin: 0 0 15px;
           font-size: 120%;
           font-weight: 600; }
+          #register .register .register-form .form-block label a {
+            font-weight: 400;
+            text-decoration: none;
+            color: #4A90E2; }
+            #register .register .register-form .form-block label a:hover {
+              color: #2275d7; }
+          #register .register .register-form .form-block label.small {
+            font-size: 100%;
+            display: inline-block; }
         #register .register .register-form .form-block input {
           padding: 10px 15px;
           box-shadow: border-box;
@@ -1703,6 +1720,8 @@ body.messages .saving-overlay {
           outline: none; }
           #register .register .register-form .form-block input:disabled {
             background: #f2f2f2; }
+        #register .register .register-form .form-block label.inline, #register .register .register-form .form-block input.inline {
+          display: inline-block; }
         #register .register .register-form .form-block .fb-login {
           display: inline-block;
           margin: 0 auto;
@@ -1945,57 +1964,83 @@ body.messages .saving-overlay {
           background: #FF8F8F; } }
   #account .main {
     max-width: 90%;
-    margin: 0 auto; }
-  #account .page-title {
-    color: #666666;
-    font-size: 210%;
-    font-weight: 600; }
-  #account .settings {
-    margin: 40px 0;
-    width: 100%; }
-    #account .settings .input-group {
-      margin-bottom: 20px;
-      font-size: 130%; }
-      #account .settings .input-group.fade input {
-        background: #f2f2f2; }
-    #account .settings label {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 120%; }
-    #account .settings input[type=text], #account .settings input[type=email] {
+    margin: 30px auto 0;
+    font-size: 130%; }
+  #account .account-left {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top; }
+    #account .account-left .page-title {
+      color: #666666;
+      font-size: 180%;
+      font-weight: 600;
+      margin-top: 0; }
+    #account .account-left .settings {
+      margin: 40px 0;
+      width: 80%; }
+      #account .account-left .settings .input-group {
+        margin-bottom: 20px; }
+        #account .account-left .settings .input-group.fade input {
+          background: #f2f2f2; }
+      #account .account-left .settings label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 120%; }
+      #account .account-left .settings input[type=text], #account .account-left .settings input[type=email] {
+        padding: 10px 15px;
+        border: 1px solid #ccc;
+        outline: none;
+        color: #666;
+        width: 100%; }
+        #account .account-left .settings input[type=text]:focus, #account .account-left .settings input[type=email]:focus {
+          border-color: #7D7D7D;
+          color: #333; }
+      #account .account-left .settings button[type=submit] {
+        background: #FF8F8F;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        -webkit-appearance: none;
+        font-weight: 600; }
+        #account .account-left .settings button[type=submit]:hover {
+          background: #ff5c5c; }
+    #account .account-left .remove-form {
+      margin-top: 40px;
+      font-size: 80%; }
+      #account .account-left .remove-form button {
+        -webkit-appearance: none;
+        background: none;
+        border: none;
+        box-shadow: none;
+        text-decoration: underline;
+        padding: 0;
+        color: #ccc;
+        outline: none; }
+  #account .account-right {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top; }
+    #account .account-right .reference-title {
+      margin-top: 0;
+      color: #666;
+      font-size: 140%; }
+    #account .account-right .reference-tagline {
+      font-size: 90%; }
+    #account .account-right .reference-link {
+      width: 100%;
       padding: 10px 15px;
       border: 1px solid #ccc;
       outline: none;
       color: #666;
-      width: 50%; }
-      @media (max-width: 520px) {
-        #account .settings input[type=text], #account .settings input[type=email] {
-          width: 100%; } }
-      #account .settings input[type=text]:focus, #account .settings input[type=email]:focus {
-        border-color: #7D7D7D;
-        color: #333; }
-    #account .settings button[type=submit] {
-      background: #FF8F8F;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 5px;
-      outline: none;
-      border: none;
-      -webkit-appearance: none;
-      font-weight: 600; }
-      #account .settings button[type=submit]:hover {
-        background: #ff5c5c; }
-  #account .remove-form {
-    margin-top: 40px; }
-    #account .remove-form button {
-      -webkit-appearance: none;
-      background: none;
-      border: none;
-      box-shadow: none;
-      text-decoration: underline;
-      padding: 0;
-      color: #ccc;
-      outline: none; }
+      width: 100%;
+      background: #f2f2f2; }
+    #account .account-right label {
+      font-size: 90%;
+      color: #7D7D7D;
+      display: block;
+      margin: 0 0 10px; }
 
 #login {
   /*.naked {*/

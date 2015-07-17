@@ -84,13 +84,15 @@ if (cluster.isMaster) {
   server.ext('onPreResponse', function(request, reply) {
 
     var response = request.response;
-    if (response.isBoom && response.output.statusCode === 404) {
-      return reply.view('404');
+    if (process.env === 'production') {
+      if (response.isBoom && response.output.statusCode === 404) {
+        return reply.view('404');
+      }
+      if (response.isBoom && response.output.statusCode === 500) {
+        return reply.view('500');
+      }
     }
-    if (response.isBoom && response.output.statusCode === 500) {
-      return reply.view('500');
-    }
-    if (response.variety === 'view') {
+    if (response.variety === 'view' && response.source.context) {
       var context = response.source.context;
 
       // Attach the sid cookie to every view
@@ -226,6 +228,7 @@ if (cluster.isMaster) {
       reporters: [{
         reporter: require('good-console'),
         events: {
+          request: '*',
           response: '*',
           log: '*',
           error: '*'

@@ -26,7 +26,7 @@ block body
               .details-content !{graphic._post.content_rendered}
               if sid
                 if sid._id == graphic._user._id
-                  .share-facebook.details-link(data-code=graphic.short_code) Share on Facebook
+                  .share-facebook.details-link(data-code='http://startessential.com/preview/#{graphic.short_code}') Share on Facebook
                   a.details-download(href=graphic.custom_image.original.Url target='_blank') Download
         .tour
           .tour-inner
