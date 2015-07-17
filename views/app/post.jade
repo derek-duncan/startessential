@@ -22,16 +22,17 @@ block body
                   button.details-save(type='submit') Save
       section.final
         .final-content
-          h3.title Customize and Post
-          .tagline Your member number is listed below. Feel free to update this in the settings if this has changed.
-          form(method='POST' action='/publish/#{post._id}')
-            input(type="hidden" name="crumb" value=crumb)
-            input.member-number(name='memberNumber' type='text' placeholder='(Optional) Young Living member number' disabled=(user.member_number ? 'disabled' : undefined) value='#{user.member_number ? user.member_number : ""}')
+          if (saved_code)
+            h3.title Inform your downlines and friends
             .cta
-              button.post-now(type='submit')
-                if user_exists
-                  | Post to Facebook
-                else 
-                  | Sign up to post
+              a.share-fb(href='/preview/#{saved_code}?message=Share%20this%20page%20now' title='Share post on Facebook') Share on Facebook
+          else
+            h3.title Customize and Post
+            .tagline Your member number is listed below. Feel free to update this in the settings if this has changed.
+            form(method='POST' action='/posts/#{post._id}/save')
+              input(type="hidden" name="crumb" value=crumb)
+              input.member-number(type='text' placeholder='(Optional) Young Living member number' disabled=(sid.member_number ? 'disabled' : undefined) value='#{sid.member_number ? sid.member_number : ""}')
+              .cta
+                button.post-now(type='submit') Save and post to Facebook
 block scripts
   script(src='/js/build/jquery.sticky-kit.min.js')

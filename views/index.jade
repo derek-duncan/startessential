@@ -12,8 +12,12 @@ block body
         h1.logo
           img(src='/images/logo-color.png' alt='Start Essential resources logo' width='300')
         .header-actions
-          a.cta-top(href="#join" title="Join Start Essential") Join now
-          a.login-top(href="/login" title="Login to Start Essential") Login
+          if sid
+            a.cta-top(href="/posts" title="Access Start Essential") Step Inside
+            a.login-top(href="/logout" title="Logout") Logout
+          else
+            a.cta-top(href="#join" title="Join Start Essential") Join now
+            a.login-top(href="/login" title="Login to Start Essential") Login
       div.header-middle.content.cf
         h4.middle-tagline If you're a Young Living distributor, you're in luck
         h2.middle-headline An Exclusive Collection of Essential Oil Graphics

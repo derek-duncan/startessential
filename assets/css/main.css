@@ -376,18 +376,14 @@ body {
 .all-content {
   min-height: 100%; }
 
-#front header.header-front {
-  text-align: center; }
-
 #front .header-top {
   width: 90%;
   margin: 0 auto;
   padding: 20px 0; }
-  @media (max-width: 768px) {
+  @media (max-width: 520px) {
     #front .header-top {
-      width: 90%;
-      text-align: center;
-      border-bottom: 1px solid #eee; } }
+      width: 100%;
+      padding-bottom: 0; } }
   #front .header-top h1.logo {
     margin: 0;
     padding: 0;
@@ -395,18 +391,18 @@ body {
     width: 10%; }
     @media (max-width: 520px) {
       #front .header-top h1.logo {
-        width: 50%;
         float: none;
-        margin: 0 auto; } }
+        width: 40%;
+        margin: 0 20px; } }
     #front .header-top h1.logo img {
       width: 100%; }
   #front .header-top .header-actions {
-    float: right; }
+    float: right;
+    margin-top: 20px; }
     @media (max-width: 520px) {
       #front .header-top .header-actions {
         float: none;
-        width: 100%;
-        margin-top: 25px; } }
+        width: 100%; } }
   #front .header-top a.cta-top, #front .header-top a.login-top {
     display: inline-block;
     margin: 0 5px;
@@ -415,10 +411,16 @@ body {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-    border: 1px solid #FF8F8F; }
+    border: 1px solid #FF8F8F;
+    box-sizing: border-box;
+    text-align: center; }
     @media (max-width: 520px) {
       #front .header-top a.cta-top, #front .header-top a.login-top {
-        overflow: initial; } }
+        overflow: initial;
+        display: inline-block;
+        font-size: 100%;
+        width: 50%;
+        margin: 0; } }
     #front .header-top a.cta-top:hover, #front .header-top a.login-top:hover {
       background: #ff5c5c; }
   #front .header-top a.login-top {
@@ -434,7 +436,8 @@ body {
   margin: 0 auto;
   padding: 30px 0 80px;
   position: relative;
-  overflow: initial; }
+  overflow: initial;
+  text-align: center; }
   @media (max-width: 768px) {
     #front .header-middle {
       width: 80%; } }
@@ -455,7 +458,7 @@ body {
     @media (max-width: 520px) {
       #front .header-middle h2.middle-headline {
         max-width: 100%;
-        font-size: 250%; } }
+        font-size: 220%; } }
   #front .header-middle p.middle-description {
     font-size: 130%;
     font-weight: 200;
@@ -466,7 +469,7 @@ body {
     @media (max-width: 520px) {
       #front .header-middle p.middle-description {
         max-width: 100%;
-        font-size: 120%; } }
+        font-size: 100%; } }
   #front .header-middle a.middle-cta {
     display: inline-block;
     margin: 20px 0;
@@ -525,7 +528,7 @@ body {
     text-align: center; }
     @media (max-width: 520px) {
       #front section.info h2.info-sub_head {
-        font-size: 160%; } }
+        font-size: 145%; } }
   #front section.info img.info-computer-example {
     width: 100%;
     margin: 50px 0 0; }
@@ -537,7 +540,7 @@ body {
   @media (max-width: 768px) {
     #front section.features .features-content {
       width: 80%;
-      padding: 80px 0 20px; } }
+      padding: 50px 0 30px; } }
 
 #front section.features .feature {
   padding: 50px 0;
@@ -700,12 +703,10 @@ body {
     color: #999999; }
     @media (max-width: 520px) {
       .footer .footer-content {
+        text-align: left;
         width: 90%; } }
     .footer .footer-content .disclaimer {
       font-size: 80%; }
-      @media (max-width: 520px) {
-        .footer .footer-content .disclaimer {
-          font-size: 100%; } }
 
 #error .main {
   font-size: 200%;
@@ -1033,6 +1034,9 @@ body {
     margin-top: 0;
     font-size: 200%;
     font-weight: 500; }
+    @media (max-width: 520px) {
+      #post .final .title {
+        font-size: 140%; } }
   #post .final .tagline {
     color: #878787;
     font-size: 130%;
@@ -1056,7 +1060,7 @@ body {
       border-color: #aaa; }
   #post .final .cta {
     margin-top: 20px; }
-    #post .final .cta .post-now {
+    #post .final .cta .post-now, #post .final .cta .share-fb {
       display: inline-block;
       padding: 15px 25px;
       font-size: 140%;
@@ -1067,7 +1071,10 @@ body {
       border-radius: 5px;
       -webkit-appearance: none;
       border: none; }
-      #post .final .cta .post-now:hover {
+      @media (max-width: 520px) {
+        #post .final .cta .post-now, #post .final .cta .share-fb {
+          font-size: 100%; } }
+      #post .final .cta .post-now:hover, #post .final .cta .share-fb:hover {
         background: #2275d7; }
 
 .main {
@@ -1446,6 +1453,9 @@ body.messages .saving-overlay {
       font-weight: 600;
       margin: 0 0 30px 0;
       float: left; }
+      @media (max-width: 520px) {
+        #posts .main .post-featured .post-featured-label {
+          font-size: 160%; } }
     #posts .main .post-featured .post-featured-image-wrap {
       float: left;
       width: 40%;
@@ -1572,6 +1582,9 @@ body.messages .saving-overlay {
       font-size: 210%;
       font-weight: 600;
       margin: 0 0 40px; }
+      @media (max-width: 520px) {
+        #posts .main .graphics .graphics-title {
+          font-size: 160%; } }
     #posts .main .graphics .graphics-loader {
       text-align: center; }
       #posts .main .graphics .graphics-loader.hide {
@@ -1966,65 +1979,78 @@ body.messages .saving-overlay {
     max-width: 90%;
     margin: 30px auto 0;
     font-size: 130%; }
-  #account .account-left {
+    @media (max-width: 520px) {
+      #account .main {
+        font-size: 100%; } }
+  #account .account-left, #account .account-right {
     display: inline-block;
     width: 50%;
-    vertical-align: top; }
-    #account .account-left .page-title {
-      color: #666666;
-      font-size: 180%;
-      font-weight: 600;
-      margin-top: 0; }
-    #account .account-left .settings {
-      margin: 40px 0;
-      width: 80%; }
-      #account .account-left .settings .input-group {
-        margin-bottom: 20px; }
-        #account .account-left .settings .input-group.fade input {
-          background: #f2f2f2; }
-      #account .account-left .settings label {
-        display: block;
-        margin-bottom: 10px;
-        font-size: 120%; }
-      #account .account-left .settings input[type=text], #account .account-left .settings input[type=email] {
-        padding: 10px 15px;
-        border: 1px solid #ccc;
-        outline: none;
-        color: #666;
-        width: 100%; }
-        #account .account-left .settings input[type=text]:focus, #account .account-left .settings input[type=email]:focus {
-          border-color: #7D7D7D;
-          color: #333; }
-      #account .account-left .settings button[type=submit] {
-        background: #FF8F8F;
-        color: #fff;
-        padding: 10px 20px;
-        border-radius: 5px;
-        outline: none;
-        border: none;
-        -webkit-appearance: none;
-        font-weight: 600; }
-        #account .account-left .settings button[type=submit]:hover {
-          background: #ff5c5c; }
-    #account .account-left .remove-form {
-      margin-top: 40px;
-      font-size: 80%; }
-      #account .account-left .remove-form button {
-        -webkit-appearance: none;
-        background: none;
-        border: none;
-        box-shadow: none;
-        text-decoration: underline;
-        padding: 0;
-        color: #ccc;
-        outline: none; }
+    vertical-align: top;
+    box-sizing: border-box; }
+    @media (max-width: 520px) {
+      #account .account-left, #account .account-right {
+        width: 100%;
+        display: block; } }
+  #account .account-left .page-title {
+    color: #666666;
+    font-size: 180%;
+    font-weight: 600;
+    margin-top: 0; }
+  #account .account-left .settings {
+    margin: 40px 0;
+    width: 80%; }
+    @media (max-width: 520px) {
+      #account .account-left .settings {
+        margin: 20px 0; } }
+    #account .account-left .settings .input-group {
+      margin-bottom: 20px; }
+      #account .account-left .settings .input-group.fade input {
+        background: #f2f2f2; }
+    #account .account-left .settings label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 120%; }
+    #account .account-left .settings input[type=text], #account .account-left .settings input[type=email] {
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      outline: none;
+      color: #666;
+      width: 100%; }
+      #account .account-left .settings input[type=text]:focus, #account .account-left .settings input[type=email]:focus {
+        border-color: #7D7D7D;
+        color: #333; }
+    #account .account-left .settings button[type=submit] {
+      background: #FF8F8F;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      outline: none;
+      border: none;
+      -webkit-appearance: none;
+      font-weight: 600; }
+      #account .account-left .settings button[type=submit]:hover {
+        background: #ff5c5c; }
+  #account .account-left .remove-form {
+    margin-top: 40px;
+    font-size: 80%; }
+    #account .account-left .remove-form button {
+      -webkit-appearance: none;
+      background: none;
+      border: none;
+      box-shadow: none;
+      text-decoration: underline;
+      padding: 0;
+      color: #ccc;
+      outline: none; }
   #account .account-right {
-    display: inline-block;
-    width: 50%;
-    vertical-align: top; }
+    padding: 30px;
+    background-color: #f2f2f2; }
+    @media (max-width: 520px) {
+      #account .account-right {
+        margin: 30px auto; } }
     #account .account-right .reference-title {
       margin-top: 0;
-      color: #666;
+      color: #314046;
       font-size: 140%; }
     #account .account-right .reference-tagline {
       font-size: 90%; }
@@ -2053,7 +2079,8 @@ body.messages .saving-overlay {
       @media (max-width: 520px) {
         #account .account-right .share-fb {
           width: 100%;
-          margin: 1% 0; } }
+          padding-left: 0;
+          padding-right: 0; } }
       #account .account-right .share-fb:hover {
         background: #344a78; }
 
@@ -2416,11 +2443,15 @@ body.messages .saving-overlay {
     margin: 10px auto; }
     @media (max-width: 520px) {
       #saved .main {
-        max-width: 80%; } }
+        max-width: 90%; } }
   #saved .page-title {
     color: #666666;
     font-size: 210%;
     font-weight: 600; }
+    @media (max-width: 520px) {
+      #saved .page-title {
+        font-size: 160%;
+        margin-bottom: 0; } }
   #saved .save {
     position: relative;
     display: inline-block;
@@ -2434,7 +2465,8 @@ body.messages .saving-overlay {
     @media (max-width: 520px) {
       #saved .save {
         width: 100%;
-        margin: 15px 0; } }
+        margin: 15px 0;
+        padding: 20px 0; } }
     #saved .save .save-image-wrap, #saved .save .save-text, #saved .save .save-title, #saved .save .save-old, #saved .save .save-posted {
       display: inline-block;
       vertical-align: middle; }
@@ -2643,13 +2675,22 @@ body.messages .saving-overlay {
   color: #666666;
   font-size: 210%;
   font-weight: 600; }
+  @media (max-width: 520px) {
+    #preview .main .tour .tour-label {
+      font-size: 160%;
+      margin: 0 0 30px; } }
 
 #preview .main .tour .signup-link {
   font-size: 140%;
   padding: 10px 20px;
   border: 1px solid #FF8F8F;
   color: #FF8F8F;
-  text-decoration: none; }
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600; }
+  @media (max-width: 520px) {
+    #preview .main .tour .signup-link {
+      font-size: 120%; } }
   #preview .main .tour .signup-link:hover {
     background: #FF8F8F;
     color: #fff; }

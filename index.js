@@ -93,6 +93,7 @@ if (cluster.isMaster) {
       var context = response.source.context;
 
       // Check to make sure we aren't too busy
+      toobusy.maxLag(120)
       if (toobusy()) {
         return reply.view('503');
       }

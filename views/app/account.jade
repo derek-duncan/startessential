@@ -10,7 +10,7 @@ block body
             label Your next week of downloads will start on
             input(type='text' readonly value=readableDate(user.records.week_renew_date))
           .input-group.fade
-            label Your distributor signup link
+            label Your distributor signup quick link
             input(type='text' readonly value=user.distributor_link)
           form.settings-form(action='/account/settings' method='POST')
             input(type="hidden" name="crumb" value=crumb)

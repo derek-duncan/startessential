@@ -153,12 +153,6 @@ $(function() {
       ga('send', 'event', 'share', 'click', 'twitter')
     })
   }
-
-  if ($('#post').length) {
-    $('.post-now button').on('click', function(e) {
-      toggleMessages()
-    })
-  }
   if ($('#posts').length) {
     var $grid;
     var numberLoaded = 0;
@@ -312,6 +306,12 @@ $(function() {
       }
     }
 
+  }
+
+  if ($('#post').length) {
+    //$('.share-fb').on('click touchend', function(e) {
+    //  fbShare($(this).attr('href'));
+    //})
   }
 
   if ($('#account').length) {

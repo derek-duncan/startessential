@@ -45,18 +45,13 @@ body {
 }
 
 #front {
-  header.header-front {
-    text-align: center;
-  }
-
   .header-top {
     width: 90%;
     margin: 0 auto;
     padding: 20px 0;
-    @media (max-width: $ipad) {
-      width: 90%;
-      text-align: center;
-      border-bottom: 1px solid #eee;
+    @media (max-width: $phone) {
+      width: 100%;
+      padding-bottom: 0;
     }
     h1.logo {
       margin: 0;
@@ -64,9 +59,9 @@ body {
       float: left;
       width: 10%;
       @media (max-width: $phone) {
-        width: 50%;
         float: none;
-        margin: 0 auto;
+        width: 40%;
+        margin: 0 20px;
       }
       img {
         width: 100%;
@@ -74,10 +69,10 @@ body {
     }
     .header-actions {
       float: right;
+      margin-top: 20px;
       @media (max-width: $phone) {
         float: none;
         width: 100%;
-        margin-top: 25px;
       }
     }
     a.cta-top, a.login-top {
@@ -89,8 +84,14 @@ body {
       text-decoration: none;
       font-weight: 600;
       border: 1px solid $red;
+      box-sizing: border-box;
+      text-align: center;
       @media (max-width: $phone) {
         overflow: initial;
+        display: inline-block;
+        font-size: 100%;
+        width: 50%;
+        margin: 0;
       }
       &:hover {
         background: $shade-red;
@@ -112,6 +113,7 @@ body {
     padding: 30px 0 80px;
     position: relative;
     overflow: initial;
+    text-align: center;
     @media (max-width: $ipad) {
       width: 80%;
     }
@@ -132,7 +134,7 @@ body {
       max-width: 80%;
       @media (max-width: $phone) {
         max-width: 100%;
-        font-size: 250%;
+        font-size: 220%;
       }
     }
     p.middle-description {
@@ -144,7 +146,7 @@ body {
       margin: 0 auto;
       @media (max-width: $phone) {
         max-width: 100%;
-        font-size: 120%;
+        font-size: 100%;
       }
     }
     a.middle-cta {
@@ -205,7 +207,7 @@ body {
       font-size: 190%;
       text-align: center;
       @media (max-width: $phone) {
-        font-size: 160%;
+        font-size: 145%;
       }
     }
     img.info-computer-example {
@@ -220,7 +222,7 @@ body {
       padding: 80px 0;
       @media (max-width: $ipad) {
         width: 80%;
-        padding: 80px 0 20px;
+        padding: 50px 0 30px;
       }
     }
     .feature {
@@ -408,13 +410,11 @@ body {
     text-align: center;
     color: #999999;
     @media (max-width: $phone) {
+      text-align: left;
       width: 90%;
     }
     .disclaimer {
       font-size: 80%;
-      @media (max-width: $phone) {
-        font-size: 100%;
-      }
     }
   }
 }

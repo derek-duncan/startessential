@@ -12,6 +12,10 @@
         color: #666666;
         font-size: 210%;
         font-weight: 600;
+        @media (max-width: $phone) {
+          font-size: 160%;
+          margin: 0 0 30px;
+        }
       }
       .signup-link {
         font-size: 140%;
@@ -19,6 +23,11 @@
         border: 1px solid $red;
         color: $red;
         text-decoration: none;
+        border-radius: 5px;
+        font-weight: 600;
+        @media (max-width: $phone) {
+          font-size: 120%;
+        }
         &:hover {
           background: $red;
           color: #fff;

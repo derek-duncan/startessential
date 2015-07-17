@@ -20,6 +20,9 @@
       margin-top: 0;
       font-size: 200%;
       font-weight: 500;
+      @media (max-width: $phone) {
+        font-size: 140%;
+      }
     }
     .tagline {
       color: #878787;
@@ -48,7 +51,7 @@
     }
     .cta {
       margin-top: 20px;
-      .post-now {
+      .post-now, .share-fb {
         display: inline-block;
         padding: 15px 25px;
         font-size: 140%;
@@ -59,6 +62,9 @@
         border-radius: 5px;
         -webkit-appearance: none;
         border: none;
+        @media (max-width: $phone) {
+          font-size: 100%;
+        }
         &:hover {
           background: darken($btn-blue, 10%);
         }
