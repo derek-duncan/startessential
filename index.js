@@ -69,9 +69,6 @@ if (cluster.isMaster) {
 
   server.ext('onRequest', function(request, reply) {
     // create a redirect url
-    if (toobusy()) {
-      return reply.view('503');
-    }
     if (request.url.path == '/login' && request.headers.referer) {
       var referer_url = request.headers.referer.split('/').slice(3);
       var redirect_url = '/' + referer_url.join('/');
@@ -94,6 +91,11 @@ if (cluster.isMaster) {
     }
     if (response.variety === 'view' && response.source.context) {
       var context = response.source.context;
+
+      // Check to make sure we aren't too busy
+      if (toobusy()) {
+        return reply.view('503');
+      }
 
       // Attach the sid cookie to every view
       if (request.state.sid && context) {
