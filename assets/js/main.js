@@ -241,7 +241,7 @@ $(function() {
           tags.append(line)
           var date = $('<span/>', {
             class: 'graphic-date',
-            text: moment(graphic.date_created).fromNow()
+            text: moment(graphic.date_published).fromNow()
           })
           tags.append(date)
           info.append(tags)

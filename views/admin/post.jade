@@ -71,5 +71,8 @@ block body
       label Featured
       input(type='checkbox' name='featured' checked=post.featured)
     div.form-section
+      label Published
+      input(type='checkbox' name='published' checked=post.published)
+    div.form-section
       button(type='submit') Save it
   pre #{post}
