@@ -1603,7 +1603,8 @@ body.messages .saving-overlay {
       width: 1.5%; }
     #posts .main .graphics .grid-item {
       width: 23.5%;
-      margin-bottom: 0.75%; }
+      margin-bottom: 0.75%;
+      box-shadow: 0 0 4px #ddd; }
       @media (max-width: 768px) {
         #posts .main .graphics .grid-item {
           width: 48.5%; } }
@@ -1631,7 +1632,7 @@ body.messages .saving-overlay {
       #posts .main .graphics .grid-item .graphic-info {
         padding: 15px;
         box-sizing: border-box;
-        border: 1px solid #DEDEDE;
+        /*border: 1px solid #DEDEDE;*/
         box-shadow: 0 1px 0 #ccc;
         border-top: none;
         background: #fff; }
