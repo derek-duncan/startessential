@@ -33,8 +33,8 @@ block body
     div.form-section
       label Category
       select(name='category')
-        option(value='Applications') Applications
-        option(value='Aroma') Aroma
+        each category in categories
+          option(value=category)= category
     div.form-section
       label Tags
       input#tags(type='text' name='tags' placeholder='Separate tags with a comma')

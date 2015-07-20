@@ -20,8 +20,8 @@ block body
   h2 This Post
   div.share-url
     label Share Url
-    input(type='text' value='http://startessential.com/posts/#{date}')
-    a.share-link(href='http://startessential.com/posts/#{date}') View Post
+    input(type='text' value='http://startessential.com/#{post.url_path}')
+    a.share-link(href='http://startessential.com/#{post.url_path}') View Post
   form.new-post-form(action='/admin/posts/#{post._id}' method='POST' enctype="multipart/form-data")
     input(type="hidden" name="crumb" value=crumb)
     div.form-section
@@ -37,8 +37,8 @@ block body
     div.form-section
       label Category
       select(name='category')
-        option(value='Applications' selected=post.category == 'Applications') Applications
-        option(value='Aroma' selected=post.category == 'Aroma') Aroma
+        each category in categories
+          option(value=category selected=post.category == category)= category
     div.form-section
       label Tags
       input#tags(type='text' name='tags' value=post.tags_flat placeholder='Separate tags with a comma')
