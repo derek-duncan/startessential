@@ -20,8 +20,8 @@ block body
   h2 This Post
   div.share-url
     label Share Url
-    input(type='text' value='http://startessential.com/#{post.url_path}')
-    a.share-link(href='http://startessential.com/#{post.url_path}') View Post
+    input(type='text' value='http://startessential.com/posts/#{post.url_path}')
+    a.share-link(href='/posts/#{post.url_path}') View Post
   form.new-post-form(action='/admin/posts/#{post._id}' method='POST' enctype="multipart/form-data")
     input(type="hidden" name="crumb" value=crumb)
     div.form-section

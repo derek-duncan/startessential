@@ -11,7 +11,9 @@ header.header
         img.logo(src='/images/logo-color.png' width='150')
     nav.nav
       if sid
-        span.record-counter #{sid.records.downloaded}/#{sid.records.downloads} Saved
+        div.record-counter
+          span.tooltip This will reset every week
+          span.counter #{sid.records.downloaded}/#{sid.records.downloads} Saved
       ul.nav-list
         li.nav-item#posts-link
           a(class=(active === 'explore' ? 'active' : undefined) href='/posts') Explore

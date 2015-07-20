@@ -884,7 +884,17 @@ body {
       float: left;
       width: 40%;
       margin-right: -40%;
-      overflow: hidden; }
+      overflow: hidden;
+      position: relative; }
+      #post .main .graphic .graphic-image-wrap:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(255, 255, 255, 0.01);
+        z-index: 999; }
       @media (max-width: 520px) {
         #post .main .graphic .graphic-image-wrap {
           width: 100%;
@@ -1221,24 +1231,46 @@ body.messages .saving-overlay {
       color: inherit; }
       .header .nav li.nav-item a.active {
         color: #979797; }
-  .header span.record-counter {
+  .header .record-counter {
     display: inline-block;
-    padding: 10px;
     margin-right: 20px;
-    background: #ff8080;
-    color: #CF4F4C;
-    font-weight: 600;
-    cursor: default;
-    text-transform: uppercase;
-    vertical-align: middle; }
+    vertical-align: middle;
+    position: relative; }
     @media (max-width: 520px) {
-      .header span.record-counter {
-        padding: 5px 10px;
+      .header .record-counter {
         float: right;
-        font-size: 14px;
         margin-right: 5px;
-        margin-top: 3px;
-        background: #FF8F8F; } }
+        margin-top: 3px; } }
+    .header .record-counter:hover .tooltip {
+      opacity: 1; }
+    .header .record-counter .counter {
+      display: inline-block;
+      padding: 10px;
+      background: #ff8080;
+      color: #CF4F4C;
+      font-weight: 600;
+      cursor: default;
+      text-transform: uppercase; }
+      @media (max-width: 520px) {
+        .header .record-counter .counter {
+          padding: 5px 10px;
+          font-size: 14px;
+          background: #FF8F8F; } }
+    .header .record-counter .tooltip {
+      opacity: 0;
+      margin-right: 15px;
+      text-align: center;
+      color: #888;
+      border: 1px solid #888;
+      padding: 5px 10px;
+      font-size: 100%;
+      font-weight: 400;
+      text-transform: none;
+      -webkit-transition: opacity 0.3s;
+              transition: opacity 0.3s; }
+      @media (max-width: 768px) {
+        .header .record-counter .tooltip {
+          display: none; } }
 
 /*.naked {*/
 /*  .header-content {*/
@@ -1404,24 +1436,46 @@ body.messages .saving-overlay {
         color: inherit; }
         #posts .header .nav li.nav-item a.active {
           color: #979797; }
-    #posts .header span.record-counter {
+    #posts .header .record-counter {
       display: inline-block;
-      padding: 10px;
       margin-right: 20px;
-      background: #ff8080;
-      color: #CF4F4C;
-      font-weight: 600;
-      cursor: default;
-      text-transform: uppercase;
-      vertical-align: middle; }
+      vertical-align: middle;
+      position: relative; }
       @media (max-width: 520px) {
-        #posts .header span.record-counter {
-          padding: 5px 10px;
+        #posts .header .record-counter {
           float: right;
-          font-size: 14px;
           margin-right: 5px;
-          margin-top: 3px;
-          background: #FF8F8F; } }
+          margin-top: 3px; } }
+      #posts .header .record-counter:hover .tooltip {
+        opacity: 1; }
+      #posts .header .record-counter .counter {
+        display: inline-block;
+        padding: 10px;
+        background: #ff8080;
+        color: #CF4F4C;
+        font-weight: 600;
+        cursor: default;
+        text-transform: uppercase; }
+        @media (max-width: 520px) {
+          #posts .header .record-counter .counter {
+            padding: 5px 10px;
+            font-size: 14px;
+            background: #FF8F8F; } }
+      #posts .header .record-counter .tooltip {
+        opacity: 0;
+        margin-right: 15px;
+        text-align: center;
+        color: #888;
+        border: 1px solid #888;
+        padding: 5px 10px;
+        font-size: 100%;
+        font-weight: 400;
+        text-transform: none;
+        -webkit-transition: opacity 0.3s;
+                transition: opacity 0.3s; }
+        @media (max-width: 768px) {
+          #posts .header .record-counter .tooltip {
+            display: none; } }
   #posts .main .main-content {
     margin: 40px auto 0;
     width: 90%; }
@@ -1460,7 +1514,17 @@ body.messages .saving-overlay {
       float: left;
       width: 40%;
       max-height: 70vh;
-      overflow: hidden; }
+      overflow: hidden;
+      position: relative; }
+      #posts .main .post-featured .post-featured-image-wrap:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(255, 255, 255, 0.01);
+        z-index: 999; }
       @media (max-width: 520px) {
         #posts .main .post-featured .post-featured-image-wrap {
           width: 100%;
@@ -1620,13 +1684,14 @@ body.messages .saving-overlay {
       #posts .main .graphics .grid-item .graphic-image-wrap {
         position: relative; }
         #posts .main .graphics .grid-item .graphic-image-wrap:after {
+          content: '';
           width: 100%;
           height: 100%;
           position: absolute;
           top: 0;
           left: 0;
-          background: transparent;
-          box-shadow: 0 0 6px #CBCBCB inset; }
+          background: rgba(255, 255, 255, 0.01);
+          z-index: 999; }
         #posts .main .graphics .grid-item .graphic-image-wrap .graphic-image {
           width: 100%; }
       #posts .main .graphics .grid-item .graphic-info {
@@ -1753,6 +1818,9 @@ body.messages .saving-overlay {
           border: none; }
           #register .register .register-form .form-block .fb-login:hover {
             background: #2275d7; }
+          @media (max-width: 520px) {
+            #register .register .register-form .form-block .fb-login {
+              font-size: 90%; } }
     #register .register .register-extra {
       display: inline-block;
       width: 40%;
@@ -1958,24 +2026,46 @@ body.messages .saving-overlay {
         color: inherit; }
         #account .header .nav li.nav-item a.active {
           color: #979797; }
-    #account .header span.record-counter {
+    #account .header .record-counter {
       display: inline-block;
-      padding: 10px;
       margin-right: 20px;
-      background: #ff8080;
-      color: #CF4F4C;
-      font-weight: 600;
-      cursor: default;
-      text-transform: uppercase;
-      vertical-align: middle; }
+      vertical-align: middle;
+      position: relative; }
       @media (max-width: 520px) {
-        #account .header span.record-counter {
-          padding: 5px 10px;
+        #account .header .record-counter {
           float: right;
-          font-size: 14px;
           margin-right: 5px;
-          margin-top: 3px;
-          background: #FF8F8F; } }
+          margin-top: 3px; } }
+      #account .header .record-counter:hover .tooltip {
+        opacity: 1; }
+      #account .header .record-counter .counter {
+        display: inline-block;
+        padding: 10px;
+        background: #ff8080;
+        color: #CF4F4C;
+        font-weight: 600;
+        cursor: default;
+        text-transform: uppercase; }
+        @media (max-width: 520px) {
+          #account .header .record-counter .counter {
+            padding: 5px 10px;
+            font-size: 14px;
+            background: #FF8F8F; } }
+      #account .header .record-counter .tooltip {
+        opacity: 0;
+        margin-right: 15px;
+        text-align: center;
+        color: #888;
+        border: 1px solid #888;
+        padding: 5px 10px;
+        font-size: 100%;
+        font-weight: 400;
+        text-transform: none;
+        -webkit-transition: opacity 0.3s;
+                transition: opacity 0.3s; }
+        @media (max-width: 768px) {
+          #account .header .record-counter .tooltip {
+            display: none; } }
   #account .main {
     max-width: 90%;
     margin: 30px auto 0;
@@ -2238,24 +2328,46 @@ body.messages .saving-overlay {
         color: inherit; }
         #login .header .nav li.nav-item a.active {
           color: #979797; }
-    #login .header span.record-counter {
+    #login .header .record-counter {
       display: inline-block;
-      padding: 10px;
       margin-right: 20px;
-      background: #ff8080;
-      color: #CF4F4C;
-      font-weight: 600;
-      cursor: default;
-      text-transform: uppercase;
-      vertical-align: middle; }
+      vertical-align: middle;
+      position: relative; }
       @media (max-width: 520px) {
-        #login .header span.record-counter {
-          padding: 5px 10px;
+        #login .header .record-counter {
           float: right;
-          font-size: 14px;
           margin-right: 5px;
-          margin-top: 3px;
-          background: #FF8F8F; } }
+          margin-top: 3px; } }
+      #login .header .record-counter:hover .tooltip {
+        opacity: 1; }
+      #login .header .record-counter .counter {
+        display: inline-block;
+        padding: 10px;
+        background: #ff8080;
+        color: #CF4F4C;
+        font-weight: 600;
+        cursor: default;
+        text-transform: uppercase; }
+        @media (max-width: 520px) {
+          #login .header .record-counter .counter {
+            padding: 5px 10px;
+            font-size: 14px;
+            background: #FF8F8F; } }
+      #login .header .record-counter .tooltip {
+        opacity: 0;
+        margin-right: 15px;
+        text-align: center;
+        color: #888;
+        border: 1px solid #888;
+        padding: 5px 10px;
+        font-size: 100%;
+        font-weight: 400;
+        text-transform: none;
+        -webkit-transition: opacity 0.3s;
+                transition: opacity 0.3s; }
+        @media (max-width: 768px) {
+          #login .header .record-counter .tooltip {
+            display: none; } }
   #login .login-button {
     font-size: 130%;
     padding: 15px 25px;
@@ -2421,24 +2533,46 @@ body.messages .saving-overlay {
         color: inherit; }
         #saved .header .nav li.nav-item a.active {
           color: #979797; }
-    #saved .header span.record-counter {
+    #saved .header .record-counter {
       display: inline-block;
-      padding: 10px;
       margin-right: 20px;
-      background: #ff8080;
-      color: #CF4F4C;
-      font-weight: 600;
-      cursor: default;
-      text-transform: uppercase;
-      vertical-align: middle; }
+      vertical-align: middle;
+      position: relative; }
       @media (max-width: 520px) {
-        #saved .header span.record-counter {
-          padding: 5px 10px;
+        #saved .header .record-counter {
           float: right;
-          font-size: 14px;
           margin-right: 5px;
-          margin-top: 3px;
-          background: #FF8F8F; } }
+          margin-top: 3px; } }
+      #saved .header .record-counter:hover .tooltip {
+        opacity: 1; }
+      #saved .header .record-counter .counter {
+        display: inline-block;
+        padding: 10px;
+        background: #ff8080;
+        color: #CF4F4C;
+        font-weight: 600;
+        cursor: default;
+        text-transform: uppercase; }
+        @media (max-width: 520px) {
+          #saved .header .record-counter .counter {
+            padding: 5px 10px;
+            font-size: 14px;
+            background: #FF8F8F; } }
+      #saved .header .record-counter .tooltip {
+        opacity: 0;
+        margin-right: 15px;
+        text-align: center;
+        color: #888;
+        border: 1px solid #888;
+        padding: 5px 10px;
+        font-size: 100%;
+        font-weight: 400;
+        text-transform: none;
+        -webkit-transition: opacity 0.3s;
+                transition: opacity 0.3s; }
+        @media (max-width: 768px) {
+          #saved .header .record-counter .tooltip {
+            display: none; } }
   #saved .main {
     max-width: 90%;
     margin: 10px auto; }
@@ -2553,7 +2687,17 @@ body.messages .saving-overlay {
     float: left;
     width: 40%;
     margin-right: -40%;
-    overflow: hidden; }
+    overflow: hidden;
+    position: relative; }
+    #preview .main .graphic .graphic-image-wrap:after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(255, 255, 255, 0.01);
+      z-index: 999; }
     @media (max-width: 520px) {
       #preview .main .graphic .graphic-image-wrap {
         width: 100%;

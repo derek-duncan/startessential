@@ -115,3 +115,4 @@
 {"event":"log","timestamp":1437343259542,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":70652}
 {"event":"log","timestamp":1437343276427,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":70687}
 {"event":"log","timestamp":1437344298643,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":71736}
+{"event":"log","timestamp":1437358677169,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-2.local:3000","pid":4884}

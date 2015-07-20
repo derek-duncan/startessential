@@ -147,23 +147,47 @@ body.messages {
       }
     }
   }
-  span.record-counter {
+  .record-counter {
     display: inline-block;
-    padding: 10px;
     margin-right: 20px;
-    background: darken($red, 3%);
-    color: #CF4F4C;
-    font-weight: 600;
-    cursor: default;
-    text-transform: uppercase;
     vertical-align: middle;
+    position: relative;
     @media (max-width: $phone) {
-      padding: 5px 10px;
       float: right;
-      font-size: 14px;
       margin-right: 5px;
       margin-top: 3px;
-      background: $red;
+    }
+    &:hover .tooltip {
+      opacity: 1;
+    }
+    .counter {
+      display: inline-block;
+      padding: 10px;
+      background: darken($red, 3%);
+      color: #CF4F4C;
+      font-weight: 600;
+      cursor: default;
+      text-transform: uppercase;
+      @media (max-width: $phone) {
+        padding: 5px 10px;
+        font-size: 14px;
+        background: $red;
+      }
+    }
+    .tooltip {
+      opacity: 0;
+      margin-right: 15px;
+      text-align: center;
+      color: #888;
+      border: 1px solid #888;
+      padding: 5px 10px;
+      font-size: 100%;
+      font-weight: 400;
+      text-transform: none;
+      transition: opacity 0.3s;
+      @media (max-width: $ipad) {
+        display: none;
+      }
     }
   }
 }

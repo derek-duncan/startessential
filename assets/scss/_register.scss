@@ -108,6 +108,9 @@
           &:hover {
             background: darken($btn-blue, 10%);
           }
+          @media (max-width: $phone) {
+            font-size: 90%;
+          }
         }
       }
     }
