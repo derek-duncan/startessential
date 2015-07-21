@@ -34,7 +34,6 @@
       padding: 15px 20px;
       border: 1px solid #D1D1D1;
       margin: 20px 0;
-      width: 70%;
       font-size: 130%;
       outline: none;
       text-align: center;
@@ -62,6 +61,8 @@
         border-radius: 5px;
         -webkit-appearance: none;
         border: none;
+        overflow: auto;
+        cursor: pointer;
         @media (max-width: $phone) {
           font-size: 100%;
         }

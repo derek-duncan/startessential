@@ -1056,7 +1056,6 @@ body {
     padding: 15px 20px;
     border: 1px solid #D1D1D1;
     margin: 20px 0;
-    width: 70%;
     font-size: 130%;
     outline: none;
     text-align: center; }
@@ -1080,7 +1079,9 @@ body {
       color: #fff;
       border-radius: 5px;
       -webkit-appearance: none;
-      border: none; }
+      border: none;
+      overflow: auto;
+      cursor: pointer; }
       @media (max-width: 520px) {
         #post .final .cta .post-now, #post .final .cta .share-fb {
           font-size: 100%; } }
@@ -1596,7 +1597,8 @@ body.messages .saving-overlay {
                 transition: all 0.3s;
         border: none;
         box-sizing: border-box;
-        text-align: center; }
+        text-align: center;
+        cursor: pointer; }
         @media (max-width: 520px) {
           #posts .main .post-featured .post-featured-details .details-link, #posts .main .post-featured .post-featured-details .details-save {
             padding: 10px 15px;
@@ -1682,7 +1684,8 @@ body.messages .saving-overlay {
         #posts .main .graphics .grid-item a:hover {
           color: #465b64; }
       #posts .main .graphics .grid-item .graphic-image-wrap {
-        position: relative; }
+        position: relative;
+        overflow: hidden; }
         #posts .main .graphics .grid-item .graphic-image-wrap:after {
           content: '';
           width: 100%;
@@ -1692,8 +1695,14 @@ body.messages .saving-overlay {
           left: 0;
           background: rgba(255, 255, 255, 0.01);
           z-index: 999; }
+        #posts .main .graphics .grid-item .graphic-image-wrap:hover .graphic-image {
+          -webkit-transform: scale(1.05);
+              -ms-transform: scale(1.05);
+                  transform: scale(1.05); }
         #posts .main .graphics .grid-item .graphic-image-wrap .graphic-image {
-          width: 100%; }
+          width: 100%;
+          -webkit-transition: all 0.3s ease-in-out;
+                  transition: all 0.3s ease-in-out; }
       #posts .main .graphics .grid-item .graphic-info {
         padding: 15px;
         box-sizing: border-box;

@@ -17,7 +17,8 @@ block body
                 if post.content
                   | !{post.content_rendered}
                 else
-                  i No content
+                  p
+                    i No content
               form(action='/posts/#{post._id}/save' method='POST')
                 input(type="hidden" name="crumb" value=crumb)
                 if (isSaved(post._id, sid))

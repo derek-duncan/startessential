@@ -44,7 +44,7 @@ block body
       input#tags(type='text' name='tags' value=post.tags_flat placeholder='Separate tags with a comma')
     div.form-section
       label Title
-      input(type='text' value='#{post.title}' name='title')
+      input(type='text' value='#{post.title}' name='title' autocomplete='off')
     div.form-section
       label Short Description
       textarea(name='short_description' rows='6' value="#{post.short_description}") #{post.short_description}
@@ -57,10 +57,10 @@ block body
       input.post-file(type='file' name='image')
     div.form-section
       label Position X
-      input(type='text' value='#{post.options.x}' name='pos_x')
+      input(type='text' value='#{post.options.x}' name='pos_x' autocomplete='off')
     div.form-section
       label Position Y
-      input(type='text' value='#{post.options.y}' name='pos_y')
+      input(type='text' value='#{post.options.y}' name='pos_y' autocomplete='off')
     div.form-section
       label Featured
       input(type='checkbox' name='featured' checked=post.featured)

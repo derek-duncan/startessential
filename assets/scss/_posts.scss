@@ -127,6 +127,7 @@
           border: none;
           box-sizing: border-box;
           text-align: center;
+          cursor: pointer;
           @media (max-width: $phone) {
             padding: 10px 15px;
             width: 100%;
@@ -234,6 +235,7 @@
         }
         .graphic-image-wrap {
           position: relative;
+          overflow: hidden;
           &:after {
             content: '';
             width: 100%;
@@ -244,8 +246,12 @@
             background: rgba(255,255,255,0.01);
             z-index: 999;
           }
+          &:hover .graphic-image {
+            transform: scale(1.05);
+          }
           .graphic-image {
             width: 100%;
+            transition: all 0.3s ease-in-out;
           }
         }
         .graphic-info {
