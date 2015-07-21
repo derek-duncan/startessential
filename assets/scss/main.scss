@@ -40,6 +40,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+button {
+  overflow: auto;
+}
+
 .all-content {
   min-height: 100%;
 }

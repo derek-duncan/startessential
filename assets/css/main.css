@@ -373,6 +373,9 @@ body {
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased; }
 
+button {
+  overflow: auto; }
+
 .all-content {
   min-height: 100%; }
 
@@ -1080,7 +1083,6 @@ body {
       border-radius: 5px;
       -webkit-appearance: none;
       border: none;
-      overflow: auto;
       cursor: pointer; }
       @media (max-width: 520px) {
         #post .final .cta .post-now, #post .final .cta .share-fb {
