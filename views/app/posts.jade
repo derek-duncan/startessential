@@ -41,6 +41,13 @@ block body
           .graphics-loader
             img(src='/images/ajax-loader.gif')
           .graphics-end No more graphics for now
+      .graphics-suggestion
+        h4.suggestion-title Have a suggestion? Let us know!
+        p.suggestion-help We are always striving to create the best Young Living graphics. If you have any suggestions or requests for future graphics, send us a message below and we will add it to our list!
+        p.suggestion-messages
+        input.suggestion-crumb(type='hidden' value=crumb)
+        textarea.suggestion-description(name='description' placeholder='Describe your suggestion here')
+        button.suggestion-submit Send
 
 mixin postBlock(post)
   .grid-item

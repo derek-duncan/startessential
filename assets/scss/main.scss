@@ -135,7 +135,7 @@ button {
       font-size: 280%;
       font-weight: 600;
       margin: 20px auto;
-      max-width: 80%;
+      max-width: 100%;
       @media (max-width: $phone) {
         max-width: 100%;
         font-size: 220%;
@@ -146,8 +146,11 @@ button {
       font-weight: 200;
       color: $dark;
       line-height: 1.4;
-      max-width: 80%;
+      max-width: 60%;
       margin: 0 auto;
+      @media (max-width: $ipad) {
+        max-width: 80%;
+      }
       @media (max-width: $phone) {
         max-width: 100%;
         font-size: 100%;
@@ -157,13 +160,16 @@ button {
       display: inline-block;
       margin: 20px 0;
       padding: 15px 20px;
-      background: $red;
+      background: darken($red, 5%);
       color: #fff;
       border-radius: 4px;
       border-bottom: 3px solid #BD6565;
       font-size: 130%;
       text-decoration: none;
-      font-weight: 400;
+      font-weight: 600;
+      &:hover {
+        background: darken($red, 10%);
+      }
       @media (max-width: $phone) {
         font-size: 110%;
       }

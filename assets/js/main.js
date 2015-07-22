@@ -196,6 +196,7 @@ $(function() {
           if (graphics.posts.length) {
             createGraphics(graphics)
           } else {
+            $('.graphics-suggestion').addClass('focus')
             $('.graphics-end').addClass('show')
           }
         }
@@ -306,6 +307,44 @@ $(function() {
       }
     }
 
+    // Suggestion Form
+
+    var suggestion = {};
+    suggestion.el = $('.graphics-suggestion');
+    suggestion.text = suggestion.el.find('.suggestion-description');
+    suggestion.submit = suggestion.el.find(".suggestion-submit");
+    suggestion.messages = suggestion.el.find(".suggestion-messages");
+
+    suggestion.text.keyup(function(e) {
+      while($(this).outerHeight() < this.scrollHeight + parseFloat($(this).css("borderTopWidth")) + parseFloat($(this).css("borderBottomWidth"))) {
+        $(this).height($(this).height()+1);
+      };
+    });
+
+    suggestion.submit.on('click touchend', function(e) {
+      e.preventDefault();
+      $.ajax({
+        url: '/api/v1/suggestions',
+        method: 'POST',
+        beforeSend: function(xhr) {
+          suggestion.messages.text('Sending suggestion...');
+          xhr.setRequestHeader('Authorization', 'Bearer ' + Cookies.get('api_token'))
+        },
+        dataType: 'json',
+        data: {
+          crumb: suggestion.el.find('.suggestion-crumb').val(),
+          description: suggestion.text.val()
+        },
+        error: function(err) {
+          suggestion.messages.text(err.statusText);
+        },
+        success: function(response) {
+          suggestion.text.val('');
+          suggestion.text.blur();
+          suggestion.messages.text(response.message)
+        }
+      })
+    })
   }
 
   if ($('#post').length) {
