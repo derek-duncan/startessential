@@ -11,7 +11,7 @@ block body
               .save
                 a(href='/preview/#{save.short_code}')
                   .save-image-wrap
-                    img.save-image(src=save.custom_image.small.Location)
+                    img.save-image(src=save.custom_image.normal.Location)
                   .save-text
                     h4.save-title= save._post.title
                     //-form.save-remove(action='/save/#{save._id}/remove' method='POST')

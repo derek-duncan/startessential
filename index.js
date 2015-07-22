@@ -158,7 +158,7 @@ if (cluster.isMaster) {
 
   server.register(require('hapi-auth-cookie'), function (err) {
     server.auth.strategy('session', 'cookie', {
-      password: 'secret',
+      password: constants.cookiePass,
       cookie: 'sid',
       redirectTo: '/login' + _message('Please login to access this content'),
       isSecure: cookieSecure,
@@ -174,13 +174,13 @@ if (cluster.isMaster) {
   server.register(require('bell'), function (err) {
     server.auth.strategy('facebook', 'bell', {
       provider: 'facebook',
-      password: 'my_secret',
+      password: constants.cookiePass,
       clientId: constants.FB_APP_ID,
       clientSecret: constants.FB_APP_SECRET,
       providerParams: {
         display: 'popup'
       },
-      isSecure: cookieSecure,     // Terrible idea but required if not using HTTPS
+      isSecure: cookieSecure,
       scope: ['email', 'public_profile', 'user_friends']
     });
   });

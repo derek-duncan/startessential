@@ -62,7 +62,8 @@
     "toobusy-js": "git+https://github.com/STRML/node-toobusy.git",
     "underscore": "^1.8.3",
     "validator": "^3.40.0",
-    "webworker-threads": "^0.5.6"
+    "webworker-threads": "^0.5.6",
+    "xmlbuilder": "^2.6.4"
   },
   "devDependencies": {
     "browserify": "^10.1.3",

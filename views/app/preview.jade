@@ -19,7 +19,10 @@ block body
       .main-content
         .graphic
           .graphic-inner.cf
-            .graphic-image-wrap
+            .graphic-image-wrap.no-overlay
+              .pinit
+                a(href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"  data-pin-color="red" data-pin-height="28")
+                  img(src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_28.png")
               img.graphic-image(src=graphic.custom_image.original.Location)
             .graphic-details
               h1.details-title= graphic._post.title
@@ -30,7 +33,9 @@ block body
                   a.details-download(href=graphic.custom_image.original.Location target='_blank') Download
         .tour
           .tour-inner
-            h2.tour-label Start using Essential Oils
-            a.signup-link(href=graphic._user.distributor_link) Signup now
+            h2.tour-label Find this information useful?
+            p.tour-sub-header 
+            a.signup-link(href=graphic._user.distributor_link) Start your journey with a personal mentor
 block scripts
   script(src='/js/build/jquery.sticky-kit.min.js')
+  script(type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js")

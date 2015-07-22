@@ -889,7 +889,7 @@ button {
       margin-right: -40%;
       overflow: hidden;
       position: relative; }
-      #post .main .graphic .graphic-image-wrap:after {
+      #post .main .graphic .graphic-image-wrap:not(.no-overlay):after {
         content: '';
         width: 100%;
         height: 100%;
@@ -903,12 +903,22 @@ button {
           width: 100%;
           max-height: auto;
           float: none; } }
-      #post .main .graphic .graphic-image-wrap img {
+      #post .main .graphic .graphic-image-wrap .pinit {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 400;
+        opacity: 0.4;
+        cursor: pointer;
+        overflow: auto; }
+        #post .main .graphic .graphic-image-wrap .pinit:hover {
+          opacity: 1; }
+      #post .main .graphic .graphic-image-wrap .graphic-image {
         width: 100%;
         -webkit-animation: 1s slideUp forwards;
                 animation: 1s slideUp forwards; }
         @media (max-width: 520px) {
-          #post .main .graphic .graphic-image-wrap img {
+          #post .main .graphic .graphic-image-wrap .graphic-image {
             -webkit-animation: none;
                     animation: none; } }
     #post .main .graphic .graphic-details {
@@ -2700,7 +2710,7 @@ body.messages .saving-overlay {
     margin-right: -40%;
     overflow: hidden;
     position: relative; }
-    #preview .main .graphic .graphic-image-wrap:after {
+    #preview .main .graphic .graphic-image-wrap:not(.no-overlay):after {
       content: '';
       width: 100%;
       height: 100%;
@@ -2714,12 +2724,22 @@ body.messages .saving-overlay {
         width: 100%;
         max-height: auto;
         float: none; } }
-    #preview .main .graphic .graphic-image-wrap img {
+    #preview .main .graphic .graphic-image-wrap .pinit {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      z-index: 400;
+      opacity: 0.4;
+      cursor: pointer;
+      overflow: auto; }
+      #preview .main .graphic .graphic-image-wrap .pinit:hover {
+        opacity: 1; }
+    #preview .main .graphic .graphic-image-wrap .graphic-image {
       width: 100%;
       -webkit-animation: 1s slideUp forwards;
               animation: 1s slideUp forwards; }
       @media (max-width: 520px) {
-        #preview .main .graphic .graphic-image-wrap img {
+        #preview .main .graphic .graphic-image-wrap .graphic-image {
           -webkit-animation: none;
                   animation: none; } }
   #preview .main .graphic .graphic-details {
@@ -2838,6 +2858,8 @@ body.messages .saving-overlay {
 
 #preview .main .tour .signup-link {
   font-size: 140%;
+  display: inline-block;
+  margin-top: 10px;
   padding: 10px 20px;
   border: 1px solid #FF8F8F;
   color: #FF8F8F;
