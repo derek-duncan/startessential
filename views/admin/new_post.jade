@@ -40,7 +40,7 @@ block body
       input#tags(type='text' name='tags' placeholder='Separate tags with a comma')
     div.form-section
       label Title
-      input(type='text' name='title')
+      input(type='text' name='title' autocomplete='off')
     div.form-section
       label Short Description
       textarea(name='short_description' rows='6')
@@ -50,6 +50,15 @@ block body
     div.form-section
       label Main image
       input(type='file' name='image')
+    div.form-section
+      label Position X
+      input(type='text' name='pos_x' autocomplete='off')
+    div.form-section
+      label Position Y
+      input(type='text' name='pos_y' autocomplete='off')
+    div.form-section
+      label Free
+      input(type='checkbox' name='free' checked=post.free)
     div.form-section
       label Featured
       input(type='checkbox' name='featured')

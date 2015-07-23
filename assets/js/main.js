@@ -208,7 +208,9 @@ $(function() {
         $.each(graphics.posts, function(i) {
           var graphic = graphics.posts[i]
 
-          var wrapper = $('<div class="grid-item"/>')
+          var wrapper = $('<div/>', {
+            class: graphic.free ? "grid-item free" : "grid-item"
+          });
 
           var link = $('<a/>', {
             href: '/posts/' + graphic.url_path,
@@ -223,6 +225,12 @@ $(function() {
           imageWrap.append(image)
 
           var info = $('<div class="graphic-info"/>')
+
+          //var free = $('<h6/>', {
+          //  class: 'graphic-free',
+          //  text: graphic.free ? 'Free to save' : ''
+          //})
+          //info.append(free)
 
           var title = $('<h4/>', {
             class: 'graphic-title',
@@ -267,7 +275,7 @@ $(function() {
           var graphicSave = $('<button/>', {
             class: 'graphic-save',
             type: 'submit',
-            text: graphic.isSaved ? 'Saved' : 'Save',
+            text: graphic.isSaved ? 'Saved' : ( graphic.free ? 'Save for free' : 'Save' ),
             disabled: graphic.isSaved
           })
           form.append(graphicSave)

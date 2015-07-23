@@ -1735,6 +1735,8 @@ body.messages .saving-overlay {
         box-shadow: 0 1px 0 #ccc;
         border-top: none;
         background: #fff; }
+      #posts .main .graphics .grid-item.free .graphic-info {
+        box-shadow: 0 1px 0 #FF8F8F; }
       #posts .main .graphics .grid-item .graphic-title {
         font-size: 120%;
         font-weight: 400;

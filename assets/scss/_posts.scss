@@ -266,6 +266,9 @@
           border-top: none;
           background: #fff;
         }
+        &.free .graphic-info {
+          box-shadow: 0 1px 0 $red;
+        }
         .graphic-title {
           font-size: 120%;
           font-weight: 400;

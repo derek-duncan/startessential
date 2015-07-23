@@ -1,7 +1,7 @@
 extends ../layouts/default.jade
 
 block body
-  p The Newest Collection of Graphics
+  h2 The Newest Collection of Graphics
   p We're constantly working hard to create the best essential oil graphics. Here's a small collection of what we've been working on this week. Also, we wanted to gift you with a FREE bonus graphic to thank you for your loyal service &mdash; be sure to check it out!
   each graphic in posts
     a(href='https://startessential.com/posts/#{graphic.url_path}' title=graphic.title style='text-decoration: none;')

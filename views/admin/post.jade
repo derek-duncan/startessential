@@ -62,6 +62,9 @@ block body
       label Position Y
       input(type='text' value='#{post.options.y}' name='pos_y' autocomplete='off')
     div.form-section
+      label Free
+      input(type='checkbox' name='free' checked=post.free)
+    div.form-section
       label Featured
       input(type='checkbox' name='featured' checked=post.featured)
     div.form-section
