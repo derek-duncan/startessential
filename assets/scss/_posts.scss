@@ -186,10 +186,14 @@
         color: #666666;
         font-size: 210%;
         font-weight: 600;
-        margin: 0 0 40px;
+        margin: 0 0 5px;
         @media (max-width: $phone) {
           font-size: 160%;
         }
+      }
+      .graphics-tagline {
+        color: $gray;
+        margin: 0 0 40px;
       }
       .graphics-loader {
         text-align: center;
@@ -376,9 +380,11 @@
         display: inline-block;
         outline: none;
         -webkit-appearance: none;
+        border-radius: 4px;
+        font-weight: 600;
         &:hover {
           color: #fff;
-          background: darken($dark, 3%);
+          background: $dark;
         }
       }
     }

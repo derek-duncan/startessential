@@ -171,8 +171,8 @@ $(function() {
     $(window).scroll(function() {
       var wHeight = $(window).height()
       var scrollTop = $(window).scrollTop()
-      var bottomOfDoc = $(document).height() - wHeight
-      if (scrollTop + wHeight * 0.5 >= bottomOfDoc) {
+      var bottomOfDoc = $('.graphics-suggestion').offset().top - wHeight;
+      if (scrollTop + wHeight >= bottomOfDoc) {
         if (!isLoading) {
           getNextGraphics();
         }

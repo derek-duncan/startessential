@@ -13,6 +13,7 @@ block body
               img.graphic-image(src=post.image.normal.Location)
             .graphic-details
               h1.details-title= post.title
+              p.details-category=post.category
               .details-content
                 if post.content
                   | !{post.content_rendered}

@@ -11,8 +11,16 @@
     color: #666666;
     font-size: 210%;
     font-weight: 600;
+    margin-bottom: 5px;
     @media (max-width: $phone) {
       font-size: 160%;
+      margin-bottom: 0;
+    }
+  }
+  .page-tagline {
+    color: $gray;
+    margin: 0 0 25px;
+    @media (max-width: $phone) {
       margin-bottom: 0;
     }
   }

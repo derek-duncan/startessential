@@ -82,6 +82,9 @@ if (cluster.isMaster) {
 
     var response = request.response;
     if (process.env === 'production') {
+      if (response.isBoom && response.output.statusCode === 403) {
+        return reply.view('403');
+      }
       if (response.isBoom && response.output.statusCode === 404) {
         return reply.view('404');
       }
