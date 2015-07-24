@@ -19,10 +19,10 @@ block body
                   | !{post.content_rendered}
                 else
                   p
-                    i No content
+                    i No description for now
               form(action='/posts/#{post._id}/save' method='POST')
                 input(type="hidden" name="crumb" value=crumb)
-                if (isSaved(post._id, sid))
+                if (saved_code)
                   button.details-save(type='submit' disabled) Saved
                 else
                   button.details-save(type='submit')
