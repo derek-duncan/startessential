@@ -8,12 +8,12 @@ header.header
   .header-content
     .logo-wrap
       a(href='/posts' title='Start Essential Logo')
-        img.logo(src='/images/logo-color.png' width='150')
+        img#stop-1.logo(src='/images/logo-color.png' width='150')
     nav.nav
       if sid
         div.record-counter
           span.tooltip This will reset every week
-          span.counter #{sid.records.downloaded}/#{sid.records.downloads} Saved
+          span#stop-2.counter #{sid.records.downloaded}/#{sid.records.downloads} Saved
       ul.nav-list
         li.nav-item#posts-link
           a(class=(active === 'explore' ? 'active' : undefined) href='/posts') Explore

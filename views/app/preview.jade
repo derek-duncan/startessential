@@ -10,7 +10,7 @@ block body
     if sid
       include ../templates/_header.jade
     else
-      include ../templates/_header-naked.jade
+      include ../templates/_header-signup.jade
     main.main
       if sid
         section.tools
@@ -32,10 +32,28 @@ block body
                   .share-facebook.details-link(data-code='http://startessential.com/preview/#{graphic.short_code}') Share on Facebook
                   a.details-download(href=graphic.custom_image.original.Location target='_blank') Download
         .tour
-          .tour-inner
-            h2.tour-label Find this information useful?
-            p.tour-sub-header 
-            a.signup-link(href=graphic._user.distributor_link) Start your journey with a personal mentor
+          .tour-inner.cf
+            article.tour-copy
+              h2.tour-label Discover a Simple, Healthier Life
+              h5.tour-sub-header It's changed the lives of millions, now it's your turn
+              section
+                p Ever since I started using essential oils, they have made life-changing differences that I love to share with others. Don't be afraid to jump in and start the journey! I am so thankful I made that decision, and I would be thrilled to help you personally discover them for yourself. Please, take a moment to read about them and begin your journey towards a healthier wellbeing.
+              section
+                h4 What are essential oils?
+                p An essential oil is an aromatic, concentrated oil that is extracted from flowers, shrubs, and other plants. It has an unique, complex chemistry that beautifully balances and contributes to a healthy body. By addressing root issues and imbalances on a cellular level, essential oils are able to support the body in resisting diseases and malfunctions it faces on a daily and long-term basis.
+              section
+                h4 How can you use essential oils?
+                p Using essential oils, especially on a day-to-day basis, is an incredibly exciting and simple process. Because Young Living essential oils are so concentrated and pure, it only takes a couple drops to start experiencing an oil's benefits. These drops can be diffused through your home, applied directly to the skin, or sometimes taken internally. It's such a tiny addition to your life, yet brings invaluable aspects to a healthy body.
+              section
+                h4 Why signup as a member with Young Living?
+                p When ordering oils from young living, you can choose to be a Member or a Retail Customer. By choosing Member, you receive several discounts and benefits (24% off for one) and are simply asked to share and talk about the oils you love. Additionally, you may signup people with referral links to recieve a commision from their purchases. A Young Living membership is simply a family of people who love to share their successes and experiences with essential oils &mdash; something every oiler should be a part of.
+            section.tour-signup
+              .tour-signup-image-wrap
+                img.tour-signup-image(src='/images/starter-kit-header.jpg' width='400')
+              .tour-signup-inner
+                h3.inner-title Get Your Own Oils
+                p.inner-description Discovering essential oils is a key moment in millions of people's lives, and it begins with this complete starter kit. I will personally be there to educate you on how to use them and guide you to a healthier wellbeing!
+                a.inner-signup(href=graphic._user.distributor_link) Signup with Young Living
 block scripts
   script(src='/js/build/jquery.sticky-kit.min.js')
   script(type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js")

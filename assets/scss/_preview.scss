@@ -4,36 +4,108 @@
     @import 'includes/graphics';
     .tour {
       .tour-inner {
-        max-width: 80%;
-        margin: 40px auto;
-        text-align: center;
-      }
-      .tour-label {
-        color: #666666;
-        font-size: 210%;
-        font-weight: 600;
+        width: 90%;
+        margin: 80px auto;
+        text-align: left;
         @media (max-width: $phone) {
-          font-size: 160%;
-          margin: 0 0 30px;
+          margin: 40px auto;
         }
       }
-      .signup-link {
-        font-size: 140%;
-        display: inline-block;
-        margin-top: 10px;
-        padding: 10px 20px;
-        border: 1px solid $red;
-        color: $red;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: 600;
+      .tour-copy {
+        width: 60%;
+        float: left;
+        font-size: 130%;
         @media (max-width: $phone) {
-          font-size: 120%;
+          width: 100%;
+          clear: both;
+          font-size: 110%;
         }
-        &:hover {
-          background: $red;
-          color: #fff;
+        .tour-label {
+          color: $dark;
+          font-size: 180%;
+          font-weight: 600;
+          margin: 0 0 10px;
+          @media (max-width: $phone) {
+            font-size: 160%;
+            margin: 0 0 20px;
+          }
         }
+        .tour-sub-header {
+          font-size: 110%;
+          margin: 0 0 45px;
+          font-weight: 400;
+          color: $gray;
+          @media (max-width: $phone) {
+            margin: 0 0 20px;
+          }
+        }
+        h4 {
+          font-size: 110%;
+        }
+        p {
+          line-height: 1.35;
+        }
+      }
+      .tour-signup {
+        width: 30%;
+        float: right;
+        transform: translateY(100px);
+        animation-delay: 2s;
+        animation: 1s slideUp forwards;
+
+        @media (max-width: $phone) {
+          width: 100%;
+          clear: both;
+          margin-top: 40px;
+        }
+        .tour-signup-image-wrap {
+          width: 100%;
+          overflow: hidden;
+          .tour-signup-image {
+            width: 100%;
+            height: auto;
+          }
+        }
+        .tour-signup-inner {
+          padding: 40px 30px;
+          box-sizing: border-box;
+          border: 1px solid #ddd;
+          border-bottom: 2px solid #ccc;
+          font-size: 140%;
+          text-align: center;
+          @media (max-width: $phone) {
+            padding: 30px;
+            font-size: 120%;
+          }
+          .inner-title {
+            margin: 0 0 30px;
+            font-size: 140%;
+            color: $dark;
+            @media (max-width: $phone) {
+              margin: 0 0 20px;
+            }
+          }
+          .inner-description {
+            margin: 0 0 30px;
+            text-align: left;
+          }
+          .inner-signup {
+            width: 100%;
+            background: $shade-red;
+            padding: 15px 0;
+            color: #fff;
+            font-weight: 600;
+            display: inline-block;
+            text-decoration: none;
+            border-radius: 4px;
+            &:hover {
+              background: $red;
+            }
+          }
+        }
+      }
+      @keyframes slideUp {
+        100% { transform: translateY(0px); }
       }
     }
   }

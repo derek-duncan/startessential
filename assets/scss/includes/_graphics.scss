@@ -59,6 +59,9 @@
       }
     }
   }
+  &.free .graphic-details {
+    border-bottom-color: lighten($red, 10%);
+  }
   .graphic-details {
     width: 56%;
     margin-left: 44%;
@@ -76,10 +79,10 @@
       border-top: none;
     }
     .details-title {
-      font-size: 200%;
+      font-size: 220%;
       margin: 0 0 5px;
       display: inline-block;
-      color: #313131;
+      color: $dark;
     }
     .details-category {
       display: block;
@@ -99,7 +102,7 @@
         margin-right: auto;
         max-width: 90%;
         margin: 10px 0 15px;
-        font-size: 120%;
+        font-size: 130%;
       }
     }
     form {
@@ -109,7 +112,7 @@
       text-decoration: none;
       font-size: 140%;
       font-weight: 600;
-      padding: 10px 20px;
+      padding: 8px 20px;
       border-radius: 4px;
       display: inline-block;
       margin: 0;

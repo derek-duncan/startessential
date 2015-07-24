@@ -269,6 +269,15 @@
         &.free .graphic-info {
           box-shadow: 0 1px 0 $red;
         }
+        &.free .graphic-title {
+          &:before {
+            font-family: 'FontAwesome';
+            font-size: 14px;
+            content: '\f069';
+            padding-right: 5px;
+            color: $red;
+          }
+        }
         .graphic-title {
           font-size: 120%;
           font-weight: 400;

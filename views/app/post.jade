@@ -7,7 +7,7 @@ block body
         .tools-inner
           a(href='/posts') < Back to all graphics
       .main-content
-        .graphic
+        div(class=( post.free ? 'graphic free' : 'graphic' ))
           .graphic-inner.cf
             .graphic-image-wrap
               img.graphic-image(src=post.image.normal.Location)
@@ -25,7 +25,11 @@ block body
                 if (isSaved(post._id, sid))
                   button.details-save(type='submit' disabled) Saved
                 else
-                  button.details-save(type='submit') Save
+                  button.details-save(type='submit')
+                    if post.free
+                      | Save for free
+                    else
+                      | Save
       section.final
         .final-content
           if (saved_code)
