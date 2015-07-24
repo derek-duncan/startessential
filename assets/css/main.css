@@ -690,17 +690,19 @@ button {
       top: 0;
       padding: 15px;
       font-size: 80%;
-      color: #333;
+      color: #314046;
       overflow: hidden;
       -webkit-transition: all 0.3s;
               transition: all 0.3s;
       opacity: 0;
-      background: rgba(255, 255, 255, 0.7);
-      border: 1px solid #ccc; }
+      background: #fff;
+      border: 1px solid #f2f2f2;
+      border-bottom: 2px solid #ccc; }
       #front section.join .join-form p.join-sample-link a {
         display: block;
         margin: 7px 0;
-        color: #FF8F8F; }
+        color: #FF8F8F;
+        text-decoration: none; }
       #front section.join .join-form p.join-sample-link.show {
         opacity: 1; }
       @media (max-width: 520px) {
@@ -720,7 +722,7 @@ button {
       display: block;
       margin: 20px 0;
       padding: 15px 20px;
-      background: #FF8F8F;
+      background: #ff5c5c;
       color: #fff;
       border-radius: 4px;
       border-bottom: 3px solid #BD6565;
@@ -728,7 +730,7 @@ button {
       text-decoration: none;
       font-weight: 400; }
       #front section.join .join-form button.join-submit:hover:not(:disabled) {
-        background: #ff5c5c; }
+        background: #FF8F8F; }
       @media (max-width: 520px) {
         #front section.join .join-form button.join-submit {
           font-size: 80%; } }

@@ -1026,3 +1026,9 @@
 {"event":"request","timestamp":1437715844262,"tags":["request","uid"],"data":"55adcd766b8d478b5d663e1d","pid":64675,"id":"1437715844244:Dereks-Air-2.ok.cox.net:64675:icge2vvc:16979","method":"get","path":"/preview/V1z7yRDF"}
 {"event":"request","timestamp":1437715963480,"tags":["request","uid"],"data":"55adcd766b8d478b5d663e1d","pid":64675,"id":"1437715963443:Dereks-Air-2.ok.cox.net:64675:icge2vvc:17021","method":"get","path":"/preview/V1z7yRDF"}
 {"event":"request","timestamp":1437716197684,"tags":["request","uid"],"data":"55adcd766b8d478b5d663e1d","pid":64675,"id":"1437716197427:Dereks-Air-2.ok.cox.net:64675:icge2vvc:17084","method":"get","path":"/preview/V1z7yRDF"}
+{"event":"request","timestamp":1437716282433,"tags":["request","uid"],"pid":64675,"id":"1437716282426:Dereks-Air-2.ok.cox.net:64675:icge2vvc:17094","method":"get","path":"/"}
+{"event":"request","timestamp":1437716291566,"tags":["request","uid"],"pid":64675,"id":"1437716291540:Dereks-Air-2.ok.cox.net:64675:icge2vvc:17114","method":"get","path":"/preview/V1z7yRDF"}
+{"event":"request","timestamp":1437716313511,"tags":["request","uid"],"pid":64675,"id":"1437716313509:Dereks-Air-2.ok.cox.net:64675:icge2vvc:17122","method":"get","path":"/"}
+{"event":"request","timestamp":1437716326330,"tags":["request","uid"],"pid":64675,"id":"1437716326319:Dereks-Air-2.ok.cox.net:64675:icge2vvc:17142","method":"get","path":"/register"}
+{"event":"request","timestamp":1437716337191,"tags":["request","uid"],"pid":64675,"id":"1437716337189:Dereks-Air-2.ok.cox.net:64675:icge2vvc:17148","method":"get","path":"/"}
+{"event":"request","timestamp":1437716339321,"tags":["request","uid"],"pid":64675,"id":"1437716339316:Dereks-Air-2.ok.cox.net:64675:icge2vvc:17168","method":"get","path":"/login"}

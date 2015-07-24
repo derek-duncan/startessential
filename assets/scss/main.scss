@@ -389,16 +389,18 @@ button {
         top: 0;
         padding: 15px;
         font-size: 80%;
-        color: #333;
+        color: $dark;
         overflow: hidden;
         transition: all 0.3s;
         opacity: 0;
-        background: rgba(255,255,255,0.7);
-        border: 1px solid #ccc;
+        background: #fff;
+        border: 1px solid #f2f2f2;
+        border-bottom: 2px solid #ccc;
         a {
           display: block;
           margin: 7px 0;
           color: $red;
+          text-decoration: none;
         }
         &.show {
           opacity: 1;
@@ -422,7 +424,7 @@ button {
         display: block;
         margin: 20px 0;
         padding: 15px 20px;
-        background: $red;
+        background: $shade-red;
         color: #fff;
         border-radius: 4px;
         border-bottom: 3px solid #BD6565;
@@ -430,7 +432,7 @@ button {
         text-decoration: none;
         font-weight: 400;
         &:hover:not(:disabled) {
-          background: $shade-red;
+          background: $red;
         }
         @media (max-width: $phone) {
           font-size: 80%;
