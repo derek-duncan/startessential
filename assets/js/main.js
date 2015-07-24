@@ -86,7 +86,7 @@ $(function() {
         var text =
           'We created a signup link so you can quickly signup people!' +
           '<a href="/n/'+this.value+'" target="_blank">http://startessential.com/n/'+this.value+'</a>' +
-          'Click <b>Get Started</b> to get access to the rest of Start Essential'
+          'Start your free trial to get access to the rest of Start Essential'
         joinSampleLink.html(text);
       }
       if (e.keyCode === 13) {
@@ -109,6 +109,40 @@ $(function() {
         joinButton.text('Submitting...');
       }
     }
+
+    $(window).load(function() {
+      // Oil animation
+      var oilsWrapper = $('.middle-oils');
+      var oils = oilsWrapper.find('.oil');
+      var oilsLen = oils.length;
+
+      var setOilHeight = function() {
+        var offset = $(window).width() > 520 ? 0.7 : 1;
+        var heightVal = oils.height() * offset;
+        oilsWrapper.css('maxHeight', heightVal)
+      }
+      setOilHeight();
+      $(window).resize(setOilHeight)
+
+      var removeState = function(el) {
+        setTimeout(function() {
+          el.removeClass('up')
+        }, 400)
+      }
+
+      var lastIndex;
+      var getRand = function() {
+        var num = Math.floor(Math.random() * oilsLen);
+        if (num === lastIndex) return getRand();
+        else return num;
+      }
+      setInterval(function() {
+        var randOil = getRand();
+        var el = oils.eq(randOil);
+        el.addClass('up');
+        removeState(el);
+      }, 4500)
+    })
 
     // GA Events //
     var ctaTop = $('.cta-top');

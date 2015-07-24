@@ -21,27 +21,33 @@ block body
       div.header-middle.content.cf
         h4.middle-tagline If you're a Young Living distributor, you're in luck
         h2.middle-headline An Exclusive Collection of Essential Oil Graphics
-        p.middle-description Download authentic Young Living graphics already customized with your distributor information and approved under Young Living's guidelines. It takes less the 30 seconds to find the perfect graphic.
-        a.middle-cta(href='#join' title='Claim 30-Days of Free Access') Claim 30-Days of Free Access
+        p.middle-description Download authentic Young Living graphics already customized with your distributor information and approved under Young Living's guidelines. It takes less the 30 seconds to find the perfect graphic!
+        a.middle-cta(href='#join' title='Claim 30-Days of Free Access') Get instant access now
         .middle-next
           p.middle-next-step Of course, if you would like to grab some more information about how it all works, just keep reading...
+        .middle-oils
+          img.oil(src='/images/previews/copaiba.jpg' title='Copaiba Essential Oil')
+          img.oil(src='/images/previews/lavender.jpg' title='Lavender Essential Oil')
+          img.oil(src='/images/previews/digize.jpg' title='Digize Essential Oil')
+          img.oil(src='/images/previews/frankinsence.jpg' title='frankinsence Essential Oil')
+          img.oil(src='/images/previews/lemon.jpg' title='Lemon Essential Oil')
+          img.oil(src='/images/previews/panaway.jpg' title='Panaway Essential Oil')
+          img.oil(src='/images/previews/peppermint.jpg' title='Peppermint Essential Oil')
+          img.oil(src='/images/previews/purification.jpg' title='Purification Essential Oil')
+          img.oil(src='/images/previews/rc.jpg' title='R.C. Essential Oil')
+          img.oil(src='/images/previews/thieves.jpg' title='Thieves Essential Oil')
         img.middle-arrow(src='/images/section-arrow.png' width='100')
     section.info
       .info-content
         h2.info-sub_head Focus on sharing the oils you love without the hassle of finding or creating your own graphics
-        img.info-computer-example(src='/images/computer-example.png' width='600' alt='Start Essential landing page')
+        //-img.info-computer-example(src='/images/computer-example.png' width='600' alt='Start Essential landing page')
     section.features
       .features-content
-        .feature
-          img.feature-icon(src='/images/feature-1.png' width='300')
-          .feature-details
-            h3.feature-title Save time by quickly searching for exactly what you need
-            p.feature-description Overcome the challenge of finding practical, approved information with a valuable library of essential oil graphics all in one place.
         .feature
           img.feature-icon(src='/images/feature-2.png' width='300')
           .feature-details
             h3.feature-title Rest assured that the graphics you share are carefully created under FDA standards
-            p.feature-description We meticoulously write all our graphics with terminology provided under Young Living's guidelines.
+            p.feature-description We meticoulously write all our graphics with terminology and phrasing provided under Young Living's guidelines.
         .feature
           img.feature-icon(src='/images/feature-3.png' width='300')
           .feature-details
@@ -52,6 +58,11 @@ block body
           .feature-details
             h3.feature-title All our graphics are yours&dash;automatically customized with your distributor information
             p.feature-description All the images and posts you save will already have your distributor signup link on them. Now every post you share is an oppertunity to grow your downline!
+        .feature
+          img.feature-icon(src='/images/feature-1.png' width='300')
+          .feature-details
+            h3.feature-title Save time by quickly searching for exactly what you need
+            p.feature-description Overcome the challenge of finding practical, approved information with a valuable library of essential oil graphics all in one place.
 
     section.join(class=(sid ? 'logged' : undefined))
       if sid
@@ -64,10 +75,11 @@ block body
           .join-form
             p.join-form-desc All you need is your distributor number.
             input.join-input(type='text' maxlength='7' placeholder='e.g. 1423153')
+            p.join-sample-link
             button.join-submit(type='submit') Claim 30-Days of Free Access
     section.unsure
-      p.unsure-statement Still not ready, or you have any questions? I'd love to talk with you! Feel free to contact me directly at&nbsp;
-        a(href='mailto:admin@startessential.com' title='Email me any questions') admin@startessential.com.
+      p.unsure-statement Still not ready, or you have any questions? I'd love to talk with you! Feel free to&nbsp;
+        a(href='mailto:derek@startessential.com' title='Email me any questions') contact me directly.
 block scripts
   script.
     ga('set', {
