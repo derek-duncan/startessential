@@ -3691,9 +3691,8 @@ body.messages .saving-overlay {
       color: #7D7D7D;
       font-size: 120%; }
     #posts .main .graphics-suggestion .suggestion-submit {
-      background: none;
-      color: #314046;
-      border: 1px solid #314046;
+      background: #FF8F8F;
+      color: #fff;
       padding: 10px 20px;
       margin-top: 10px;
       -webkit-transition: all 0.3s;
@@ -3702,10 +3701,10 @@ body.messages .saving-overlay {
       outline: none;
       -webkit-appearance: none;
       border-radius: 4px;
-      font-weight: 600; }
+      font-weight: 600;
+      border: none; }
       #posts .main .graphics-suggestion .suggestion-submit:hover {
-        color: #fff;
-        background: #314046; }
+        background: #ff5c5c; }
 
 #register {
   width: 60%;
