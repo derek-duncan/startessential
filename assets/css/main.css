@@ -401,11 +401,13 @@ button {
       width: 100%; }
   #front .header-top .header-actions {
     float: right;
-    margin-top: 20px; }
+    margin-top: 20px;
+    box-sizing: border-box; }
     @media (max-width: 520px) {
       #front .header-top .header-actions {
         float: none;
-        width: 100%; } }
+        width: 100%;
+        padding: 0 20px; } }
   #front .header-top a.cta-top, #front .header-top a.login-top {
     display: inline-block;
     margin: 0 5px;
