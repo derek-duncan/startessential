@@ -1062,3 +1062,7 @@
 {"event":"request","timestamp":1437717723354,"tags":["request","uid"],"data":"55adcd766b8d478b5d663e1d","pid":83077,"id":"1437717723298:Dereks-Air-2.ok.cox.net:83077:ich807un:10025","method":"get","path":"/posts"}
 {"event":"request","timestamp":1437718208459,"tags":["request","uid"],"data":"55adcd766b8d478b5d663e1d","pid":83118,"id":"1437718208390:Dereks-Air-2.ok.cox.net:83118:ich815tl:10000","method":"get","path":"/"}
 {"event":"request","timestamp":1437718211075,"tags":["request","uid"],"data":"55adcd766b8d478b5d663e1d","pid":83118,"id":"1437718211065:Dereks-Air-2.ok.cox.net:83118:ich815tl:10020","method":"get","path":"/"}
+{"event":"request","timestamp":1437857258662,"tags":["request","uid"],"data":"55adcd766b8d478b5d663e1d","pid":83118,"id":"1437857258641:Dereks-Air-2.ok.cox.net:83118:ich815tl:10046","method":"get","path":"/"}
+{"event":"request","timestamp":1437857262198,"tags":["request","uid"],"data":"55adcd766b8d478b5d663e1d","pid":83118,"id":"1437857261944:Dereks-Air-2.ok.cox.net:83118:ich815tl:10067","method":"get","path":"/posts"}
+{"event":"request","timestamp":1437857297056,"tags":["request","uid"],"data":"55adcd766b8d478b5d663e1d","pid":83118,"id":"1437857297043:Dereks-Air-2.ok.cox.net:83118:ich815tl:10081","method":"get","path":"/admin"}
+{"event":"request","timestamp":1437857297121,"tags":["request","uid"],"data":"55adcd766b8d478b5d663e1d","pid":83118,"id":"1437857297109:Dereks-Air-2.ok.cox.net:83118:ich815tl:10082","method":"get","path":"/admin"}
