@@ -3726,7 +3726,7 @@ body.messages .saving-overlay {
     #register .details .copy p {
       margin: 5px 0 0;
       color: #888;
-      font-size: 140%; }
+      font-size: 120%; }
       #register .details .copy p span {
         color: #FF8F8F;
         font-style: italic; }
@@ -3800,6 +3800,9 @@ body.messages .saving-overlay {
           @media (max-width: 520px) {
             #register .register .register-form .form-block .fb-login {
               font-size: 90%; } }
+        #register .register .register-form .form-block .fb-login-desc {
+          font-size: 80%;
+          color: #aaa; }
     #register .register .register-extra {
       display: inline-block;
       width: 40%;
