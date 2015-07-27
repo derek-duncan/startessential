@@ -612,6 +612,9 @@ button {
         text-align: left;
         margin: 25px 0 0;
         padding: 0; } }
+    #front section.features .feature .feature-details a {
+      color: #FF8F8F;
+      text-decoration: none; }
   #front section.features .feature .feature-title {
     margin: 0 0 20px 0; }
   #front section.features .feature .feature-description {
