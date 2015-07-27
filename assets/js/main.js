@@ -175,6 +175,12 @@ $(function() {
       shareLink[0].setSelectionRange(0, 9999);
     })
 
+    $('.share-fb').on('click touchend', function(e) {
+      var self = $(this);
+      e.preventDefault()
+      fbShare(self.attr('data-url'))
+    })
+
     // GA Events //
     var shareFB = $('.share-fb');
     var shareTW = $('.share-tw');
