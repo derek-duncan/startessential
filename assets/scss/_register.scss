@@ -109,7 +109,9 @@
             background: darken($btn-blue, 10%);
           }
           @media (max-width: $phone) {
-            font-size: 90%;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 75%;
           }
         }
         .fb-login-desc {

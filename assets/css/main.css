@@ -3795,7 +3795,9 @@ body.messages .saving-overlay {
             background: #2275d7; }
           @media (max-width: 520px) {
             #register .register .register-form .form-block .fb-login {
-              font-size: 90%; } }
+              padding-left: 10px;
+              padding-right: 10px;
+              font-size: 75%; } }
         #register .register .register-form .form-block .fb-login-desc {
           font-size: 80%;
           color: #aaa; }
