@@ -1,20 +1,19 @@
 head
-  // Google Analytics Content Experiment code
+  // Facebook Pixel Code
   script.
-    function utmx_section(){}function utmx(){}(function(){var
-    k='102171873-1',d=document,l=d.location,c=d.cookie;
-    if(l.search.indexOf('utm_expid='+k)>0)return;
-    function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
-    indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
-    length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
-    '<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
-    '://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
-    '&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
-    valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-    '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-  script.
-    utmx('url','A/B');
-  // End of Google Analytics Content Experiment code
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '1616746845262238');
+    fbq('track', 'PageView');
+
+  noscript
+    img(height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1616746845262238&ev=PageView&noscript=1")
+  // End Facebook Pixel Code
+
   title #{title}
   meta(name="description" content="Provides essential oil images, infographics, and social media posts to help you grow your essential oils business")
   meta(name="viewport" content="width=device-width, initial-scale=1")
