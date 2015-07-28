@@ -4344,12 +4344,17 @@ body.messages .saving-overlay {
     background: #4A90E2;
     color: #fff;
     font-weight: 600;
-    border-radius: 5px;
+    border-radius: 4px;
     text-decoration: none;
     display: inline-block;
-    margin: 30px; }
+    margin: 30px auto; }
     #login .login-button:hover {
       background: #2275d7; }
+    @media (max-width: 520px) {
+      #login .login-button {
+        font-size: 110%;
+        padding: 12px 20px;
+        margin: 20px auto; } }
 
 #saved {
   /*.naked {*/

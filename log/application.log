@@ -1157,3 +1157,8 @@
 {"event":"request","timestamp":1438058858694,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":21240,"id":"1438058858676:Dereks-MacBook-Air-2.local:21240:iclxnb34:10248","method":"get","path":"/posts/purification-an-essential-component-to-a-clean-home"}
 {"event":"request","timestamp":1438058906775,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":21240,"id":"1438058906722:Dereks-MacBook-Air-2.local:21240:iclxnb34:10262","method":"get","path":"/posts/purification-an-essential-component-to-a-clean-home"}
 {"event":"request","timestamp":1438058911494,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":21240,"id":"1438058911468:Dereks-MacBook-Air-2.local:21240:iclxnb34:10268","method":"get","path":"/posts/purification-an-essential-component-to-a-clean-home"}
+{"event":"request","timestamp":1438058932635,"tags":["request","uid"],"pid":21240,"id":"1438058932630:Dereks-MacBook-Air-2.local:21240:iclxnb34:10279","method":"get","path":"/"}
+{"event":"request","timestamp":1438058934552,"tags":["request","uid"],"pid":21240,"id":"1438058934547:Dereks-MacBook-Air-2.local:21240:iclxnb34:10299","method":"get","path":"/login"}
+{"event":"request","timestamp":1438058939091,"tags":["request","uid"],"pid":21240,"id":"1438058939086:Dereks-MacBook-Air-2.local:21240:iclxnb34:10305","method":"get","path":"/login"}
+{"event":"request","timestamp":1438058945330,"tags":["request","uid"],"pid":21240,"id":"1438058945325:Dereks-MacBook-Air-2.local:21240:iclxnb34:10310","method":"get","path":"/login"}
+{"event":"request","timestamp":1438059028692,"tags":["request","uid"],"pid":21240,"id":"1438059028687:Dereks-MacBook-Air-2.local:21240:iclxnb34:10327","method":"get","path":"/login"}
