@@ -2920,7 +2920,8 @@ button {
     text-align: center; }
     @media (max-width: 520px) {
       #post .final .final-content {
-        width: 80%; } }
+        width: 80%;
+        text-align: left; } }
   #post .final .title {
     margin-top: 0;
     font-size: 200%;
@@ -2931,23 +2932,12 @@ button {
   #post .final .tagline {
     color: #878787;
     font-size: 130%;
-    margin-top: 0; }
-  #post .final .member-number {
-    -webkit-appearance: none;
-    padding: 15px 20px;
-    border: 1px solid #D1D1D1;
-    margin: 20px 0;
-    font-size: 130%;
-    outline: none;
-    text-align: center; }
+    margin-top: 0;
+    text-align: left; }
     @media (max-width: 520px) {
-      #post .final .member-number {
-        width: 100%; } }
-    #post .final .member-number:disabled {
-      background: #eee;
-      color: #aaa; }
-    #post .final .member-number:focus {
-      border-color: #aaa; }
+      #post .final .tagline {
+        font-size: 100%;
+        line-height: 1.4; } }
   #post .final .cta {
     margin-top: 20px; }
     #post .final .cta .post-now, #post .final .cta .share-fb {
@@ -2956,7 +2946,7 @@ button {
       font-size: 140%;
       font-weight: 600;
       text-decoration: none;
-      background: #4A90E2;
+      background: #ff5c5c;
       color: #fff;
       border-radius: 5px;
       -webkit-appearance: none;
@@ -2966,7 +2956,7 @@ button {
         #post .final .cta .post-now, #post .final .cta .share-fb {
           font-size: 100%; } }
       #post .final .cta .post-now:hover, #post .final .cta .share-fb:hover {
-        background: #2275d7; }
+        background: #FF8F8F; }
 
 .main {
   padding-top: 65px; }

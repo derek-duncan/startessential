@@ -14,6 +14,7 @@
       text-align: center;
       @media (max-width: $phone) {
         width: 80%;
+        text-align: left;
       }
     }
     .title {
@@ -28,24 +29,10 @@
       color: #878787;
       font-size: 130%;
       margin-top: 0;
-    }
-    .member-number {
-      -webkit-appearance: none;
-      padding: 15px 20px;
-      border: 1px solid #D1D1D1;
-      margin: 20px 0;
-      font-size: 130%;
-      outline: none;
-      text-align: center;
+      text-align: left;
       @media (max-width: $phone) {
-        width: 100%;
-      }
-      &:disabled {
-        background: #eee;
-        color: #aaa;
-      }
-      &:focus {
-        border-color: #aaa;
+        font-size: 100%;
+        line-height: 1.4;
       }
     }
     .cta {
@@ -56,7 +43,7 @@
         font-size: 140%;
         font-weight: 600;
         text-decoration: none;
-        background: $btn-blue;
+        background: $shade-red;
         color: #fff;
         border-radius: 5px;
         -webkit-appearance: none;
@@ -66,7 +53,7 @@
           font-size: 100%;
         }
         &:hover {
-          background: darken($btn-blue, 10%);
+          background: $red;
         }
       }
     }

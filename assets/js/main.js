@@ -84,7 +84,7 @@ $(function() {
         joinButton.removeAttr('disabled');
         joinSampleLink.addClass('show')
         var text =
-          'We created a signup link so you can quickly signup people!' +
+          'We created a signup link so you can quickly signup people &mdash; try it out!' +
           '<a href="/n/'+this.value+'" target="_blank">http://startessential.com/n/'+this.value+'</a>' +
           'Start your free trial to get access to the rest of Start Essential'
         joinSampleLink.html(text);

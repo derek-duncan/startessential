@@ -370,3 +370,5 @@
 {"event":"log","timestamp":1437967893484,"tags":["internal","implementation","error"],"data":{"__NR_transaction":null,"domain":{"domain":null,"_events":{},"members":[]},"domainThrown":true},"pid":17582}
 {"event":"log","timestamp":1437967955689,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":17636}
 {"event":"log","timestamp":1437968103172,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":17842}
+{"event":"log","timestamp":1438002647634,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-2.local:3000","pid":21240}
+{"event":"log","timestamp":1438057563641,"tags":["internal","implementation","error"],"data":{"__NR_transaction":null,"domain":{"domain":null,"_events":{},"members":[]},"domainThrown":true},"pid":21240}
