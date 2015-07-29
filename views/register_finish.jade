@@ -46,3 +46,39 @@ block body
           .question-block
             h5.question-title Can I cancel anytime?
             p Yes. We would really miss you, but you can cancel your subscription at any time. No strings attached.
+
+block scripts
+  // Google Code for Purchase Conversion Page
+  // In your html page, add the snippet and call
+  // goog_report_conversion when someone clicks on the
+  // chosen link or button.
+  script(type="text/javascript").
+    /* <![CDATA[ */
+    goog_snippet_vars = function() {
+      var w = window;
+      w.google_conversion_id = 946719821;
+      w.google_conversion_label = "H6rZCJKE3l4QzZi3wwM";
+      w.google_remarketing_only = false;
+    }
+    // DO NOT CHANGE THE CODE BELOW.
+    goog_report_conversion = function(url) {
+      goog_snippet_vars();
+      window.google_conversion_format = "3";
+      window.google_is_call = true;
+      var opt = new Object();
+      opt.onload_callback = function() {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      }
+      var conv_handler = window['google_trackConversion'];
+      if (typeof(conv_handler) == 'function') {
+        conv_handler(opt);
+      }
+    }
+    /* ]]> */
+  script(type="text/javascript" src="//www.googleadservices.com/pagead/conversion_async.js")
+  script(type='text/javascript').
+    $(document).on('click touchend', '.stripe-button-el', function() {
+      goog_report_conversion();
+    })
