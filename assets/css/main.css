@@ -469,11 +469,13 @@ button {
     font-weight: 200;
     color: #314046;
     line-height: 1.4;
-    max-width: 60%;
+    max-width: 70%;
+    min-width: 480px;
     margin: 0 auto; }
     @media (max-width: 768px) {
       #front .header-middle p.middle-description {
-        max-width: 80%; } }
+        max-width: 80%;
+        min-width: auto; } }
     @media (max-width: 520px) {
       #front .header-middle p.middle-description {
         max-width: 100%;

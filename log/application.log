@@ -1162,3 +1162,13 @@
 {"event":"request","timestamp":1438058939091,"tags":["request","uid"],"pid":21240,"id":"1438058939086:Dereks-MacBook-Air-2.local:21240:iclxnb34:10305","method":"get","path":"/login"}
 {"event":"request","timestamp":1438058945330,"tags":["request","uid"],"pid":21240,"id":"1438058945325:Dereks-MacBook-Air-2.local:21240:iclxnb34:10310","method":"get","path":"/login"}
 {"event":"request","timestamp":1438059028692,"tags":["request","uid"],"pid":21240,"id":"1438059028687:Dereks-MacBook-Air-2.local:21240:iclxnb34:10327","method":"get","path":"/login"}
+{"event":"request","timestamp":1438059056707,"tags":["request","uid"],"pid":21240,"id":"1438059056690:Dereks-MacBook-Air-2.local:21240:iclxnb34:10336","method":"get","path":"/login"}
+{"event":"request","timestamp":1438059058700,"tags":["request","uid"],"pid":21240,"id":"1438059058692:Dereks-MacBook-Air-2.local:21240:iclxnb34:10346","method":"get","path":"/login"}
+{"event":"request","timestamp":1438059062492,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":21240,"id":"1438059062452:Dereks-MacBook-Air-2.local:21240:iclxnb34:10353","method":"get","path":"/posts"}
+{"event":"request","timestamp":1438059063007,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":21240,"id":"1438059062960:Dereks-MacBook-Air-2.local:21240:iclxnb34:10363","method":"get","path":"/posts"}
+{"event":"request","timestamp":1438059067122,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":21240,"id":"1438059067104:Dereks-MacBook-Air-2.local:21240:iclxnb34:10377","method":"get","path":"/posts/support-a-healthy-face"}
+{"event":"request","timestamp":1438059072064,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":21240,"id":"1438059072016:Dereks-MacBook-Air-2.local:21240:iclxnb34:10383","method":"get","path":"/posts"}
+{"event":"request","timestamp":1438133889442,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":1804,"id":"1438133889429:Dereks-Air-2.ok.cox.net:1804:ico3s6oy:10014","method":"get","path":"/"}
+{"event":"request","timestamp":1438133934538,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":1804,"id":"1438133934535:Dereks-Air-2.ok.cox.net:1804:ico3s6oy:10040","method":"get","path":"/"}
+{"event":"request","timestamp":1438133968527,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":1804,"id":"1438133968523:Dereks-Air-2.ok.cox.net:1804:ico3s6oy:10064","method":"get","path":"/"}
+{"event":"request","timestamp":1438133970126,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":1804,"id":"1438133970122:Dereks-Air-2.ok.cox.net:1804:ico3s6oy:10088","method":"get","path":"/"}

@@ -148,10 +148,12 @@ button {
       font-weight: 200;
       color: $dark;
       line-height: 1.4;
-      max-width: 60%;
+      max-width: 70%;
+      min-width: 480px;
       margin: 0 auto;
       @media (max-width: $ipad) {
         max-width: 80%;
+        min-width: auto;
       }
       @media (max-width: $phone) {
         max-width: 100%;
