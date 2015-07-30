@@ -1187,3 +1187,9 @@
 {"event":"request","timestamp":1438138619411,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":1804,"id":"1438138619392:Dereks-Air-2.ok.cox.net:1804:ico3s6oy:10187","method":"get","path":"/register/finish"}
 {"event":"request","timestamp":1438138656268,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":1804,"id":"1438138656263:Dereks-Air-2.ok.cox.net:1804:ico3s6oy:10195","method":"get","path":"/register/finish"}
 {"event":"request","timestamp":1438138684281,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":1804,"id":"1438138684273:Dereks-Air-2.ok.cox.net:1804:ico3s6oy:10203","method":"get","path":"/register/finish"}
+{"event":"request","timestamp":1438140775090,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":1804,"id":"1438140775072:Dereks-Air-2.ok.cox.net:1804:ico3s6oy:10212","method":"get","path":"/login"}
+{"event":"request","timestamp":1438140797165,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":1804,"id":"1438140797084:Dereks-Air-2.ok.cox.net:1804:ico3s6oy:10217","method":"get","path":"/posts"}
+{"event":"request","timestamp":1438140801646,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":1804,"id":"1438140801621:Dereks-Air-2.ok.cox.net:1804:ico3s6oy:10231","method":"get","path":"/posts/everyday-oils-all-you-will-ever-need"}
+{"event":"request","timestamp":1438172998260,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":1804,"id":"1438172998220:Dereks-Air-2.ok.cox.net:1804:ico3s6oy:10239","method":"get","path":"/thankyou"}
+{"event":"request","timestamp":1438212233862,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":11609,"id":"1438212233644:Dereks-Air-2.ok.cox.net:11609:icorwm3q:10000","method":"get","path":"/posts"}
+{"event":"request","timestamp":1438231120115,"tags":["request","uid"],"pid":11609,"id":"1438231120105:Dereks-Air-2.ok.cox.net:11609:icorwm3q:10015","method":"get","path":"/"}
