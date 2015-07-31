@@ -9,7 +9,7 @@ block body
           h5= user.full_name
           a(href='mailto:#{user.email}')= user.email
 
-          if user.scope === "pre_authorized"
+          if user.scope === "pre_authenticated"
             if user.stripe.trial_expired
               p Status: Trial Expired
             else
