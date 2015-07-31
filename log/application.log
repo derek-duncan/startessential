@@ -1197,3 +1197,8 @@
 {"event":"request","timestamp":1438303835841,"tags":["request","uid"],"pid":35349,"id":"1438303835622:Dereks-Air-2.ok.cox.net:35349:icpqh5o5:10000","method":"get","path":"/login"}
 {"event":"request","timestamp":1438303839709,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":35349,"id":"1438303839647:Dereks-Air-2.ok.cox.net:35349:icpqh5o5:10007","method":"get","path":"/posts"}
 {"event":"request","timestamp":1438303840326,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":35349,"id":"1438303840276:Dereks-Air-2.ok.cox.net:35349:icpqh5o5:10017","method":"get","path":"/posts"}
+{"event":"request","timestamp":1438368693725,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":69108,"id":"1438368693587:Dereks-Air-2.ok.cox.net:69108:icr5xhs6:10000","method":"get","path":"/posts/support-a-healthy-face"}
+{"event":"request","timestamp":1438369372444,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":69108,"id":"1438369372425:Dereks-Air-2.ok.cox.net:69108:icr5xhs6:10007","method":"get","path":"/posts/purification-an-essential-component-to-a-clean-home"}
+{"event":"request","timestamp":1438369373972,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":69108,"id":"1438369373952:Dereks-Air-2.ok.cox.net:69108:icr5xhs6:10013","method":"get","path":"/saved"}
+{"event":"request","timestamp":1438369375194,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":69108,"id":"1438369375172:Dereks-Air-2.ok.cox.net:69108:icr5xhs6:10019","method":"get","path":"/preview/V1pdpc0F"}
+{"event":"request","timestamp":1438370850853,"tags":["request","uid"],"data":"55b5a3114aa063504233eae9","pid":69108,"id":"1438370850781:Dereks-Air-2.ok.cox.net:69108:icr5xhs6:10026","method":"get","path":"/posts"}
