@@ -376,3 +376,5 @@
 {"event":"log","timestamp":1438133885906,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":1804}
 {"event":"log","timestamp":1438174402364,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":11609}
 {"event":"log","timestamp":1438231410205,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":33875}
+{"event":"log","timestamp":1438232468109,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":35349}
+{"event":"log","timestamp":1438303840267,"tags":["internal","implementation","error"],"data":{"__NR_transaction":null,"domain":{"domain":null,"_events":{},"members":[]},"domainThrown":true},"pid":35349}
