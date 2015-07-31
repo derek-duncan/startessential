@@ -8,8 +8,16 @@ block body
         .user
           h5= user.full_name
           a(href='mailto:#{user.email}')= user.email
+
+          if user.scope === "pre_authorized"
+            if user.stripe.trial_expired
+              p Status: Trial Expired
+            else
+              p Status: Trialing
+          else
+            p Status: Active
           p #{user.saved_posts.length} #{user.saved_posts.length === 1 ? 'save' : 'saves'}
-          p Last active on #{readableDate(user.date_active)}
+          p Logged in #{adminDate(user.date_active)}
   hr
   section
     h2 Today's post
