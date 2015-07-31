@@ -9,4 +9,5 @@ block body
     each post in posts
       .post-item
         a(href="/admin/posts/#{post._id}")
-          h3 #{post.date_formatted} | #{post.title}
+          h3 #{post.title}
+          p #{post.saves} #{post.saves === 0 || post.saves > 1 ? 'saves' : 'save'}

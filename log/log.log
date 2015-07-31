@@ -384,3 +384,10 @@
 {"event":"log","timestamp":1438310998176,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":64260}
 {"event":"log","timestamp":1438318891315,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":69108}
 {"event":"log","timestamp":1438370901681,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":73122}
+{"event":"log","timestamp":1438372374788,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":74153}
+{"event":"log","timestamp":1438372381146,"tags":["internal","implementation","error"],"data":{"__NR_transaction":null,"domain":{"domain":null,"_events":{},"members":[]},"domainThrown":true},"pid":74153}
+{"event":"log","timestamp":1438372452088,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":74227}
+{"event":"log","timestamp":1438372465127,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":74279}
+{"event":"log","timestamp":1438372498187,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":74331}
+{"event":"log","timestamp":1438372514944,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":74366}
+{"event":"log","timestamp":1438372667187,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":74489}

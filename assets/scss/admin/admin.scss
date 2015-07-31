@@ -50,11 +50,27 @@ $gray: #7D7D7D;
   margin: 0 auto;
 }
 
+h2 {
+  color: #333;
+}
 .all-posts {
   .post-item {
-    margin: 15px 0;
+    padding: 15px 0;
+    border-bottom: 1px solid #f2f2f2;
+    transition: transform 0.3s;
+    &:hover {
+      transform: translateX(10px);
+    }
     a {
       color: $red;
+      text-decoration: none;
+      h3 {
+        margin: 0;
+      }
+    }
+    p {
+      color: #333;
+      margin: 10px 0 0;
     }
   }
 }
