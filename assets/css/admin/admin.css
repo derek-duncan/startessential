@@ -385,6 +385,28 @@ body {
   width: 60%;
   margin: 0 auto; }
 
+.users .users-list .user {
+  padding: 15px 0;
+  border-bottom: 1px solid #f2f2f2;
+  cursor: default;
+  -webkit-transition: -webkit-transform 0.3s;
+          transition: transform 0.3s; }
+  .users .users-list .user:hover {
+    -webkit-transform: translateX(10px);
+        -ms-transform: translateX(10px);
+            transform: translateX(10px); }
+  .users .users-list .user h5 {
+    color: #333;
+    font-size: 140%;
+    margin: 0 0 10px; }
+  .users .users-list .user a {
+    display: block;
+    color: #FF8F8F;
+    text-decoration: none; }
+  .users .users-list .user p {
+    font-size: 80%;
+    margin: 0; }
+
 h2 {
   color: #333; }
 

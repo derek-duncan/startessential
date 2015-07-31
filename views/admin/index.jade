@@ -1,7 +1,16 @@
 extends ../templates/admin.jade
 
 block body
-  pre Users registered: #{users.length}
+  section.users
+    h3 Users registered: <span>#{users.length}</span>
+    .users-list
+      each user in users
+        .user
+          h5= user.full_name
+          a(href='mailto:#{user.email}')= user.email
+          p #{user.saved_posts.length} #{user.saved_posts.length === 1 ? 'save' : 'saves'}
+          p Last active on #{readableDate(user.date_active)}
+  hr
   section
     h2 Today's post
     if post && post.length
