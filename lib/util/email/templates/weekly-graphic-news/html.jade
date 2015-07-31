@@ -3,14 +3,17 @@ extends ../layouts/default.jade
 block body
   h2 The Newest Collection of Graphics
   p We're constantly working hard to create the best essential oil graphics. Here's a small collection of what we've been working on this week. Also, we wanted to gift you with a FREE bonus graphic to thank you for your loyal service &mdash; be sure to check it out!
-  each graphic in posts
-    a(href='https://startessential.com/posts/#{graphic.url_path}' title=graphic.title style='text-decoration: none;')
-      h4(style='color: #314046; padding-left: 15px; border-left: 5px solid #f39191; text-decoration: none; font-size: 24px; font-weight: 400; margin-bottom: 10px;')= graphic.title
-    img(src=graphic.image.normal.Location width='300' style='width: 100%; border: 1px solid #f2f2f2;')
-    p(style='margin-top: 5px;')
-      a(href='https://startessential.com/posts/#{graphic.url_path}' title=graphic.title style='color: #fe9191; font-size: 20px; text-decoration: none; font-weight: 600;') Save now
-    hr(style='height: 0; margin: 25px 0; overflow: hidden; border-top: 1px solid #eee; width: 100%;')
-  //-[bonus_graphic_1]
+  if posts
+    each graphic in posts
+      a(href='https://startessential.com/posts/#{graphic.url_path}' title=graphic.title style='text-decoration: none;')
+        h4(style='color: #314046; padding-left: 15px; border-left: 5px solid #f39191; text-decoration: none; font-size: 24px; font-weight: 400; margin-bottom: 10px;')= graphic.title
+      img(src=graphic.image.normal.Location width='300' style='width: 100%; border: 1px solid #f2f2f2;')
+      p(style='margin-top: 5px;')
+        a(href='https://startessential.com/posts/#{graphic.url_path}' title=graphic.title style='color: #fe9191; font-size: 20px; text-decoration: none; font-weight: 600;') Save now
+      hr(style='height: 0; margin: 25px 0; overflow: hidden; border-top: 1px solid #eee; width: 100%;')
+    //-[bonus_graphic_1]
+  else
+    a(href="http://startessential.com/posts" title='New Posts' style='display: block; font-size: 20px; background: #CF4F4C; color: #fff; padding: 15px 20px; width: 270px; margin: 20px auto 0; text-align: center;') Explore the new graphics
 
   p With love,
   p The Start Essential team
