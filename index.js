@@ -81,7 +81,7 @@ if (cluster.isMaster) {
   server.ext('onPreResponse', function(request, reply) {
 
     var response = request.response;
-    if (process.env === 'production') {
+    if (process.env.NODE_ENV === 'production') {
       if (response.isBoom && response.output.statusCode === 403) {
         return reply.view('403');
       }
