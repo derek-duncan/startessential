@@ -442,3 +442,4 @@
 {"event":"log","timestamp":1438624049168,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-3.local:3000","pid":86414}
 {"event":"log","timestamp":1438624061196,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-3.local:3000","pid":86444}
 {"event":"log","timestamp":1438624076461,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-3.local:3000","pid":86475}
+{"event":"log","timestamp":1438625913301,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-3.local:3000","pid":88023}
