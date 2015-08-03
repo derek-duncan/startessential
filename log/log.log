@@ -451,3 +451,15 @@
 {"event":"log","timestamp":1438627543155,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-3.local:3000","pid":1217}
 {"event":"log","timestamp":1438629748829,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-3.local:3000","pid":2905}
 {"event":"log","timestamp":1438629790424,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-3.local:3000","pid":2962}
+{"event":"log","timestamp":1438631029237,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-3.local:3000","pid":3903}
+{"event":"log","timestamp":1438631073769,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-3.local:3000","pid":3960}
+{"event":"log","timestamp":1438631538990,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-3.local:3000","pid":4335}
+{"event":"log","timestamp":1438631593716,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-3.local:3000","pid":4394}
+{"event":"log","timestamp":1438631648015,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-3.local:3000","pid":4470}
+{"event":"log","timestamp":1438631666954,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-3.local:3000","pid":4523}
+{"event":"log","timestamp":1438631668618,"tags":["internal","implementation","error"],"data":{"__NR_transaction":null,"domain":{"domain":null,"_events":{},"members":[]},"domainThrown":true},"pid":4523}
+{"event":"log","timestamp":1438631706277,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-3.local:3000","pid":4579}
+{"event":"log","timestamp":1438631716981,"tags":["internal","implementation","error"],"data":{"__NR_transaction":null,"domain":{"domain":null,"_events":{},"members":[]},"domainThrown":true},"pid":4579}
+{"event":"log","timestamp":1438631737501,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-3.local:3000","pid":4636}
+{"event":"log","timestamp":1438631748514,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-3.local:3000","pid":4689}
+{"event":"log","timestamp":1438631755243,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-3.local:3000","pid":4723}
