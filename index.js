@@ -173,6 +173,17 @@ if (cluster.isMaster) {
     });
   });
 
+  // Trial strategy
+
+  server.register({
+    register: require('lib/middleware/trial'),
+    options: {
+      redirectTo: '/register/finish' + _message('Please add payment information to continue using Start Essential')
+    }
+  }, function (err) {
+
+  });
+
   // Facebook login strategy
   server.register(require('bell'), function (err) {
     server.auth.strategy('facebook', 'bell', {
