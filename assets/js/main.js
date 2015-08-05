@@ -165,6 +165,18 @@ $(function() {
     fbRegister.on('click touchend', function(e) {
       ga('send', 'event', 'register', 'button')
     })
+
+    var showCoupon = $('.show-coupon');
+    var hiddenCoupon = $('.form-block-hidden');
+    showCoupon.on('click touchend', function(e) {
+      var visible = hiddenCoupon.hasClass('show');
+
+      if (visible) {
+        hiddenCoupon.removeClass('show');
+      } else {
+        hiddenCoupon.addClass('show');
+      }
+    });
   }
 
   if ($('#thankyou').length) {

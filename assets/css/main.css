@@ -630,6 +630,9 @@ button {
   padding: 70px 0 70px;
   background: #fffff6;
   text-align: center; }
+  @media (max-width: 520px) {
+    #front section.join {
+      text-align: left; } }
   #front section.join.logged {
     padding: 70px 0; }
   #front section.join .join-content {
@@ -640,7 +643,7 @@ button {
       #front section.join .join-content {
         max-width: 90%; } }
   #front section.join .join-sub_head {
-    font-size: 240%;
+    font-size: 230%;
     margin: 0 0 10px; }
     @media (max-width: 520px) {
       #front section.join .join-sub_head {
@@ -655,7 +658,7 @@ button {
         font-size: 120%; } }
   #front section.join .join-desc {
     margin: 30px auto 20px;
-    font-size: 120%;
+    font-size: 115%;
     max-width: 90%;
     color: #314046; }
     @media (max-width: 520px) {
@@ -693,12 +696,11 @@ button {
       margin: 0;
       margin-left: 40px;
       top: 0;
-      padding: 15px;
       font-size: 80%;
       color: #314046;
       overflow: hidden;
-      -webkit-transition: all 0.3s;
-              transition: all 0.3s;
+      -webkit-transition: opacity 0.3s;
+              transition: opacity 0.3s;
       opacity: 0;
       background: #fff;
       border: 1px solid #f2f2f2;
@@ -709,7 +711,8 @@ button {
         color: #FF8F8F;
         text-decoration: none; }
       #front section.join .join-form p.join-sample-link.show {
-        opacity: 1; }
+        opacity: 1;
+        padding: 15px; }
       @media (max-width: 520px) {
         #front section.join .join-form p.join-sample-link {
           position: relative;
@@ -733,12 +736,15 @@ button {
       border-bottom: 3px solid #BD6565;
       font-size: 100%;
       text-decoration: none;
-      font-weight: 400; }
+      font-weight: 600; }
       #front section.join .join-form button.join-submit:hover:not(:disabled) {
         background: #FF8F8F; }
       @media (max-width: 520px) {
         #front section.join .join-form button.join-submit {
           font-size: 80%; } }
+    #front section.join .join-form .join-reasure {
+      font-size: 70%;
+      color: #7D7D7D; }
   #front section.join .login-button {
     padding: 10px 20px;
     border: 1px solid #FF8F8F;
@@ -3726,6 +3732,8 @@ body.messages .saving-overlay {
     box-sizing: border-box;
     border: 1px solid #ddd;
     font-size: 130%; }
+    #register .register form {
+      margin: 0; }
     #register .register .register-form {
       padding-right: 30px;
       box-sizing: border-box;
@@ -3748,15 +3756,15 @@ body.messages .saving-overlay {
           margin: 0 0 15px;
           font-size: 120%;
           font-weight: 600; }
-          #register .register .register-form .form-block label a {
-            font-weight: 400;
-            text-decoration: none;
-            color: #4A90E2; }
-            #register .register .register-form .form-block label a:hover {
-              color: #2275d7; }
-          #register .register .register-form .form-block label.small {
-            font-size: 100%;
-            display: inline-block; }
+        #register .register .register-form .form-block a {
+          font-weight: 400;
+          text-decoration: none;
+          color: #4A90E2; }
+          #register .register .register-form .form-block a:hover {
+            color: #2275d7; }
+        #register .register .register-form .form-block .small {
+          font-size: 100%;
+          display: inline-block; }
         #register .register .register-form .form-block input {
           padding: 10px 15px;
           box-shadow: border-box;
@@ -3766,11 +3774,21 @@ body.messages .saving-overlay {
           outline: none; }
           #register .register .register-form .form-block input:disabled {
             background: #f2f2f2; }
-        #register .register .register-form .form-block label.inline, #register .register .register-form .form-block input.inline {
-          display: inline-block; }
+        #register .register .register-form .form-block.terms p, #register .register .register-form .form-block.terms input {
+          display: inline-block;
+          vertical-align: middle; }
+        #register .register .register-form .form-block.terms p {
+          margin: 0;
+          width: 90%;
+          font-size: 75%; }
+        #register .register .register-form .form-block.terms input {
+          width: 10%; }
+        #register .register .register-form .form-block.coupon .form-block-hidden {
+          font-size: 80%;
+          margin-top: 15px; }
         #register .register .register-form .form-block .fb-login {
           display: inline-block;
-          margin: 0 auto;
+          margin: 15px auto 0;
           padding: 15px 25px;
           background: #4A90E2;
           color: #fff;
@@ -3792,7 +3810,21 @@ body.messages .saving-overlay {
               font-size: 75%; } }
         #register .register .register-form .form-block .fb-login-desc {
           font-size: 80%;
+          font-style: italic;
           color: #aaa; }
+      #register .register .register-form .show-coupon {
+        color: #314046;
+        font-size: 80%;
+        cursor: pointer;
+        font-style: italic;
+        padding: 0;
+        margin: 0; }
+        #register .register .register-form .show-coupon:hover {
+          color: #FF8F8F; }
+      #register .register .register-form .form-block-hidden {
+        display: none; }
+        #register .register .register-form .form-block-hidden.show {
+          display: block; }
     #register .register .register-extra {
       display: inline-block;
       width: 40%;
@@ -3820,20 +3852,10 @@ body.messages .saving-overlay {
           padding-top: 0; }
         #register .register .register-form:last-child, #register .register .register-extra:last-child {
           padding-bottom: 0; } }
-    #register .register .value-list {
-      padding: 0;
-      margin: 0; }
-      #register .register .value-list .value-item {
-        margin: 10px 0;
-        list-style: none;
-        padding-left: 25px; }
-      #register .register .value-list .value-item:before {
-        content: '\f00c';
-        font-family: FontAwesome;
-        display: inline-block;
-        color: #ccc;
-        width: 25px;
-        margin-left: -25px; }
+    #register .register .value-list:not(.sub) {
+      padding: 0 20px; }
+    #register .register .value-list .value-item {
+      margin: 10px 0; }
   #register .plan {
     font-size: 100%;
     text-align: left;

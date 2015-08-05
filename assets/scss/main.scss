@@ -323,6 +323,9 @@ button {
     padding: 70px 0 70px;
     background: lighten(#FFFEE7, 3%);
     text-align: center;
+    @media (max-width: $phone) {
+      text-align: left;
+    }
     &.logged {
       padding: 70px 0;
     }
@@ -335,7 +338,7 @@ button {
       }
     }
     .join-sub_head {
-      font-size: 240%;
+      font-size: 230%;
       margin: 0 0 10px;
       @media (max-width: $phone) {
         font-size: 180%;
@@ -352,7 +355,7 @@ button {
     }
     .join-desc {
       margin: 30px auto 20px;
-      font-size: 120%;
+      font-size: 115%;
       max-width: 90%;
       color: $dark;
       @media (max-width: $phone) {
@@ -393,11 +396,10 @@ button {
         margin: 0;
         margin-left: 40px;
         top: 0;
-        padding: 15px;
         font-size: 80%;
         color: $dark;
         overflow: hidden;
-        transition: all 0.3s;
+        transition: opacity 0.3s;
         opacity: 0;
         background: #fff;
         border: 1px solid #f2f2f2;
@@ -410,6 +412,7 @@ button {
         }
         &.show {
           opacity: 1;
+          padding: 15px;
         }
         @media (max-width: $phone) {
           position: relative;
@@ -436,13 +439,17 @@ button {
         border-bottom: 3px solid #BD6565;
         font-size: 100%;
         text-decoration: none;
-        font-weight: 400;
+        font-weight: 600;
         &:hover:not(:disabled) {
           background: $red;
         }
         @media (max-width: $phone) {
           font-size: 80%;
         }
+      }
+      .join-reasure {
+        font-size: 70%;
+        color: $gray;
       }
     }
 

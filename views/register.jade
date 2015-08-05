@@ -21,24 +21,23 @@ block body
             .form-block
               label Member number
               input(type='text' value=(memberNumber || undefined) name='memberNumber' maxlength='7')
-            .form-block
-              label Coupon (optional)
-              input(type='text' name='coupon')
-            .form-block
-              label.inline.small I agree to the <a href='/privacy-policy' target='_blank'>Privacy Policy</a> and <a href='/terms-of-service' target='_blank'>Terms of Agreement</a>
-              input.inline(type='checkbox' value='agree' name='termsAgree')
+            .form-block.terms
+              label Terms of Service
+              input(type='checkbox' value='agree' name='termsAgree')
+              p.small I agree to the <a href='/privacy-policy' target='_blank'>Privacy Policy</a> and <a href='/terms-of-service' target='_blank'>Terms of Agreement</a>
             .form-block
               button.fb-login(type='submit') Register with Facebook
               p.fb-login-desc Registering with Facebook is simply a way to quickly login and access Start Essential. We promise to <i>never</i> post or access your private information without your approval.
+            .form-block.coupon
+              p.show-coupon Have a coupon? Enter it here.
+              .form-block-hidden
+                input(type='text' name='coupon' placeholder='Enter your coupon here')
         .register-extra
-          h4.extra-title What you get
+          h4.extra-title Starter Plan
           .question-block
             ul.value-list
               li.value-item 7-day free trial
-              li.value-item Save 2 graphics / week
-                ul.value-list.sub
-                  li.value-item 8 graphics / month
-              li.value-item Simply $10 / month
-                ul.value-list.sub
-                  li.value-item That's only $1.25 a graphic
-              li.value-item Cancel anytime, no commitment
+              li.value-item Save 2 new graphics a week
+              li.value-item Young Living signup link to use with new members
+              li.value-item Landing page to inform people about Young Living Essential Oils
+              li.value-item No commitment, cancel anytime
