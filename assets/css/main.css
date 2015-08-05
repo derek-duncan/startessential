@@ -2893,8 +2893,6 @@ button {
       color: #314046; }
       #plans .plans .plan.free .plan-header .plan-tagline {
         color: #aaa; }
-    #plans .plans .plan.free .plan-features {
-      padding-bottom: 60px; }
     #plans .plans .plan.starter .plan-header {
       background: #314046;
       color: #fff; }
@@ -2928,7 +2926,7 @@ button {
           margin-bottom: 0; }
     #plans .plans .plan .plan-action {
       position: relative;
-      margin: -40px 30px 20px; }
+      margin: 25px 0 0; }
       #plans .plans .plan .plan-action .action {
         display: inline-block;
         padding: 15px 30px;
