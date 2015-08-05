@@ -639,6 +639,9 @@ button {
     font-size: 140%;
     max-width: 60%;
     margin: 0 auto; }
+    @media (max-width: 768px) {
+      #front section.join .join-content {
+        max-width: 80%; } }
     @media (max-width: 520px) {
       #front section.join .join-content {
         max-width: 90%; } }
@@ -670,6 +673,9 @@ button {
     max-width: 60%;
     margin: 0 auto;
     font-size: 120%; }
+    @media (max-width: 768px) {
+      #front section.join .join-form {
+        max-width: 80%; } }
     @media (max-width: 520px) {
       #front section.join .join-form {
         max-width: 100%;
@@ -3864,6 +3870,7 @@ body.messages .saving-overlay {
       margin: 0; }
     #register .plan .plan-secure {
       margin: 20px 0 0;
+      font-size: 80%;
       color: #bbb; }
       #register .plan .plan-secure .secure-text {
         padding-left: 5px; }

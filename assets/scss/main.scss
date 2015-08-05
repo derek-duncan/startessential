@@ -333,6 +333,9 @@ button {
       font-size: 140%;
       max-width: 60%;
       margin: 0 auto;
+      @media (max-width: $ipad) {
+        max-width: 80%;
+      }
       @media (max-width: $phone) {
         max-width: 90%;
       }
@@ -368,6 +371,9 @@ button {
       max-width: 60%;
       margin: 0 auto;
       font-size: 120%;
+      @media (max-width: $ipad) {
+        max-width: 80%;
+      }
       @media (max-width: $phone) {
         max-width: 100%;
         font-size: 100%;

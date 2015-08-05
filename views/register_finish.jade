@@ -13,7 +13,7 @@ block body
             form(action="/register/finish" method="POST")
               input(type="hidden" name="crumb" value=crumb)
               .form-block
-                label Add payment
+                label Monthly Payment
                 script(
                   src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                   data-key=stripe_key_pk
@@ -23,21 +23,21 @@ block body
                   data-image="/images/app-icon-round.png"
                   data-allowRememberMe='false'
                   data-email='#{email}'
-                  data-label='Pay with card')
+                  data-label='Add card'
+                  data-panel-label='Pay')
                 .plan-secure
                   img.secure-icon(src='/images/secure_icon.png' width='16')
                   span.secure-text Secured with Stripe
               .form-block
-                label What you get
+                label Starter Plan
                 ul.value-list
-                  li.value-item 7-day free trial
-                  li.value-item Save 2 graphics / week
+                  li.value-item Save 2 new graphics a week
+                  li.value-item Simply $10 a month
                     ul.value-list.sub
-                      li.value-item 8 graphics / month
-                  li.value-item $10 / month
-                    ul.value-list.sub
-                      li.value-item That's only $1.25 a graphic
-                  li.value-item Cancel anytime
+                      li.value-item $1.25 a graphic
+                  li.value-item Young Living signup link to use with new members
+                  li.value-item Landing page to inform people about Young Living Essential Oils
+                  li.value-item No commitment, cancel anytime
         .register-extra
           h4.extra-title FAQ
           .question-block
