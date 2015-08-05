@@ -1,0 +1,52 @@
+extends templates/layout
+block body
+  #plans
+    header.header-front
+      div.header-top.cf
+        h1.logo
+          a(href='/' title='Start Essential homepage')
+            img(src='/images/logo-color.png' alt='Start Essential resources logo' width='300')
+        .header-actions
+          if sid
+            a.cta-top(href="/posts" title="Access Start Essential") Step Inside
+            a.login-top(href="/logout" title="Logout") Logout
+          else
+            a.cta-top(href="/register" title="Join Start Essential") Join now
+            a.login-top(href="/login" title="Login to Start Essential") Login
+    main.main
+      h2.plans-title Start Essential Pricing
+      p.plans-description Get started downloading Start Essential's exclusive graphics without any commitment.
+      section.plans
+        .plan.full.free
+          .plan-header
+            h3.plan-title $0 Free Plan
+            p.plan-tagline No credit card required
+          .plan-features
+            ul
+              li.plan-feature
+                | 7-day
+                b  free trial
+              li.plan-feature
+                b Save 2 new graphics a week
+              li.plan-feature
+                b Young Living signup link
+                |  to use with new members
+              li.plan-feature
+                b Landing page
+                |  to inform people about Young Living Essential Oils
+              li.plan-feature No credit card required
+          .plan-action
+            a.action(href='/register') Start now
+        .plan-sep
+          p After your Free Plan ends, you may transition to the <i>Starter Plan</i>
+        .plan.full.starter
+          .plan-header
+            h3.plan-title Starter Plan
+            p.plan-tagline $10 a month
+          .plan-features
+            ul
+              li.plan-feature
+                b <i>All</i> of the Free Plan features
+              li.plan-feature
+                b No commitment
+                | , cancel anytime

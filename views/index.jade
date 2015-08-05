@@ -12,11 +12,12 @@ block body
         h1.logo
           img(src='/images/logo-color.png' alt='Start Essential resources logo' width='300')
         .header-actions
+          a.pricing(href='/plans' title='Start Essential pricing plans') Pricing
           if sid
             a.cta-top(href="/posts" title="Access Start Essential") Step Inside
             a.login-top(href="/logout" title="Logout") Logout
           else
-            a.cta-top(href="#join" title="Join Start Essential") Join now
+            a.cta-top(href="/register" title="Join Start Essential") Join now
             a.login-top(href="/login" title="Login to Start Essential") Login
       div.header-middle.content.cf
         h4.middle-tagline If you're a Young Living distributor and want to promote your business, this is for you
@@ -85,6 +86,10 @@ block body
             input.join-input(type='text' maxlength='7' placeholder='e.g. 1234567')
             p.join-sample-link
             button.join-submit(type='submit') Start for free
+    section.plans
+      .plans-inner
+        p.plans-statement
+          a.plans-action(href='/plans' title='Start Essential pricing plans') View Our Plans/Pricing
     section.unsure
       p.unsure-statement Still not ready, or you have any questions? I'd love to talk with you! Feel free to&nbsp;
         a(href='mailto:derek@startessential.com' title='Email me any questions') contact me directly.

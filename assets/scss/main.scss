@@ -49,69 +49,7 @@ button {
 }
 
 #front {
-  .header-top {
-    width: 90%;
-    margin: 0 auto;
-    padding: 20px 0;
-    @media (max-width: $phone) {
-      width: 100%;
-      padding-bottom: 0;
-    }
-    h1.logo {
-      margin: 0;
-      padding: 0;
-      float: left;
-      width: 10%;
-      @media (max-width: $phone) {
-        float: none;
-        width: 40%;
-        margin: 0 20px;
-      }
-      img {
-        width: 100%;
-      }
-    }
-    .header-actions {
-      float: right;
-      margin-top: 20px;
-      box-sizing: border-box;
-      @media (max-width: $phone) {
-        float: none;
-        width: 100%;
-        padding: 0 20px;
-      }
-    }
-    a.cta-top, a.login-top {
-      display: inline-block;
-      margin: 0 5px;
-      padding: 10px 20px;
-      background: $red;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      border: 1px solid $red;
-      box-sizing: border-box;
-      text-align: center;
-      @media (max-width: $phone) {
-        overflow: initial;
-        display: inline-block;
-        font-size: 100%;
-        width: 50%;
-        margin: 0;
-      }
-      &:hover {
-        background: $shade-red;
-      }
-    }
-    a.login-top {
-      background: transparent;
-      color: $red;
-      &:hover {
-        background: $red;
-        color: #fff;
-      }
-    }
-  }
+  @import 'includes/customHeader';
   .header-middle {
     clear: both;
     width: 60%;
@@ -248,6 +186,7 @@ button {
       @media (max-width: $phone) {
         max-width: 90%;
         font-size: 180%;
+        text-align: left;
       }
     }
     /*img.info-computer-example {*/
@@ -473,6 +412,33 @@ button {
       }
     }
   }
+  section.plans {
+    display: none;
+    color: $gray;
+    background: none;
+    border-bottom: 1px solid #ddd;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+    @media (max-width: $phone) {
+      display: block;
+    }
+    .plans-statement {
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      font-size: 90%;
+      @media (max-width: $phone) {
+        font-size: 110%;
+      }
+      a.plans-action {
+        display: inline-block;
+        text-decoration: none;
+        color: $red;
+      }
+    }
+  }
   section.unsure {
     max-width: 80%;
     margin: 0 auto;
@@ -514,6 +480,7 @@ button {
 @import 'error';
 @import 'agreements';
 @import 'thankyou';
+@import 'plans';
 @import 'post';
 @import "header";
 @import 'posts';

@@ -1,0 +1,139 @@
+#plans {
+  @import 'includes/customHeader';
+
+  .main {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 130%;
+    @media (max-width: $phone) {
+      margin: 30px auto 0;
+      width: 90%;
+    }
+  }
+  .plans-title {
+    font-size: 210%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    @media (max-width: $phone) {
+      font-size: 190%;
+      text-align: left;
+    }
+  }
+  .plans-description {
+    text-align: center;
+    font-size: 90%;
+    color: $gray;
+    margin: 10px 0 0;
+    @media (max-width: $phone) {
+      font-size: 80%;
+      text-align: left;
+    }
+  }
+  .plans {
+    width: 60%;
+    margin: 30px auto 0;
+    position: relative;
+    @media (max-width: $ipad) {
+      width: 80%;
+    }
+    @media (max-width: $phone) {
+      margin-top: 20px;
+      width: 100%;
+    }
+    .plan-sep {
+      p {
+        text-align: center;
+        border-top: 5px dashed #ccc;
+        border-bottom: 5px dashed #ccc;
+        padding: 20px 0;
+        margin: 0;
+      }
+    }
+    .plan {
+      display: inline-block;
+      &.half {
+        width: 50%;
+        box-sizing: border-box;
+        padding: 0 25px;
+      }
+      &.full {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 25px 0;
+      }
+      &.free {
+        .plan-header {
+          background: #f2f2f2;
+          color: $dark;
+          .plan-tagline {
+            color: #aaa;
+          }
+        }
+        .plan-features {
+          padding-bottom: 60px;
+        }
+      }
+      &.starter {
+        .plan-header {
+          background: $dark;
+          color: #fff;
+          .plan-tagline {
+            color: #ccc;
+          }
+        }
+      }
+      .plan-header {
+        padding: 30px;
+        box-sizing: border-box;
+        @media (max-width: $phone) {
+          padding: 20px 30px;
+        }
+        .plan-title {
+          margin: 0;
+          font-size: 140%;
+        }
+        .plan-tagline {
+          margin: 0;
+        }
+      }
+      .plan-features {
+        padding: 30px;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-top: none;
+        ul {
+          margin: 0;
+          padding: 0;
+        }
+        .plan-feature {
+          list-style: none;
+          margin: 25px 0;
+          &:first-child {
+            margin-top: 0;
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+      .plan-action {
+        position: relative;
+        margin: -40px 30px 20px;
+        .action {
+          display: inline-block;
+          padding: 15px 30px;
+          background: $shade-red;
+          border-bottom: 2px solid darken($shade-red, 20%);
+          color: #fff;
+          text-decoration: none;
+          border-radius: 4px;
+          &:hover {
+            background: $red;
+          }
+        }
+      }
+    }
+  }
+}

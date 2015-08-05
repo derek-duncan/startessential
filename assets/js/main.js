@@ -177,6 +177,18 @@ $(function() {
         hiddenCoupon.addClass('show');
       }
     });
+
+    var showFBDesc = $('.fb-login-desc-toggle');
+    var hiddenFBDesc = $('.fb-login-desc');
+    showFBDesc.on('click touchend', function(e) {
+      var visible = hiddenFBDesc.hasClass('show');
+
+      if (visible) {
+        hiddenFBDesc.removeClass('show');
+      } else {
+        hiddenFBDesc.addClass('show');
+      }
+    });
   }
 
   if ($('#thankyou').length) {

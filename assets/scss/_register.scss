@@ -9,6 +9,11 @@
   @media (max-width: $phone) {
     width: 90%;
   }
+  .main {
+    @media (max-width: $phone) {
+      padding-top: 60px;
+    }
+  }
   .details {
     text-align: center;
     .copy {
@@ -37,6 +42,10 @@
     box-sizing: border-box;
     border: 1px solid #ddd;
     font-size: 130%;
+    @media (max-width: $phone) {
+      padding: 20px;
+      font-size: 100%;
+    }
     form {
       margin: 0;
     }
@@ -50,6 +59,10 @@
       @media (max-width: $phone) {
         border: none;
         border-bottom: 1px solid #ddd;
+      }
+      &.full {
+        width: 100%;
+        border: none;
       }
       .form-block {
         margin: 20px 0;
@@ -81,11 +94,14 @@
           padding: 10px 15px;
           box-shadow: border-box;
           border: 1px solid #ccc;
-          width: 100%;
-          border-radius: 5px;
+          width: 70%;
+          border-radius: 4px;
           outline: none;
           &:disabled {
             background: #f2f2f2;
+          }
+          @media (max-width: $ipad) {
+            width: 100%;
           }
         }
         &.terms {
@@ -95,11 +111,18 @@
           }
           p {
             margin: 0;
-            width: 90%;
             font-size: 75%;
+            @media (max-width: $ipad) {
+              font-size: 85%;
+            }
           }
           input {
-            width: 10%;
+            font-size: 140%;
+            margin-right: 10px;
+            width: auto;
+            @media (max-width: $ipad) {
+              margin-bottom: 10px;
+            }
           }
         }
         &.coupon .form-block-hidden {
@@ -109,14 +132,13 @@
 
         .fb-login {
           display: inline-block;
-          margin: 15px auto 0;
+          margin: 15px auto 30px;
           padding: 15px 25px;
           background: $btn-blue;
           color: #fff;
           text-decoration: none;
           font-size: 120%;
           font-weight: 600;
-          width: 100%;
           box-sizing: border-box;
           border-radius: 5px;
           text-align: center;
@@ -126,15 +148,40 @@
             background: darken($btn-blue, 10%);
           }
           @media (max-width: $phone) {
-            padding-left: 10px;
-            padding-right: 10px;
-            font-size: 75%;
+            padding-left: 15px;
+            padding-right: 15px;
+            width: 100%;
+            font-size: 100%;
+          }
+        }
+        .fb-login-desc-toggle {
+          display: block;
+          font-size: 80%;
+          font-style: italic;
+          color: $dark;
+          cursor: pointer;
+          padding: 0;
+          margin: 0;
+          &:hover {
+            color: $red;
+          }
+          &.hide {
+            display: none;
           }
         }
         .fb-login-desc {
-          font-size: 80%;
+          font-size: 70%;
           font-style: italic;
           color: #aaa;
+          margin: 10px 0 0;
+          padding: 0;
+          display: none;
+          @media (max-width: $phone) {
+            font-size: 80%;
+          }
+          &.show {
+            display: block;
+          }
         }
       }
       .show-coupon {

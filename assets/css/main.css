@@ -401,14 +401,15 @@ button {
       width: 100%; }
   #front .header-top .header-actions {
     float: right;
-    margin-top: 20px;
+    margin-top: 5px;
     box-sizing: border-box; }
     @media (max-width: 520px) {
       #front .header-top .header-actions {
         float: none;
         width: 100%;
-        padding: 0 20px; } }
-  #front .header-top a.cta-top, #front .header-top a.login-top {
+        padding: 0 20px;
+        margin-top: 25px; } }
+  #front .header-top a.pricing, #front .header-top a.cta-top, #front .header-top a.login-top {
     display: inline-block;
     margin: 0 5px;
     padding: 10px 20px;
@@ -420,14 +421,24 @@ button {
     box-sizing: border-box;
     text-align: center; }
     @media (max-width: 520px) {
-      #front .header-top a.cta-top, #front .header-top a.login-top {
+      #front .header-top a.pricing, #front .header-top a.cta-top, #front .header-top a.login-top {
         overflow: initial;
         display: inline-block;
         font-size: 100%;
         width: 50%;
         margin: 0; } }
-    #front .header-top a.cta-top:hover, #front .header-top a.login-top:hover {
+    #front .header-top a.pricing:hover, #front .header-top a.cta-top:hover, #front .header-top a.login-top:hover {
       background: #ff5c5c; }
+  #front .header-top a.pricing {
+    background: transparent;
+    border: none;
+    color: #FF8F8F; }
+    #front .header-top a.pricing:hover {
+      background: none;
+      text-decoration: underline; }
+    @media (max-width: 520px) {
+      #front .header-top a.pricing {
+        display: none; } }
   #front .header-top a.login-top {
     background: transparent;
     color: #FF8F8F; }
@@ -570,7 +581,8 @@ button {
     @media (max-width: 520px) {
       #front section.info h2.info-sub_head {
         max-width: 90%;
-        font-size: 180%; } }
+        font-size: 180%;
+        text-align: left; } }
 
 #front section.features .features-content {
   width: 60%;
@@ -762,6 +774,31 @@ button {
     #front section.join .login-button:hover {
       background: #FF8F8F;
       color: #fff; }
+
+#front section.plans {
+  display: none;
+  color: #7D7D7D;
+  background: none;
+  border-bottom: 1px solid #ddd;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px 0;
+  text-align: center; }
+  @media (max-width: 520px) {
+    #front section.plans {
+      display: block; } }
+  #front section.plans .plans-statement {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 90%; }
+    @media (max-width: 520px) {
+      #front section.plans .plans-statement {
+        font-size: 110%; } }
+    #front section.plans .plans-statement a.plans-action {
+      display: inline-block;
+      text-decoration: none;
+      color: #FF8F8F; }
 
 #front section.unsure {
   max-width: 80%;
@@ -2727,6 +2764,182 @@ button {
   #thankyou .app .app-link:hover {
     background: #ff5c5c; }
 
+#plans .header-top {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 0; }
+  @media (max-width: 520px) {
+    #plans .header-top {
+      width: 100%;
+      padding-bottom: 0; } }
+  #plans .header-top h1.logo {
+    margin: 0;
+    padding: 0;
+    float: left;
+    width: 10%; }
+    @media (max-width: 520px) {
+      #plans .header-top h1.logo {
+        float: none;
+        width: 40%;
+        margin: 0 20px; } }
+    #plans .header-top h1.logo img {
+      width: 100%; }
+  #plans .header-top .header-actions {
+    float: right;
+    margin-top: 5px;
+    box-sizing: border-box; }
+    @media (max-width: 520px) {
+      #plans .header-top .header-actions {
+        float: none;
+        width: 100%;
+        padding: 0 20px;
+        margin-top: 25px; } }
+  #plans .header-top a.pricing, #plans .header-top a.cta-top, #plans .header-top a.login-top {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 10px 20px;
+    background: #FF8F8F;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid #FF8F8F;
+    box-sizing: border-box;
+    text-align: center; }
+    @media (max-width: 520px) {
+      #plans .header-top a.pricing, #plans .header-top a.cta-top, #plans .header-top a.login-top {
+        overflow: initial;
+        display: inline-block;
+        font-size: 100%;
+        width: 50%;
+        margin: 0; } }
+    #plans .header-top a.pricing:hover, #plans .header-top a.cta-top:hover, #plans .header-top a.login-top:hover {
+      background: #ff5c5c; }
+  #plans .header-top a.pricing {
+    background: transparent;
+    border: none;
+    color: #FF8F8F; }
+    #plans .header-top a.pricing:hover {
+      background: none;
+      text-decoration: underline; }
+    @media (max-width: 520px) {
+      #plans .header-top a.pricing {
+        display: none; } }
+  #plans .header-top a.login-top {
+    background: transparent;
+    color: #FF8F8F; }
+    #plans .header-top a.login-top:hover {
+      background: #FF8F8F;
+      color: #fff; }
+
+#plans .main {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 130%; }
+  @media (max-width: 520px) {
+    #plans .main {
+      margin: 30px auto 0;
+      width: 90%; } }
+
+#plans .plans-title {
+  font-size: 210%;
+  text-align: center;
+  margin: 0;
+  padding: 0; }
+  @media (max-width: 520px) {
+    #plans .plans-title {
+      font-size: 190%;
+      text-align: left; } }
+
+#plans .plans-description {
+  text-align: center;
+  font-size: 90%;
+  color: #7D7D7D;
+  margin: 10px 0 0; }
+  @media (max-width: 520px) {
+    #plans .plans-description {
+      font-size: 80%;
+      text-align: left; } }
+
+#plans .plans {
+  width: 60%;
+  margin: 30px auto 0;
+  position: relative; }
+  @media (max-width: 768px) {
+    #plans .plans {
+      width: 80%; } }
+  @media (max-width: 520px) {
+    #plans .plans {
+      margin-top: 20px;
+      width: 100%; } }
+  #plans .plans .plan-sep p {
+    text-align: center;
+    border-top: 5px dashed #ccc;
+    border-bottom: 5px dashed #ccc;
+    padding: 20px 0;
+    margin: 0; }
+  #plans .plans .plan {
+    display: inline-block; }
+    #plans .plans .plan.half {
+      width: 50%;
+      box-sizing: border-box;
+      padding: 0 25px; }
+    #plans .plans .plan.full {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 25px 0; }
+    #plans .plans .plan.free .plan-header {
+      background: #f2f2f2;
+      color: #314046; }
+      #plans .plans .plan.free .plan-header .plan-tagline {
+        color: #aaa; }
+    #plans .plans .plan.free .plan-features {
+      padding-bottom: 60px; }
+    #plans .plans .plan.starter .plan-header {
+      background: #314046;
+      color: #fff; }
+      #plans .plans .plan.starter .plan-header .plan-tagline {
+        color: #ccc; }
+    #plans .plans .plan .plan-header {
+      padding: 30px;
+      box-sizing: border-box; }
+      @media (max-width: 520px) {
+        #plans .plans .plan .plan-header {
+          padding: 20px 30px; } }
+      #plans .plans .plan .plan-header .plan-title {
+        margin: 0;
+        font-size: 140%; }
+      #plans .plans .plan .plan-header .plan-tagline {
+        margin: 0; }
+    #plans .plans .plan .plan-features {
+      padding: 30px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-top: none; }
+      #plans .plans .plan .plan-features ul {
+        margin: 0;
+        padding: 0; }
+      #plans .plans .plan .plan-features .plan-feature {
+        list-style: none;
+        margin: 25px 0; }
+        #plans .plans .plan .plan-features .plan-feature:first-child {
+          margin-top: 0; }
+        #plans .plans .plan .plan-features .plan-feature:last-child {
+          margin-bottom: 0; }
+    #plans .plans .plan .plan-action {
+      position: relative;
+      margin: -40px 30px 20px; }
+      #plans .plans .plan .plan-action .action {
+        display: inline-block;
+        padding: 15px 30px;
+        background: #ff5c5c;
+        border-bottom: 2px solid #f50000;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px; }
+        #plans .plans .plan .plan-action .action:hover {
+          background: #FF8F8F; }
+
 #post .tools {
   background: #eee;
   border-bottom: 2px solid #ECECEC; }
@@ -3717,6 +3930,9 @@ body.messages .saving-overlay {
   @media (max-width: 520px) {
     #register {
       width: 90%; } }
+  @media (max-width: 520px) {
+    #register .main {
+      padding-top: 60px; } }
   #register .details {
     text-align: center; }
     #register .details .copy h3 {
@@ -3738,6 +3954,10 @@ body.messages .saving-overlay {
     box-sizing: border-box;
     border: 1px solid #ddd;
     font-size: 130%; }
+    @media (max-width: 520px) {
+      #register .register {
+        padding: 20px;
+        font-size: 100%; } }
     #register .register form {
       margin: 0; }
     #register .register .register-form {
@@ -3751,6 +3971,9 @@ body.messages .saving-overlay {
         #register .register .register-form {
           border: none;
           border-bottom: 1px solid #ddd; } }
+      #register .register .register-form.full {
+        width: 100%;
+        border: none; }
       #register .register .register-form .form-block {
         margin: 20px 0; }
         #register .register .register-form .form-block:nth-of-type(1) {
@@ -3775,33 +3998,42 @@ body.messages .saving-overlay {
           padding: 10px 15px;
           box-shadow: border-box;
           border: 1px solid #ccc;
-          width: 100%;
-          border-radius: 5px;
+          width: 70%;
+          border-radius: 4px;
           outline: none; }
           #register .register .register-form .form-block input:disabled {
             background: #f2f2f2; }
+          @media (max-width: 768px) {
+            #register .register .register-form .form-block input {
+              width: 100%; } }
         #register .register .register-form .form-block.terms p, #register .register .register-form .form-block.terms input {
           display: inline-block;
           vertical-align: middle; }
         #register .register .register-form .form-block.terms p {
           margin: 0;
-          width: 90%;
           font-size: 75%; }
+          @media (max-width: 768px) {
+            #register .register .register-form .form-block.terms p {
+              font-size: 85%; } }
         #register .register .register-form .form-block.terms input {
-          width: 10%; }
+          font-size: 140%;
+          margin-right: 10px;
+          width: auto; }
+          @media (max-width: 768px) {
+            #register .register .register-form .form-block.terms input {
+              margin-bottom: 10px; } }
         #register .register .register-form .form-block.coupon .form-block-hidden {
           font-size: 80%;
           margin-top: 15px; }
         #register .register .register-form .form-block .fb-login {
           display: inline-block;
-          margin: 15px auto 0;
+          margin: 15px auto 30px;
           padding: 15px 25px;
           background: #4A90E2;
           color: #fff;
           text-decoration: none;
           font-size: 120%;
           font-weight: 600;
-          width: 100%;
           box-sizing: border-box;
           border-radius: 5px;
           text-align: center;
@@ -3811,13 +4043,34 @@ body.messages .saving-overlay {
             background: #2275d7; }
           @media (max-width: 520px) {
             #register .register .register-form .form-block .fb-login {
-              padding-left: 10px;
-              padding-right: 10px;
-              font-size: 75%; } }
-        #register .register .register-form .form-block .fb-login-desc {
+              padding-left: 15px;
+              padding-right: 15px;
+              width: 100%;
+              font-size: 100%; } }
+        #register .register .register-form .form-block .fb-login-desc-toggle {
+          display: block;
           font-size: 80%;
           font-style: italic;
-          color: #aaa; }
+          color: #314046;
+          cursor: pointer;
+          padding: 0;
+          margin: 0; }
+          #register .register .register-form .form-block .fb-login-desc-toggle:hover {
+            color: #FF8F8F; }
+          #register .register .register-form .form-block .fb-login-desc-toggle.hide {
+            display: none; }
+        #register .register .register-form .form-block .fb-login-desc {
+          font-size: 70%;
+          font-style: italic;
+          color: #aaa;
+          margin: 10px 0 0;
+          padding: 0;
+          display: none; }
+          @media (max-width: 520px) {
+            #register .register .register-form .form-block .fb-login-desc {
+              font-size: 80%; } }
+          #register .register .register-form .form-block .fb-login-desc.show {
+            display: block; }
       #register .register .register-form .show-coupon {
         color: #314046;
         font-size: 80%;
