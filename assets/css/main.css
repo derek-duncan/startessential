@@ -2874,8 +2874,8 @@ button {
       width: 100%; } }
   #plans .plans .plan-sep p {
     text-align: center;
-    border-top: 5px dashed #ccc;
-    border-bottom: 5px dashed #ccc;
+    border-top: 4px dashed #ccc;
+    border-bottom: 4px dashed #ccc;
     padding: 20px 0;
     margin: 0; }
   #plans .plans .plan {
