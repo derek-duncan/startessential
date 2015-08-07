@@ -4904,12 +4904,24 @@ body.messages .saving-overlay {
         #saved .save .save-title {
           display: block; } }
     #saved .save .save-download {
-      display: block;
-      margin: 10px 0 5px;
+      display: inline-block;
       color: #FF8F8F;
       font-size: 110%; }
       #saved .save .save-download:hover {
         color: #ff5c5c; }
+    #saved .save form {
+      margin: 10px 0 5px; }
+    #saved .save .save-resave {
+      -webkit-appearance: none;
+      color: #7D7D7D;
+      padding: 0;
+      background: none;
+      margin-right: 10px;
+      font-weight: 400;
+      font-size: 110%;
+      border: none; }
+      #saved .save .save-resave:hover {
+        color: #FF8F8F; }
     #saved .save .save-right {
       position: relative; }
       #saved .save .save-right .save-customized {

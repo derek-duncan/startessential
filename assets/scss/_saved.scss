@@ -87,12 +87,27 @@
       }
     }
     .save-download {
-      display: block;
-      margin: 10px 0 5px;
+      display: inline-block;
       color: $red;
       font-size: 110%;
       &:hover {
         color: $shade-red;
+      }
+    }
+    form {
+      margin: 10px 0 5px;
+    }
+    .save-resave {
+      -webkit-appearance: none;
+      color: $gray;
+      padding: 0;
+      background: none;
+      margin-right: 10px;
+      font-weight: 400;
+      font-size: 110%;
+      border: none;
+      &:hover {
+        color: $red;
       }
     }
     .save-right {

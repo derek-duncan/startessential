@@ -15,9 +15,11 @@ block body
                     img.save-image(src=save.custom_image.normal.Location)
                   .save-text
                     h4.save-title= save._post.title
-                    //-form.save-remove(action='/save/#{save._id}/remove' method='POST')
-                      button(type='submit') Remove
-                    a.save-download(href=save.custom_image.original.Url target='_blank' title='Download your customized graphic') Download
+                    form(action='/posts/#{save._post._id}/save?resave=1' method='POST')
+                      input(type="hidden" name="crumb" value=crumb)
+                      if sid.scope === "admin"
+                        button.save-resave(type='submit') Resave
+                      a.save-download(href=save.custom_image.original.Url target='_blank' title='Download your customized graphic') Download
                     .save-right
                       span.save-customized 
                         span.fa.fa-check
