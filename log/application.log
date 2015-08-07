@@ -1815,3 +1815,4 @@
 {"event":"request","timestamp":1438925672442,"tags":["request","uid"],"data":"55c153b462bae904b35848ae","pid":3284,"id":"1438925672392:Dereks-Air-2.ok.cox.net:3284:id16phnu:10108","method":"get","path":"/saved"}
 {"event":"request","timestamp":1438925689062,"tags":["request","uid"],"data":"55c153b462bae904b35848ae","pid":3284,"id":"1438925688989:Dereks-Air-2.ok.cox.net:3284:id16phnu:10114","method":"get","path":"/saved"}
 {"event":"request","timestamp":1438925695736,"tags":["request","uid"],"data":"55c153b462bae904b35848ae","pid":3284,"id":"1438925695661:Dereks-Air-2.ok.cox.net:3284:id16phnu:10120","method":"get","path":"/saved"}
+{"event":"request","timestamp":1438926014522,"tags":["request","uid"],"data":"55c153b462bae904b35848ae","pid":3284,"id":"1438926014314:Dereks-Air-2.ok.cox.net:3284:id16phnu:10126","method":"get","path":"/posts"}

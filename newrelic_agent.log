@@ -6691,3 +6691,7 @@
 {"v":0,"level":30,"name":"newrelic","hostname":"Dereks-Air-2.ok.cox.net","pid":3284,"time":"2015-08-07T05:20:54.822Z","msg":"Starting New Relic for Node.js connection process."}
 {"v":0,"level":30,"name":"newrelic","hostname":"Dereks-Air-2.ok.cox.net","pid":3284,"time":"2015-08-07T05:21:00.977Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1041301/applications/7544466","component":"new_relic_response"}
 {"v":0,"level":30,"name":"newrelic","hostname":"Dereks-Air-2.ok.cox.net","pid":3284,"time":"2015-08-07T05:21:00.979Z","msg":"Connected to collector-179.newrelic.com:443 with agent run ID 32403253683543431.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-Air-2.ok.cox.net","pid":6241,"time":"2015-08-07T06:09:50.180Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-Air-2.ok.cox.net","pid":6241,"time":"2015-08-07T06:09:54.189Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1041301/applications/7544466","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-Air-2.ok.cox.net","pid":6241,"time":"2015-08-07T06:09:54.192Z","msg":"Connected to collector-179.newrelic.com:443 with agent run ID 32403245093714136.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-Air-2.ok.cox.net","pid":6258,"time":"2015-08-07T06:09:54.138Z","msg":"Starting New Relic for Node.js connection process."}
