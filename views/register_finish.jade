@@ -32,9 +32,9 @@ block body
                 label Starter Plan
                 ul.value-list
                   li.value-item Save 2 new graphics a week
-                  li.value-item Simply $10 a month
+                  li.value-item Simply $#{ amount / 100 } a month
                     ul.value-list.sub
-                      li.value-item $1.25 a graphic
+                      li.value-item $#{ parseFloat( ( amount / 100 / 8 ), 1000 ).toFixed( 2 )} a graphic
                   li.value-item Young Living signup link to use with new members
                   li.value-item Landing page to inform people about Young Living Essential Oils
                   li.value-item No commitment, cancel anytime
