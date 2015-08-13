@@ -13508,3 +13508,312 @@
 {"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":4353,"time":"2015-08-13T01:56:04.098Z","msg":"Starting New Relic for Node.js connection process."}
 {"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":4353,"time":"2015-08-13T01:56:08.552Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1041301/applications/7544466","component":"new_relic_response"}
 {"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":4353,"time":"2015-08-13T01:56:08.554Z","msg":"Connected to collector-179.newrelic.com:443 with agent run ID 32525411161658283.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5184,"time":"2015-08-13T02:13:41.329Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5184,"time":"2015-08-13T02:13:43.751Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1041301/applications/7544466","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5184,"time":"2015-08-13T02:13:43.753Z","msg":"Connected to collector-179.newrelic.com:443 with agent run ID 32525406866730438.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5208,"time":"2015-08-13T02:13:43.568Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5208,"time":"2015-08-13T02:13:47.786Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1041301/applications/7544466","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5208,"time":"2015-08-13T02:13:47.787Z","msg":"Connected to collector-179.newrelic.com:443 with agent run ID 32525411161697865.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5249,"time":"2015-08-13T02:14:15.836Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5249,"time":"2015-08-13T02:14:18.384Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1041301/applications/7544466","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5249,"time":"2015-08-13T02:14:18.385Z","msg":"Connected to collector-179.newrelic.com:443 with agent run ID 32525406866731709.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5273,"time":"2015-08-13T02:14:18.209Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5273,"time":"2015-08-13T02:14:22.259Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1041301/applications/7544466","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5273,"time":"2015-08-13T02:14:22.261Z","msg":"Connected to collector-179.newrelic.com:443 with agent run ID 32525411161699153.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5283,"time":"2015-08-13T02:14:44.980Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5283,"time":"2015-08-13T02:14:47.932Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1041301/applications/7544466","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5283,"time":"2015-08-13T02:14:47.934Z","msg":"Connected to collector-179.newrelic.com:443 with agent run ID 32525406866732626.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5308,"time":"2015-08-13T02:14:47.667Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5309,"time":"2015-08-13T02:14:51.815Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5310,"time":"2015-08-13T02:14:55.566Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5311,"time":"2015-08-13T02:14:59.750Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5312,"time":"2015-08-13T02:15:03.942Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5313,"time":"2015-08-13T02:15:07.940Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5314,"time":"2015-08-13T02:15:12.294Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5332,"time":"2015-08-13T02:15:16.681Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5332,"time":"2015-08-13T02:15:21.008Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1041301/applications/7544466","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5332,"time":"2015-08-13T02:15:21.010Z","msg":"Connected to collector-179.newrelic.com:443 with agent run ID 32525411161701597.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5345,"time":"2015-08-13T02:15:37.102Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5345,"time":"2015-08-13T02:15:39.450Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1041301/applications/7544466","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5345,"time":"2015-08-13T02:15:39.451Z","msg":"Connected to collector-179.newrelic.com:443 with agent run ID 32525406866734937.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5369,"time":"2015-08-13T02:15:39.255Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5369,"time":"2015-08-13T02:15:43.370Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1041301/applications/7544466","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5369,"time":"2015-08-13T02:15:43.371Z","msg":"Connected to collector-179.newrelic.com:443 with agent run ID 32525411161702356.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5630,"time":"2015-08-13T02:22:22.060Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5630,"time":"2015-08-13T02:22:24.470Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1041301/applications/7544466","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5630,"time":"2015-08-13T02:22:24.471Z","msg":"Connected to collector-179.newrelic.com:443 with agent run ID 32525406866748213.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5655,"time":"2015-08-13T02:22:24.282Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5656,"time":"2015-08-13T02:22:28.468Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5657,"time":"2015-08-13T02:22:32.484Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5658,"time":"2015-08-13T02:22:36.710Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5659,"time":"2015-08-13T02:22:40.817Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5660,"time":"2015-08-13T02:22:44.895Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5678,"time":"2015-08-13T02:22:48.946Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5679,"time":"2015-08-13T02:22:53.308Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5680,"time":"2015-08-13T02:22:57.877Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5684,"time":"2015-08-13T02:23:04.023Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5685,"time":"2015-08-13T02:23:08.216Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5686,"time":"2015-08-13T02:23:12.308Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5704,"time":"2015-08-13T02:23:16.957Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5705,"time":"2015-08-13T02:23:20.938Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5706,"time":"2015-08-13T02:23:25.149Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5707,"time":"2015-08-13T02:23:29.100Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5708,"time":"2015-08-13T02:23:33.143Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5709,"time":"2015-08-13T02:23:37.891Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5710,"time":"2015-08-13T02:23:42.319Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5728,"time":"2015-08-13T02:23:46.503Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5729,"time":"2015-08-13T02:23:50.662Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5730,"time":"2015-08-13T02:23:54.854Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5731,"time":"2015-08-13T02:23:58.999Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5732,"time":"2015-08-13T02:24:03.565Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5733,"time":"2015-08-13T02:24:07.505Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5734,"time":"2015-08-13T02:24:11.664Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5735,"time":"2015-08-13T02:24:15.763Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5753,"time":"2015-08-13T02:24:19.830Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5754,"time":"2015-08-13T02:24:23.729Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5755,"time":"2015-08-13T02:24:27.712Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5756,"time":"2015-08-13T02:24:31.859Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5757,"time":"2015-08-13T02:24:36.479Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5758,"time":"2015-08-13T02:24:41.095Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5759,"time":"2015-08-13T02:24:45.510Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5777,"time":"2015-08-13T02:24:49.761Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5778,"time":"2015-08-13T02:24:53.853Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5779,"time":"2015-08-13T02:24:58.000Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5780,"time":"2015-08-13T02:25:01.904Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5781,"time":"2015-08-13T02:25:05.909Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5782,"time":"2015-08-13T02:25:09.813Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5783,"time":"2015-08-13T02:25:13.811Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5801,"time":"2015-08-13T02:25:18.069Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5802,"time":"2015-08-13T02:25:22.375Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5803,"time":"2015-08-13T02:25:26.387Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5804,"time":"2015-08-13T02:25:31.076Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5805,"time":"2015-08-13T02:25:35.234Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5806,"time":"2015-08-13T02:25:39.579Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5807,"time":"2015-08-13T02:25:43.671Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5825,"time":"2015-08-13T02:25:47.972Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5826,"time":"2015-08-13T02:25:51.870Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5827,"time":"2015-08-13T02:25:55.746Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5828,"time":"2015-08-13T02:25:59.816Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5829,"time":"2015-08-13T02:26:04.016Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5834,"time":"2015-08-13T02:26:08.835Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5864,"time":"2015-08-13T02:26:15.310Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5884,"time":"2015-08-13T02:26:20.193Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5889,"time":"2015-08-13T02:26:25.185Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5890,"time":"2015-08-13T02:26:30.486Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5891,"time":"2015-08-13T02:26:35.793Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5892,"time":"2015-08-13T02:26:40.482Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5894,"time":"2015-08-13T02:26:45.888Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5913,"time":"2015-08-13T02:26:50.667Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5914,"time":"2015-08-13T02:26:55.249Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5915,"time":"2015-08-13T02:26:59.718Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5916,"time":"2015-08-13T02:27:04.101Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5917,"time":"2015-08-13T02:27:08.933Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5918,"time":"2015-08-13T02:27:13.641Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5936,"time":"2015-08-13T02:27:17.862Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5937,"time":"2015-08-13T02:27:22.683Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5939,"time":"2015-08-13T02:27:27.801Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5943,"time":"2015-08-13T02:27:33.082Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5944,"time":"2015-08-13T02:27:37.383Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5946,"time":"2015-08-13T02:27:42.659Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5965,"time":"2015-08-13T02:27:48.078Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5966,"time":"2015-08-13T02:27:52.303Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5967,"time":"2015-08-13T02:27:56.597Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5968,"time":"2015-08-13T02:28:01.009Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5969,"time":"2015-08-13T02:28:06.348Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5970,"time":"2015-08-13T02:28:10.867Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5972,"time":"2015-08-13T02:28:15.598Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5990,"time":"2015-08-13T02:28:19.855Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5991,"time":"2015-08-13T02:28:24.191Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5992,"time":"2015-08-13T02:28:28.619Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5993,"time":"2015-08-13T02:28:32.912Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5994,"time":"2015-08-13T02:28:37.459Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5996,"time":"2015-08-13T02:28:42.173Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":5997,"time":"2015-08-13T02:28:46.444Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6015,"time":"2015-08-13T02:28:50.950Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6016,"time":"2015-08-13T02:28:55.539Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6017,"time":"2015-08-13T02:29:00.061Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6018,"time":"2015-08-13T02:29:04.361Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6019,"time":"2015-08-13T02:29:08.917Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6020,"time":"2015-08-13T02:29:13.548Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6038,"time":"2015-08-13T02:29:17.838Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6039,"time":"2015-08-13T02:29:22.090Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6040,"time":"2015-08-13T02:29:26.605Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6041,"time":"2015-08-13T02:29:31.131Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6042,"time":"2015-08-13T02:29:35.122Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6043,"time":"2015-08-13T02:29:39.163Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6044,"time":"2015-08-13T02:29:43.223Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6062,"time":"2015-08-13T02:29:47.529Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6063,"time":"2015-08-13T02:29:51.391Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6064,"time":"2015-08-13T02:29:55.756Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6065,"time":"2015-08-13T02:29:59.625Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6066,"time":"2015-08-13T02:30:03.817Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6068,"time":"2015-08-13T02:30:07.860Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6069,"time":"2015-08-13T02:30:11.967Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6070,"time":"2015-08-13T02:30:16.045Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6088,"time":"2015-08-13T02:30:20.185Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6089,"time":"2015-08-13T02:30:24.428Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6090,"time":"2015-08-13T02:30:30.022Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6093,"time":"2015-08-13T02:30:35.368Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6094,"time":"2015-08-13T02:30:39.597Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6095,"time":"2015-08-13T02:30:44.945Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6113,"time":"2015-08-13T02:30:49.193Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6114,"time":"2015-08-13T02:30:53.272Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6115,"time":"2015-08-13T02:30:57.137Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6116,"time":"2015-08-13T02:31:01.045Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6117,"time":"2015-08-13T02:31:04.979Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6118,"time":"2015-08-13T02:31:08.853Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6119,"time":"2015-08-13T02:31:12.765Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6134,"time":"2015-08-13T02:31:16.633Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6138,"time":"2015-08-13T02:31:20.679Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6139,"time":"2015-08-13T02:31:24.523Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6140,"time":"2015-08-13T02:31:28.437Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6141,"time":"2015-08-13T02:31:32.595Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6142,"time":"2015-08-13T02:31:36.535Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6143,"time":"2015-08-13T02:31:40.632Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6144,"time":"2015-08-13T02:31:44.718Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6162,"time":"2015-08-13T02:31:48.909Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6163,"time":"2015-08-13T02:31:53.316Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6164,"time":"2015-08-13T02:31:57.558Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6165,"time":"2015-08-13T02:32:01.763Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6166,"time":"2015-08-13T02:32:05.712Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6167,"time":"2015-08-13T02:32:09.771Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6168,"time":"2015-08-13T02:32:14.873Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6186,"time":"2015-08-13T02:32:19.340Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6187,"time":"2015-08-13T02:32:23.474Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6188,"time":"2015-08-13T02:32:27.329Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6189,"time":"2015-08-13T02:32:31.475Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6224,"time":"2015-08-13T02:32:35.804Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6224,"time":"2015-08-13T02:32:38.138Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1041301/applications/7544466","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6224,"time":"2015-08-13T02:32:38.140Z","msg":"Connected to collector-179.newrelic.com:443 with agent run ID 32525406866768253.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6241,"time":"2015-08-13T02:32:37.955Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6242,"time":"2015-08-13T02:32:41.807Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6243,"time":"2015-08-13T02:32:46.005Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6261,"time":"2015-08-13T02:32:50.765Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6262,"time":"2015-08-13T02:32:54.964Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6263,"time":"2015-08-13T02:32:59.069Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6264,"time":"2015-08-13T02:33:03.191Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6265,"time":"2015-08-13T02:33:07.277Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6266,"time":"2015-08-13T02:33:11.427Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6267,"time":"2015-08-13T02:33:16.115Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6285,"time":"2015-08-13T02:33:20.425Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6286,"time":"2015-08-13T02:33:24.609Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6287,"time":"2015-08-13T02:33:28.813Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6288,"time":"2015-08-13T02:33:32.806Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6289,"time":"2015-08-13T02:33:36.804Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6290,"time":"2015-08-13T02:33:40.618Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6291,"time":"2015-08-13T02:33:44.565Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6309,"time":"2015-08-13T02:33:48.769Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6311,"time":"2015-08-13T02:33:54.923Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6312,"time":"2015-08-13T02:33:59.404Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6313,"time":"2015-08-13T02:34:04.044Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6315,"time":"2015-08-13T02:34:09.101Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6316,"time":"2015-08-13T02:34:13.235Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6334,"time":"2015-08-13T02:34:18.302Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6335,"time":"2015-08-13T02:34:22.454Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6336,"time":"2015-08-13T02:34:26.658Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6337,"time":"2015-08-13T02:34:31.073Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6339,"time":"2015-08-13T02:34:35.919Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6340,"time":"2015-08-13T02:34:41.029Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6341,"time":"2015-08-13T02:34:44.887Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6359,"time":"2015-08-13T02:34:49.055Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6360,"time":"2015-08-13T02:34:53.012Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6361,"time":"2015-08-13T02:34:57.161Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6362,"time":"2015-08-13T02:35:01.810Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6363,"time":"2015-08-13T02:35:06.534Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6364,"time":"2015-08-13T02:35:10.599Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6365,"time":"2015-08-13T02:35:14.751Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6383,"time":"2015-08-13T02:35:18.890Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6384,"time":"2015-08-13T02:35:22.839Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6385,"time":"2015-08-13T02:35:26.843Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6386,"time":"2015-08-13T02:35:30.736Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6387,"time":"2015-08-13T02:35:34.836Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6388,"time":"2015-08-13T02:35:39.126Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6389,"time":"2015-08-13T02:35:43.275Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6405,"time":"2015-08-13T02:35:47.189Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6408,"time":"2015-08-13T02:35:51.268Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6409,"time":"2015-08-13T02:35:55.352Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6410,"time":"2015-08-13T02:35:59.505Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6411,"time":"2015-08-13T02:36:03.427Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6412,"time":"2015-08-13T02:36:07.444Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6414,"time":"2015-08-13T02:36:11.336Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6415,"time":"2015-08-13T02:36:15.357Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6433,"time":"2015-08-13T02:36:20.263Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6434,"time":"2015-08-13T02:36:24.318Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6435,"time":"2015-08-13T02:36:28.273Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6436,"time":"2015-08-13T02:36:32.300Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6437,"time":"2015-08-13T02:36:36.195Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6438,"time":"2015-08-13T02:36:40.339Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6439,"time":"2015-08-13T02:36:44.271Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6457,"time":"2015-08-13T02:36:48.320Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6458,"time":"2015-08-13T02:36:52.691Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6459,"time":"2015-08-13T02:36:57.100Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6460,"time":"2015-08-13T02:37:01.029Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6461,"time":"2015-08-13T02:37:05.084Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6462,"time":"2015-08-13T02:37:09.311Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6463,"time":"2015-08-13T02:37:13.363Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6481,"time":"2015-08-13T02:37:17.474Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6482,"time":"2015-08-13T02:37:21.583Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6483,"time":"2015-08-13T02:37:25.623Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6484,"time":"2015-08-13T02:37:29.614Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6485,"time":"2015-08-13T02:37:33.559Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6486,"time":"2015-08-13T02:37:37.642Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6487,"time":"2015-08-13T02:37:41.502Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6488,"time":"2015-08-13T02:37:45.588Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6506,"time":"2015-08-13T02:37:49.778Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6507,"time":"2015-08-13T02:37:53.824Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6508,"time":"2015-08-13T02:37:58.154Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6509,"time":"2015-08-13T02:38:02.549Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6510,"time":"2015-08-13T02:38:06.757Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6511,"time":"2015-08-13T02:38:10.894Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6512,"time":"2015-08-13T02:38:14.998Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6531,"time":"2015-08-13T02:38:19.411Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6532,"time":"2015-08-13T02:38:23.596Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6533,"time":"2015-08-13T02:38:27.705Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6534,"time":"2015-08-13T02:38:31.871Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6535,"time":"2015-08-13T02:38:36.223Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6536,"time":"2015-08-13T02:38:40.220Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6537,"time":"2015-08-13T02:38:44.269Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6555,"time":"2015-08-13T02:38:48.602Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6556,"time":"2015-08-13T02:38:52.666Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6557,"time":"2015-08-13T02:38:56.909Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6558,"time":"2015-08-13T02:39:01.428Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6559,"time":"2015-08-13T02:39:05.614Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6560,"time":"2015-08-13T02:39:10.213Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6561,"time":"2015-08-13T02:39:14.296Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6579,"time":"2015-08-13T02:39:18.715Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6580,"time":"2015-08-13T02:39:22.915Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6581,"time":"2015-08-13T02:39:26.865Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6582,"time":"2015-08-13T02:39:30.853Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6583,"time":"2015-08-13T02:39:34.856Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6584,"time":"2015-08-13T02:39:39.013Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6585,"time":"2015-08-13T02:39:43.292Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6587,"time":"2015-08-13T02:39:47.643Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6604,"time":"2015-08-13T02:39:52.188Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6605,"time":"2015-08-13T02:39:56.846Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6606,"time":"2015-08-13T02:40:01.381Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6606,"time":"2015-08-13T02:40:05.713Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1041301/applications/7544466","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6606,"time":"2015-08-13T02:40:05.714Z","msg":"Connected to collector-179.newrelic.com:443 with agent run ID 32525411161751870.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6630,"time":"2015-08-13T02:40:42.020Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6630,"time":"2015-08-13T02:40:44.428Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1041301/applications/7544466","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6630,"time":"2015-08-13T02:40:44.430Z","msg":"Connected to collector-179.newrelic.com:443 with agent run ID 32525406866786750.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6654,"time":"2015-08-13T02:40:44.227Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6654,"time":"2015-08-13T02:40:48.173Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1041301/applications/7544466","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6654,"time":"2015-08-13T02:40:48.176Z","msg":"Connected to collector-179.newrelic.com:443 with agent run ID 32525411161754168.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6696,"time":"2015-08-13T02:41:38.627Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6696,"time":"2015-08-13T02:41:41.043Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1041301/applications/7544466","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6696,"time":"2015-08-13T02:41:41.045Z","msg":"Connected to collector-179.newrelic.com:443 with agent run ID 32525406866788880.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6720,"time":"2015-08-13T02:41:40.854Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6720,"time":"2015-08-13T02:41:44.979Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1041301/applications/7544466","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6720,"time":"2015-08-13T02:41:44.981Z","msg":"Connected to collector-179.newrelic.com:443 with agent run ID 32525411161756297.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6767,"time":"2015-08-13T02:42:25.707Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6767,"time":"2015-08-13T02:42:28.712Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1041301/applications/7544466","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6767,"time":"2015-08-13T02:42:28.714Z","msg":"Connected to collector-179.newrelic.com:443 with agent run ID 32525406866790704.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6791,"time":"2015-08-13T02:42:28.446Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6791,"time":"2015-08-13T02:42:32.531Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1041301/applications/7544466","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6791,"time":"2015-08-13T02:42:32.532Z","msg":"Connected to collector-179.newrelic.com:443 with agent run ID 32525411161758123.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6799,"time":"2015-08-13T02:42:44.632Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6799,"time":"2015-08-13T02:42:47.365Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1041301/applications/7544466","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6799,"time":"2015-08-13T02:42:47.367Z","msg":"Connected to collector-179.newrelic.com:443 with agent run ID 32525406866791267.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6825,"time":"2015-08-13T02:42:47.298Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6825,"time":"2015-08-13T02:42:51.905Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1041301/applications/7544466","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air-2.local","pid":6825,"time":"2015-08-13T02:42:51.906Z","msg":"Connected to collector-179.newrelic.com:443 with agent run ID 32525411161758702.","component":"collector_api"}
