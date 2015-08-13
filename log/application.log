@@ -1849,3 +1849,4 @@
 {"event":"request","timestamp":1439085336640,"tags":["request","uid"],"data":"55c153b462bae904b35848ae","pid":44919,"id":"1439085336204:Dereks-Air-2.ok.cox.net:44919:id3u6pi2:10036","method":"get","path":"/register/finish"}
 {"event":"request","timestamp":1439085378514,"tags":["request","uid"],"data":"55c153b462bae904b35848ae","pid":44919,"id":"1439085378046:Dereks-Air-2.ok.cox.net:44919:id3u6pi2:10045","method":"get","path":"/register/finish"}
 {"event":"request","timestamp":1439085386277,"tags":["request","uid"],"data":"55c153b462bae904b35848ae","pid":44919,"id":"1439085385814:Dereks-Air-2.ok.cox.net:44919:id3u6pi2:10054","method":"get","path":"/register/finish"}
+{"event":"request","timestamp":1439434932687,"tags":["request","uid"],"data":"55c153b462bae904b35848ae","pid":7766,"id":"1439434932621:Dereks-MacBook-Air-2.local:7766:id9mdvtv:10000","method":"get","path":"/account"}

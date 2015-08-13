@@ -7407,3 +7407,21 @@
 {"event":"log","timestamp":1439433770642,"tags":["migrations"],"data":"Migration completed","pid":6825}
 {"event":"log","timestamp":1439434277831,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-2.local:3000","pid":7172}
 {"event":"log","timestamp":1439434277970,"tags":["migrations"],"data":"Migration completed","pid":7172}
+{"event":"log","timestamp":1439434820671,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-2.local:3000","pid":7606}
+{"event":"log","timestamp":1439434820755,"tags":["migrations"],"data":"Migration completed","pid":7606}
+{"event":"log","timestamp":1439434833111,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-2.local:3000","pid":7626}
+{"event":"log","timestamp":1439434833137,"tags":["migrations"],"data":"Migration completed","pid":7626}
+{"event":"log","timestamp":1439434848435,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-2.local:3000","pid":7630}
+{"event":"log","timestamp":1439434848449,"tags":["migrations"],"data":"Migration completed","pid":7630}
+{"event":"log","timestamp":1439434860724,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-2.local:3000","pid":7651}
+{"event":"log","timestamp":1439434860749,"tags":["migrations"],"data":"Migration completed","pid":7651}
+{"event":"log","timestamp":1439434874218,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-2.local:3000","pid":7654}
+{"event":"log","timestamp":1439434874243,"tags":["migrations"],"data":"Migration completed","pid":7654}
+{"event":"log","timestamp":1439434887232,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-2.local:3000","pid":7674}
+{"event":"log","timestamp":1439434887259,"tags":["migrations"],"data":"Migration completed","pid":7674}
+{"event":"log","timestamp":1439434899885,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-2.local:3000","pid":7677}
+{"event":"log","timestamp":1439434899898,"tags":["migrations"],"data":"Migration completed","pid":7677}
+{"event":"log","timestamp":1439434919988,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-2.local:3000","pid":7766}
+{"event":"log","timestamp":1439434920008,"tags":["migrations"],"data":"Migration completed","pid":7766}
+{"event":"log","timestamp":1439434970367,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-2.local:3000","pid":7826}
+{"event":"log","timestamp":1439434970397,"tags":["migrations"],"data":"Migration completed","pid":7826}
