@@ -10,7 +10,7 @@ exports.up = function(next) {
       if (user.scope === 'admin') return done();
 
       var newUpload = new Upload({
-        filename: user.first_name.toLowerCase() + '.png'
+        filename: user.full_name.split(' ')[0].toLowerCase() + '.png'
       });
       var emblemOptions = {
         number: user.member_number,
