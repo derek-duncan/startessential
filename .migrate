@@ -1,1 +1,1 @@
-{"migrations":[{"title":"1439432435378-update-subscription-date2.js"}],"path":"/Users/derekduncan/Documents/startessential-new/site/.migrate","pos":0,"_events":{}}
+{"migrations":[{"title":"1439432435378-update-subscription-date2.js"},{"title":"1439434164483-fix-broken-dates-in-records.js"}],"path":"/Users/derekduncan/Documents/startessential-new/site/.migrate","pos":0,"_events":{}}

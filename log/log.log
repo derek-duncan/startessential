@@ -7405,3 +7405,5 @@
 {"event":"log","timestamp":1439433751450,"tags":["migrations"],"data":"Migration completed","pid":6791}
 {"event":"log","timestamp":1439433770565,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-2.local:3000","pid":6825}
 {"event":"log","timestamp":1439433770642,"tags":["migrations"],"data":"Migration completed","pid":6825}
+{"event":"log","timestamp":1439434277831,"tags":["info"],"data":"Server running at: http://Dereks-MacBook-Air-2.local:3000","pid":7172}
+{"event":"log","timestamp":1439434277970,"tags":["migrations"],"data":"Migration completed","pid":7172}
