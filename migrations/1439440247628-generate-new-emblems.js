@@ -6,7 +6,7 @@ var User = require('../lib/models/user.js');
 exports.up = function(next) {
   User.find({}).exec(function(err, users) {
     if (err) return done(err)
-    async.each(users, function(user, done) {
+    async.eachSeries(users, function(user, done) {
       if (user.scope === 'admin') return done();
 
       var newUpload = new Upload({
