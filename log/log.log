@@ -7431,3 +7431,31 @@
 {"event":"log","timestamp":1439442340322,"tags":["migrations"],"data":"Migration completed","pid":1958}
 {"event":"log","timestamp":1439442444241,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":2044}
 {"event":"log","timestamp":1439442444254,"tags":["migrations"],"data":"Migration completed","pid":2044}
+{"event":"log","timestamp":1439443246355,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":2618}
+{"event":"log","timestamp":1439443247675,"tags":["migrations"],"data":"Migration completed","pid":2618}
+{"event":"log","timestamp":1439443270351,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":2668}
+{"event":"log","timestamp":1439443270367,"tags":["migrations"],"data":"Migration completed","pid":2668}
+{"event":"log","timestamp":1439443316873,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":2750}
+{"event":"log","timestamp":1439443318094,"tags":["migrations"],"data":"Migration completed","pid":2750}
+{"event":"log","timestamp":1439443604931,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":2964}
+{"event":"log","timestamp":1439443606195,"tags":["migrations"],"data":"Migration completed","pid":2964}
+{"event":"log","timestamp":1439443638272,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":3014}
+{"event":"log","timestamp":1439443639562,"tags":["migrations"],"data":"Migration completed","pid":3014}
+{"event":"log","timestamp":1439443681542,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":3064}
+{"event":"log","timestamp":1439443682908,"tags":["migrations"],"data":"Migration completed","pid":3064}
+{"event":"log","timestamp":1439443748099,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":3131}
+{"event":"log","timestamp":1439443749443,"tags":["migrations"],"data":"Migration completed","pid":3131}
+{"event":"log","timestamp":1439443977638,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":3310}
+{"event":"log","timestamp":1439443977658,"tags":["migrations"],"data":"Migration completed","pid":3310}
+{"event":"log","timestamp":1439443997652,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":3358}
+{"event":"log","timestamp":1439444001934,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":3359}
+{"event":"log","timestamp":1439444006150,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":3360}
+{"event":"log","timestamp":1439444010976,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":3361}
+{"event":"log","timestamp":1439444014953,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":3362}
+{"event":"log","timestamp":1439444018915,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":3363}
+{"event":"log","timestamp":1439444029373,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":3399}
+{"event":"log","timestamp":1439444030756,"tags":["migrations"],"data":"Migration completed","pid":3399}
+{"event":"log","timestamp":1439444041059,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":3419}
+{"event":"log","timestamp":1439444041079,"tags":["migrations"],"data":"Migration completed","pid":3419}
+{"event":"log","timestamp":1439444098952,"tags":["info"],"data":"Server running at: http://Dereks-Air-2.ok.cox.net:3000","pid":3501}
+{"event":"log","timestamp":1439444099023,"tags":["migrations"],"data":"Migration completed","pid":3501}

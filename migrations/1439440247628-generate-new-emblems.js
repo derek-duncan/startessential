@@ -4,13 +4,13 @@ var Upload = require('../lib/util/image')
 var User = require('../lib/models/user.js');
 
 exports.up = function(next) {
-  User.find({ }).exec(function(err, users) {
+  User.find({}).exec(function(err, users) {
     if (err) return done(err)
     async.each(users, function(user, done) {
       if (user.scope === 'admin') return done();
 
       var newUpload = new Upload({
-        filename: user.full_name.split(' ')[0].toLowerCase() + '.png'
+        filename: user.first_name.toLowerCase() + '.png'
       });
       var emblemOptions = {
         number: user.member_number,
