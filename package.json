@@ -46,6 +46,7 @@
     "mandrill-api": "^1.0.45",
     "marked": "^0.3.3",
     "masonry-layout": "^3.3.0",
+    "migrate": "^0.2.2",
     "moment": "^2.10.3",
     "mongoose": "*",
     "newrelic": "^1.20.2",

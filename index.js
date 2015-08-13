@@ -14,6 +14,7 @@ var fs = require('fs');
 var cluster = require('cluster');
 var blocked = require('blocked');
 var toobusy = require('toobusy-js');
+var migrate = require('migrate');
 
 var env = process.env.NODE_ENV || 'development';
 
@@ -48,6 +49,16 @@ if (cluster.isMaster) {
   fs.readdirSync(__dirname + '/lib/cron').forEach(function (file) {
     if (file.indexOf('.js') >= 0) require(__dirname + '/lib/cron/' + file);
   });
+
+  // Migrate database
+  var set = migrate.load(__dirname + '/.migrate', __dirname + '/migrations');
+  if ( set.migrations.length ) {
+    set.up(function (err) {
+      if (err) throw err;
+
+      server.log(['migrations'], 'Migration completed');
+    });
+  }
 
   var port = constants.application[env].port;
   server.connection({
