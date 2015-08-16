@@ -291,6 +291,16 @@ if (cluster.isMaster) {
     }
   });
 
+
+  var CronJob = require('cron').CronJob;
+  try {
+    new CronJob('00 30 06 * * 0,4', function() {
+      console.log('this should not be printed');
+    })
+  } catch(ex) {
+    console.log("cron pattern not valid");
+  }
+
   // Start server
   server.start(function () {
     server.log('info', 'Server running at: ' + server.info.uri);
