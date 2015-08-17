@@ -9,10 +9,8 @@ var _message = require('lib/util/createMessage')
 
 var Hapi = require('hapi');
 var Good = require('good');
-var routes = require('lib/routes/index.js');
 var fs = require('fs');
 var cluster = require('cluster');
-var blocked = require('blocked');
 var toobusy = require('toobusy-js');
 var migrate = require('migrate');
 
@@ -70,39 +68,27 @@ if (cluster.isMaster) {
       jade: require('jade')
     },
     isCached: false,
-    relativeTo: __dirname,
-    path: './views',
-    helpersPath: './views/helpers'
+    relativeTo: __dirname
   });
 
   var User = mongoose.model('User');
-  var validateUser = require('lib/util/validateUser');
+  var middleware = require('lib/middleware');
 
-  server.ext('onRequest', function(request, reply) {
-    // create a redirect url
-    if (request.url.path == '/login' && request.headers.referer) {
-      var referer_url = request.headers.referer.split('/').slice(3);
-      var redirect_url = '/' + referer_url.join('/');
-      request.setUrl('/login?redirect=' + redirect_url);
-    }
+  // Load middleware
+  server.register([
 
-    return reply.continue();
-  });
+    middleware.request.redirect,
+    middleware.response.errorPages,
+
+  ], function (err) {
+
+    if (err) console.error('Failed to load a plugin:', err);
+
+  }); // middleware register
 
   server.ext('onPreResponse', function(request, reply) {
 
     var response = request.response;
-    if (process.env.NODE_ENV === 'production') {
-      if (response.isBoom && response.output.statusCode === 403) {
-        return reply.view('403');
-      }
-      if (response.isBoom && response.output.statusCode === 404) {
-        return reply.view('404');
-      }
-      if (response.isBoom && response.output.statusCode === 500) {
-        return reply.view('500');
-      }
-    }
     if (response.variety === 'view' && response.source.context) {
       var context = response.source.context;
 
@@ -118,7 +104,7 @@ if (cluster.isMaster) {
       }
 
       // Add Helpers for Jade templates
-      fs.readdirSync(__dirname + '/views/helpers').forEach(function (file) {
+      fs.readdirSync(__dirname + '/views/util/helpers').forEach(function (file) {
         if (file.indexOf('.js') >= 0 && context) {
           var name = file.split('.')[0];
           context[name] = require(__dirname + '/views/helpers/' + file);
@@ -147,7 +133,6 @@ if (cluster.isMaster) {
     return reply.continue();
   });
 
-  var cookieSecure = process.env.NODE_ENV === 'production' ? true : false;
   // Authentication strategy
   server.register(require('hapi-auth-bearer-token'), function (err) {
 
@@ -162,7 +147,7 @@ if (cluster.isMaster) {
         if (!token) return callback(null, false)
 
         User.decode(token, function(err, decoded) {
-          validateUser.validate(decoded.uid, { token: token }, callback)
+          middleware.cookie.validate(decoded.uid, { token: token }, callback)
         })
       }
     });
@@ -175,11 +160,11 @@ if (cluster.isMaster) {
       password: constants.cookiePass,
       cookie: 'sid',
       redirectTo: '/login' + _message('Please login to access this content'),
-      isSecure: cookieSecure,
+      isSecure: constants.cookieSecure,
       redirectOnTry: false,
       ttl: (60 * 1000) /* seconds */ * 60 /* minutes */ * 24 /* hours */ * 7 /* days */,
       validateFunc: function(session, callback) {
-        validateUser.validate(session._id, {}, callback)
+        middleware.cookie.validate(session._id, {}, callback)
       }
     });
   });
@@ -205,7 +190,7 @@ if (cluster.isMaster) {
       providerParams: {
         display: 'popup'
       },
-      isSecure: cookieSecure,
+      isSecure: constants.cookieSecure,
       scope: ['email', 'public_profile', 'user_friends']
     });
   });
@@ -225,25 +210,24 @@ if (cluster.isMaster) {
   });
 
   // Add all the routes within the routes folder
+  var routes = require('lib/routes');
   // API routes
-  server.register({register: require('./lib/routes/api')}, function(err) {
+  server.register({register: routes.api}, function(err) {
     if (err) server.log('error', err)
   })
-  // Index routes
-  server.register({register: require('./lib/routes/index')}, function(err) {
+  // Core routes
+  server.register({register: routes.core}, function(err) {
     if (err) server.log('error', err)
   })
-  // App routes
-  server.register({register: require('./lib/routes/app')}, function(err) {
+  // Graphics routes
+  server.register({register: routes.graphics}, function(err) {
     if (err) server.log('error', err)
   })
 
   // Cookie definitions
-  var cookiePassword = 'qowrDS&_(R)E(*#)(*WDFF)';
-
   server.state('se_register', {
     encoding: 'iron',
-    password: cookiePassword,
+    password: constants.cookiePass,
     path: '/',
     ignoreErrors: false,
     clearInvalid: true
@@ -291,15 +275,6 @@ if (cluster.isMaster) {
     }
   });
 
-
-  var CronJob = require('cron').CronJob;
-  try {
-    new CronJob('00 30 06 * * 0,4', function() {
-      console.log('this should not be printed');
-    })
-  } catch(ex) {
-    console.log("cron pattern not valid");
-  }
 
   // Start server
   server.start(function () {

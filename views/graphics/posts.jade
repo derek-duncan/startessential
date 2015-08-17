@@ -1,4 +1,4 @@
-extends ../templates/layout.jade
+extends lib/views/util/templates/layout.jade
 block head
   script(type="text/javascript").
     var idx = window.location.toString().indexOf("#_=_");
@@ -10,7 +10,7 @@ block head
 
 block body
   div#posts
-    include ../templates/_header
+    include lib/views/util/templates/_header
     main.main
       if featured
         .post-featured

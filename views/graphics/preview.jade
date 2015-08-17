@@ -1,4 +1,4 @@
-extends ../templates/layout.jade
+extends lib/views/util/templates/layout.jade
 block head
   meta(property='og:title' content='#{graphic._post.title}')
   meta(property='og:site_name' content='Start Essential')
@@ -8,9 +8,9 @@ block head
 block body
   div#preview
     if sid
-      include ../templates/_header.jade
+      include lib/views/util/templates/_header.jade
     else
-      include ../templates/_header-signup.jade
+      include lib/views/util/templates/_header-signup.jade
     main.main
       if sid
         section.tools
