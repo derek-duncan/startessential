@@ -1,0 +1,28 @@
+extends /templates/admin
+
+block body
+  section.users
+    h3 Users registered: <span>#{users.length}</span>
+    .users-list
+      each user in users
+        .user
+          h5= user.full_name
+          a(href='mailto:#{user.email}')= user.email
+
+          if user.scope === "pre_authenticated"
+            if user.stripe.trial_expired
+              p Status: Trial Expired
+            else
+              p Status: Trialing
+          else
+            p Status: Active
+          p #{user.saved_posts.length} #{user.saved_posts.length === 1 ? 'save' : 'saves'}
+          p Logged in #{adminDate(user.date_active)}
+  hr
+  section
+    h2 Today's post
+    if post && post.length
+      b Today's done!
+      a(href="/admin/posts/#{post._id}") View it
+    else
+      a(href='/admin/new') Upload the post for today

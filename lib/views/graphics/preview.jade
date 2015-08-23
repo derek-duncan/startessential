@@ -1,0 +1,64 @@
+extends /templates/layout
+block head
+  meta(property='og:title' content='#{graphic._post.title}')
+  meta(property='og:site_name' content='Start Essential')
+  meta(property='og:url' content='http://startessential.com/preview/#{graphic.short_code}')
+  meta(property='og:description' content='#{graphic._post.content}')
+  meta(property='og:image' content='#{graphic.custom_image.normal.Location}')
+block body
+  div#preview
+    if sid
+      include /includes/_header
+    else
+      include /includes/_header-signup
+    main.main
+      if sid
+        section.tools
+          .tools-inner
+            a(href='/posts') < Back to all graphics
+      .main-content
+        .graphic
+          .graphic-inner.cf
+            .graphic-image-wrap.no-overlay
+              .pinit
+                a(href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"  data-pin-color="red" data-pin-height="28")
+                  img(src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_28.png")
+              img.graphic-image(src=graphic.custom_image.original.Location)
+            .graphic-details
+              h1.details-title= graphic._post.title
+              .details-content
+                if graphic._post.content
+                  | !{graphic._post.content_rendered}
+                else
+                  p
+                    i No description for now
+              if sid
+                if sid._id == graphic._user._id
+                  .share-facebook.details-link(data-code='http://startessential.com/preview/#{graphic.short_code}') Share on Facebook
+                  a.details-download(href=graphic.custom_image.original.Location target='_blank') Download
+        .tour
+          .tour-inner.cf
+            article.tour-copy
+              h2.tour-label Discover a Simple, Healthier Life
+              h5.tour-sub-header Essential oils have changed the lives of millions, now it's your turn
+              section
+                p Essential oils promote optimal health, longevity, vitality, abundance, energy, and life. I would love to share my journey of using Young Living Essential Oils with you. I am so thankful I made that decision to use them, and I would be thrilled to help you personally discover them for yourself. Please, take a moment to read about Young Living Essential Oils and begin your journey towards a healthier well being.
+              section
+                h4 What are essential oils?
+                p An essential oil is an aromatic, concentrated oil that is extracted from flowers, herbs, and other plants. It has an unique, complex chemistry that beautifully balances and contributes to a healthy body. By addressing root issues and imbalances on a cellular level, essential oils are able to support the body in resisting diseases and malfunctions it faces on a daily and long-term basis.
+              section
+                h4 How can you use essential oils?
+                p Using essential oils, especially on a day-to-day basis, is an incredibly exciting and simple process. Because Young Living Essential Oils are so concentrated and pure, it only takes a couple drops to start experiencing an oil's benefits. These drops can be diffused through your home, applied directly to the skin, or taken internally. It's a simple addition to your life that brings invaluable balance to a healthy body.
+              section
+                h4 Why signup as a member with Young Living?
+                p When ordering oils from young living, you can choose to be a Member or a Retail Customer. By choosing to be a Member, you receive several discounts and benefits. Additionally, you may signup people with referral links to recieve a commision from their purchases. A Young Living membership is simply a family of people who love to share their successes and experiences with essential oils &mdash; something every oiler should be a part of.
+            section.tour-signup
+              .tour-signup-image-wrap
+                img.tour-signup-image(src='/images/starter-kit-header.jpg' width='400')
+              .tour-signup-inner
+                h3.inner-title Get Your Own Oils
+                p.inner-description Discovering essential oils is a key moment in millions of people's lives, and it begins with this complete starter kit. I will personally be there to educate you on how to use them and guide you to a healthier well being!
+                a.inner-signup(href=graphic._user.distributor_link) Signup with Young Living
+block scripts
+  script(src='/js/build/jquery.sticky-kit.min.js')
+  script(type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js")

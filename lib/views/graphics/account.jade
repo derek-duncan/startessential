@@ -1,0 +1,40 @@
+extends /templates/layout
+block body
+  div#account
+    include /includes/_header
+    main.main
+      .account-left
+        h2.page-title Account Settings
+        .settings
+          .input-group.fade
+            label Your next week of downloads will start on
+            input(type='text' readonly value=readableDate(user.records.week_renew_date))
+          .input-group.fade
+            label Your Young Living signup easy link
+            input(type='text' readonly value=user.distributor_link)
+          form.settings-form(action='/account/settings' method='POST')
+            input(type="hidden" name="crumb" value=crumb)
+            input(type='hidden' name='_id' value=user._id)
+            .input-group
+              label Member number
+              input(type='text' maxlength='7' name='memberNumber' value=user.member_number)
+            .input-group
+              label Email
+              input(type='text' name='email' value=user.email)
+            .input-group
+              button(type='submit') Save
+        .other
+          form.remove-form(action='/account/remove' method='POST')
+            input(type="hidden" name="crumb" value=crumb)
+            input(type='hidden' name='_id' value=user._id)
+            button(type='submit') Cancel Account
+      .account-right
+        h2.reference-title Reference Information &mdash; FREE stuff
+        p.reference-tagline Share Start Essential with other Young Living distributors to receive additional FREE months on your subscription.
+        .share-form
+          label Copy and share this link
+          input.share-link(type='text' value='http://startessential.com?friend=#{sid.referral_id}' readonly)
+          .share-links
+            a.share-fb(href='' data-url='https://startessential.com?friend=#{sid.referral_id}' title='Share on facebook to grow faster') Share on Facebook
+            //-a.share-tw(href='' title='Share on twitter to grow faster') Share on Twitter
+

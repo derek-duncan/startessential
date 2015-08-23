@@ -1,22 +1,23 @@
 "use strict";
 
 require('newrelic');
-var _ = require('lodash')
-var constants = require('lib/constants')
-var async = require('async')
-var mongoose = require('mongoose')
-var _message = require('lib/util/createMessage')
-
 var Hapi = require('hapi');
-var Good = require('good');
-var fs = require('fs');
 var cluster = require('cluster');
 var toobusy = require('toobusy-js');
+var mongoose = require('mongoose')
 var migrate = require('migrate');
+var Good = require('good');
+var path = require('path');
+var fs = require('fs');
 
-var env = process.env.NODE_ENV || 'development';
+var constants = require('lib/constants')
+var _message = require('lib/util/createMessage')
 
+// ======================
+
+// Fork the process on production
 if (cluster.isMaster) {
+
   var workers = process.env.WEB_CONCURRENCY || 1;;
   for (var i = 0; i < workers; i++) {
     cluster.fork();
@@ -25,18 +26,42 @@ if (cluster.isMaster) {
     console.log('A worker process died, restarting...');
     cluster.fork();
   });
+
 } else {
+  constants.appRoot = path.resolve(__dirname);
+
   var server = new Hapi.Server()
+
+  server.connection({
+    port: constants.application[ constants.application.env ].port
+  });
+
+  server.views({
+    engines: {
+      jade: {
+        module: require('jade'),
+        compileOptions: {
+          basedir: path.resolve('lib/views/util')
+        }
+      }
+    },
+    isCached: false,
+    path: path.resolve('lib/views')
+  });
+
+  // ======================
 
   // Connect to mongodb
   var connect = function () {
     var options = { server: { socketOptions: { keepAlive: 1 } } };
-    mongoose.connect(constants.database[env].url, options);
+    mongoose.connect(constants.database[ constants.application.env ].url, options);
   };
   connect();
 
   mongoose.connection.on('error', server.log);
   mongoose.connection.on('disconnected', connect);
+
+  // ======================
 
   // Bootstrap models
   fs.readdirSync(__dirname + '/lib/models').forEach(function (file) {
@@ -48,6 +73,8 @@ if (cluster.isMaster) {
     if (file.indexOf('.js') >= 0) require(__dirname + '/lib/cron/' + file);
   });
 
+  // ======================
+
   // Migrate database
   var set = migrate.load(__dirname + '/.migrate', __dirname + '/migrations');
   if ( set.migrations.length ) {
@@ -58,80 +85,46 @@ if (cluster.isMaster) {
     });
   }
 
-  var port = constants.application[env].port;
-  server.connection({
-    port: port
-  });
+  // ======================
 
-  server.views({
-    engines: {
-      jade: require('jade')
-    },
-    isCached: false,
-    relativeTo: __dirname
-  });
-
-  var User = mongoose.model('User');
   var middleware = require('lib/middleware');
 
   // Load middleware
+
   server.register([
-
-    middleware.request.redirect,
-    middleware.response.errorPages,
-
-  ], function (err) {
-
-    if (err) console.error('Failed to load a plugin:', err);
-
-  }); // middleware register
-
-  server.ext('onPreResponse', function(request, reply) {
-
-    var response = request.response;
-    if (response.variety === 'view' && response.source.context) {
-      var context = response.source.context;
-
-      // Check to make sure we aren't too busy
-      toobusy.maxLag(503)
-      if (toobusy()) {
-        return reply.view('503');
-      }
-
-      // Attach the sid cookie to every view
-      if (request.state.sid && context) {
-        context.sid = request.state.sid;
-      }
-
-      // Add Helpers for Jade templates
-      fs.readdirSync(__dirname + '/views/util/helpers').forEach(function (file) {
-        if (file.indexOf('.js') >= 0 && context) {
-          var name = file.split('.')[0];
-          context[name] = require(__dirname + '/views/helpers/' + file);
-        }
-      });
-
-      // Add Message to Jade templates
-      var validator = require('validator');
-      var queryMessage = request.query.message;
-      if (queryMessage) {
-        context.message = validator.escape(queryMessage)
-      }
-
-      // Add FB App id to templates
-      context.fb_app_id = constants.FB_APP_ID;
-      context.stripe_key_pk = constants.STRIPE_KEY_PK;
-
-      // Trigger request logging
-      var exclude = ['css', 'images', 'js', 'fonts']
-      var path_start = request.path.split('/')[1]
-      if (!_.includes(exclude, path_start)) {
-        var sid = request.state.sid || {}
-        request.log(['request', 'uid'], sid._id)
+    {
+      register: middleware.request.redirect,
+      options: {}
+    },
+    {
+      register: middleware.response.errorPages,
+      options: {}
+    },
+    {
+      register: middleware.response.toobusy,
+      options: {}
+    },
+    {
+      register: middleware.response.locals,
+      options: {}
+    },
+    {
+      register: middleware.response.logging,
+      options: {}
+    },
+    {
+      register: middleware.trial,
+      options: {
+        redirectTo: '/register/finish' + _message('Please add payment information to continue using Start Essential')
       }
     }
-    return reply.continue();
-  });
+  ], function (err) {
+    if (err) console.error('Failed to load a plugin:', err);
+  }); // middleware register
+
+  // ======================
+
+  var User = mongoose.model('User');
 
   // Authentication strategy
   server.register(require('hapi-auth-bearer-token'), function (err) {
@@ -140,21 +133,13 @@ if (cluster.isMaster) {
       allowQueryToken: true,
       allowMultipleHeaders: false,
       accessTokenName: 'access_token',
-      validateFunc: function(token, callback) {
-
-        var request = this;
-
-        if (!token) return callback(null, false)
-
-        User.decode(token, function(err, decoded) {
-          middleware.cookie.validate(decoded.uid, { token: token }, callback)
-        })
-      }
+      validateFunc: middleware.validate.bearerToken.validate
     });
   });
 
-  // Cookie strategy
+  // ======================
 
+  // Cookie strategy
   server.register(require('hapi-auth-cookie'), function (err) {
     server.auth.strategy('session', 'cookie', {
       password: constants.cookiePass,
@@ -163,22 +148,11 @@ if (cluster.isMaster) {
       isSecure: constants.cookieSecure,
       redirectOnTry: false,
       ttl: (60 * 1000) /* seconds */ * 60 /* minutes */ * 24 /* hours */ * 7 /* days */,
-      validateFunc: function(session, callback) {
-        middleware.cookie.validate(session._id, {}, callback)
-      }
+      validateFunc: middleware.validate.sessionCookie.validate
     });
   });
 
-  // Trial strategy
-
-  server.register({
-    register: require('lib/middleware/trial'),
-    options: {
-      redirectTo: '/register/finish' + _message('Please add payment information to continue using Start Essential')
-    }
-  }, function (err) {
-
-  });
+  // ======================
 
   // Facebook login strategy
   server.register(require('bell'), function (err) {
@@ -195,19 +169,24 @@ if (cluster.isMaster) {
     });
   });
 
+  // ======================
+
   // Default auth
   server.auth.default({
     strategy: 'session',
     scope: constants.SCOPE.PRE_AUTHENTICATED
   })
 
-  // Add Crumb plugin
+  // ======================
 
+  // Add Crumb plugin
   server.register({ register: require('crumb'), options: {}}, function (err) {
     if (err) {
       server.log(['error', 'crumb'], err)
     }
   });
+
+  // ======================
 
   // Add all the routes within the routes folder
   var routes = require('lib/routes');
@@ -224,6 +203,8 @@ if (cluster.isMaster) {
     if (err) server.log('error', err)
   })
 
+  // ======================
+
   // Cookie definitions
   server.state('se_register', {
     encoding: 'iron',
@@ -232,6 +213,8 @@ if (cluster.isMaster) {
     ignoreErrors: false,
     clearInvalid: true
   })
+
+  // ======================
 
   // Register logger
   server.register({
@@ -275,6 +258,7 @@ if (cluster.isMaster) {
     }
   });
 
+  // ======================
 
   // Start server
   server.start(function () {

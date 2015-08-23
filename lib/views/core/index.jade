@@ -1,0 +1,101 @@
+extends /templates/layout
+block head
+  meta(property='og:title' content='Start Essential')
+  meta(property='og:type' content='website')
+  meta(property='og:url' content='https://startessential.com')
+  meta(property='og:description' content='A collection of Young Living, essential oil graphics. FDA compliant. Add your YL distributor number. Start for free.')
+  meta(property='og:image' content='https://startessential.com/images/fb-homepage.jpg')
+block body
+  #front
+    header.header-front
+      div.header-top.cf
+        h1.logo
+          img(src='/images/logo-color.png' alt='Start Essential resources logo' width='300')
+        .header-actions
+          a.pricing(href='/plans' title='Start Essential pricing plans') Pricing
+          if sid
+            a.cta-top(href="/posts" title="Access Start Essential") Step Inside
+            a.login-top(href="/logout" title="Logout") Logout
+          else
+            a.cta-top(href="/register" title="Join Start Essential") Join now
+            a.login-top(href="/login" title="Login to Start Essential") Login
+      div.header-middle.content.cf
+        h4.middle-tagline If you're a Young Living distributor and want to promote your business, this is for you
+        h2.middle-headline Exclusive Collection of Essential Oil Graphics
+        p.middle-description Download authentic Young Living graphics already customized with your distributor information and approved under Young Living's guidelines. It takes less the 30 seconds to find the perfect graphic!
+        a.middle-cta(href='#join' title='Claim 7-Days of Free Access') Start Exploring for FREE
+        .middle-next
+          p.middle-next-step Of course, if you would like to grab some more information about how it all works, just keep reading...
+        .middle-oils
+          img.oil(src='/images/previews/copaiba.jpg' title='Copaiba Essential Oil')
+          img.oil(src='/images/previews/lavender.jpg' title='Lavender Essential Oil')
+          img.oil(src='/images/previews/digize.jpg' title='Digize Essential Oil')
+          img.oil(src='/images/previews/frankinsence.jpg' title='frankinsence Essential Oil')
+          img.oil(src='/images/previews/lemon.jpg' title='Lemon Essential Oil')
+          img.oil(src='/images/previews/panaway.jpg' title='Panaway Essential Oil')
+          img.oil(src='/images/previews/peppermint.jpg' title='Peppermint Essential Oil')
+          img.oil(src='/images/previews/purification.jpg' title='Purification Essential Oil')
+          img.oil(src='/images/previews/rc.jpg' title='R.C. Essential Oil')
+          img.oil(src='/images/previews/thieves.jpg' title='Thieves Essential Oil')
+        img.middle-arrow(src='/images/section-arrow.png' width='100')
+    section.info
+      .info-content
+        h2.info-sub_head Focus on sharing the oils you love without the hassle of finding or creating your own graphics
+        //-img.info-computer-example(src='/images/computer-example.png' width='600' alt='Start Essential landing page')
+    section.features
+      .features-content
+        .feature
+          img.feature-icon(src='/images/feature-2.png' width='300')
+          .feature-details
+            h3.feature-title Rest assured that the graphics you share are carefully created under FDA standards
+            p.feature-description We meticoulously write all our graphics with terminology and phrasing provided under Young Living's guidelines.
+        .feature
+          img.feature-icon(src='/images/feature-3.png' width='300')
+          .feature-details
+            h3.feature-title Educate your downlines and friends 40% more effectively with graphics
+            p.feature-description Did you know that 90% of information transmitted to the brain is visual? Studies have shown that people are 40% more likely to respond to a post with visual information then just plain text. Talk about growth!
+              br
+              span Source:&nbsp;
+                a(href="http://blog.hubspot.com/blog/tabid/6307/bid/33423/19-Reasons-You-Should-Include-Visual-Content-in-Your-Marketing-Data.aspx" title="Visual Content increases growth") hubspot.com
+        .feature
+          img.feature-icon(src='/images/feature-4.png' width='300')
+          .feature-details
+            h3.feature-title All our graphics are yours&dash;automatically customized with your distributor information
+            p.feature-description All the images and posts you save will already have your YL member signup link on them. Now every post you share is an oppertunity to grow your downline!
+        .feature
+          img.feature-icon(src='/images/feature-1.png' width='300')
+          .feature-details
+            h3.feature-title Landing page to inform people about Young Living Essential Oils
+            p.feature-description Each graphic includes a landing page with an introduction to the Young Living Essential Oils and your signup link for new members.
+        //-.feature
+          img.feature-icon(src='/images/feature-1.png' width='300')
+          .feature-details
+            h3.feature-title Save time by quickly searching for exactly what you need
+            p.feature-description Overcome the challenge of finding practical, approved information with a valuable library of essential oil graphics all in one place.
+
+    section.join(class=(sid ? 'logged' : undefined))
+      if sid
+        a.login-button(href='/login') Login to your account
+      else
+        .join-content#join
+          h2.join-sub_head Customize Your First Graphic Now
+          h4.join-offer Free 7-Day Access
+          p.join-desc Begin providing practical and captivating information to your downlines and friends today.
+          .join-form
+            p.join-form-desc All you need is your Young Living Member ID. <b>No credit card required.</b>
+            input.join-input(type='text' maxlength='7' placeholder='e.g. 1234567')
+            p.join-sample-link
+            button.join-submit(type='submit') Start for free
+    section.plans
+      .plans-inner
+        p.plans-statement
+          a.plans-action(href='/plans' title='Start Essential pricing plans') View Our Plans/Pricing
+    section.unsure
+      p.unsure-statement Still not ready, or you have any questions? I'd love to talk with you! Feel free to&nbsp;
+        a(href='mailto:derek@startessential.com' title='Email me any questions') contact me directly.
+block scripts
+  script.
+    ga('set', {
+      page: '/',
+      title: 'Homepage'
+    });

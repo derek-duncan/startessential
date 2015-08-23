@@ -1,0 +1,49 @@
+extends /templates/layout
+block body
+  div#post
+    include /includes/_header
+    main.main
+      section.tools
+        .tools-inner
+          a(href='/posts') < Back to all graphics
+      .main-content
+        div(class=( post.free ? 'graphic free' : 'graphic' ))
+          .graphic-inner.cf
+            .graphic-image-wrap
+              img.graphic-image(src=post.image.normal.Location)
+            .graphic-details
+              h1.details-title= post.title
+              p.details-category=post.category
+              .details-content
+                if post.content
+                  | !{post.content_rendered}
+                else
+                  p
+                    i No description for now
+              form(action='/posts/#{post._id}/save' method='POST')
+                input(type="hidden" name="crumb" value=crumb)
+                if (saved_code)
+                  button.details-save(type='submit' disabled) Saved
+                else
+                  button.details-save(type='submit')
+                    if post.free
+                      | Save for free
+                    else
+                      | Save
+      section.final
+        .final-content
+          if (saved_code)
+            h3.title Inform your downlines and friends
+            .cta
+              a.share-fb(href='/preview/#{saved_code}?message=Share%20this%20page%20now' title='Share post on Facebook') Share on Facebook
+          else
+            h3.title Young Living Member Signup Page
+            .tagline
+              p When you <i>save</i> and <i>share</i> this graphic to Facebook, Pinterest, email, etc., anyone who clicks on it will be given instructions on how to signup as a Young Living Member.
+              p This page explains Young Living Essential Oils and motivates curious visitors to signup. It even includes a quick signup link that pre-fills your Member Number on Young Living. It is a wonderful way to grow your Young Living business. To generate your customized graphic and signup page, press the "Save" button below.
+            form(method='POST' action='/posts/#{post._id}/save')
+              input(type="hidden" name="crumb" value=crumb)
+              .cta
+                button.post-now(type='submit') Generate Graphic & Signup Page
+block scripts
+  script(src='/js/build/jquery.sticky-kit.min.js')
