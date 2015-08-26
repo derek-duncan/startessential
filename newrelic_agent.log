@@ -99,3 +99,4 @@
 {"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air.local","pid":38128,"time":"2015-08-26T21:07:02.553Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1041301/applications/7544466","component":"new_relic_response"}
 {"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air.local","pid":38128,"time":"2015-08-26T21:07:02.554Z","msg":"Connected to collector-179.newrelic.com:443 with agent run ID 34787231181591738.","component":"collector_api"}
 {"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air.local","pid":38128,"time":"2015-08-26T21:07:02.702Z","msg":"Request for AWS attribute instance-type timed out","component":"aws-info"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Dereks-MacBook-Air.local","pid":38104,"time":"2015-08-26T21:08:11.439Z","msg":"There was an error in requesting AWS attribute instance-type: connect ETIMEDOUT","component":"aws-info"}
