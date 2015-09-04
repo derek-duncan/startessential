@@ -1497,3 +1497,4 @@
 {"event":"request","timestamp":1441399880073,"tags":["request","uid"],"pid":29939,"id":"1441399880038:Dereks-Air-2:29939:ie649op7:10000","method":"get","path":"/login"}
 {"event":"request","timestamp":1441399901737,"tags":["request","uid"],"data":"55e906810b7347af1d282fa1","pid":29939,"id":"1441399901653:Dereks-Air-2:29939:ie649op7:10015","method":"get","path":"/posts"}
 {"event":"request","timestamp":1441399902670,"tags":["request","uid"],"data":"55e906810b7347af1d282fa1","pid":29939,"id":"1441399902624:Dereks-Air-2:29939:ie649op7:10025","method":"get","path":"/posts"}
+{"event":"request","timestamp":1441401051508,"tags":["request","uid"],"pid":30071,"id":"1441401051454:Dereks-Air-2:30071:ie64cic8:10000","method":"get","path":"/"}
