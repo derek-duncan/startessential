@@ -146,18 +146,26 @@ h2 {
     width: 100%;
   }
   button {
-    -webkit-appearance: none;
-    width: 30%;
-    background: $red;
-    box-shadow: none;
-    border: none;
-    padding: 15px 0;
-    text-align: center;
-    border-radius: 5px;
-    color: #fff;
-    margin-top: 20px;
-    &:hover {
-      background: darken($red, 7%);
-    }
+    @extend .button;
+  }
+}
+.button {
+  -webkit-appearance: none;
+  width: 30%;
+  background: $red;
+  box-shadow: none;
+  border: none;
+  padding: 15px 0;
+  text-align: center;
+  border-radius: 5px;
+  color: #fff;
+  margin-top: 20px;
+  &:hover {
+    background: darken($red, 7%);
+  }
+  &.button--small {
+    padding: 7px 20px;
+    width: auto;
+    font-size: 1em;
   }
 }

@@ -1,0 +1,106 @@
+#tour {
+  width: $contentMobile;
+  margin: 40px auto;
+  @media (min-width: $ipad) {
+    width: $contentDesktop;
+  }
+  .oils-header {
+    font-size: 0.8em;
+    margin: 0 0 15px 0;
+    color: $dark;
+  }
+  .oils-pager {
+    .oils-previous, .oils-next, .oils-signup {
+      width: 49%;
+      margin: 0 0.5%;
+      padding: 10px 15px;
+      box-sizing: border-box;
+      background: $dark;
+      color: #fff;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.9em;
+      text-transform: uppercase;
+      text-decoration: none;
+      vertical-align: top;
+      display: inline-block;
+      text-align: center;
+      transition: background-color 0.3s;
+      cursor: pointer;
+      user-select: none;
+      @media (min-width: $ipad) {
+        padding: 15px 20px;
+        font-size: 1.2em;
+      }
+      &:hover {
+        background-color: #000;
+      }
+      &.hide {
+        display: none;
+      }
+      &.show {
+        display: inline-block;
+      }
+    }
+    .oils-signup {
+      display: none;
+      background: $defaultColor;
+    }
+  }
+  .oil {
+    margin: 0 0 30px;
+    padding: 2em;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    display: none;
+    &.active {
+      display: block;
+    }
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  .oil-tagline {
+    font: 1em $titleFont;
+    letter-spacing: 0.2em;
+    color: #999;
+    @media (min-width: $ipad) {
+      font-size: 1.3em;
+    }
+  }
+  .oil-name {
+    position: relative;
+    display: block;
+    font-size: 2.2em;
+    margin: 0;
+    &:after {
+      content: '';
+      position: relative;
+      display: block;
+      margin: 0.3em 0;
+      height: 8px;
+      width: 200px;
+      background-color: $defaultColor;
+    }
+  }
+  .oil-content {
+    display: table;
+    margin: 2em 0 0;
+  }
+  .oil-image {
+    display: table-cell;
+    vertical-align: middle;
+    width: 80px;
+    height: auto;
+    margin: 0 30px 0 0;
+    @media (min-width: $ipad) {
+      width: 120px;
+    }
+  }
+  .oil-description {
+    display: table-cell;
+    vertical-align: middle;
+    color: $dark;
+    font-size: 0.9em;
+  }
+}

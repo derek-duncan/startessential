@@ -1,0 +1,75 @@
+extends /templates/site/layout
+block head
+block body
+  include /includes/site/_banner
+  main.main-content#home
+    article.article.article--banner
+      a(href='/articles/story' title='')
+        .article-image.grayscale
+          img(src='/images/lavender-background.jpg')
+        .article-content
+          h2.article-title.custom-color.custom-bg-after
+            if site.content.story.title
+              | site.content.story.title
+            else
+              | Write Your Story About Young Living
+          .article-blurb
+            if site.story_rendered
+              | !{site.story_rendered.split(' ').slice(0, 30).join(' ') + '...'}
+
+            else
+              p No story has been written yet... it's a mystery :)
+          a.button.custom-color.custom-border.custom-bg-hover(href='/articles/story') Read More
+    section.quick-links
+      each link in site.content.quick_links
+        a.link.custom-color(href='#{link.href}' target='_blank')= link.title
+    section.announcements
+      .announcements-inner
+        h4.announcements-label.custom-color.custom-bg-after Announcements
+          span &nbsp;& News
+        each announcement, index in site.content.announcements
+          .announcement
+            h5.announcement-title= announcement.title
+            div.announcement-details !{announcement.details_rendered}
+        if !site.content.announcements.length
+          | No announcements yet. Keep checking back for updates.
+    //-article.article.article--large.article--style-1
+      a(href='#' title='')
+        .article-content.custom-bg-alt-after
+          .article-tag.custom-bg-alt.custom-bg-alt-after My Story
+          h2.article-title= site.content.story.title
+          .article-blurb
+            if site.story_rendered
+              | !{site.story_rendered.split(' ').slice(0, 20).join(' ') + '...'}
+
+            else
+              | No content for now
+        .article-negative
+          canvas.negative-triangle(width='100' height='100')
+    section.tour
+      .tour-inner
+        .tour-tag.custom-bg.custom-bg-after Young Living Starter Kit
+        .tour-content
+          .tour-text
+            .text-block
+              .text-1.custom-color TO
+              img.bottle(src='/images/site/tour-bottle.png')
+              .text-2.custom-color UR
+            .text-block
+              .text-3.custom-color-alt THE OILS
+          a.tour-action.button.custom-border.custom-color.custom-bg-hover(href='/tour') Take the Tour
+      .tour-negative
+        canvas.negative-triangle(width='100' height='100')
+    article.article.article--large.article--style-2
+      a(href='#' title='')
+        .article-content
+          h2.article-title.custom-bg-after Are You Interested in Essential Oils?
+          .article-blurb
+            p Neque donec purus suspendisse quis nibh nunc nonummy in. Ipsum dolor enim potenti at mattis fermentum. Proin morbi eros aliquet magna ante at. Neque donec.
+          .article-actions
+            .actions-top
+              if site.contact.email
+                a.action-email.button.custom-color.custom-bg-hover.custom-border(href='mailto:#{site.contact.email}') Let's Talk!
+                span.action-divider / or /
+            .actions-bottom
+              a.action-member.button.custom-bg.custom-border(href='#{site._user.distributor_link}' target='_blank') Become a Member

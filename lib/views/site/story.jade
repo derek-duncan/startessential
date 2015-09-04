@@ -1,0 +1,12 @@
+extends /templates/site/layout
+block head
+block body
+  include /includes/site/_banner
+  main.main#story
+    article.article
+      h2.article-title= site.content.story.title
+      .article-content
+        if site.content.story.length
+          | !{site.story_rendered}
+        else
+          p I'm still working on writing down my story :) Please contact me if you would like to chat!

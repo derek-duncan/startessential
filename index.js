@@ -117,6 +117,25 @@ if (cluster.isMaster) {
       options: {
         redirectTo: '/register/finish' + _message('Please add payment information to continue using Start Essential')
       }
+    },
+    {
+      register: require('hapi-subdomain-router'),
+      options: {
+        subdomain: '*',
+        excludePath: ['css', 'js', 'images', 'fonts'],
+        destination: '/users'
+      }
+    },
+    {
+      register: middleware.site,
+      options: {
+        bypass: true,
+        redirectTo: 'https://startessential.com' + _message('This user\'s website could not be found')
+      }
+    },
+    {
+      register: middleware.userUpdate,
+      options: {}
     }
   ], function (err) {
     if (err) console.error('Failed to load a plugin:', err);
@@ -202,6 +221,12 @@ if (cluster.isMaster) {
   server.register({register: routes.graphics}, function(err) {
     if (err) server.log('error', err)
   })
+  // Site routes
+  server.register({register: routes.site}, { routes: { prefix: '/users' } }, function(err) {
+    if (err) server.log('error', err)
+  })
+
+  // ======================
 
   // ======================
 

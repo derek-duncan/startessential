@@ -19,6 +19,9 @@ header.header
           a(class=(active === 'explore' ? 'active' : undefined) href='/posts') Explore
         li.nav-item#saved-link
           a(class=(active === 'saved' ? 'active' : undefined) href='/saved') Saved
+        if sid && sid.site
+          li.nav-item#site-link
+            a(class=(active === 'site' ? 'active' : undefined) href='/site') Site
         li.nav-item#account-link
           a(class=(active === 'account' ? 'active' : undefined) href='/account') Account
         li.nav-item 

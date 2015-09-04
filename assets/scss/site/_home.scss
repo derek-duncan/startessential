@@ -1,0 +1,503 @@
+$spacing: 4em;
+$spacingMobile: 3em;
+$contentOffset: 30px;
+
+#home {
+  .article {
+    margin: $spacingMobile 0;
+    position: relative;
+    overflow: hidden;
+    @media (min-width: $ipad) {
+      padding: 0;
+      margin: $spacing 0;
+    }
+    &.article--large {
+      font-size: 120%;
+      @media (min-width: $ipad) {
+        font-size: 130%;
+      }
+    }
+    a {
+      text-decoration: none;
+    }
+    .article-content {
+      box-sizing: border-box;
+      padding: 0;
+      width: $contentMobile;
+      margin: 0 auto;
+      z-index: 3;
+      position: relative;
+      @media (min-width: $ipad) {
+        width: $contentDesktop;
+      }
+    }
+    .article-tag {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      padding: 8px 20px;
+      background-color: $defaultColor;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 1em;
+      font-weight: 500;
+      margin: 0 0 0.8em;
+      &:after {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        vertical-align: middle;
+        width: 15px;
+        background-color: lighten($defaultColor, 15%);
+        height: 20px;
+        left: 100%;
+        bottom: 0;
+      }
+    }
+    .article-title {
+      margin: 0;
+      padding: 0;
+      font-weight: 500;
+      font-size: 1.6em;
+      line-height: 1.2;
+      color: $dark;
+      text-decoration: none;
+      position: relative;
+    }
+    .article-blurb {
+      margin: 0.5em 0 0;
+      padding: 0;
+      color: #9A9A9A;
+      line-height: 1.7;
+      font-size: 0.8em;
+      p:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .article--banner {
+    border: none;
+    top: 0;
+    min-height: 350px;
+    overflow: hidden;
+    &:hover {
+      .article-image img {
+        width: 105%;
+      }
+    }
+    .article-image {
+      width: 100%;
+      position: relative;
+      max-height: 200px;
+      background: #D8D8D8;
+      overflow: hidden;
+      @media (min-width: $ipad) {
+        width: 50%;
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        top: 1em;
+        max-height: 400px;
+      }
+      &.grayscale {
+        img {
+          filter: grayscale(90%) brightness(1.4) contrast(80%) opacity(0.8);
+        }
+      }
+      img {
+        width: 100%;
+        transition: width 0.3s;
+      }
+    }
+    .article-title, .article-blurb {
+      display: block;
+      box-sizing: border-box;
+      z-index: 5;
+    }
+    .article-title {
+      font-size: 1.5em;
+      color: $defaultColor;
+      display: inline-block;
+      width: auto;
+      position: relative;
+      margin: 1em 0 0;
+      @media (min-width: $ipad) {
+        padding: 10px 15px;
+        box-sizing: border-box;
+        background-color: $defaultColor;
+        color: #fff;
+        font-size: 2.1em;
+        margin: 0 0 20px;
+        &:after {
+          content: '';
+          display: block;
+          width: 200px;
+          height: 8px;
+          background-color: $defaultColor;
+          position: absolute;
+          bottom: -20px;
+          left: 0;
+        }
+      }
+      @media (min-width: $large) {
+        font-size: 2.3em;
+        padding: 15px 20px;
+      }
+    }
+    .article-blurb {
+      font-size: 1em;
+      line-height: 1.6;
+      padding: 20px 0 0;
+      width: 100%;
+      @media (min-width: $ipad) {
+        width: 35%;
+        font-size: 1em;
+      }
+      p:first-child {
+        padding-top: 0;
+        margin-top: 0;
+      }
+    }
+  }
+
+  .article--style-1 {
+    .article-tag {
+      background-color: $defaultAlt;
+      &:after {
+        background-color: lighten($defaultAlt, 20%);
+      }
+    }
+    .article-content {
+      @media (min-width: $ipad) {
+        width: 70%;
+        margin-left: 5%;
+      }
+      &:after {
+        content: '';
+        position: relative;
+        display: block;
+        margin: 1.5em 0 0;
+        height: 8px;
+        width: 200px;
+        background-color: $defaultAlt;
+      }
+    }
+    .article-negative {
+      z-index: 1;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      margin: 0 auto;
+      width: 80%;
+      opacity: 0.8;
+      @media (min-width: $ipad) {
+        opacity: 1;
+        width: auto;
+      }
+    }
+  }
+
+  .article--style-2 {
+    .article-content {
+    }
+    .article-title {
+      &:after {
+        content: '';
+        position: relative;
+        display: block;
+        margin: 0.8em 0;
+        height: 8px;
+        width: 200px;
+        background-color: $defaultAlt;
+      }
+    }
+    .article-blurb {
+      display: inline-block;
+      vertical-align: top;
+      box-sizing: border-box;
+      @media (min-width: $ipad) {
+        width: 60%;
+        padding-right: 20px;
+      }
+      @media (min-width: $large) {
+        width: 50%;
+      }
+    }
+    .article-actions {
+      display: inline-block;
+      vertical-align: top;
+      @media (min-width: $ipad) {
+        width: 40%;
+      }
+      @media (min-width: $large) {
+        width: 50%;
+      }
+      .actions-top, .actions-bottom {
+        display: block;
+      }
+      .action-email, .action-member {
+        margin: 5px 0;
+      }
+      .action-divider {
+        display: inline-block;
+        vertical-align: bottom;
+        margin-left: 15px;
+        color: #ccc;
+        font-style: italic;
+        font-size: 1.4em;
+      }
+      .action-member {
+        color: #fff;
+      }
+    }
+  }
+
+  .quick-links {
+    background-color: $defaultLight;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 0 0;
+    display: table;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    .link {
+      display: table-cell;
+      text-align: center;
+      color: $defaultColor;
+      font-size: 0.8em;
+      @media (min-width: $ipad) {
+        font-size: 1em;
+      }
+    }
+  }
+
+  .announcements {
+    box-sizing: border-box;
+    border-top: 20px solid $defaultLight;
+    border-bottom: 20px solid $defaultLight;
+
+    .announcements-inner {
+      width: $contentMobile;
+      margin: 0 auto;
+      padding: 2em 0;
+      @media (min-width: $ipad) {
+        width: $contentDesktop;
+      }
+    }
+    .announcements-label {
+      margin: 0;
+      font: 1.5em $titleFont;
+      color: $defaultColor;
+      letter-spacing: 0.05em;
+      @media (min-width: $ipad) {
+        font-size: 2em;
+        letter-spacing: 0.3em;
+      }
+      span {
+        display: inline-block;
+        color: #868686;
+      }
+      &:after {
+        content: '';
+        display: block;
+        width: 200px;
+        height: 8px;
+        background-color: $defaultColor;
+        position: relative;
+        margin: 15px 0 1em;
+      }
+    }
+    .announcement {
+      padding: 1.5em 1em;
+      cursor: pointer;
+      width: 100%;
+      box-sizing: border-box;
+      background-color: $defaultLight;
+      font-size: 1.2em;
+      border-bottom: 10px solid #fff;
+      border-top: 3px solid $defaultLight;
+      @media (min-width: $ipad) {
+        padding: 1.5em 3em;
+        display: inline-block;
+        vertical-align: top;
+        width: 49.5%;
+        transition: color 0.3s, background-color 0.3s;
+      }
+      &:not(.empty):hover, &:not(.empty).show {
+        background-color: $defaultColor;
+        color: #fff;
+      }
+      &:not(.empty).show {
+        border-bottom-color: $defaultColor;
+        border-top-color: #D02A29;
+      }
+      &:nth-of-type(even) {
+        @media (min-width: $ipad) {
+          margin-left: 0.5%;
+        }
+      }
+      &:nth-of-type(odd) {
+        @media (min-width: $ipad) {
+          margin-right: 0.5%;
+        }
+      }
+      .announcement-title {
+        margin: 0;
+        font-weight: 400;
+        position: relative;
+        user-select: none;
+        em {
+          display: block;
+          color: $defaultColor;
+          padding: 10px 0 0;
+          @media (min-width: $ipad) {
+            padding: 0;
+          }
+        }
+      }
+      .announcement-details {
+        height: 0;
+        overflow: hidden;
+        font-size: 80%;
+        cursor: text;
+        a {
+          color: $linkColor;
+        }
+      }
+    }
+    .announcement-insert {
+      display: block;
+      background: $defaultColor;
+      color: #fff;
+      box-sizing: border-box;
+      padding: 1.5em 1em;
+      @media (min-width: $ipad) {
+        border-top: 3px solid #D02A29;
+        padding: 1em 3.5em;
+      }
+      a {
+        color: #fff;
+      }
+    }
+  }
+
+  .tour {
+
+    position: relative;
+    overflow: auto;
+    .tour-inner {
+      width: $contentMobile;
+      margin: $spacing auto;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      @media (min-width: $ipad) {
+        text-align: left;
+        width: $contentDesktop;
+      }
+    }
+    .tour-tag {
+      position: relative;
+      display: inline-block;
+      font-size: 0.8em;
+      font-weight: 600;
+      padding: 5px 25px;
+      background-color: $defaultColor;
+      color: #fff;
+      text-transform: uppercase;
+      @media (min-width: $ipad) {
+        margin-left: 7%;
+        font-size: 1.8em;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        width: 400px;
+        height: 20px;
+        background: lighten($defaultAlt, 20%);
+        bottom: -15px;
+        right: -20px;
+        z-index: -1;
+      }
+    }
+    .tour-text {
+      position: relative;
+      display: inline-block;
+      z-index: 1;
+      @media (min-width: $ipad) {
+        margin: 5px 0 0 12%;
+      }
+      .text-block {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+      }
+      .text-1, .bottle, .text-2 {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .text-1, .text-2 {
+        font: 3em $titleFont;
+        letter-spacing: 0.3em;
+        color: $defaultColor;
+        z-index: 2;
+        @media (min-width: $ipad) {
+          font-size: 10em;
+        }
+      }
+      .text-1 {
+        margin-right: -10px;
+        @media (min-width: $ipad) {
+          margin-right: -50px;
+        }
+      }
+      .text-2 {
+        @media (min-width: $ipad) {
+          margin-left: -25px;
+        }
+      }
+      .bottle {
+        position: relative;
+        height: auto;
+        width: 50px;
+        z-index: 4;
+        @media (min-width: $ipad) {
+          left: -20px;
+          width: 150px;
+        }
+      }
+      .text-3 {
+        position: relative;
+        display: block;
+        font: 2em $titleFont;
+        color: #002B5C;
+        opacity: 0.6;
+        top: -0.4em;
+        z-index: 5;
+        text-align: center;
+        @media (min-width: $ipad) {
+          font-size: 6em;
+        }
+      }
+    }
+    .tour-action {
+      font-size: 1em;
+      z-index: 6;
+      @media (min-width: $ipad) {
+        font-size: 1.6em;
+        position: absolute;
+        bottom: 25%;
+        right: 5%;
+      }
+    }
+    .tour-negative {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 0;
+    }
+  }
+}

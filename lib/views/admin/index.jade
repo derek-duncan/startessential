@@ -17,7 +17,14 @@ block body
           else
             p Status: Active
           p #{user.saved_posts.length} #{user.saved_posts.length === 1 ? 'save' : 'saves'}
+          if user.site
+            p Site URL: <a href="#{user.site.name}.startessential.com" target="_blank">#{user.site.name}.startessential.com</a>
           p Logged in #{adminDate(user.date_active)}
+          if !user.site
+            form(method='POST' action='/admin/sites/new')
+              input(type='hidden' name='crumb' value='#{crumb}')
+              input(type='hidden' name='user_id' value='#{user._id}')
+              button.button.button--small(type='submit') Create Site
   hr
   section
     h2 Today's post

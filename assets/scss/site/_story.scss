@@ -1,0 +1,34 @@
+#story {
+  a {
+    color: $linkColor;
+  }
+  .article {
+    width: $contentMobile;
+    margin: 0 auto;
+    padding: 40px 0;
+    box-sizing: border-box;
+    @media (min-width: $ipad) {
+      width: $contentDesktop;
+    }
+    .article-title {
+      font-size: 2.7em;
+      margin: 0;
+    }
+    .article-content {
+      margin-top: 40px;
+      font-size: 1em;
+      line-height: 1.5em;
+      color: #666;
+      @media (min-width: $ipad) {
+        max-width: 60%;
+        padding-right: 70px;
+        border-right: 1px solid #ddd;
+      }
+      img {
+        width: 100%;
+        display: block;
+        margin: 30px 0;
+      }
+    }
+  }
+}

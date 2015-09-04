@@ -8,6 +8,7 @@ $btn-blue: #4A90E2;
 
 $content-width: 60%;
 
+$large: 1200px;
 $ipad: 768px;
 $phone: 520px;
 
@@ -490,3 +491,4 @@ button {
 @import 'saved';
 @import 'preview';
 @import 'joyride';
+@import 'site';

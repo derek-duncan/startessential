@@ -1,0 +1,31 @@
+html
+  include /includes/site/_head
+  body
+    section.all.custom-border
+      header
+        //-if sid._id === site._user._id
+          a(href='https://startessential.com/site') Edit your site's settings
+        ul.nav
+          .nav-inner
+            div.nav-left.nav-desktop
+              li.nav-item
+                a(href='/') Home
+              li.nav-item
+                a(href='/articles/story') My Story
+            div.nav-yl-icon
+              img(alt='YL' src='/images/site/yl-logo-inverted.png')
+            div.nav-right.nav-desktop
+              li.nav-item
+                a(href='/tour') Starter Kit Tour
+            div.nav-mobile-icon(data-target='.nav-mobile-list')
+              i.fa.fa-bars
+          .nav-mobile-list
+            li.nav-mobile-item
+              a(href='/') Home
+            li.nav-mobile-item
+              a(href='/articles/story') My Story
+            li.nav-mobile-item
+              a(href='/tour') Starter Kit Tour
+      block body
+      include /includes/site/_footer
+

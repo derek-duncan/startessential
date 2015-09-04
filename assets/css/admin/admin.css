@@ -462,16 +462,21 @@ h2 {
     padding: 20px;
     outline: none;
     width: 100%; }
-  .new-post-form button {
-    -webkit-appearance: none;
-    width: 30%;
-    background: #FF8F8F;
-    box-shadow: none;
-    border: none;
-    padding: 15px 0;
-    text-align: center;
-    border-radius: 5px;
-    color: #fff;
-    margin-top: 20px; }
-    .new-post-form button:hover {
-      background: #ff6b6b; }
+
+.button, .new-post-form button {
+  -webkit-appearance: none;
+  width: 30%;
+  background: #FF8F8F;
+  box-shadow: none;
+  border: none;
+  padding: 15px 0;
+  text-align: center;
+  border-radius: 5px;
+  color: #fff;
+  margin-top: 20px; }
+  .button:hover, .new-post-form button:hover {
+    background: #ff6b6b; }
+  .button.button--small, .new-post-form button.button--small {
+    padding: 7px 20px;
+    width: auto;
+    font-size: 1em; }

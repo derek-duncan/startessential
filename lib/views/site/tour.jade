@@ -1,0 +1,94 @@
+extends /templates/site/layout
+block head
+block body
+  include /includes/site/_banner
+  main.main-content#tour
+    .oils-header
+      b Premium Starter Kit Oils Tour
+      span &nbsp;Page <span class="header-number">1</span>/10
+    .oils
+
+      .oil.active#lavender(data-index='0' data-color='#DA8EFB')
+        span.oil-tagline Learn All About
+        h2.oil-name Lavender
+        .oil-content
+          img.oil-image(src='/images/site/tour/lavender.png' alt='Lavender Oil')
+          .oil-description
+            p Lavender is universally regarded as one of the most powerful and versatile essential oils, and the uses for this plant are almost endless.  Lavender essential oil is one of the main Young Living products because it offers a host of benefits and a sweet, floral aroma.
+
+      .oil#peppermint(data-index='1' data-color='#5F9589')
+        span.oil-tagline Learn All About
+        h2.oil-name Peppermint
+        .oil-content
+          img.oil-image(src='/images/site/tour/peppermint.png' alt='Peppermint Oil')
+          .oil-description
+            p The fresh, energizing aroma of Peppermint essential oil helps support healthy digestion. Great for flavoring drinks, it can also help promote healthy intestinal function
+
+      .oil#lemon(data-index='2' data-color='#FADF73')
+        span.oil-tagline Learn All About
+        h2.oil-name Lemon
+        .oil-content
+          img.oil-image(src='/images/site/tour/lemon.png' alt='Lemon Oil')
+          .oil-description
+            p Lemon's many applications make it one of the most useful essential oils to have on hand. The fresh, zesty aroma is refreshing, and its naturally occurring d-limonene plays an important role in NingXia Red<sup>®</sup>, Young Living's superfruit supplement.
+
+      .oil#copaiba(data-index='3' data-color='#DF9E68')
+        span.oil-tagline Learn All About
+        h2.oil-name Copaiba
+        .oil-content
+          img.oil-image(src='/images/site/tour/copaiba.png' alt='Copaiba Oil')
+          .oil-description
+            p Unlike other essential oils, Copaiba is tapped directly from the tree rather than distilled. Copaiba essential oil has a pleasant, complex taste, and when taken internally, it can promote overall wellness. Take Copaiba daily as an important part of a daily health regimen.
+
+      .oil#frankincense(data-index='4' data-color='#FF5B6C')
+        span.oil-tagline Learn All About
+        h2.oil-name Frankincense
+        .oil-content
+          img.oil-image(src='/images/site/tour/frankincense.png' alt='Frankincense Oil')
+          .oil-description
+            p Frankincense essential oil has an earthy, balsamic aroma that is highly revered for its ability to increase feelings of spirituality and inner strength. Known for a broad range of uses, Frankincense features prominently in our skin care line of products.
+
+      .oil#thieves(data-index='5' data-color='#C26A62')
+        span.oil-tagline Learn All About
+        h2.oil-name Thieves
+        .oil-content
+          img.oil-image(src='/images/site/tour/thieves.png' alt='Thieves Oil')
+          .oil-description
+            p Thieves owes its pleasant, spicy aroma and flavor to a balanced blend of Cinnamon Bark, Clove, Eucalyptus Radiata, Rosemary, and Lemon essential oils. This one-ofa-kind blend can be found in many of Young Living's most popular products. Taken internally, it may help maintain a healthy respiratory system.
+
+      .oil#purification(data-index='6' data-color='#BA5074')
+        span.oil-tagline Learn All About
+        h2.oil-name Purification
+        .oil-content
+          img.oil-image(src='/images/site/tour/purification.png' alt='Purification Oil')
+          .oil-description
+            p Neutralize odors and enhance the air in your home with the crisp, refreshing aroma of Purification.  When diffused, Purification helps purify and cleanse the air from stubborn and lingering odors. This uplifting blend is also an excellent choice for moisturizing dry skin.
+
+      .oil#rc(data-index='7' data-color='#F13F71')
+        span.oil-tagline Learn All About
+        h2.oil-name R.C.
+        .oil-content
+          img.oil-image(src='/images/site/tour/rc.png' alt='R.C. Oil')
+          .oil-description
+            p Combining the essential oils of three unique varieties of eucalyptus with other aromatics, R.C. is an aromatic must-have.
+
+      .oil#digize(data-index='8' data-color='#DC3E3E')
+        span.oil-tagline Learn All About
+        h2.oil-name DiGize
+        .oil-content
+          img.oil-image(src='/images/site/tour/digize.png' alt='DiGize Oil')
+          .oil-description
+            p DiGize contains a blend of sweetly aromatic essential oils that are both pleasant to smell and to taste. The inclusion of Peppermint essential oil may make it a great support for normal digestion.
+
+      .oil#panaway(data-index='9' data-color='#438FDC')
+        span.oil-tagline Learn All About
+        h2.oil-name PanAway
+        .oil-content
+          img.oil-image(src='/images/site/tour/panaway.png' alt='PanAway Oil')
+          .oil-description
+            p PanAway, an essential oil blend of Wintergreen, Helichrysum, Clove, and Peppermint, is great to use following physical activity.
+
+    .oils-pager
+      .oils-previous Previous
+      .oils-next Next
+      a.oils-signup.custom-bg(href='#{site._user.distributor_link}' target='_blank') Signup for your Starter Kit

@@ -1,0 +1,9 @@
+if site && site._user
+  .banner
+    .banner-full
+      .banner-inner
+        p
+          | #{site._user.full_name}&nbsp;
+          br
+          span Young Living Distributor
+        a.custom-bg.banner-cta(href='#{site._user.distributor_link}' target='_blank' title='Join Young Living with #{site._user.first_name}') Join Young Living With Me

@@ -437,6 +437,120 @@ $(function() {
     })
   }
 
+  if ( $('#site').length ) {
+    var collapsedForm = $('.form--collapsed');
+
+    collapsedForm.each(function() {
+
+      var form = $( this );
+      var openTriggers = form.find( '.form-info, .form-preview, .form-action a' );
+      var formAction = form.find('.form-action a');
+      var formActionInitial = formAction.text();
+
+      openTriggers.on( 'click', function(e) {
+        e.preventDefault();
+        form.toggleClass( 'open' );
+        if (form.hasClass('open')) {
+          formAction.text('Close');
+        } else {
+          formAction.text(formActionInitial);
+        }
+        form.find('textarea').elastic();
+      });
+    });
+
+    var addInputGroupButton = $('.add-input-group');
+
+    addInputGroupButton.each(function() {
+
+      var self = $(this);
+      self.on('click', function() {
+
+        var formInputContainer = self.parents('.form-edit').find('.form-dynamics');
+        var dynamicInputGroups = formInputContainer.find('.input-group--dynamic');
+
+        var target = $(self.data('group'));
+        var inputGroupTemplate = target.clone();
+        var inputGroupTemplateInputs = inputGroupTemplate.find('input');
+
+        inputGroupTemplateInputs.each(function() {
+
+          var self = $(this);
+          var name = self.data('name');
+          name = name.replace(/INDEX/g, dynamicInputGroups.length);
+          self.attr('name', name);
+        });
+        inputGroupTemplate.attr('class', 'input-group input-group--dynamic');
+
+        formInputContainer.append(inputGroupTemplate);
+      });
+    });
+
+    $(document).on('click touchend', '.input-group-close', function() {
+      var self = $(this);
+      var inputGroup = self.parents('.input-group--dynamic');
+      var areYouSure = confirm('Are you sure you would like to remove this link?');
+      if (areYouSure) {
+        inputGroup.remove();
+      }
+    });
+
+    var unsaved = false;
+    $(document).on('input change', 'input, textarea', function() {
+      unsaved = true;
+    });
+
+    var submitted = false;
+    $('.form-submit').on('click touchend', function() {
+
+      submitted = true;
+    });
+
+    $(window).on('beforeunload', function(e){
+      if (unsaved && !submitted) {
+        return 'You have unsaved changes, be sure to press the Save button.';
+      }
+    });
+
+    // Custom Elements
+    var colorForm = $('.colors');
+    var colorBlocks = colorForm.find('.color');
+    var colorInputMain = colorForm.find('input[name=color]');
+    var colorInputSecondary = colorForm.find('input[name=secondary]');
+    var handleColorClick = function(e) {
+
+      var self = $(this);
+      var color = self.data('color');
+      var secondary = self.data('secondary');
+      colorInputMain.val(color);
+      colorInputSecondary.val(secondary);
+      colorBlocks.removeClass('active');
+      self.addClass('active');
+    };
+    var setColor = function() {
+
+      var self = $(this);
+      var color = self.data('color');
+      self.css('background-color', color);
+    };
+    colorBlocks.on('click touchend', handleColorClick);
+    colorBlocks.each(setColor);
+
+    var colorBlocksActive = colorBlocks.filter('.active');
+    if (colorBlocksActive.length) {
+
+      colorBlocksActive.trigger('click');
+    } else {
+
+      colorBlocks.first().trigger('click');
+    }
+
+    $('.form-dynamics').sortable({
+      items: '.input-group--dynamic',
+      placeholder: '<div class="input-group--dynamic dynamic-placeholder"></div>'
+    });
+  }
+
   if ($('#preview').length) {
 
     var shareBtn = $('.share-facebook');

@@ -1,0 +1,85 @@
+.banner {
+  position: relative;
+  .banner-full {
+    text-align: center;
+    position: relative;
+    background-color: $defaultLight;
+    padding: 15px 0;
+    z-index: 10;
+    @media (min-width: $ipad) {
+      padding: 10px 0;
+    }
+  }
+  .banner-inner {
+    width: $contentMobile;
+    margin: 0 auto;
+    text-align: center;
+    animation: 1s fadeUp;
+    @media (min-width: $ipad) {
+      text-align: left;
+      width: $contentDesktop;
+    }
+  }
+  p {
+    margin: 0 0 10px 0;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 110%;
+    font-weight: 200;
+    letter-spacing: 1.6;
+    color: #787878;
+    @media (min-width: $ipad) {
+      margin: 15px 0;
+      text-align: left;
+    }
+    span {
+      font-size: 70%;
+      font-style: italic;
+      color: #ccc;
+    }
+  }
+  .banner-cta {
+    display: inline-block;
+    padding: 8px 20px;
+    margin: 0;
+    border-radius: 15px;
+    background-color: $defaultColor;
+    color: #fff;
+    font-size: 80%;
+    text-decoration: none;
+    transition: background-color 0.3s, left 0.3s;
+    left: 0;
+    position: relative;
+    &:hover {
+      left: 5px;
+      background-color: darken($defaultColor, 10%);
+    }
+    @media (min-width: $ipad) {
+      margin-left: 15px;
+      border-radius: 20px;
+    }
+  }
+}
+
+.button {
+  padding: 5px 15px;
+  border: 4px solid $defaultColor;
+  background: #fff;
+  color: $defaultColor;
+  font: 400 1em inherit;
+  text-transform: uppercase;
+  outline: none;
+  user-select: none;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  @media (min-width: $ipad) {
+    padding: 7px 23px;
+    font-size: 1.2em;
+  }
+  &:hover {
+    color: #fff !important;
+    background-color: $defaultColor;
+  }
+}

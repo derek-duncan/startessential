@@ -1,4 +1,6 @@
 node_modules/
 **/*.log
 *.log
+.DS_Store
+**/.DS_Store
 ////.migrate

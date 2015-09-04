@@ -1,0 +1,179 @@
+extends /templates/layout
+block body
+  div#site
+    include /includes/_header
+    main.main
+      h2.page-title Your Young Living Website
+      p.page-description Change settings for your personal Young Living website here. You are one of the <i>first</i> members to recieve a personal website. Please check back for updates as we add new features and options.
+
+      form.site-form(action='/site/edit' method='POST')
+        input(type="hidden" name="crumb" value=crumb)
+
+        .form.form--collapsed.colors
+          .form-info
+            h3.form-title Site Color
+          .form-elements
+            .form-preview
+              p Personalize your site's primary color
+            .form-edit.form-edit--shaded
+              .input-group
+                label Color
+                div(class="color #{site.options.color.main === '#FF7B42' ? 'active' : ''}" data-color='#FF7B42' data-secondary='#42B1FF') <!-- orange -->
+                div(class="color #{site.options.color.main === '#FF3736' ? 'active' : ''}" data-color='#FF3736' data-secondary='#3DAEAE') <!-- red -->
+                div(class="color #{site.options.color.main === '#E991F1' ? 'active' : ''}" data-color='#E991F1' data-secondary='#F3F0AF') <!-- purple -->
+                div(class="color #{site.options.color.main === '#1BADFD' ? 'active' : ''}" data-color='#1BADFD' data-secondary='#FF3F3F') <!-- blue -->
+                div(class="color #{site.options.color.main === '#88E490' ? 'active' : ''}" data-color='#88E490' data-secondary='#FFBBF3') <!-- green -->
+                input(name='color' type='hidden' value= (site.options.color.main || ""))
+                input(name='secondary' type='hidden' value= (site.options.color.secondary || ""))
+            .form-action
+              a Edit
+
+        .form.form--collapsed.story
+          .form-info
+            h3.form-title Your Story
+          .form-elements
+            .form-preview
+              if site.content.story && site.content.story.content
+                p= site.content.story.content.slice(0, 60)
+              else
+                p Write your story!
+            .form-edit.form-edit--shaded
+              .input-group
+                label Title*
+                input(name='storyTitle' type='text' value='#{site.content.story.title ? site.content.story.title : ""}')
+              .input-group
+                label Your Story*
+                textarea(name='storyContent') #{site.content.story.content}
+            .form-action
+              a Edit
+
+        .form.form--collapsed.quick-links
+          .form-info
+            h3.form-title Quick Links
+          .form-elements
+            .input-group--template.quick-link
+              .input-group
+                label Link Title*
+                input(data-name='links[link_INDEX][title]' type='text')
+              .input-group
+                label Link URL*
+                input(data-name='links[link_INDEX][href]' type='text')
+              .input-group-close
+                i.fa.fa-close
+                span &nbsp;Remove
+
+            .form-preview
+              p= site.content.quick_links.length + " Links"
+            .form-edit
+              .form-dynamics
+                if site.content.quick_links.length
+                  each link, index in site.content.quick_links
+                    +link(link, index)
+                else
+                  +link({}, 0)
+              .add-input-group(data-group='.quick-link')
+                i.fa.fa-plus
+                | &nbsp;Add Quick Link
+            .form-action
+              a Edit
+
+            mixin link(link, index)
+              .input-group.input-group--dynamic
+                .input-group
+                  label Link Title*
+                  input(name='links[link_#{index}][title]' type='text' value='#{link.title ? link.title : ""}')
+                .input-group
+                  label Link URL*
+                  input(name='links[link_#{index}][href]' type='text' value='#{link.href ? link.href : ""}')
+                .input-group-close
+                  i.fa.fa-close
+                  span &nbsp;Remove
+
+        .form.form--collapsed.announcements
+          .form-info
+            h3.form-title Announcements
+          .form-elements
+            .input-group--template.announcement
+              .input-group
+                label Announcement Title*
+                input(data-name='announcements[announcement_INDEX][title]' type='text')
+              .input-group
+                label Announcement Details
+                textarea(data-name='announcements[announcement_INDEX][details]')
+              .input-group-close
+                i.fa.fa-close
+                span &nbsp;Remove
+
+            .form-preview
+              p= site.content.announcements.length + " Announcements"
+            .form-edit
+              .form-dynamics
+                if site.content.announcements.length
+                  each announcement, index in site.content.announcements
+                    +announcement(announcement, index)
+                else
+                  +announcement({}, 0)
+              .add-input-group(data-group='.announcement')
+                i.fa.fa-plus
+                | &nbsp;Add Announcement
+            .form-action
+              a Edit
+
+            mixin announcement(announcement, index)
+              .input-group.input-group--dynamic
+                .input-group
+                  label Announcement Title*
+                  input(name='announcements[announcement_#{index}][title]' type='text' value='#{announcement.title ? announcement.title : ""}')
+                .input-group
+                  label Announcement Details
+                  textarea(name='announcements[announcement_#{index}][details]') #{announcement.details ? announcement.details : ""}
+                .input-group-close
+                  i.fa.fa-close
+                  span &nbsp;Remove
+
+        .form.form--collapsed.social
+          .form-info
+            h3.form-title Social Links
+            p.form-details Paste the link to your social profiles in the fields below.
+          .form-elements
+            .form-preview
+              p Facebook, Twitter, Pinterest, and Instagram
+            .form-edit.form-edit--shaded
+              .input-group
+                label Facebook
+                input(name='facebook' type='text' value='#{site.social.facebook || ""}')
+              .input-group
+                label Twitter
+                input(name='twitter' type='text' value='#{site.social.twitter || ""}')
+              .input-group
+                label Pinterest
+                input(name='pinterest' type='text' value='#{site.social.pinterest || ""}')
+              .input-group
+                label Instagram
+                input(name='instagram' type='text' value='#{site.social.instagram || ""}')
+            .form-action
+              a Edit
+
+        .form.form--collapsed.contact
+          .form-info
+            h3.form-title Contact Details
+          .form-elements
+            .form-preview
+              p Email, phone number, etc
+            .form-edit.form-edit--shaded
+              .input-group
+                label Contact Email
+                input(name='email' type='email' value='#{site.contact.email || ""}')
+              .input-group
+                label Phone Number
+                input(name='phone' type='tel' value='#{site.contact.phone || ""}')
+            .form-action
+              a Edit
+
+        button.form-submit.site-form-submit(type='submit') Save
+
+      a.view-website(href='http://#{site.name}.localhost:3000' target='_blank' title='View your YL Website') View Your YL Website
+
+block scripts
+  script(type='text/javascript' src='/js/build/jquery.elastic.source.js')
+  script(type='text/javascript' src='/js/build/jquery.sortable.min.js')
