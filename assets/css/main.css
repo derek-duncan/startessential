@@ -4373,8 +4373,15 @@ body.messages .saving-overlay {
       font-weight: 600; }
       #account .account-left .settings button[type=submit]:hover {
         background: #ff5c5c; }
+  #account .account-left .logout {
+    margin: 15px 0;
+    display: block;
+    color: #ccc;
+    font-size: 80%; }
+    @media (min-width: 768px) {
+      #account .account-left .logout {
+        margin: 40px 0 15px; } }
   #account .account-left .remove-form {
-    margin-top: 40px;
     font-size: 80%; }
     #account .account-left .remove-form button {
       -webkit-appearance: none;

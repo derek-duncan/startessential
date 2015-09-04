@@ -69,8 +69,16 @@
         }
       }
     }
+    .logout {
+      margin: 15px 0;
+      display: block;
+      color: #ccc;
+      font-size: 80%;
+      @media (min-width: $ipad) {
+        margin: 40px 0 15px;
+      }
+    }
     .remove-form {
-      margin-top: 40px;
       font-size: 80%;
       button {
         -webkit-appearance: none;

@@ -24,6 +24,7 @@ header.header
             a(class=(active === 'site' ? 'active' : undefined) href='/site') Site
         li.nav-item#account-link
           a(class=(active === 'account' ? 'active' : undefined) href='/account') Account
-        li.nav-item 
-          a(href='/logout') Logout
+        if !sid && sid.site
+          li.nav-item 
+            a(href='/logout') Logout
 

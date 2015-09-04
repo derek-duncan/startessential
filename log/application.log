@@ -1498,3 +1498,8 @@
 {"event":"request","timestamp":1441399901737,"tags":["request","uid"],"data":"55e906810b7347af1d282fa1","pid":29939,"id":"1441399901653:Dereks-Air-2:29939:ie649op7:10015","method":"get","path":"/posts"}
 {"event":"request","timestamp":1441399902670,"tags":["request","uid"],"data":"55e906810b7347af1d282fa1","pid":29939,"id":"1441399902624:Dereks-Air-2:29939:ie649op7:10025","method":"get","path":"/posts"}
 {"event":"request","timestamp":1441401051508,"tags":["request","uid"],"pid":30071,"id":"1441401051454:Dereks-Air-2:30071:ie64cic8:10000","method":"get","path":"/"}
+{"event":"request","timestamp":1441402006201,"tags":["request","uid"],"data":"55e906810b7347af1d282fa1","pid":31379,"id":"1441402006116:Dereks-Air-2:31379:ie65erwh:10000","method":"get","path":"/account"}
+{"event":"request","timestamp":1441402007094,"tags":["request","uid"],"data":"55e906810b7347af1d282fa1","pid":31379,"id":"1441402007075:Dereks-Air-2:31379:ie65erwh:10005","method":"get","path":"/account"}
+{"event":"request","timestamp":1441402058461,"tags":["request","uid"],"data":"55e906810b7347af1d282fa1","pid":31379,"id":"1441402058440:Dereks-Air-2:31379:ie65erwh:10010","method":"get","path":"/account"}
+{"event":"request","timestamp":1441402062346,"tags":["request","uid"],"data":"55e906810b7347af1d282fa1","pid":31379,"id":"1441402062327:Dereks-Air-2:31379:ie65erwh:10015","method":"get","path":"/account"}
+{"event":"request","timestamp":1441402123667,"tags":["request","uid"],"data":"55e906810b7347af1d282fa1","pid":31379,"id":"1441402123623:Dereks-Air-2:31379:ie65erwh:10020","method":"get","path":"/account"}
