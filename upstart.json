@@ -4,6 +4,7 @@
   "watch"            : ['index.js', 'lib'],
   "ignore_watch"     : ["assets", "log", "node_modules", "lib/views/", ".git"],
   "env": {
-    "NODE_PATH": "."
+    "NODE_PATH": ".",
+    "NODE_ENV": "development",
   }
 }
