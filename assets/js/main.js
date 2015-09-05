@@ -230,18 +230,6 @@ $(function() {
       //transitionDuration: 0
     })
 
-    getNextGraphics()
-
-    $(window).scroll(function() {
-      var wHeight = $(window).height()
-      var scrollTop = $(window).scrollTop()
-      var bottomOfDoc = $('.graphics-suggestion').offset().top - wHeight;
-      if (scrollTop + wHeight >= bottomOfDoc) {
-        if (!isLoading) {
-          getNextGraphics();
-        }
-      }
-    })
     // Ajax graphics
     function getNextGraphics() {
       $.ajax({
@@ -378,6 +366,19 @@ $(function() {
         }
       }
     }
+
+    getNextGraphics()
+
+    $(window).scroll(function() {
+      var wHeight = $(window).height()
+      var scrollTop = $(window).scrollTop()
+      var bottomOfDoc = $('.graphics-suggestion').offset().top - wHeight;
+      if (scrollTop + wHeight >= bottomOfDoc) {
+        if (!isLoading) {
+          getNextGraphics();
+        }
+      }
+    })
 
     // Suggestion Form
 
