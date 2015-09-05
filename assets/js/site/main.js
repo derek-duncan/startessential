@@ -93,7 +93,6 @@ $(function() {
     SE.color = SE.color + ' !important';
     SE.colorAlt = SE.colorAlt + ' !important';
 
-    console.log(SE.colorAlt)
     changeCSS('.custom-bg', 'background-color', SE.color);
     changeCSS('.custom-bg-after:after', 'background-color', SE.color);
     changeCSS('.custom-bg-hover:hover', 'background-color', SE.color);
@@ -246,7 +245,7 @@ function changeCSS(theClass,element,value) {
 
     try {
 
-      document.styleSheets[S].insertRule(theClass+' { '+element+': '+value+'; }', document.styleSheets[S][cssRules].length);
+      document.styleSheets[S].insertRule(theClass+' { '+element+': '+value+'; }', document.styleSheets[S]['cssRules'].length);
     } catch(err) {
 
       try {
