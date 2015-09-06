@@ -4,9 +4,7 @@ $phone: 520px;
 
 $red: #FF8F8F;
 $dark: #494949;
-/*$defaultColor: #FF3736;*/
 $defaultColor: #ccc;
-/*$defaultAlt: #3DAEAE;*/
 $defaultAlt: #ddd;
 $defaultLight: #FAFAFA;
 $grayBorderColor: #f2f2f2;
@@ -16,6 +14,18 @@ $titleFont: 'Falco Black';
 
 $contentDesktop: 90%;
 $contentMobile: 90%;
+
+@font-face {
+  font-family: 'Falco Black';
+  src: url('/fonts/falco_black-webfont.eot');
+  src: url('/fonts/falco_black-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/falco_black-webfont.woff2') format('woff2'),
+    url('/fonts/falco_black-webfont.woff') format('woff'),
+    url('/fonts/falco_black-webfont.ttf') format('truetype'),
+    url('/fonts/falco_black-webfont.svg#falco_blackblack') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
   font: 300 120% 'Helvetica Neue', sans-serif;
