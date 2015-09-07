@@ -17,12 +17,12 @@ $contentMobile: 90%;
 
 @font-face {
   font-family: 'Falco Black';
-  src: url('/fonts/falco_black-webfont.eot');
-  src: url('/fonts/falco_black-webfont.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/falco_black-webfont.woff2') format('woff2'),
-    url('/fonts/falco_black-webfont.woff') format('woff'),
-    url('/fonts/falco_black-webfont.ttf') format('truetype'),
-    url('/fonts/falco_black-webfont.svg#falco_blackblack') format('svg');
+  src: url('../../fonts/falco_black-webfont.eot');
+  src: url('../../fonts/falco_black-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../../fonts/falco_black-webfont.woff2') format('woff2'),
+    url('../../fonts/falco_black-webfont.woff') format('woff'),
+    url('../../fonts/falco_black-webfont.ttf') format('truetype'),
+    url('../../fonts/falco_black-webfont.svg#falco_blackblack') format('svg');
   font-weight: normal;
   font-style: normal;
 }

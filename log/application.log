@@ -1591,3 +1591,4 @@
 {"event":"request","timestamp":1441577098656,"tags":["request","uid"],"data":"55ecb888a60db66a56d7b0a1","pid":22122,"id":"1441577098585:Dereks-MacBook-Air-2.local:22122:ie91rm1d:10030","method":"get","path":"/thankyou"}
 {"event":"request","timestamp":1441580791608,"tags":["request","uid"],"data":"55ecb888a60db66a56d7b0a1","pid":22201,"id":"1441580791580:Dereks-MacBook-Air-2.local:22201:ie91t1c1:10000","method":"get","path":"/"}
 {"event":"request","timestamp":1441580795062,"tags":["request","uid"],"data":"55ecb888a60db66a56d7b0a1","pid":22201,"id":"1441580794970:Dereks-MacBook-Air-2.local:22201:ie91t1c1:10020","method":"get","path":"/posts"}
+{"event":"request","timestamp":1441594898690,"tags":["request","uid"],"pid":22678,"id":"1441594898632:Dereks-Air-2:22678:ie942ch8:10000","method":"get","path":"/"}
