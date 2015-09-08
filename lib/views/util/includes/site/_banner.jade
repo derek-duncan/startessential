@@ -7,3 +7,16 @@ if site && site._user
           br
           span Young Living Distributor
         a.custom-bg.banner-cta(href='#{site._user.distributor_link}' target='_blank' title='Join Young Living with #{site._user.first_name}') Join Young Living With Me
+        .banner-social
+          if site.social.facebook
+            a.facebook(href=site.social.facebook target='_blank')
+              i.fa.fa-facebook-official
+          if site.social.twitter
+            a.twitter(href=site.social.twitter target='_blank')
+              i.fa.fa-twitter-square
+          if site.social.pinterest
+            a.pinterest(href=site.social.pinterest target='_blank')
+              i.fa.fa-pinterest-square
+          if site.social.instagram
+            a.instagram(href=site.social.instagram target='_blank')
+              i.fa.fa-instagram

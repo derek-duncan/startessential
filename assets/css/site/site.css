@@ -2378,6 +2378,34 @@ th {
       .banner .banner-cta {
         margin-left: 15px;
         border-radius: 20px; } }
+  .banner .banner-social {
+    display: block;
+    padding-top: 10px; }
+    @media (min-width: 768px) {
+      .banner .banner-social {
+        display: inline-block;
+        vertical-align: middle;
+        padding-left: 30px;
+        padding-top: 0; } }
+    .banner .banner-social a {
+      font-size: 1.5em;
+      opacity: 1;
+      -webkit-transition: opacity 0.3s;
+              transition: opacity 0.3s;
+      margin: 0 5px; }
+      .banner .banner-social a:hover {
+        opacity: 0.8; }
+      @media (min-width: 768px) {
+        .banner .banner-social a {
+          font-size: 2em; } }
+    .banner .banner-social .facebook {
+      color: #3b5998; }
+    .banner .banner-social .twitter {
+      color: #00aced; }
+    .banner .banner-social .pinterest {
+      color: #cb2027; }
+    .banner .banner-social .instagram {
+      color: #517fa4; }
 
 .button {
   padding: 5px 15px;

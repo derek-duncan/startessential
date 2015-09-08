@@ -60,6 +60,40 @@
       border-radius: 20px;
     }
   }
+  .banner-social {
+    display: block;
+    padding-top: 10px;
+    @media (min-width: $ipad) {
+      display: inline-block;
+      vertical-align: middle;
+      padding-left: 30px;
+      padding-top: 0;
+    }
+    a {
+      font-size: 1.5em;
+      opacity: 1;
+      transition: opacity 0.3s;
+      margin: 0 5px;
+      &:hover {
+        opacity: 0.8;
+      }
+      @media (min-width: $ipad) {
+        font-size: 2em;
+      }
+    }
+    .facebook {
+      color: #3b5998;
+    }
+    .twitter {
+      color: #00aced;
+    }
+    .pinterest {
+      color: #cb2027;
+    }
+    .instagram {
+      color: #517fa4;
+    }
+  }
 }
 
 .button {
