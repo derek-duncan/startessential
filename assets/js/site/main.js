@@ -153,7 +153,7 @@ $(function() {
 
       var wW = $(window).width();
       var index = $('.announcement').index(self);
-      if (index % 2 !== 0 || wW <= SE.ipad) {
+      if (index % 2 !== 0 || $('.announcement').length < 2 || wW <= SE.ipad) {
         details.insertAfter(self);
       } else {
         details.insertAfter(self.next());
