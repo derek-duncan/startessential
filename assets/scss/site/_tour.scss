@@ -88,19 +88,27 @@
     margin: 2em 0 0;
   }
   .oil-image {
-    display: table-cell;
-    vertical-align: middle;
+    display: block;
+    float: left;
     width: 80px;
     height: auto;
-    margin: 0 30px 0 0;
+    margin: 0 30px 30px 0;
     @media (min-width: $ipad) {
       width: 120px;
+      margin: 0 30px 0 0;
+      display: table-cell;
+      vertical-align: middle;
+      float: none;
     }
   }
   .oil-description {
-    display: table-cell;
-    vertical-align: middle;
+    display: block;
     color: $dark;
     font-size: 0.9em;
+    @media (min-width: $ipad) {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
   }
 }

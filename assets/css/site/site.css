@@ -2985,16 +2985,23 @@ th {
     display: table;
     margin: 2em 0 0; }
   #tour .oil-image {
-    display: table-cell;
-    vertical-align: middle;
+    display: block;
+    float: left;
     width: 80px;
     height: auto;
-    margin: 0 30px 0 0; }
+    margin: 0 30px 30px 0; }
     @media (min-width: 768px) {
       #tour .oil-image {
-        width: 120px; } }
+        width: 120px;
+        margin: 0 30px 0 0;
+        display: table-cell;
+        vertical-align: middle;
+        float: none; } }
   #tour .oil-description {
-    display: table-cell;
-    vertical-align: middle;
+    display: block;
     color: #494949;
     font-size: 0.9em; }
+    @media (min-width: 768px) {
+      #tour .oil-description {
+        display: table-cell;
+        vertical-align: middle; } }
