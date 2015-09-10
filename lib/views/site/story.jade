@@ -6,7 +6,7 @@ block body
     article.article
       h2.article-title= site.content.story.title
       .article-content
-        if site.content.story.length
+        if site.content.story.content.length
           | !{site.story_rendered}
         else
           p I'm still working on writing down my story :) Please contact me if you would like to chat!
