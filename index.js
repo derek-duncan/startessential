@@ -1,28 +1,28 @@
-"use strict";
+'use strict';
 
 require('newrelic');
-var Hapi = require('hapi');
-var cluster = require('cluster');
-var toobusy = require('toobusy-js');
-var mongoose = require('mongoose')
-var migrate = require('migrate');
-var Good = require('good');
-var path = require('path');
-var fs = require('fs');
+const Hapi = require('hapi');
+const cluster = require('cluster');
+const toobusy = require('toobusy-js');
+const mongoose = require('mongoose')
+const migrate = require('migrate');
+const Good = require('good');
+const path = require('path');
+const fs = require('fs');
 
-var constants = require('lib/constants')
-var _message = require('lib/util/createMessage')
+const constants = require('lib/constants')
+const _message = require('lib/util/createMessage')
 
 // ======================
 
 // Fork the process on production
 if (cluster.isMaster) {
 
-  var workers = process.env.WEB_CONCURRENCY || 1;;
-  for (var i = 0; i < workers; i++) {
+  const workers = process.env.WEB_CONCURRENCY || 1;;
+  for (let i = 0; i < workers; i++) {
     cluster.fork();
   }
-  cluster.on('exit', function() {
+  cluster.on('exit', () => {
     console.log('A worker process died, restarting...');
     cluster.fork();
   });
@@ -30,7 +30,7 @@ if (cluster.isMaster) {
 } else {
   constants.appRoot = path.resolve(__dirname);
 
-  var server = new Hapi.Server()
+  const server = new Hapi.Server()
 
   server.connection({
     port: constants.application[ constants.application.env ].port
@@ -52,8 +52,8 @@ if (cluster.isMaster) {
   // ======================
 
   // Connect to mongodb
-  var connect = function () {
-    var options = { server: { socketOptions: { keepAlive: 1 } } };
+  const connect = function () {
+    const options = { server: { socketOptions: { keepAlive: 1 } } };
     mongoose.connect(constants.database[ constants.application.env ].url, options);
   };
   connect();
@@ -76,7 +76,7 @@ if (cluster.isMaster) {
   // ======================
 
   // Migrate database
-  var set = migrate.load(__dirname + '/.migrate', __dirname + '/migrations');
+  const set = migrate.load(__dirname + '/.migrate', __dirname + '/migrations');
   if ( set.migrations.length ) {
     set.up(function (err) {
       if (err) throw err;
@@ -87,7 +87,7 @@ if (cluster.isMaster) {
 
   // ======================
 
-  var middleware = require('lib/middleware');
+  const middleware = require('lib/middleware');
 
   // Load middleware
 
@@ -143,7 +143,7 @@ if (cluster.isMaster) {
 
   // ======================
 
-  var User = mongoose.model('User');
+  const User = mongoose.model('User');
 
   // Authentication strategy
   server.register(require('hapi-auth-bearer-token'), function (err) {
@@ -193,7 +193,7 @@ if (cluster.isMaster) {
   // Default auth
   server.auth.default({
     strategy: 'session',
-    scope: constants.SCOPE.PRE_AUTHENTICATED
+    scope: [constants.SCOPE.PRE_AUTHENTICATED]
   })
 
   // ======================
@@ -208,7 +208,7 @@ if (cluster.isMaster) {
   // ======================
 
   // Add all the routes within the routes folder
-  var routes = require('lib/routes');
+  const routes = require('lib/routes');
   // API routes
   server.register({register: routes.api}, function(err) {
     if (err) server.log('error', err)
