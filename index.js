@@ -85,7 +85,6 @@ if (cluster.isMaster) {
     });
   }
 
-  require('lib/controllers/user/util');
   // ======================
 
   const middleware = require('lib/middleware');
