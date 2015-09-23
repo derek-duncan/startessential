@@ -74,6 +74,11 @@
       &:last-child {
         border: none;
       }
+
+      a {
+        color: $dark;
+        text-decoration: none;
+      }
     }
   }
   .nav-item {

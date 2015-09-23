@@ -74,11 +74,17 @@
       opacity: 1;
       transition: opacity 0.3s;
       margin: 0 5px;
+      display: inline-block;
+      vertical-align: middle;
       &:hover {
         opacity: 0.8;
       }
       @media (min-width: $ipad) {
         font-size: 2em;
+      }
+      img {
+        height: 100%;
+        width: auto;
       }
     }
     .facebook {
@@ -92,6 +98,12 @@
     }
     .instagram {
       color: #517fa4;
+    }
+    .blogger {
+      height: 26px;
+      @media (min-width: $ipad) {
+        height: 33px;
+      }
     }
   }
 }

@@ -137,7 +137,7 @@ block body
             p.form-details Paste the link to your social profiles in the fields below.
           .form-elements
             .form-preview
-              p Facebook, Twitter, Pinterest, and Instagram
+              p Facebook, Twitter, Pinterest, Instagram, and Blogger
             .form-edit.form-edit--shaded
               .input-group
                 label Facebook
@@ -151,6 +151,9 @@ block body
               .input-group
                 label Instagram
                 input(name='instagram' type='text' value='#{site.social.instagram || ""}')
+              .input-group
+                label Blogger
+                input(name='blogger' type='text' value='#{site.social.blogger || ""}')
             .form-action
               a Edit
 
