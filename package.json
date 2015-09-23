@@ -60,6 +60,6 @@
     "gulp-sass": "^2.0.0"
   },
   "engines": {
-    "npm": "4.0.x"
+    "node": "4.0.x"
   }
 }
