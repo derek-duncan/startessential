@@ -143,8 +143,6 @@ if (cluster.isMaster) {
 
   // ======================
 
-  const User = mongoose.model('User');
-
   // Authentication strategy
   server.register(require('hapi-auth-bearer-token'), function (err) {
 
@@ -183,7 +181,7 @@ if (cluster.isMaster) {
       providerParams: {
         display: 'popup'
       },
-      isSecure: constants.cookieSecure,
+      isSecure: false,
       scope: ['email', 'public_profile', 'user_friends']
     });
   });

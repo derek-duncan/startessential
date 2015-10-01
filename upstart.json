@@ -5,7 +5,7 @@
   "ignore_watch"     : ["assets", "log", "node_modules", "lib/views/", ".git"],
   "env": {
     "NODE_PATH": ".",
-    "NODE_ENV": "development",
+    "NODE_ENV": "production",
   },
   "node-args": "--harmony"
 }
